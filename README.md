@@ -1,0 +1,170 @@
+# Neuko AI Wiki
+
+> Welcome to the comprehensive Neuko AI wiki. Everything you need to know about the cryptic Web3 project, its lore, puzzles, community, and more.
+
+## Welcome
+
+This wiki is designed for newcomers and veterans alike. Whether you're just discovering Neuko AI or want to dive deep into the lore and puzzles, you'll find everything organized here.
+
+**What is Neuko AI?** A Solana-based Web3 project combining AI, NFTs, and interactive storytelling. Built by former Doodles members, it emphasizes organic community building, cryptic lore, and puzzle-solving over traditional marketing.
+
+**Current Status** (November 2025): ~13,462 followers, 1,100+ badge holders, strong community culture, team speaking at SolanaConf in December.
+
+---
+
+## Quick Start
+
+**New to Neuko AI?** Start here:
+
+1. **[Getting Started](./getting-started.md)** - 5-minute overview, terminology, and entry points
+2. **[Project Overview](./project-overview.md)** - What Neuko AI is and why it matters
+3. **[Timeline](./timeline.md)** - Complete chronological story of what's happened
+
+**Want to dive deeper?** Continue with:
+
+4. **[Neuko X Transmissions](./neuko-x.md)** - Every video and post breakdown
+5. **[Lore](./lore.md)** - Complete story and mythology
+6. **[Puzzles](./puzzles.md)** - Puzzle catalog and solutions
+7. **[Badges](./badges.md)** - Badge system explained
+8. **[Community](./community.md)** - Community culture and members
+9. **[Team](./team.md)** - Founders and their philosophy
+10. **[Website](./website.md)** - neuko.ai portal documentation
+
+---
+
+## Core Pages
+
+### Essential Reading
+
+- **[Getting Started](./getting-started.md)** - Newcomer onboarding guide with quick overview, current status, terminology, and entry points
+- **[Project Overview](./project-overview.md)** - High-level introduction: what Neuko AI is, mission, technology, and roadmap hints
+- **[Timeline](./timeline.md)** - Complete chronological log of events, badge drops, video releases, puzzle discoveries, and milestones
+
+### Content & Story
+
+- **[Neuko X Transmissions](./neuko-x.md)** - Complete catalog of every X post/video with detailed breakdowns, puzzle clues, lore elements, and community reactions
+- **[Lore](./lore.md)** - Complete mythology: G*Boy story, MITER-Corp conspiracy, badge symbolism, and community-developed narrative elements
+- **[Puzzles](./puzzles.md)** - Puzzle catalog: types, solved puzzles with solutions, unsolved mysteries, and puzzle-solving contributors
+
+### Systems & Community
+
+- **[Badges](./badges.md)** - Badge system: Rabbit/Moth/Snake system, distribution phases, holder stats, and community distribution story
+- **[Community](./community.md)** - Community culture: key members, rituals, AMA summaries, and social experiment dynamics
+- **[Team](./team.md)** - Founders and team: complete roster, philosophy, Doodles background, and approach to community building
+- **[Website](./website.md)** - neuko.ai portal: PIN system, console logs discovered, and treasure trails
+
+### Maintenance
+
+- **[Future Cleanup](./future-cleanup.md)** - Migration checklist for when it's safe to delete the raw `sources/` directory
+
+---
+
+## Key Resources
+
+### Official Channels
+
+- **X (Twitter)**: [@neukoai](https://twitter.com/neukoai) - Primary communication channel
+- **Website**: [neuko.ai](https://neuko.ai) - Puzzle-gated portal
+- **Badge Collections**: 
+  - [Magic Eden](https://magiceden.io/marketplace/gboy_badges)
+  - [Tensor](https://tensor.trade/trade/gboy_badges)
+
+### Community Documentation
+
+- Community recaps by @satoshi_owl, @Sinsonx, @thrax_nft
+- Puzzle-solving threads and analysis
+- Community-driven onboarding content
+
+---
+
+## Wiki Structure
+
+This wiki is organized to help you:
+
+1. **Get oriented quickly** - Start with Getting Started and Project Overview
+2. **Understand the story** - Read Timeline and Lore
+3. **Explore content** - Study Neuko X Transmissions and Puzzles
+4. **Learn about systems** - Understand Badges, Community, and Website
+5. **Know the team** - Read Team for founder philosophy
+
+Each page includes:
+- Clear explanations for newcomers
+- Detailed information for deep dives
+- Cross-references to related pages
+- Source citations for verification
+
+---
+
+## Reading Paths
+
+### For Newcomers
+
+1. Getting Started → Project Overview → Timeline
+2. Watch all Neuko AI videos on X
+3. Read Lore and Badges to understand the system
+4. Explore Community to see how to get involved
+
+### For Puzzle Solvers
+
+1. Puzzles → Neuko X Transmissions → Website
+2. Study solved puzzles and techniques
+3. Explore unsolved mysteries
+4. Connect with puzzle-solving community
+
+### For Lore Enthusiasts
+
+1. Lore → Timeline → Neuko X Transmissions
+2. Study badge symbolism and story arc
+3. Explore community-developed lore
+4. Follow unsolved mysteries
+
+### For Community Members
+
+1. Community → Badges → Team
+2. Understand community culture and values
+3. Learn about key members and rituals
+4. See how team builds community
+
+---
+
+## Contributing
+
+This wiki is compiled from source files in the `sources/` directory. All information cites original sources for verification.
+
+**Source Files**: Raw research and transcripts stored in `sources/` directory (temporary, will be archived once fully ported)
+
+**Wiki Pages**: Organized, newcomer-friendly documentation in the root directory
+
+---
+
+## Referencing Sources
+
+All wiki pages cite original source files (e.g., `sources/thread-5.md`) alongside summaries. This keeps provenance clear while signaling which artifacts can be archived later.
+
+See [Future Cleanup](./future-cleanup.md) for migration status and cleanup checklist.
+
+---
+
+## Quick Links
+
+- [What is Neuko AI?](./project-overview.md#what-neuko-ai-is)
+- [How do I get started?](./getting-started.md)
+- [What are the badges?](./badges.md)
+- [What's the story?](./lore.md)
+- [How do I solve puzzles?](./puzzles.md)
+- [Who's in the community?](./community.md)
+- [Who are the founders?](./team.md)
+
+---
+
+## Status
+
+**Last Updated**: November 2025  
+**Coverage**: Complete through November 13, 2025  
+**Sources**: All information ported from `sources/` directory  
+**Maintenance**: Wiki is a living document, updated as new information emerges
+
+---
+
+Welcome to the Neuko AI wiki. We're watching. 👁️
+

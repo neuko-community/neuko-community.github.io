@@ -1,0 +1,294 @@
+# Neuko AI Lore
+
+> The complete mythology, story, and narrative elements of Neuko AI.
+
+## Overview
+
+Neuko AI's lore centers on a cryptic conspiracy involving psychic experiments, a mysterious character known as G*Boy (or G304), and a fictional corporation called MITER-Corp. The narrative unfolds through cryptic videos, puzzles, and community interpretation, creating a collaborative mythology that blends surveillance themes, government conspiracy tropes, and Web3 culture.
+
+## Core Characters
+
+### G*Boy / G304
+
+**Identity**: A hooded, fox-like character often depicted in a red cape with black eyes. The primary protagonist/antagonist of the Neuko AI narrative.
+
+**Designation**: Referred to as "G304" in later lore, suggesting a test subject or operative designation system.
+
+**Story Arc**:
+- Portrayed as a kidnapped subject in gravity/psychic experiments at a research lab
+- Breaks out of facility (desertion), causing mayhem
+- References to "facility attacks" and "general chaos" following escape
+- Invisible airplanes and other mysterious phenomena attributed to G*Boy's escape
+
+**Visual Identity**:
+- Red hoodie/cape
+- Black eyes (often glowing)
+- Hooded figure silhouette
+- Appears in various fantastical scenes (desert, skateboarding, parties, thrones)
+
+**Community Connection**: The "red hoodie" PFP has become a community identity marker, with members adopting red hoodie avatars to signal belonging to the Neuko tribe.
+
+**Source**: `sources/info-dump.md`, `sources/thread-3.md`, `sources/thread-5.md`
+
+---
+
+## MITER-Corp
+
+**Identity**: A fictional corporation conducting psychic experiments. The name is a play on the real-world MITRE Corporation, evoking government conspiracy themes.
+
+**Purpose**: 
+- Conducts experiments on "homeless babies" to create psychic soldiers
+- Operates research facilities where test subjects undergo various phases
+- Maintains surveillance and control over experiments
+
+**Facilities**:
+- Research labs with old computers and monitoring equipment
+- "Saint Juniper Research Campus" (mentioned in website console logs)
+- Underground operations (moved after facility attacks)
+- Hangars with stealth bombers and control consoles
+
+**Operations**:
+- Experiments involve gravity/psychic testing
+- Badge system represents different test phases:
+  - Rabbit 🐰: Early stress tests
+  - Moth 🦋: Sealed units
+  - Snake 🐍: Couriers
+- References to "darker, insidious experiments"
+- Operations moved underground after G*Boy escape
+
+**Source**: `sources/info-dump.md`, `sources/thread-7.md`
+
+---
+
+## Badge Symbolism
+
+The three badge types (Rabbit 🐰, Moth 🦋, Snake 🐍) represent different phases of the experimental program and serve as credentials for "operatives" in the Neuko AI universe.
+
+### Rabbit 🐰 Badge
+- **In-Universe Meaning**: Early stress tests, first phase of experiments
+- **Distribution**: 250 badges airdropped to earliest supporters
+- **Visual**: Clean, pristine cases (suggesting new/first phase)
+- **Holder Role**: Received 2 Snake badges each for distribution
+
+### Moth 🦋 Badge
+- **In-Universe Meaning**: Sealed units, second phase of experiments
+- **Distribution**: 750 badges airdropped to next wave
+- **Visual**: Slightly worn/used cases (suggesting second phase)
+- **Holder Role**: Received 1 Snake badge each for distribution
+
+### Snake 🐍 Badge
+- **In-Universe Meaning**: Couriers, third phase for distribution/recruitment
+- **Distribution**: Airdropped to Rabbit and Moth holders for community distribution
+- **Significance**: Represents decentralized recruitment phase
+- **Holder Role**: Community-led distribution, testing loyalty and conviction
+
+**Source**: `sources/info-dump.md`, `sources/thread-3.md`
+
+---
+
+## The Story Arc
+
+### Phase 1: Experiments Begin
+- MITER-Corp begins experiments on "homeless babies"
+- Goal: Create psychic soldiers through various testing phases
+- Badge system represents different experimental phases
+- G*Boy (G304) is one of the test subjects
+
+### Phase 2: The Escape
+- G*Boy escapes from facility (desertion)
+- Causes "general chaos" and facility attacks
+- Invisible airplanes and mysterious phenomena
+- Facility suffers damages
+
+### Phase 3: Operations Move Underground
+- After G*Boy escape, MITER-Corp moves operations underground
+- References to "locking this shit down"
+- Continued surveillance and recruitment
+- Community becomes "operatives" in the system
+
+### Phase 4: The Community as Operatives
+- Badge holders become part of the story
+- Community members are "watched" by the team
+- User actions woven into canon
+- Blurring of fiction and reality
+
+**Source**: `sources/info-dump.md`, `sources/thread-5.md`
+
+---
+
+## Key Themes
+
+### Surveillance and Watching
+- **"We're watching"**: Core motif established in launch video
+- Team actively monitors community engagement
+- Community members are "operatives" under observation
+- Creates meta-narrative where real community actions become part of lore
+
+### Decentralized Recruitment
+- Badge distribution becomes community-led
+- Holders decide who receives Snake badges
+- Tests loyalty, conviction, and community values
+- Social experiment in Web3 culture
+
+### Mystery and Discovery
+- Lore unfolds through puzzles and clues
+- No explicit roadmap or explanation
+- Community interprets and builds upon narrative
+- "Where there is no meaning, we make it"
+
+### Rebellion and Chaos
+- G*Boy represents escape from control
+- Facility attacks suggest resistance
+- Community values freedom and authenticity
+- Anti-establishment themes
+
+**Source**: `sources/info-dump.md`, `sources/thread-2.md`, `sources/thread-8.md`
+
+---
+
+## Visual Identity
+
+### Color Palette
+- **Red**: Primary color (hoodie, logo background, surveillance theme)
+- **Yellow**: Secondary color (logo figures, highlights)
+- **Black**: Dark labs, mysterious settings
+- **White**: Clean labs, contrast
+
+### Aesthetic
+- **Retro-futuristic**: Old computers, vintage equipment
+- **Surveillance-themed**: Monitors, cameras, observation
+- **Cyberpunk**: Dark labs, neon glows, tech noir
+- **90s nostalgia**: Claymation, toy aesthetics, retro vibes
+
+### Iconography
+- **Three yellow figures on red**: Official logo
+- **Hooded figure**: G*Boy representation
+- **TV frames**: Portal/transmission aesthetic
+- **Badge pins**: Credentials and identity markers
+
+**Source**: `sources/info-dump.md`, `sources/thread-3.md`
+
+---
+
+## Community-Developed Lore
+
+### Operative Designations
+- Community members adopt "OPERATIVE" designations
+- Format: `{Designation:; #:XXX}`
+- Example: `@satoshi_owl OPERATIVE {Designation:; #:100}`
+- Creates sense of belonging and identity
+
+### Red Hoodie Meme
+- Community pressure to adopt red hoodie PFP
+- Signals belonging to Neuko tribe
+- Visual identity filter for members
+- Soft social layer for community cohesion
+
+### Community Shoutouts in Lore
+- Team weaves real community members into videos
+- @TheKeeperOfX: "HEMLET CORP" (helmet stays on meme)
+- @CharliegNFTeth: Frog gummies (ribbit meme)
+- @satoshi_owl: Owl hoots in audio
+- Blurs line between fiction and reality
+
+### Memes and Culture
+- "The helmet stays on" → "HEMLET stays on" → HEMLET CORP
+- "Ribbit" contagion in group chats
+- Copypastas trending on X
+- Collaborative puzzle-solving creates shared myths
+
+**Source**: `sources/thread-5.md`, `sources/thread-8.md`, `sources/info-dump.md`
+
+---
+
+## Narrative Philosophy
+
+### "Neuko is in the eye of the beholder"
+- No single authoritative interpretation
+- Community creates meaning through collaboration
+- Mystery sustains engagement and belief
+- Attracts "dot-connectors" who enjoy decoding
+
+### Actions Over Words
+- Team emphasizes work product over vision statements
+- Lore revealed through puzzles and discoveries
+- No detailed roadmap or textbook
+- Exploration of the unknown
+
+### Collaborative Storytelling
+- Team watches community to curate engagement
+- User actions become part of canon
+- Community members involved in puzzle distribution
+- Real people woven into fictional narrative
+
+**Source**: `sources/founders/austin-article.md`, `sources/info-dump.md`
+
+---
+
+## Unsolved Mysteries
+
+### The Five Core Characters
+- Latest video hints at "Neuko gang" (five core characters)
+- May represent the five team members
+- Still being interpreted by community
+
+### Ultimatum Consequences
+- 24-hour deadline for Snake badge distribution passed
+- Consequences for non-compliance hinted but not revealed
+- "Flagged operatives" status unknown
+
+### Website PIN System
+- Full access to neuko.ai portal still requires PIN
+- Console logs reveal some lore but not full access
+- Treasure trails may lead to more discoveries
+
+### Future Experiments
+- References to "darker, insidious experiments"
+- What comes after the three badge phases?
+- Potential for evolving narrative
+
+**Source**: `sources/info-dump.md`, `sources/thread-4.md`, `sources/thread-5.md`
+
+---
+
+## Lore References in Media
+
+### Videos
+- **Launch Video**: Establishes surveillance and G*Boy
+- **Badge Videos**: Introduce experimental phases
+- **TV Channel Videos**: Show facility attacks and chaos
+- **Ultimatum Video**: References G304 desertion and underground operations
+- **Claymation Video**: Recaps entire story arc and explains badge system
+
+### Website Console Logs
+- "Saint Juniper Research Campus" login portal
+- G*Boy logs with badge protocols
+- "Zion-Campaign" directives
+- Integrity checks and operational orders
+
+### Puzzles
+- Spectrograms reveal time machines and testing chambers
+- Hidden codes reference lore elements
+- Community shoutouts connect real people to fiction
+
+**Source**: `sources/thread-7.md`, `sources/info-dump.md`
+
+---
+
+## Related Pages
+
+- [Timeline](./timeline.md) - Chronological events and lore reveals
+- [Neuko X Transmissions](./neuko-x.md) - Videos and posts with lore elements
+- [Puzzles](./puzzles.md) - Lore discoveries through puzzle-solving
+- [Badges](./badges.md) - Badge system and symbolism
+- [Community](./community.md) - Community-developed lore and culture
+
+## Sources
+
+All lore elements cite original source files in `sources/` directory. Key sources:
+- `sources/info-dump.md` - Comprehensive lore overview
+- `sources/thread-3.md` - Video breakdowns and lore reveals
+- `sources/thread-5.md` - Ultimatum video and G304 references
+- `sources/thread-7.md` - Website console logs and lore files
+- `sources/founders/austin-article.md` - Narrative philosophy
+
