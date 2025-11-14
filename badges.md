@@ -113,7 +113,6 @@ While no utilities have been confirmed, community speculation includes:
 - **AI Tools**: Potential access to AI-powered content creation tools
 - **Generative Art**: Possible evolving or generative NFT features
 - **Platform Access**: Future platform or product utilities
-- **Token Integration**: Connection to $NEUKOAI token (if utilities confirmed)
 - **Future Drops**: Potential access to future distributions
 
 **Status**: Utility is currently unknown - team emphasizes building over promises
@@ -208,4 +207,4 @@ From founder [@SQU1NCH](https://x.com/SQU1NCH):
 - [Timeline](./timeline.md) - Badge distribution events chronologically
 - [Lore](./lore.md) - Badge symbolism in the story
 - [Community](./community/overview.md) - Community distribution and culture
-- [Getting Started](./getting-started.md) - How to get involved
+- [What's Neuko?](./whats-neuko.md) - How to get involved

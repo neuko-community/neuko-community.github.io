@@ -12,7 +12,7 @@
 
 **New to Neuko?** Start here:
 
-1. [**Getting Started**](getting-started.md) - 5-minute overview, terminology, and entry points
+1. [**What's Neuko?**](whats-neuko.md) - 5-minute overview, terminology, and entry points
 2. [**Project Overview**](project-overview.md) - What Neuko is and why it matters
 3. [**Timeline**](timeline.md) - Complete chronological story of what's happened
 
@@ -31,7 +31,7 @@
 
 ### Essential Reading
 
-* [**Getting Started**](getting-started.md) - Newcomer onboarding guide with quick overview, current status, terminology, and entry points
+* [**What's Neuko?**](whats-neuko.md) - Newcomer onboarding guide with quick overview, current status, terminology, and entry points
 * [**Project Overview**](project-overview.md) - High-level introduction: what Neuko is, mission, technology, and roadmap hints
 * [**Timeline**](timeline.md) - Complete chronological log of events, badge drops, video releases, puzzle discoveries, and milestones
 
@@ -78,7 +78,7 @@
 
 This wiki is organized to help you:
 
-1. **Get oriented quickly** - Start with Getting Started and Project Overview
+1. **Get oriented quickly** - Start with What's Neuko? and Project Overview
 2. **Understand the story** - Read Timeline and Lore
 3. **Explore content** - Study Neuko X Transmissions and Puzzles
 4. **Learn about systems** - Understand Badges, Community, and Website
@@ -96,7 +96,7 @@ Each page includes:
 
 ### For Newcomers
 
-1. Getting Started → Project Overview → Timeline
+1. What's Neuko? → Project Overview → Timeline
 2. Watch all Neuko videos on X
 3. Read Lore and Badges to understand the system
 4. Explore Community to see how to get involved
@@ -135,7 +135,7 @@ This wiki is community-built and maintained. Contributions, corrections, and upd
 ## Quick Links
 
 * [What is Neuko?](project-overview.md#what-neuko-ai-is)
-* [How do I get started?](getting-started.md)
+* [What's Neuko?](whats-neuko.md)
 * [What are the badges?](badges.md)
 * [What's the story?](lore.md)
 * [How do I solve puzzles?](transmissions/puzzle-techniques.md)

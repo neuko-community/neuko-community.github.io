@@ -64,7 +64,7 @@ The Neuko community is characterized by high conviction, collaborative puzzle-so
 
 ## Related Pages
 
-- [Getting Started](../getting-started.md) - How to join the community
+- [What's Neuko?](../whats-neuko.md) - How to join the community
 - [Badges](../badges.md) - Community distribution story
 - [Transmissions](../transmissions/overview.md) - Community reactions to posts
 - [Lore](../lore.md) - Community-developed lore

@@ -1,4 +1,4 @@
-# Getting Started with Neuko
+# What's Neuko?
 
 > A quick guide for newcomers to understand what Neuko is and how to get involved.
 
@@ -6,7 +6,7 @@
 
 ### What is Neuko?
 
-Neuko is a Solana-based Web3 project that launched in mid-October 2025, combining elements of AI, NFTs, and interactive storytelling. It's built by a team of former Doodles members who emphasize organic community building, cryptic lore, and puzzle-solving over traditional marketing.
+Neuko is a Solana-based Web3 project combining elements of AI, NFTs, and interactive storytelling. It's built by a team of former Doodles members who emphasize organic community building, cryptic lore, and puzzle-solving over traditional marketing.
 
 **Key Points**:
 - **Cryptic Mystery Project**: No explicit roadmap, emphasis on discovery
@@ -15,19 +15,18 @@ Neuko is a Solana-based Web3 project that launched in mid-October 2025, combinin
 - **Puzzle-Heavy**: Hidden clues in videos, audio, and website code
 - **100% Organic**: No paid promotions, partnerships, or KOL deals
 
-### Current Status (as of November 2025)
+### Current Status
 
-- **Followers**: ~13,462 on X (up from 0 in early October)
+- **Followers**: Growing community on X (started from 0 in October 2025)
 - **Badge Holders**: Over 1,100 unique holders
 - **Badge Distribution**: 3 phases complete (Rabbit, Moth, Snake)
-- **Market Performance**: Strong floor prices, only 2-3% listed (diamond hands)
-- **Mindshare**: 0.25% (higher than many established projects)
-- **Upcoming**: Team speaking at SolanaConf in early December 2025
+- **Market Performance**: Strong floor prices, low listing percentage (diamond hands)
+- **Community**: Active puzzle-solving, community-driven content, high conviction
 
 ### Are You Too Late?
 
-**No!** The project is still very early:
-- Only ~1 month old (launched October 2025)
+**No!** The project is still early:
+- Launched in October 2025
 - Still many mysteries unsolved
 - More to come (team emphasizes "we're still building")
 - Community actively onboarding newcomers
@@ -48,6 +47,9 @@ Neuko is a Solana-based Web3 project that launched in mid-October 2025, combinin
 - PIN unlock system (requires puzzle-solving)
 - Console logs accessible via browser dev tools
 
+**Telegram**: [Neuko Community](https://t.me/neukoai)
+- Community chat and discussions
+
 **No Discord**: Team has warned against fake Discords. Official communication is on X only.
 
 ### Badge Collections
@@ -57,9 +59,8 @@ Neuko is a Solana-based Web3 project that launched in mid-October 2025, combinin
 - Solana-based NFTs
 - Strong floor prices despite down market
 
-**Tensor**: [G*Boy Badges](https://tensor.trade/trade/gboy_badges)
-- Alternative marketplace
-- Official collection link (from founder [@SQU1NCH](https://x.com/SQU1NCH))
+**Tensor**: [G*Boy Badges Collection](https://tensor.trade/trade/gboy_badges)
+- Alternative marketplace for badges
 
 ---
 
@@ -73,8 +74,8 @@ Neuko is a Solana-based Web3 project that launched in mid-October 2025, combinin
 
 ### Lore Terms
 
-- **G*Boy / G304**: The mysterious hooded character, escaped test subject
-- **MITER-Corp**: Fictional corporation conducting experiments (play on real-world MITRE)
+- **G*Boy / G304**: The mysterious hooded fox-like character, escaped test subject
+- **MITER-Corp**: Fictional corporation conducting experiments 
 - **Operatives**: Badge holders and community members
 - **"We're watching"**: Core surveillance motif
 - **Cognitive Assessment**: First badge distribution phase
@@ -103,9 +104,10 @@ Start with these pages in order:
 ### 2. Watch the Videos
 
 Watch all Neuko videos on X in chronological order:
-- Start with "we're watching" (October 13)
-- Follow through to latest claymation video (November 12)
+- Start with "we're watching" (first major video)
+- Follow through to the latest videos
 - Pay attention to details - puzzles are hidden throughout
+- See [Neuko X Transmissions](./transmissions/overview.md) for complete catalog
 
 ### 3. Join the Community
 
@@ -149,7 +151,7 @@ Watch all Neuko videos on X in chronological order:
 
 - 4/5 founders are ex-Doodles
 - Doxxed with track records
-- Speaking at NFT Paris, Accelerate Art
+- Speaking at major events (NFT Paris, Accelerate Art, SolanaConf)
 - Experience building NFT IP and communities
 
 ### 5. Strong Community Culture
@@ -179,10 +181,6 @@ No confirmed utilities yet, but theories include AI tools, generative art, or ev
 - Community gifting (if you're active and engaged)
 - Future distributions (team may drop more)
 
-### Q: What is the $NEUKOAI token?
-
-**A**: Associated token on Solana DEXs with ~$1.4M market cap (as of early November). No confirmed utilities yet, but theories suggest AI integration or NFT utilities.
-
 ### Q: Is there a Discord?
 
 **A**: No official Discord. Team has warned against fake Discords. Official communication is on X ([@neukoai](https://x.com/neukoai)) only.
@@ -198,10 +196,10 @@ No confirmed utilities yet, but theories include AI tools, generative art, or ev
 ### Q: What's next?
 
 **A**: 
-- Team speaking at SolanaConf (early December 2025)
 - More videos and puzzles likely
 - Potential reveals or announcements
 - Community continues to grow
+- Team emphasizes building over promises - no detailed roadmap
 
 ---
 
@@ -209,7 +207,7 @@ No confirmed utilities yet, but theories include AI tools, generative art, or ev
 
 If you want to fully understand Neuko:
 
-1. **[Getting Started](./getting-started.md)** (you are here) - Quick overview
+1. **[What's Neuko?](./whats-neuko.md)** (you are here) - Quick overview
 2. **[Project Overview](./project-overview.md)** - What Neuko is
 3. **[Timeline](./timeline.md)** - Complete chronological events
 4. **[Neuko X Transmissions](./transmissions/overview.md)** - Every video/post breakdown

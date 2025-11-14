@@ -80,7 +80,7 @@ Neuko is a Solana-based Web3 project that launched in mid-October 2025, combinin
 - Contribute through content creation or puzzle-solving
 
 **4. Explore the Wiki**
-- Start with [Getting Started](./getting-started.md)
+- Start with [What's Neuko?](./whats-neuko.md)
 - Read [Timeline](./timeline.md) for complete story
 - Study [Lore](./lore.md) and [Puzzle Resources](./transmissions/puzzle-techniques.md)
 - Understand [Badges](./badges.md) and [Community](./community/overview.md)
@@ -93,7 +93,6 @@ Neuko is a Solana-based Web3 project that launched in mid-October 2025, combinin
 ### Blockchain
 - **Solana**: Badge NFTs are Solana-based
 - **Marketplaces**: Magic Eden, Tensor
-- **Token**: $NEUKOAI token on Solana DEXs (~$1.4M market cap as of early November)
 
 ### Potential AI Integration
 - **Speculated**: AI tools for content creation
@@ -152,36 +151,9 @@ Neuko is a Solana-based Web3 project that launched in mid-October 2025, combinin
 
 ---
 
-## Badge and Token Relationship
-
-### Current Status
-
-**Badges**:
-- Rabbit 🐰, Moth 🐝, Snake 🐍 NFTs on Solana
-- Serve as credentials and early supporter status
-- Part of lore and story
-- Utility is currently unknown - we do not know what their utility is
-
-**$NEUKOAI Token**:
-- Associated token on Solana DEXs
-- ~$1.4M market cap (as of early November)
-- No confirmed utilities yet
-
-### Speculated Connections
-
-- Badges may provide access to AI tools
-- Token may integrate with badge utilities
-- Potential platform or product features
-- Future drops or distributions
-
-**Status**: Relationship between badges, token, and utilities still undefined. Team focuses on building over promises.
-
-
----
-
 ## Reading Order for Newcomers
 
-1. **[Getting Started](./getting-started.md)** - Quick overview and entry points
+1. **[What's Neuko?](./whats-neuko.md)** - Quick overview and entry points
 2. **[Project Overview](./project-overview.md)** (you are here) - What Neuko is
 3. **[Timeline](./timeline.md)** - Complete chronological story
 4. **[Neuko X Transmissions](./transmissions/overview.md)** - Every video and post breakdown
@@ -212,7 +184,7 @@ Neuko is a Solana-based Web3 project that launched in mid-October 2025, combinin
 
 ## Related Pages
 
-- [Getting Started](./getting-started.md) - Newcomer guide
+- [What's Neuko?](./whats-neuko.md) - Newcomer guide
 - [Timeline](./timeline.md) - What's happened so far
 - [Lore](./lore.md) - Complete story
 - [Badges](./badges.md) - Badge system

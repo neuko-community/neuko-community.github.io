@@ -2,9 +2,9 @@
 
 * [Unofficial Neuko Wiki](README.md)
 
-## Getting Started
+## What's Neuko?
 
-* [Getting Started](getting-started.md)
+* [What's Neuko?](whats-neuko.md)
 * [Project Overview](project-overview.md)
 * [Timeline](timeline.md)
 

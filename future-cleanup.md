@@ -7,7 +7,7 @@
 ### Core Pages
 
 1. ✅ **README.md** - Comprehensive navigation hub and wiki overview
-2. ✅ **getting-started.md** - Newcomer onboarding guide
+2. ✅ **whats-neuko.md** - Newcomer onboarding guide
 3. ✅ **project-overview.md** - High-level project introduction
 4. ✅ **timeline.md** - Complete chronological events with links to X posts
 5. ✅ **lore.md** - Complete story and mythology synthesis
