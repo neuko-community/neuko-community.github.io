@@ -1,16 +1,16 @@
-# Getting Started with Neuko AI
+# Getting Started with Neuko
 
-> A quick guide for newcomers to understand what Neuko AI is and how to get involved.
+> A quick guide for newcomers to understand what Neuko is and how to get involved.
 
 ## What You Need to Know in 5 Minutes
 
-### What is Neuko AI?
+### What is Neuko?
 
-Neuko AI is a Solana-based Web3 project that launched in mid-October 2025, combining elements of AI, NFTs, and interactive storytelling. It's built by a team of former Doodles members who emphasize organic community building, cryptic lore, and puzzle-solving over traditional marketing.
+Neuko is a Solana-based Web3 project that launched in mid-October 2025, combining elements of AI, NFTs, and interactive storytelling. It's built by a team of former Doodles members who emphasize organic community building, cryptic lore, and puzzle-solving over traditional marketing.
 
 **Key Points**:
 - **Cryptic Mystery Project**: No explicit roadmap, emphasis on discovery
-- **Badge NFT System**: Rabbit 🐰, Moth 🦋, and Snake 🐍 badges represent different phases
+- **Badge NFT System**: Rabbit 🐰, Moth 🐝, and Snake 🐍 badges represent different phases
 - **Community-Driven**: Decentralized distribution, community-led onboarding
 - **Puzzle-Heavy**: Hidden clues in videos, audio, and website code
 - **100% Organic**: No paid promotions, partnerships, or KOL deals
@@ -53,7 +53,7 @@ Neuko AI is a Solana-based Web3 project that launched in mid-October 2025, combi
 ### Badge Collections
 
 **Magic Eden**: [G*Boy Badges Collection](https://magiceden.io/marketplace/gboy_badges)
-- Rabbit 🐰, Moth 🦋, and Snake 🐍 badges
+- Rabbit 🐰, Moth 🐝, and Snake 🐍 badges
 - Solana-based NFTs
 - Strong floor prices despite down market
 
@@ -68,7 +68,7 @@ Neuko AI is a Solana-based Web3 project that launched in mid-October 2025, combi
 ### Badges
 
 - **Rabbit 🐰**: First phase badge (250 total), represents early stress tests
-- **Moth 🦋**: Second phase badge (750 total), represents sealed units
+- **Moth 🐝**: Second phase badge (750 total), represents sealed units
 - **Snake 🐍**: Third phase badge (distributed by community), represents couriers
 
 ### Lore Terms
@@ -102,7 +102,7 @@ Start with these pages in order:
 
 ### 2. Watch the Videos
 
-Watch all Neuko AI videos on X in chronological order:
+Watch all Neuko videos on X in chronological order:
 - Start with "we're watching" (October 13)
 - Follow through to latest claymation video (November 12)
 - Pay attention to details - puzzles are hidden throughout
@@ -110,7 +110,7 @@ Watch all Neuko AI videos on X in chronological order:
 ### 3. Join the Community
 
 - **Follow @neukoai** on X
-- **Engage with community threads** (search for Neuko AI threads)
+- **Engage with community threads** (search for Neuko threads)
 - **Read community recaps** by @satoshi_owl, @Sinsonx, @thrax_nft
 - **Participate in puzzle-solving** if interested
 
@@ -165,10 +165,9 @@ Watch all Neuko AI videos on X in chronological order:
 
 ### Q: What do the badges do?
 
-**A**: Currently, badges represent:
+**A**: We currently do not know what the badge utility is. The team has not confirmed any specific utilities. Currently, badges represent:
 - Early supporter status
 - Community credentials
-- Access to future drops/utilities (speculated)
 - Part of the lore/story
 
 No confirmed utilities yet, but theories include AI tools, generative art, or evolving NFTs.
@@ -208,10 +207,10 @@ No confirmed utilities yet, but theories include AI tools, generative art, or ev
 
 ## Reading Order for Deep Dive
 
-If you want to fully understand Neuko AI:
+If you want to fully understand Neuko:
 
 1. **[Getting Started](./getting-started.md)** (you are here) - Quick overview
-2. **[Project Overview](./project-overview.md)** - What Neuko AI is
+2. **[Project Overview](./project-overview.md)** - What Neuko is
 3. **[Timeline](./timeline.md)** - Complete chronological events
 4. **[Neuko X Transmissions](./neuko-x.md)** - Every video/post breakdown
 5. **[Lore](./lore.md)** - Complete story and mythology
@@ -236,7 +235,7 @@ If you want to fully understand Neuko AI:
 
 ## Related Pages
 
-- [Project Overview](./project-overview.md) - What Neuko AI is
+- [Project Overview](./project-overview.md) - What Neuko is
 - [Timeline](./timeline.md) - What's happened so far
 - [Badges](./badges.md) - Understanding the badge system
 - [Community](./community.md) - Joining the community

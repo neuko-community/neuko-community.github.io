@@ -1,4 +1,4 @@
-# Neuko AI Team
+# Neuko Team
 
 > Founders, team members, and their philosophy.
 

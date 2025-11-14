@@ -1,12 +1,12 @@
-# Neuko AI Wiki
+# Neuko Wiki
 
-> Welcome to the comprehensive Neuko AI wiki. Everything you need to know about the cryptic Web3 project, its lore, puzzles, community, and more.
+> Welcome to the comprehensive Neuko wiki. Everything you need to know about the cryptic Web3 project, its lore, puzzles, community, and more.
 
 ## Welcome
 
-This wiki is designed for newcomers and veterans alike. Whether you're just discovering Neuko AI or want to dive deep into the lore and puzzles, you'll find everything organized here.
+This wiki is designed for newcomers and veterans alike. Whether you're just discovering Neuko or want to dive deep into the lore and puzzles, you'll find everything organized here.
 
-**What is Neuko AI?** A Solana-based Web3 project combining AI, NFTs, and interactive storytelling. Built by former Doodles members, it emphasizes organic community building, cryptic lore, and puzzle-solving over traditional marketing.
+**What is Neuko?** A Solana-based Web3 project combining AI, NFTs, and interactive storytelling. Built by former Doodles members, it emphasizes organic community building, cryptic lore, and puzzle-solving over traditional marketing.
 
 **Current Status** (November 2025): ~13,462 followers, 1,100+ badge holders, strong community culture, team speaking at SolanaConf in December.
 
@@ -14,10 +14,10 @@ This wiki is designed for newcomers and veterans alike. Whether you're just disc
 
 ## Quick Start
 
-**New to Neuko AI?** Start here:
+**New to Neuko?** Start here:
 
 1. **[Getting Started](./getting-started.md)** - 5-minute overview, terminology, and entry points
-2. **[Project Overview](./project-overview.md)** - What Neuko AI is and why it matters
+2. **[Project Overview](./project-overview.md)** - What Neuko is and why it matters
 3. **[Timeline](./timeline.md)** - Complete chronological story of what's happened
 
 **Want to dive deeper?** Continue with:
@@ -37,7 +37,7 @@ This wiki is designed for newcomers and veterans alike. Whether you're just disc
 ### Essential Reading
 
 - **[Getting Started](./getting-started.md)** - Newcomer onboarding guide with quick overview, current status, terminology, and entry points
-- **[Project Overview](./project-overview.md)** - High-level introduction: what Neuko AI is, mission, technology, and roadmap hints
+- **[Project Overview](./project-overview.md)** - High-level introduction: what Neuko is, mission, technology, and roadmap hints
 - **[Timeline](./timeline.md)** - Complete chronological log of events, badge drops, video releases, puzzle discoveries, and milestones
 
 ### Content & Story
@@ -100,7 +100,7 @@ Each page includes:
 ### For Newcomers
 
 1. Getting Started → Project Overview → Timeline
-2. Watch all Neuko AI videos on X
+2. Watch all Neuko videos on X
 3. Read Lore and Badges to understand the system
 4. Explore Community to see how to get involved
 
@@ -147,7 +147,7 @@ See [Future Cleanup](./future-cleanup.md) for migration status and cleanup check
 
 ## Quick Links
 
-- [What is Neuko AI?](./project-overview.md#what-neuko-ai-is)
+- [What is Neuko?](./project-overview.md#what-neuko-ai-is)
 - [How do I get started?](./getting-started.md)
 - [What are the badges?](./badges.md)
 - [What's the story?](./lore.md)
@@ -166,5 +166,5 @@ See [Future Cleanup](./future-cleanup.md) for migration status and cleanup check
 
 ---
 
-Welcome to the Neuko AI wiki. We're watching. 👁️
+Welcome to the Neuko wiki. We're watching. 👁️
 

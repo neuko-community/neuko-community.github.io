@@ -1,15 +1,15 @@
 # Project Overview
 
-> High-level introduction to Neuko AI: what it is, why it matters, and how to get involved.
+> High-level introduction to Neuko: what it is, why it matters, and how to get involved.
 
 ## Mission Snapshot
 
-### What Neuko AI Is
+### What Neuko Is
 
-Neuko AI is a Solana-based Web3 project that launched in mid-October 2025, combining elements of AI, NFTs, and interactive storytelling. It's built by a team of former Doodles members who emphasize organic community building, cryptic lore, and puzzle-solving over traditional marketing.
+Neuko is a Solana-based Web3 project that launched in mid-October 2025, combining elements of AI, NFTs, and interactive storytelling. It's built by a team of former Doodles members who emphasize organic community building, cryptic lore, and puzzle-solving over traditional marketing.
 
 **Core Elements**:
-- **Badge NFT System**: Rabbit 🐰, Moth 🦋, and Snake 🐍 badges represent different phases and serve as credentials
+- **Badge NFT System**: Rabbit 🐰, Moth 🐝, and Snake 🐍 badges represent different phases and serve as credentials
 - **Cryptic Lore**: Story centered on G*Boy (G304), MITER-Corp experiments, and surveillance themes
 - **Puzzle-Heavy**: Hidden clues in videos, audio, and website code unlock lore and rewards
 - **Community-Driven**: Decentralized distribution, community-led onboarding, collaborative puzzle-solving
@@ -140,7 +140,7 @@ Neuko AI is a Solana-based Web3 project that launched in mid-October 2025, combi
 ### Confirmed Upcoming Events
 
 **SolanaConf (Solana Breakpoint) - Early December 2025**
-- Team scheduled to speak about Neuko AI
+- Team scheduled to speak about Neuko
 - Potential major catalyst and reveal event
 - First major public appearance
 
@@ -163,10 +163,10 @@ Neuko AI is a Solana-based Web3 project that launched in mid-October 2025, combi
 ### Current Status
 
 **Badges**:
-- Rabbit 🐰, Moth 🦋, Snake 🐍 NFTs on Solana
+- Rabbit 🐰, Moth 🐝, Snake 🐍 NFTs on Solana
 - Serve as credentials and early supporter status
 - Part of lore and story
-- No confirmed utilities yet
+- Utility is currently unknown - we do not know what their utility is
 
 **$NEUKOAI Token**:
 - Associated token on Solana DEXs
@@ -189,7 +189,7 @@ Neuko AI is a Solana-based Web3 project that launched in mid-October 2025, combi
 ## Reading Order for Newcomers
 
 1. **[Getting Started](./getting-started.md)** - Quick overview and entry points
-2. **[Project Overview](./project-overview.md)** (you are here) - What Neuko AI is
+2. **[Project Overview](./project-overview.md)** (you are here) - What Neuko is
 3. **[Timeline](./timeline.md)** - Complete chronological story
 4. **[Neuko X Transmissions](./neuko-x.md)** - Every video and post breakdown
 5. **[Lore](./lore.md)** - Story and mythology

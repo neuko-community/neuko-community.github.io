@@ -1,10 +1,10 @@
-# Neuko AI Community
+# Neuko Community
 
 > Community culture, key members, rituals, and social experiment dynamics.
 
 ## Overview
 
-The Neuko AI community is characterized by high conviction, collaborative puzzle-solving, and strong cultural identity. The team designed a social experiment around badge distribution that tested community values, resulting in a diamond-handed, engagement-focused community that self-organized to reward contribution over quick profits.
+The Neuko community is characterized by high conviction, collaborative puzzle-solving, and strong cultural identity. The team designed a social experiment around badge distribution that tested community values, resulting in a diamond-handed, engagement-focused community that self-organized to reward contribution over quick profits.
 
 ## Community Design: The Social Experiment
 
@@ -13,9 +13,10 @@ The Neuko AI community is characterized by high conviction, collaborative puzzle
 The Snake badge distribution (Phase 3) was designed as a social experiment:
 
 **Setup**:
-- Team airdropped Snake badges to Rabbit and Moth holders
+- Team gave Snake badges to Rabbit and Moth holders
 - Gave complete freedom: Hold, Sell, or Give
-- No instructions or oversight
+- Holders were to distribute to people they thought would benefit the community
+- No team oversight or control
 - Tested community values and loyalty
 
 **Hypothesis**: In a down market, would holders sell free NFTs or demonstrate loyalty?

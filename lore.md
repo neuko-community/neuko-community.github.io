@@ -1,16 +1,16 @@
-# Neuko AI Lore
+# Neuko Lore
 
-> The complete mythology, story, and narrative elements of Neuko AI.
+> The complete mythology, story, and narrative elements of Neuko.
 
 ## Overview
 
-Neuko AI's lore centers on a cryptic conspiracy involving psychic experiments, a mysterious character known as G*Boy (or G304), and a fictional corporation called MITER-Corp. The narrative unfolds through cryptic videos, puzzles, and community interpretation, creating a collaborative mythology that blends surveillance themes, government conspiracy tropes, and Web3 culture.
+Neuko's lore centers on a cryptic conspiracy involving psychic experiments, a mysterious character known as G*Boy (or G304), and a fictional corporation called MITER-Corp. The narrative unfolds through cryptic videos, puzzles, and community interpretation, creating a collaborative mythology that blends surveillance themes, government conspiracy tropes, and Web3 culture.
 
 ## Core Characters
 
 ### G*Boy / G304
 
-**Identity**: A hooded, fox-like character often depicted in a red cape with black eyes. The primary protagonist/antagonist of the Neuko AI narrative.
+**Identity**: A hooded, fox-like character often depicted in a red cape with black eyes. The primary protagonist/antagonist of the Neuko narrative.
 
 **Designation**: Referred to as "G304" in later lore, suggesting a test subject or operative designation system.
 
@@ -51,7 +51,7 @@ Neuko AI's lore centers on a cryptic conspiracy involving psychic experiments, a
 - Experiments involve gravity/psychic testing
 - Badge system represents different test phases:
   - Rabbit 🐰: Early stress tests
-  - Moth 🦋: Sealed units
+  - Moth 🐝: Sealed units
   - Snake 🐍: Couriers
 - References to "darker, insidious experiments"
 - Operations moved underground after G*Boy escape
@@ -62,23 +62,23 @@ Neuko AI's lore centers on a cryptic conspiracy involving psychic experiments, a
 
 ## Badge Symbolism
 
-The three badge types (Rabbit 🐰, Moth 🦋, Snake 🐍) represent different phases of the experimental program and serve as credentials for "operatives" in the Neuko AI universe.
+The three badge types (Rabbit 🐰, Moth 🐝, Snake 🐍) represent different phases of the experimental program and serve as credentials for "operatives" in the Neuko universe.
 
 ### Rabbit 🐰 Badge
 - **In-Universe Meaning**: Early stress tests, first phase of experiments
-- **Distribution**: 250 badges airdropped to earliest supporters
+- **Distribution**: 250 badges airdropped first to 250 people
 - **Visual**: Clean, pristine cases (suggesting new/first phase)
-- **Holder Role**: Received 2 Snake badges each for distribution
+- **Holder Role**: Received 2 Snake badges each for distribution to people they thought would benefit the community
 
-### Moth 🦋 Badge
+### Moth 🐝 Badge
 - **In-Universe Meaning**: Sealed units, second phase of experiments
-- **Distribution**: 750 badges airdropped to next wave
+- **Distribution**: 750 badges airdropped after Rabbits to next wave
 - **Visual**: Slightly worn/used cases (suggesting second phase)
-- **Holder Role**: Received 1 Snake badge each for distribution
+- **Holder Role**: Received 1 Snake badge each for distribution to people they thought would benefit the community
 
 ### Snake 🐍 Badge
 - **In-Universe Meaning**: Couriers, third phase for distribution/recruitment
-- **Distribution**: Airdropped to Rabbit and Moth holders for community distribution
+- **Distribution**: Given to Rabbit and Moth badge holders to distribute to people they thought would benefit the community
 - **Significance**: Represents decentralized recruitment phase
 - **Holder Role**: Community-led distribution, testing loyalty and conviction
 

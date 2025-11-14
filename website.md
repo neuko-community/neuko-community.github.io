@@ -1,10 +1,10 @@
-# Neuko AI Website
+# Neuko Website
 
 > Documentation of the neuko.ai portal, PIN system, console logs, and treasure trails.
 
 ## Overview
 
-The Neuko AI website ([neuko.ai](https://neuko.ai)) is a minimalistic, puzzle-gated portal that serves as both a teaser and a puzzle layer. The site features a PIN unlock system requiring codes discovered through video puzzles, and contains hidden console logs with lore and directives.
+The Neuko website ([neuko.ai](https://neuko.ai)) is a minimalistic, puzzle-gated portal that serves as both a teaser and a puzzle layer. The site features a PIN unlock system requiring codes discovered through video puzzles, and contains hidden console logs with lore and directives.
 
 ## Website Structure
 

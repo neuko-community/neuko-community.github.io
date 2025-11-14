@@ -1,10 +1,10 @@
-# Neuko AI Puzzles
+# Neuko Puzzles
 
-> Complete catalog of puzzles, solutions, and puzzle-solving techniques used in Neuko AI.
+> Complete catalog of puzzles, solutions, and puzzle-solving techniques used in Neuko.
 
 ## Overview
 
-Puzzles are core to Neuko AI's engagement strategy. Hidden in videos, audio, website code, and community interactions, they unlock lore, reward engagement, and create a collaborative problem-solving culture. The team designs puzzles as social experiments, decentralizing participation and testing community conviction.
+Puzzles are core to Neuko's engagement strategy. Hidden in videos, audio, website code, and community interactions, they unlock lore, reward engagement, and create a collaborative problem-solving culture. The team designs puzzles as social experiments, decentralizing participation and testing community conviction.
 
 ## Puzzle Types
 

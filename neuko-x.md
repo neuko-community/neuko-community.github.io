@@ -1,6 +1,6 @@
 # Neuko X Transmissions
 
-> Complete catalog of every Neuko AI X post/video with detailed breakdowns, puzzle clues, lore elements, and community reactions.
+> Complete catalog of every Neuko X post/video with detailed breakdowns, puzzle clues, lore elements, and community reactions.
 
 ## Post Catalog
 
@@ -10,7 +10,7 @@
 **Caption**: "i stood up i fell over i wept on the floor"  
 **Media**: None (text-only reply)  
 **Engagement**: Early teaser, establishes cryptic poetic tone  
-**Significance**: First public signal from Neuko AI account before official launch  
+**Significance**: First public signal from Neuko account before official launch  
 **Lore Elements**: Establishes cryptic, emotional tone  
 **Source**: `sources/info-dump.md`
 
@@ -61,7 +61,7 @@
 - Zooms on details (notebooks, screens)
 - Transitions to badges pinned on clothing
   - Rabbit 🐰 badges shown with clean cases
-  - Moth 🦋 badges shown slightly worn/used
+  - Moth 🐝 badges shown slightly worn/used
 - Ends with hooded figure in rainy night alley
 - Ambient sounds/song
 - Style: Clean, exploratory, teasing rewards
@@ -69,7 +69,7 @@
 **Founder Comments**: All three founders (@austin_hurwitz, @SQU1NCH, @greenie_sr) posted cryptic "🐰" comment
 
 **Puzzle/Lore Hooks**: 
-- Introduces Rabbit 🐰, Moth 🦋, and Snake 🐍 badge system
+- Introduces Rabbit 🐰, Moth 🐝, and Snake 🐍 badge system
 - Badge condition differences hint at distribution phases
 - Lab setting continues facility theme
 - "Early matters" suggests time-sensitive rewards
@@ -101,12 +101,12 @@
 - Badge requirements displayed:
   - 1,000 total badges
   - 250 Rabbit 🐰
-  - 750 Moth 🦋
+  - 750 Moth 🐝
 - Instructions: DM Solana address within 24 hours
 - Style: Chaotic, psychological
 
 **Requirements**: 
-- 1,000 total badges (250 Rabbit 🐰, 750 Moth 🦋)
+- 1,000 total badges (250 Rabbit 🐰, 750 Moth 🐝)
 - 24-hour deadline to DM Solana wallet address
 
 **Puzzle/Lore Hooks**: 
@@ -140,8 +140,8 @@
 - Style: Simple, reveal-focused
 
 **Distribution**:
-- Phase 1: 250 Rabbit 🐰 badges airdropped to earliest supporters
-- Phase 2: 750 Moth 🦋 badges airdropped to next wave
+- Phase 1: 250 Rabbit 🐰 badges airdropped first to 250 people
+- Phase 2: 750 Moth 🐝 badges airdropped after Rabbits to next wave
 
 **Puzzle Discovery**: 
 - Spectrograms hidden in audio (discovered by @0xstateoftheart)
@@ -168,7 +168,7 @@
 ### Post #6: Snake Badge Distribution Begins
 **Date**: October 24, 2025  
 **Post ID**: `1981740247504269582`  
-**Caption**: "🐰 = 2 🐍 🦋 = 1 🐍 monday"  
+**Caption**: "🐰 = 2 🐍 🐝 = 1 🐍 monday"  
 **Video Duration**: ~45 seconds  
 **Video Description**:
 - Old computers transmitting protocols (Phase 3)
@@ -186,8 +186,8 @@
 
 **Distribution Mechanics**:
 - Rabbit 🐰 holders receive 2 Snake 🐍 badges each
-- Moth 🦋 holders receive 1 Snake 🐍 badge each
-- Holders decide: Hold, Sell, or Give
+- Moth 🐝 holders receive 1 Snake 🐍 badge each
+- Holders decide: Hold, Sell, or Give to people they thought would benefit the community
 
 **Puzzle Elements**: 
 - Channel numbers visible (potential codes)
@@ -287,7 +287,7 @@
 - "Let's lock this shit down"
 
 **Message**: 
-- Rabbit 🐰 and Moth 🦋 holders who haven't distributed Snake 🐍 badges given 24-hour ultimatum
+- Rabbit 🐰 and Moth 🐝 holders who haven't distributed Snake 🐍 badges given 24-hour ultimatum
 - Consequences for non-compliance hinted but not revealed
 
 **Puzzle Elements**: 
@@ -396,7 +396,7 @@
 - **MITER-Corp**: Fictional corporation conducting experiments (play on real-world MITRE)
 - **Badge Symbolism**:
   - Rabbit 🐰: Early stress tests
-  - Moth 🦋: Sealed units
+  - Moth 🐝: Sealed units
   - Snake 🐍: Couriers
 - **G*Boy/G304**: Escaped subject causing chaos
 - **Experiments**: Psychic soldiers created from "homeless babies"

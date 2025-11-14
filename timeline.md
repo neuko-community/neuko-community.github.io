@@ -1,6 +1,6 @@
-# Neuko AI Timeline
+# Neuko Timeline
 
-> Complete chronological log of Neuko AI events, milestones, and discoveries.
+> Complete chronological log of Neuko events, milestones, and discoveries.
 
 ## October 2025
 
@@ -8,7 +8,7 @@
 **First Teaser Post**
 - **Event**: Poetic reply posted: "i stood up i fell over i wept on the floor"
 - **Post ID**: `1976994494383112304`
-- **Significance**: First public signal from Neuko AI account, establishes cryptic tone
+- **Significance**: First public signal from Neuko account, establishes cryptic tone
 - **Source**: `sources/info-dump.md`
 
 ### October 13, 2025
@@ -28,7 +28,7 @@
 - **Caption**: "early matters"
 - **Video**: ~21 seconds, panoramic white lab with old computers, badge close-ups (Rabbit and Moth), ends with hooded figure in rainy alley
 - **Details**: Rabbit badges shown with clean cases, Moth badges slightly worn - hinting at distribution phases
-- **Significance**: Introduces Rabbit 🐰, Moth 🦋, and Snake 🐍 badge system
+- **Significance**: Introduces Rabbit 🐰, Moth 🐝, and Snake 🐍 badge system
 - **Founder Comments**: All three founders (@austin_hurwitz, @SQU1NCH, @greenie_sr) posted cryptic "🐰" comment
 - **Source**: `sources/info-dump.md`, `sources/thread-3.md`
 
@@ -39,7 +39,7 @@
 - **Caption**: *(blank)*
 - **Video**: ~48 seconds, black screen with breathing countdowns, flashes anime-style images (hospital, animals, fire)
 - **Requirements**: 
-  - 1,000 total badges (250 Rabbit 🐰, 750 Moth 🦋)
+  - 1,000 total badges (250 Rabbit 🐰, 750 Moth 🐝)
   - 24-hour deadline to DM Solana wallet address
 - **Significance**: First badge distribution phase begins, establishes "cognitive assessment" lore
 - **Source**: `sources/info-dump.md`, `sources/thread-3.md`
@@ -51,21 +51,21 @@
 - **Caption**: *(blank)*
 - **Video**: ~26 seconds, hands opening boxes with badges, screens show "Distribution Complete"
 - **Distribution**:
-  - Phase 1: 250 Rabbit 🐰 badges airdropped to earliest supporters
-  - Phase 2: 750 Moth 🦋 badges airdropped to next wave
+  - Phase 1: 250 Rabbit 🐰 badges airdropped first to 250 people
+  - Phase 2: 750 Moth 🐝 badges airdropped after Rabbits to next wave
 - **Puzzle Discovery**: Spectrograms hidden in audio reveal time machine and testing chamber imagery
 - **Significance**: First two badge phases complete, Snake 🐍 teased
 - **Source**: `sources/info-dump.md`, `sources/thread-3.md`
 
 ### October 24, 2025
 **Snake Badge Distribution Begins**
-- **Event**: Snake badge airdrop to Rabbit/Moth holders for community distribution
+- **Event**: Snake badges given to Rabbit/Moth holders to distribute to people they thought would benefit the community
 - **Post ID**: `1981740247504269582`
-- **Caption**: "🐰 = 2 🐍 🦋 = 1 🐍 monday"
+- **Caption**: "🐰 = 2 🐍 🐝 = 1 🐍 monday"
 - **Video**: ~45 seconds, TV channels flipping through chaotic scenes (highway, news, snake handler, facility attack)
 - **Distribution Mechanics**:
   - Rabbit 🐰 holders receive 2 Snake 🐍 badges each
-  - Moth 🦋 holders receive 1 Snake 🐍 badge each
+  - Moth 🐝 holders receive 1 Snake 🐍 badge each
   - Holders decide: Hold, Sell, or Give
 - **Significance**: Decentralized community-led distribution begins, major social experiment
 - **Puzzle Elements**: Channel numbers, background chatter, hidden numerical codes
@@ -112,7 +112,7 @@
 - **Post ID**: `1984362507784351883`
 - **Caption**: "last call, 🐍 hoarders"
 - **Video**: ~41 seconds, field operations recap with community shoutouts
-- **Message**: Rabbit 🐰 and Moth 🦋 holders who haven't distributed Snake 🐍 badges given 24-hour ultimatum
+- **Message**: Rabbit 🐰 and Moth 🐝 holders who haven't distributed Snake 🐍 badges given 24-hour ultimatum
 - **Lore Elements**: 
   - Mentions "G304" (G*Boy designation)
   - References facility attacks and "desertion"
@@ -193,7 +193,7 @@
 
 ### Early December 2025
 **SolanaConf (Solana Breakpoint)**
-- **Event**: Team scheduled to speak about Neuko AI
+- **Event**: Team scheduled to speak about Neuko
 - **Significance**: Potential major catalyst and reveal event
 - **Source**: `sources/thread-3.md`
 

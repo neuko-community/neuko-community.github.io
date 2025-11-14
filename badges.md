@@ -1,10 +1,10 @@
-# Neuko AI Badges
+# Neuko Badges
 
-> Complete guide to the Rabbit 🐰, Moth 🦋, and Snake 🐍 badge system.
+> Complete guide to the Rabbit 🐰, Moth 🐝, and Snake 🐍 badge system.
 
 ## Overview
 
-Neuko AI's badge system consists of three NFT badge types distributed in phases to early supporters. The badges serve as credentials, represent different phases of the experimental lore, and test community loyalty through a decentralized distribution model.
+Neuko's badge system consists of three NFT badge types distributed in phases to early supporters. The badges serve as credentials, represent different phases of the experimental lore, and test community loyalty through a decentralized distribution model.
 
 ## Badge Types
 
@@ -12,11 +12,11 @@ Neuko AI's badge system consists of three NFT badge types distributed in phases 
 
 **Total Supply**: 250  
 **Phase**: Phase 1 - Early Stress Tests  
-**Distribution**: Airdropped to earliest supporters (October 20-22, 2025)  
+**Distribution**: Airdropped first to 250 people (October 20-22, 2025)  
 **Visual**: Clean, pristine cases (suggesting new/first phase)  
 **Lore Meaning**: Represents early stress tests in MITER-Corp experiments  
 **Holder Benefits**: 
-- Received 2 Snake 🐍 badges each for distribution
+- Received 2 Snake 🐍 badges each for distribution to people they thought would benefit the community
 - Early supporter credential
 - Part of first wave
 
@@ -24,15 +24,15 @@ Neuko AI's badge system consists of three NFT badge types distributed in phases 
 
 ---
 
-### Moth 🦋 Badge
+### Moth 🐝 Badge
 
 **Total Supply**: 750  
 **Phase**: Phase 2 - Sealed Units  
-**Distribution**: Airdropped to next wave of supporters (October 20-22, 2025)  
+**Distribution**: Airdropped after Rabbits to next wave of supporters (October 20-22, 2025)  
 **Visual**: Slightly worn/used cases (suggesting second phase)  
 **Lore Meaning**: Represents sealed units in MITER-Corp experiments  
 **Holder Benefits**: 
-- Received 1 Snake 🐍 badge each for distribution
+- Received 1 Snake 🐍 badge each for distribution to people they thought would benefit the community
 - Second wave supporter credential
 - Part of expanded community
 
@@ -44,13 +44,13 @@ Neuko AI's badge system consists of three NFT badge types distributed in phases 
 
 **Total Supply**: Variable (distributed to Rabbit/Moth holders)  
 **Phase**: Phase 3 - Couriers  
-**Distribution**: Airdropped to Rabbit and Moth holders for community distribution (October 24, 2025)  
+**Distribution**: Given to Rabbit and Moth badge holders to distribute to people they thought would benefit the community (October 24, 2025)  
 **Visual**: Third phase badge  
 **Lore Meaning**: Represents couriers in MITER-Corp experiments  
 **Distribution Mechanics**:
 - Rabbit 🐰 holders: 2 Snake 🐍 badges each
-- Moth 🦋 holders: 1 Snake 🐍 badge each
-- Holders decide: Hold, Sell, or Give
+- Moth 🐝 holders: 1 Snake 🐍 badge each
+- Holders decide: Hold, Sell, or Give to people they thought would benefit the community
 
 **Significance**: Major social experiment - community-led distribution
 
@@ -64,12 +64,12 @@ Neuko AI's badge system consists of three NFT badge types distributed in phases 
 
 **Announcement**: Cognitive Assessment Video (October 20)  
 **Requirements**: 
-- 1,000 total badges (250 Rabbit 🐰, 750 Moth 🦋)
+- 1,000 total badges (250 Rabbit 🐰, 750 Moth 🐝)
 - 24-hour deadline to DM Solana wallet address
 - Team selected earliest supporters based on engagement
 
 **Distribution**: 
-- 250 Rabbit 🐰 badges airdropped
+- 250 Rabbit 🐰 badges airdropped first to 250 people
 - Recipients: Earliest supporters who showed interest and engagement
 - No whitelist grinds, no KOL deals, no backdoor access
 
@@ -84,7 +84,7 @@ Neuko AI's badge system consists of three NFT badge types distributed in phases 
 **Announcement**: Same as Phase 1 (Cognitive Assessment Video)  
 **Requirements**: Same 24-hour deadline  
 **Distribution**: 
-- 750 Moth 🦋 badges airdropped
+- 750 Moth 🐝 badges airdropped after Rabbits
 - Recipients: Next wave of supporters after Rabbit phase
 - Selected by team based on engagement
 
@@ -97,11 +97,11 @@ Neuko AI's badge system consists of three NFT badge types distributed in phases 
 ### Phase 3: Snake Badge Distribution (October 24, 2025)
 
 **Announcement**: Snake Badge Video (October 24)  
-**Caption**: "🐰 = 2 🐍 🦋 = 1 🐍 monday"  
+**Caption**: "🐰 = 2 🐍 🐝 = 1 🐍 monday"  
 **Distribution Mechanics**:
 - Rabbit 🐰 holders receive 2 Snake 🐍 badges each
-- Moth 🦋 holders receive 1 Snake 🐍 badge each
-- Holders decide what to do: Hold, Sell, or Give
+- Moth 🐝 holders receive 1 Snake 🐍 badge each
+- Holders decide what to do: Hold, Sell, or Give to people they thought would benefit the community
 
 **Social Experiment**: 
 - Decentralized community-led distribution
@@ -144,21 +144,24 @@ Neuko AI's badge system consists of three NFT badge types distributed in phases 
 
 ## Badge Utility
 
-### Current Utility
+**Current Status**: We currently do not know what the badge utility is. The team has not confirmed any specific utilities for the badges.
+
+### What Badges Currently Represent
 
 - **Early Supporter Credential**: Proof of being here first
-- **Community Access**: Part of Neuko AI community
+- **Community Access**: Part of Neuko community
 - **Lore Integration**: Part of the story/narrative
-- **Future Drops**: Potential access to future distributions
 
 ### Speculated Utility
 
+While no utilities have been confirmed, community speculation includes:
 - **AI Tools**: Potential access to AI-powered content creation tools
 - **Generative Art**: Possible evolving or generative NFT features
 - **Platform Access**: Future platform or product utilities
 - **Token Integration**: Connection to $NEUKOAI token (if utilities confirmed)
+- **Future Drops**: Potential access to future distributions
 
-**Status**: No confirmed utilities yet - team emphasizes building over promises
+**Status**: Utility is currently unknown - team emphasizes building over promises
 
 **Source**: `sources/info-dump.md`
 
@@ -171,9 +174,9 @@ Neuko AI's badge system consists of three NFT badge types distributed in phases 
 The Snake badge distribution was designed as a social experiment to test community values and loyalty:
 
 **Setup**:
-- Team airdropped Snake badges to Rabbit and Moth holders
+- Team gave Snake badges to Rabbit and Moth holders
 - Gave holders complete freedom: Hold, Sell, or Give
-- No instructions on who to give to
+- Holders were to distribute to people they thought would benefit the community
 - No team oversight or control
 
 **Community Response**:
@@ -233,7 +236,7 @@ From founder @SQU1NCH:
 
 **Collection**: [G*Boy Badges](https://magiceden.io/marketplace/gboy_badges)  
 **Blockchain**: Solana  
-**Types**: Rabbit 🐰, Moth 🦋, Snake 🐍  
+**Types**: Rabbit 🐰, Moth 🐝, Snake 🐍  
 **Listings**: Only 2-3% listed (as of late October 2025)
 
 ### Tensor
@@ -253,7 +256,7 @@ From founder @SQU1NCH:
 According to the latest lore (November 12 claymation video):
 
 - **Rabbit 🐰**: Early stress tests in MITER-Corp experiments
-- **Moth 🦋**: Sealed units in experimental phases
+- **Moth 🐝**: Sealed units in experimental phases
 - **Snake 🐍**: Couriers for distribution and recruitment
 
 ### Story Integration
