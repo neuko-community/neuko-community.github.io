@@ -9,7 +9,7 @@
 
 <video controls width="20%">
   <source src="../../media/videos/posts/post_2025_10_17.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+  Your browser does not support the video tag. [Download video](../../media/videos/posts/post_2025_10_17.mp4) (4.7MB)
 </video>
 
 - Panoramic white lab with cluttered desks, old computers, papers
