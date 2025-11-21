@@ -40,7 +40,7 @@ Use standard markdown image syntax:
 
 ## File Naming Convention
 
-- Videos: `post_{year}_{month}_{day}.mp4`
+- Videos: `{context}_{description}.mp4`
 - Images: `{context}_{description}.png` or `.jpg`
 
 ## Notes
