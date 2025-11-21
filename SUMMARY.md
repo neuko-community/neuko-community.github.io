@@ -5,7 +5,6 @@
 ## What's Neuko?
 
 * [What's Neuko?](whats-neuko.md)
-* [Project Overview](project-overview.md)
 * [Timeline](timeline.md)
 
 ## Content & Story
@@ -45,4 +44,3 @@
 ## Maintenance
 
 * [Release Notes](maintenance/release-notes.md)
-* [Future Cleanup](future-cleanup.md)

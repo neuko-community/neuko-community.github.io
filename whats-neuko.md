@@ -208,15 +208,67 @@ No confirmed utilities yet, but theories include AI tools, generative art, or ev
 If you want to fully understand Neuko:
 
 1. **[What's Neuko?](./whats-neuko.md)** (you are here) - Quick overview
-2. **[Project Overview](./project-overview.md)** - What Neuko is
-3. **[Timeline](./timeline.md)** - Complete chronological events
-4. **[Neuko X Transmissions](./transmissions/overview.md)** - Every video/post breakdown
-5. **[Lore](./lore.md)** - Complete story and mythology
-6. **[Badges](./badges.md)** - Badge system details
-7. **[Puzzle Resources](./transmissions/puzzle-techniques.md)** - Puzzle-solving techniques and resources
-8. **[Community](./community/overview.md)** - Community culture and members
-9. **[Team](./team.md)** - Founders and their philosophy
-10. **[Website](./website.md)** - neuko.ai portal documentation
+2. **[Website](./website.md)** - neuko.ai portal documentation
+
+---
+
+## Technology Stack
+
+### Blockchain
+- **Solana**: Badge NFTs are Solana-based
+- **Marketplaces**: Magic Eden, Tensor
+
+### Potential AI Integration
+- **Speculated**: AI tools for content creation
+- **Theories**: Generative art, evolving NFTs
+- **Status**: No confirmed utilities yet
+
+### Website
+- **Portal**: [neuko.ai](https://neuko.ai)
+- **Design**: Minimalistic, puzzle-gated
+- **Features**: PIN unlock system, console logs, treasure trails
+
+---
+
+## Mission and Philosophy
+
+### Core Beliefs
+
+**"Actions Over Words"**
+- Work product over vision statements
+- Quality over quantity
+- Attention earned through craft, not noise
+
+**"Neuko is in the Eye of the Beholder"**
+- No single authoritative interpretation
+- Community creates meaning through collaboration
+- Mystery sustains engagement and belief
+
+**Building for Equity, Not Extraction**
+- Fair distribution, no mercenary tactics
+- Community-first approach
+- Long-term thinking over quick flips
+
+---
+
+## Roadmap Hints
+
+### Confirmed Upcoming Events
+
+**SolanaConf (Solana Breakpoint) - Early December 2025**
+- Team scheduled to speak about Neuko
+- Potential major catalyst and reveal event
+- First major public appearance
+
+### Speculated Future
+
+- More badge distributions (possible)
+- AI tool integration (theorized)
+- Platform features (speculated)
+- Further lore reveals (likely)
+- Additional puzzle layers (expected)
+
+**Status**: Team emphasizes building over promises. No detailed roadmap published.
 
 ---
 
@@ -233,7 +285,6 @@ If you want to fully understand Neuko:
 
 ## Related Pages
 
-- [Project Overview](./project-overview.md) - What Neuko is
 - [Timeline](./timeline.md) - What's happened so far
 - [Badges](./badges.md) - Understanding the badge system
 - [Community](./community/overview.md) - Joining the community

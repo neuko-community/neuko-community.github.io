@@ -241,7 +241,7 @@ Neuko is built by a team with a proven track records in building NFT IP and comm
 
 ## Related Pages
 
-- [Project Overview](./project-overview.md) - Team's mission and approach
+- [Project Overview](./whats-neuko.md) - Team's mission and approach
 - [Community](./community/overview.md) - How team builds community
 - [Timeline](./timeline.md) - Team actions and announcements
 
