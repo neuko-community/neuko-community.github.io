@@ -25,3 +25,4 @@
 
 ## Contributing
 This wiki is open source. If you find a new clue or want to improve a page, please contribute!
+*   **[How to Contribute](./CONTRIBUTING.md)**: See our list of priority missions and open tasks.

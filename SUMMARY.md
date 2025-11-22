@@ -33,4 +33,5 @@
 * [Unsolved Mysteries](transmissions/unsolved.md)
 
 ## Maintenance
+* [How to Contribute](CONTRIBUTING.md)
 * [Release Notes](maintenance/release-notes.md)
