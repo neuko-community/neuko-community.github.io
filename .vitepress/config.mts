@@ -64,6 +64,7 @@ export default defineConfig({
     title: "Neuko Wiki",
     description: "Community-Built Wiki for Neuko",
     cleanUrls: true,
+    appearance: 'dark',
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
