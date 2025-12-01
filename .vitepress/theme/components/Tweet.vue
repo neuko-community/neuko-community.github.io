@@ -30,7 +30,7 @@ onMounted(() => {
 
 <template>
   <div class="tweet-wrapper">
-    <div ref="tweetContainer"></div>
+    <div ref="tweetContainer" class="tweet-container"></div>
   </div>
 </template>
 
@@ -39,6 +39,12 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   margin: 2rem 0;
-  min-height: 300px; /* Prevent layout shift */
+  min-height: 300px;
+  overflow: hidden; /* Hide overflow from scaling */
+}
+
+.tweet-container {
+  transform: scale(1.2); /* Make it 20% larger */
+  transform-origin: top center;
 }
 </style>
