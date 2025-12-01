@@ -24,7 +24,8 @@ It all started with this event... G\*BOY being spotted on a video call between [
 
 It's no coincidence that these operatives were pulled into today's mission, but I'm getting ahead of myself.
 
-<iframe src="https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-0&frame=false&hideCard=false&hideThread=false&id=1991992692524699866&lang=en&theme=dark&widgetsVersion=2615f7e52b7e0%3A1702314776716&width=550px" width="550" frameborder="0" scrolling="auto" allowfullscreen="allowfullscreen" style="max-width: 100%; margin: 0; padding: 0; border: none; display: block;"></iframe>
+<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">OMG... you guys gotta see this!!! I can&#39;t believe my eyes! <a href="https://twitter.com/thrax_nft?ref_src=twsrc%5Etfw">@thrax_nft</a> WE NEED DETAILS MAN!! WTF HAPPENED?! <a href="https://t.co/Au1Y4iXUhM">pic.twitter.com/Au1Y4iXUhM</a></p>&mdash; Lost Snow (villain arc) (@LostSnow_Rin) <a href="https://twitter.com/LostSnow_Rin/status/1991992692524699866?ref_src=twsrc%5Etfw">November 21, 2025</a></blockquote> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 Thrax is shown to immediately disconnect from the call and is not heard from again... until... \
