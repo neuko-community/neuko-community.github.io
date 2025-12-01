@@ -1,110 +1,201 @@
+/* Import a tech/mono font if possible, otherwise rely on system mono for accents */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
-  /* Neuko Brand Colors */
-  --vp-c-brand-1: #FF4D4D;
-  --vp-c-brand-2: #FF3333;
-  --vp-c-brand-3: #FF1A1A;
-  --vp-c-brand-soft: rgba(255, 77, 77, 0.16);
+  /* G*Boy Palette (Dark Mode) */
+  --vp-c-bg: #0a0a0a;
+  --vp-c-bg-alt: #111111;
+  --vp-c-bg-elv: #1a1a1a;
 
-  /* Dark Theme Overrides (GitBook Style) */
-  --vp-c-bg: #1F1D1D;
-  --vp-c-bg-alt: #181616;
-  --vp-c-bg-elv: #2A2828;
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #cccccc;
+  --vp-c-text-3: #888888;
 
-  --vp-c-text-1: rgba(255, 255, 255, 0.95);
-  --vp-c-text-2: rgba(255, 255, 255, 0.75);
-  --vp-c-text-3: rgba(255, 255, 255, 0.55);
+  /* Accents */
+  --vp-c-brand-1: #FFE800;
+  /* G*Boy Yellow */
+  --vp-c-brand-2: #FFD700;
+  --vp-c-brand-3: #FFC400;
 
-  --vp-c-border: #333131;
-  --vp-c-divider: #333131;
+  --vp-c-danger-1: #FF3333;
+  /* Neuko Red */
 
-  --vp-c-gutter: #333131;
+  --vp-c-border: #333333;
+  --vp-c-divider: #333333;
 
-  /* Sidebar */
-  --vp-sidebar-bg-color: #181616;
+  --vp-c-gutter: #111111;
+
+  /* Layout */
+  --vp-sidebar-bg-color: #0a0a0a;
   --vp-sidebar-width: 280px;
+  --vp-nav-bg-color: #0a0a0a;
+  --vp-nav-height: 70px;
 
-  /* Nav */
-  --vp-nav-bg-color: #1F1D1D;
-  --vp-nav-height: 64px;
+  /* Fonts */
+  --vp-font-family-base: 'Inter', sans-serif;
+  --vp-font-family-mono: 'Space Mono', monospace;
 }
 
-/* Force Dark Mode Appearance even if system is light (optional, but good for this vibe) */
-.vp-doc h1,
-.vp-doc h2,
-.vp-doc h3,
-.vp-doc h4,
-.vp-doc h5,
-.vp-doc h6 {
-  color: var(--vp-c-text-1);
+/* GLOBAL BRUTALIST STYLES */
+
+/* Sharp corners everywhere */
+* {
+  border-radius: 0 !important;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--vp-c-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+h1 {
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+  /* Yellow Headers */
 }
 
 /* Links */
 .vp-doc a {
   color: var(--vp-c-brand-1);
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
 }
 
 .vp-doc a:hover {
-  color: var(--vp-c-brand-2);
-  text-decoration: underline;
+  color: var(--vp-c-brand-1);
+  border-bottom-color: var(--vp-c-brand-1);
 }
 
-/* Sidebar Item Active */
+/* Buttons (VitePress Action Buttons) */
+.VPButton {
+  border: 1px solid var(--vp-c-brand-1) !important;
+  background-color: transparent !important;
+  color: var(--vp-c-brand-1) !important;
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.VPButton:hover {
+  background-color: var(--vp-c-brand-1) !important;
+  color: #000 !important;
+}
+
+.VPButton.theme-brand {
+  background-color: var(--vp-c-brand-1) !important;
+  color: #000 !important;
+}
+
+.VPButton.theme-brand:hover {
+  background-color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Navbar */
+.VPNavBar {
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+/* Sidebar */
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-border);
+}
+
 .VPSidebarItem.is-active>.item>.link {
   color: var(--vp-c-brand-1) !important;
+  background-color: #1a1a1a;
 }
 
-/* Fix Table Backgrounds in Dark Mode */
+/* Feature Cards (Homepage) */
+.VPFeature {
+  background-color: #111 !important;
+  border: 1px solid #333 !important;
+  transition: transform 0.2s;
+}
+
+.VPFeature:hover {
+  border-color: var(--vp-c-brand-1) !important;
+  transform: translateY(-2px);
+}
+
+.VPFeature .title {
+  color: var(--vp-c-brand-1) !important;
+  font-family: var(--vp-font-family-mono);
+}
+
+/* Tables */
 .vp-doc table {
   display: table;
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
+  font-size: 14px;
 }
 
 .vp-doc tr {
-  background-color: var(--vp-c-bg);
-  border-top: 1px solid var(--vp-c-border);
+  background-color: #0a0a0a;
+  border-top: 1px solid #333;
 }
 
 .vp-doc tr:nth-child(2n) {
-  background-color: var(--vp-c-bg-alt);
+  background-color: #111;
 }
 
 .vp-doc th,
 .vp-doc td {
-  border: 1px solid var(--vp-c-border);
-  padding: 8px 16px;
-  background-color: transparent;
-  /* Ensure no white background leaks through */
+  border: 1px solid #333;
+  padding: 12px;
+}
+
+.vp-doc th {
+  background-color: #1a1a1a;
+  color: var(--vp-c-brand-1);
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
 }
 
 /* Blockquotes */
 .vp-doc blockquote {
-  background-color: var(--vp-c-bg-alt);
-  border-left-color: var(--vp-c-brand-1);
+  background-color: #111;
+  border-left: 4px solid var(--vp-c-brand-1);
+  color: #ccc;
 }
 
-/* Feature Cards (Homepage) */
-.VPFeature {
-  background-color: var(--vp-c-bg-alt) !important;
-  border-color: var(--vp-c-border) !important;
+/* Custom "Yellow Bar" Class (to be used in markdown) */
+.yellow-bar {
+  background-color: var(--vp-c-brand-1);
+  color: #000;
+  font-family: var(--vp-font-family-mono);
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border: 1px solid #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-1);
 }

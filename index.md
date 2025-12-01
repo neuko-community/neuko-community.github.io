@@ -2,30 +2,46 @@
 layout: home
 
 hero:
-  name: "Neuko Wiki"
-  text: "Community-Built Documentation"
-  tagline: "Unraveling the mysteries of Neuko.ai"
-  actions: []
+  name: "G*BOY / NEUKO"
+  text: "OFFICIAL WIKI"
+  tagline: "THE ARCHIVE OF THE NEUKO PROTOCOL"
+  actions:
+    - theme: brand
+      text: START HERE
+      link: /whats-neuko
+    - theme: alt
+      text: GBOYSPECIAL.COM
+      link: https://gboyspecial.com
 
 features:
-  - title: The Story
-    details: Catch up on the Lore, Timeline, and Transmissions.
+  - title: THE STORY
+    details: The complete timeline of G*Boy, MITER-Corp, and the Operatives.
     link: /lore
-    linkText: Read the Lore
-  - title: Puzzle Guide
-    details: Techniques, solvers, and unsolved mysteries.
+    linkText: READ LORE
+  - title: PUZZLE GUIDE
+    details: Solvers, techniques, and the database of unsolved mysteries.
     link: /transmissions/puzzle-guide
-    linkText: Solve Puzzles
-  - title: Ecosystem
-    details: Badges, Community, and Team.
+    linkText: ACCESS GUIDE
+  - title: ECOSYSTEM
+    details: Badges, Markets, and Community stats.
     link: /community/overview
-    linkText: Explore Community
-  - title: Newcomers
-    details: Start here if you are new to Neuko.
-    link: /whats-neuko
-    linkText: Get Started
+    linkText: VIEW DATA
+  - title: TRANSMISSIONS
+    details: Archive of all video signals and hidden messages.
+    link: /transmissions/overview
+    linkText: WATCH LOGS
 
 ---
+
+<div class="yellow-bar">
+MAKE THINGS * PUT G*BOY ON THE INTERNET * MAKE THINGS * PUT G*BOY ON THE INTERNET * MAKE THINGS * PUT G*BOY ON THE INTERNET
+</div>
+
+## ABOUT G*BOY
+
+**G*BOY SPECIAL** is a story of occult military industrial secrets, psionic experiment assassin monsters and a world-ending hive mind homogeny conspiracy.
+
+But first G*BOY takes over the internet.
 
 ## Video Intro: What the Hell is Neuko?
 
