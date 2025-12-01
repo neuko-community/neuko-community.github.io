@@ -47,7 +47,7 @@ But first G*BOY takes over the internet.
 
 Community member [@kezo_futura](https://x.com/kezo_futura) put together an amazing [12 minute intro video](https://x.com/kezo_futura/status/1993398379217584410) on everything Neuko and G*boy. A must watch if you are diving in for the first time.
 
-![](.gitbook/assets/Screenshot%202025-11-25%20at%202.21.27%E2%80%AFPM.png)
+<Tweet id="1993398379217584410" />
 
 ## Contributing
 
