@@ -3,8 +3,6 @@ description: The Bloc scooped Thrax, locked him in a basement, de-programed him,
 cover: ../.gitbook/assets/Screenshot 2025-11-28 at 9.03.46 AM.png
 ---
 
-<img src="../.gitbook/assets/Screenshot 2025-11-28 at 9.03.46 AM.png" alt="The Bloc x Thrax Banner" style="width: 100%; height: auto; display: block; margin: 0 0 2rem 0;" />
-
 # The Bloc x Thrax
 
 > The Bloc scooped Thrax, locked him in a basement, de-programed him, and issued a puzzle to the community to get him back.
@@ -25,8 +23,7 @@ It all started with this event... G\*BOY being spotted on a video call between [
 
 It's no coincidence that these operatives were pulled into today's mission, but I'm getting ahead of myself.
 
-<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">OMG... you guys gotta see this!!! I can&#39;t believe my eyes! <a href="https://twitter.com/thrax_nft?ref_src=twsrc%5Etfw">@thrax_nft</a> WE NEED DETAILS MAN!! WTF HAPPENED?! <a href="https://t.co/Au1Y4iXUhM">pic.twitter.com/Au1Y4iXUhM</a></p>&mdash; Lost Snow (villain arc) (@LostSnow_Rin) <a href="https://twitter.com/LostSnow_Rin/status/1991992692524699866?ref_src=twsrc%5Etfw">November 21, 2025</a></blockquote> 
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">OMG... you guys gotta see this!!! I can&#39;t believe my eyes! <a href="https://twitter.com/thrax_nft?ref_src=twsrc%5Etfw">@thrax_nft</a> WE NEED DETAILS MAN!! WTF HAPPENED?! <a href="https://t.co/Au1Y4iXUhM">pic.twitter.com/Au1Y4iXUhM</a></p>&mdash; Lost Snow (villain arc) (@LostSnow_Rin) <a href="https://twitter.com/LostSnow_Rin/status/1991992692524699866?ref_src=twsrc%5Etfw">November 21, 2025</a></blockquote>
 
 
 Thrax is shown to immediately disconnect from the call and is not heard from again... until... \

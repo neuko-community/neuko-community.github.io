@@ -65,6 +65,9 @@ export default defineConfig({
     description: "Community-Built Wiki for Neuko",
     cleanUrls: true,
     appearance: 'dark',
+    head: [
+        ['script', { src: 'https://platform.twitter.com/widgets.js', async: true, charset: 'utf-8' }]
+    ],
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
