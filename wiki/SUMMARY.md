@@ -1,6 +1,6 @@
 # Table of contents
 
-* [(iii)](README.md)
+* [(iii)](index.md)
 
 ## Start Here
 
