@@ -4,13 +4,20 @@ import path from 'path'
 
 // Helper to parse SUMMARY.md
 function parseSummary() {
-    const summaryPath = path.resolve(__dirname, '../SUMMARY.md')
+    const summaryPath = path.resolve(__dirname, '../wiki/SUMMARY.md')
     if (!fs.existsSync(summaryPath)) return []
 
     const content = fs.readFileSync(summaryPath, 'utf-8')
     const lines = content.split('\n')
-    const sidebar = []
-    let currentSection = null
+
+    interface SidebarItem {
+        text: string
+        link?: string
+        items?: SidebarItem[]
+    }
+
+    const sidebar: SidebarItem[] = []
+    let currentSection: SidebarItem | null = null
 
     for (const line of lines) {
         const linkMatch = line.match(/^\* \[(.*?)\]\((.*?)\)/)
@@ -26,7 +33,7 @@ function parseSummary() {
             sidebar.push(currentSection)
         } else if (linkMatch) {
             // Top level link
-            const item = {
+            const item: SidebarItem = {
                 text: linkMatch[1],
                 link: linkMatch[2].replace('.md', '')
             }
@@ -36,7 +43,7 @@ function parseSummary() {
             // If there is no current section, we might want to create a "General" one or just add it.
             // Looking at the file, "Start Here" is a header.
             if (currentSection) {
-                currentSection.items.push(item)
+                currentSection.items!.push(item)
             } else {
                 // Items before any header (like README)
                 // We might want to ignore README if it's the home page, or add it.
@@ -47,7 +54,7 @@ function parseSummary() {
             }
         } else if (subLinkMatch) {
             // Indented item - add to the last item of the current section
-            if (currentSection && currentSection.items.length > 0) {
+            if (currentSection && currentSection.items && currentSection.items.length > 0) {
                 const parentItem = currentSection.items[currentSection.items.length - 1]
                 if (!parentItem.items) parentItem.items = []
                 parentItem.items.push({
@@ -64,9 +71,10 @@ export default defineConfig({
     title: "Neuko Wiki",
     description: "Community-Built Wiki for Neuko",
     cleanUrls: true,
+    srcDir: './wiki',
     appearance: 'dark',
     head: [
-        ['script', { src: 'https://platform.twitter.com/widgets.js', async: true, charset: 'utf-8' }]
+        ['script', { src: 'https://platform.twitter.com/widgets.js', async: 'true', charset: 'utf-8' }]
     ],
     themeConfig: {
         nav: [
