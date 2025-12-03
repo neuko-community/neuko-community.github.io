@@ -71,7 +71,6 @@ export default defineConfig({
     title: "Neuko Wiki",
     description: "Community-Built Wiki for Neuko",
     cleanUrls: true,
-    base: '/wiki/',
     srcDir: './wiki',
     appearance: 'dark',
     head: [
