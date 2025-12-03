@@ -2,17 +2,16 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: false
 
 jobs:
   build:
@@ -23,25 +22,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 20
-          cache: npm
+          bun-version: latest
 
       - name: Install dependencies
-        run: npm ci
+        run: bun install
 
       - name: Build docs
         run: |
-          npm run docs:build
+          bun run docs:build
           touch ./.vitepress/dist/.nojekyll
 
-      - name: Deploy to External Repository
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          external_repository: neuko-community/neuko-community.github.io
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./.vitepress/dist
-          publish_branch: main
+          publish_branch: gh-pages
           cname: neuko-community.github.io
