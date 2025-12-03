@@ -35,7 +35,7 @@ None discovered - introduces badge system visually.
 
 ## Community Reactions
 
-* People felt FOMO seeing messages about 250 early rabbits
+* People felt FOMO seeing messages about 200 early rabbits
 * Speculation about what badges mean
 * Excitement about potential airdrops
 

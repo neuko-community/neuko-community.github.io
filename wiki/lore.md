@@ -63,12 +63,12 @@ The three badge types (Rabbit 🐰, Moth 🐝, Snake 🐍) represent different p
 
 ### Rabbit 🐰 Badge
 
-* **Distribution**: 250 badges airdropped first to 250 people
+* **Distribution**: 200 badges airdropped first to 200 people
 * **Holder Role**: Received 2 Snake badges each for distribution to people they thought would benefit the community
 
 ### Moth 🐝 Badge
 
-* **Distribution**: 750 badges airdropped after Rabbits to next wave
+* **Distribution**: 462 badges airdropped after Rabbits to next wave
 * **Holder Role**: Received 1 Snake badge each for distribution to people they thought would benefit the community
 
 ### Snake 🐍 Badge

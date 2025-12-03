@@ -36,7 +36,7 @@
 - **Caption**: *(blank)*
 - **Video**: ~48 seconds, black screen with breathing countdowns, flashes anime-style images (hospital, animals, fire)
 - **Requirements**: 
-  - 1,000 total badges (250 Rabbit 🐰, 750 Moth 🐝)
+  - 662 total badges (200 Rabbit 🐰, 462 Moth 🐝)
   - 24-hour deadline to DM Solana wallet address
 - **Significance**: First badge distribution phase begins, establishes "cognitive assessment" lore
 
@@ -47,8 +47,8 @@
 - **Caption**: *(blank)*
 - **Video**: ~26 seconds, hands opening boxes with badges, screens show "Distribution Complete"
 - **Distribution**:
-  - Phase 1: 250 Rabbit 🐰 badges airdropped first to 250 people
-  - Phase 2: 750 Moth 🐝 badges airdropped after Rabbits to next wave
+  - Phase 1: 200 Rabbit 🐰 badges airdropped first to 200 people
+  - Phase 2: 462 Moth 🐝 badges airdropped after Rabbits to next wave
 - **Puzzle Discovery**: Spectrograms hidden in audio reveal time machine and testing chamber imagery
 - **Significance**: First two badge phases complete, Snake 🐍 teased
 

@@ -55,7 +55,7 @@ defineProps({
     </div>
 
     <!-- Footer -->
-    <div class="tweet-footer">
+    <div class="tweet-footer" :class="{ 'mt-auto': mediaType === 'none' }">
       <span class="tweet-date">{{ date }}</span>
       <span class="info-icon">ⓘ</span>
     </div>
@@ -72,6 +72,10 @@ defineProps({
   flex-direction: column;
   gap: 0.75rem;
   padding: 1.5rem;
+}
+
+.mt-auto {
+  margin-top: auto !important;
 }
 
 /* Header */
@@ -157,7 +161,7 @@ defineProps({
 
 /* Media */
 .tweet-media {
-  margin-top: 0.5rem;
+  margin-top: auto; /* Push media to bottom */
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid #333;
@@ -213,7 +217,7 @@ defineProps({
   gap: 0.5rem;
   font-size: 0.9rem;
   color: #71767b;
-  margin-top: auto; /* Push footer to bottom */
+  margin-top: 0.25rem; /* Reset to small margin since media handles the push */
   border-top: 1px solid #333;
   padding-top: 0.75rem;
 }

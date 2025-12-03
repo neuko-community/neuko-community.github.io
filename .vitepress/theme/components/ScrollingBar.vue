@@ -22,7 +22,7 @@
 .scrolling-bar-container {
   width: 100%;
   max-width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto 2rem auto;
   padding: 0 2rem;
 }
 

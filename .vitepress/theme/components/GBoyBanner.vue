@@ -24,7 +24,7 @@ import { withBase } from 'vitepress'
 .gboy-banner-container {
   width: 100%;
   max-width: 1200px; /* Match HomeContent max-width */
-  margin: 4rem auto;
+  margin: 4rem auto 2rem auto;
   padding: 0 2rem;
 }
 

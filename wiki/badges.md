@@ -10,8 +10,8 @@ Neuko's badge system consists of three NFT badge types distributed in phases to 
 
 ### Rabbit 🐰 Badge
 
-**Total Supply**: 250\
-**Distribution**: Airdropped first to 250 people (October 20-22, 2025)
+**Total Supply**: 200\
+**Distribution**: Airdropped first to 200 people (October 20-22, 2025)
 
 * Received 2 Snake 🐍 badges each for distribution to people they thought would benefit the community
 * Part of first wave
@@ -20,7 +20,7 @@ Neuko's badge system consists of three NFT badge types distributed in phases to 
 
 ### Moth 🐝 Badge
 
-**Total Supply**: 750\
+**Total Supply**: 462\
 **Distribution**: Airdropped after Rabbits to next wave of supporters (October 20-22, 2025)
 
 * Received 1 Snake 🐍 badge each for distribution to people they thought would benefit the community
@@ -30,7 +30,7 @@ Neuko's badge system consists of three NFT badge types distributed in phases to 
 
 ### Snake 🐍 Badge
 
-**Total Supply**: 1500 (?) (distributed to Rabbit/Moth holders)\
+**Total Supply**: 834 (distributed to Rabbit/Moth holders)\
 **Distribution**: Given to Rabbit and Moth badge holders to distribute to people they thought would benefit the community (October 24, 2025)\
 **Distribution Mechanics**:
 
@@ -49,13 +49,13 @@ Neuko's badge system consists of three NFT badge types distributed in phases to 
 **Announcement**: Cognitive Assessment Video (October 20)\
 **Requirements**:
 
-* 1,000 total badges (250 Rabbit 🐰, 750 Moth 🐝)
+* 662 total badges (200 Rabbit 🐰, 462 Moth 🐝)
 * 24-hour deadline to DM Solana wallet address
 * Team selected earliest supporters based on engagement
 
 **Distribution**:
 
-* 250 Rabbit 🐰 badges airdropped first to 250 people
+* 200 Rabbit 🐰 badges airdropped first to 200 people
 * Recipients: Earliest supporters who showed interest and engagement
 * No whitelist grinds, no KOL deals, no backdoor access
 
@@ -69,7 +69,7 @@ Neuko's badge system consists of three NFT badge types distributed in phases to 
 **Requirements**: Same 24-hour deadline\
 **Distribution**:
 
-* 750 Moth 🐝 badges airdropped after Rabbits
+* 462 Moth 🐝 badges airdropped after Rabbits
 * Recipients: Next wave of supporters after Rabbit phase
 * Selected by team based on engagement
 

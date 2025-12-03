@@ -18,15 +18,15 @@
   * Fire
 * Ends with "Cognitive Assessment Complete" text
 * Badge requirements displayed:
-  * 1,000 total badges
-  * 250 Rabbit 🐰
-  * 750 Moth 🐝
+  * 662 total badges
+  * 200 Rabbit 🐰
+  * 462 Moth 🐝
 * Instructions: DM Solana address within 24 hours
 * Style: Chaotic, psychological
 
 ## Requirements
 
-* 1,000 total badges (250 Rabbit 🐰, 750 Moth 🐝)
+* 662 total badges (200 Rabbit 🐰, 462 Moth 🐝)
 * 24-hour deadline to DM Solana wallet address
 
 ## Puzzle/Lore Hooks

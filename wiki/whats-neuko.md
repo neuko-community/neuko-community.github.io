@@ -22,9 +22,9 @@
 
 | Icon | Badge | Supply | Meaning / Notes |
 | :--- | :--- | :--- | :--- |
-| 🐰 | Rabbit | 250 | Phase 1 — Cognitive Assessment (Airdrop) |
-| 🐝 | Moth | 750 | Phase 2 (Airdrop) |
-| 🐍 | Snake | open | Phase 3 — community distributed |
+| 🐰 | Rabbit | 200 | Phase 1 — Cognitive Assessment (Airdrop) |
+| 🐝 | Moth | 462 | Phase 2 (Airdrop) |
+| 🐍 | Snake | 834 | Phase 3 — community distributed |
 
 **Key Lore Terms**: **G*Boy** = escaped hooded fox subject · **MITER-Corp** = evil corp · **Operatives** = badge holders · **Red Hoodie** = community PFP uniform
 
