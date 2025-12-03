@@ -1,5 +1,6 @@
 <script setup>
 import { withBase } from 'vitepress'
+import CustomTweet from './CustomTweet.vue'
 </script>
 
 <template>
@@ -88,19 +89,30 @@ import { withBase } from 'vitepress'
 
     <!-- Row 4: Community Spotlight -->
     <div class="community-section">
-      <h3 class="section-title">COMMUNITY SPOTLIGHT</h3>
+      <h3 class="section-title">COMMUNITY MEMBER SPOTLIGHT BY <a href="https://x.com/_Marcotics_" target="_blank" class="highlight-link">@_Marcotics_</a></h3>
       <div class="community-grid">
-        <div class="community-card">
-          <h4>THE BLOC</h4>
-          <p>A self-organized group of elite puzzle-solvers who cracked the SJ Secure Lab portal.</p>
+        <div class="community-card tweet-card">
+          <CustomTweet 
+            content="<p>Today’s <span class='highlight'>@neukoai</span> community spotlight is none other than the UK’s greatest fister, the man, the myth, the legend <span class='highlight'>@DegenFigster</span> 🫡</p>"
+            date="Nov 14, 2025"
+            mediaType="image"
+            mediaUrl="https://pbs.twimg.com/media/G554uOJWcAAg_U4.jpg?name=orig"
+          />
         </div>
-        <div class="community-card">
-          <h4>OPERATIVES</h4>
-          <p>Community members adopting the "Red Hoodie" identity to signal belonging to the Neuko tribe.</p>
+        <div class="community-card tweet-card">
+          <CustomTweet 
+            content="<p>It’s time folks, the <span class='highlight'>@neukoai</span> community spotlight 🫡</p><p>I’m sure the new Spotlight gif gives it away but this one’s for you <span class='highlight'>@satoshi_owl</span></p><p>Now let’s dive in and showcase his talents 🔥</p>"
+            date="Nov 19, 2025"
+            mediaType="image"
+            mediaUrl="https://pbs.twimg.com/tweet_video_thumb/G6TREHmXIAArJoM.jpg"
+          />
         </div>
-        <div class="community-card">
-          <h4>HALL OF FAME</h4>
-          <p>Legends like @thrax_nft and @0xstateoftheart who pioneered audio spectrogram analysis.</p>
+        <div class="community-card tweet-card">
+          <CustomTweet 
+            content="<p>It’s been a while where I’ve had a lot going on but it’s time for a new <span class='highlight'>@neukoai</span> community spotlight 🫡</p><p>Let’s dive in below 👇</p>"
+            date="9:05 AM · Dec 2, 2025"
+            mediaType="gif"
+          />
         </div>
       </div>
     </div>
@@ -335,6 +347,23 @@ import { withBase } from 'vitepress'
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 12px;
+}
+
+.tweet-card {
+  padding: 0; /* Remove padding for tweet to fit better */
+  display: flex;
+  /* align-items: center; Removed to allow full height stretch */
+  justify-content: center;
+  overflow: hidden;
+}
+
+.highlight-link {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
 }
 
 .community-card h4 {

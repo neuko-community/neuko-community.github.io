@@ -74,7 +74,12 @@ export default defineConfig({
     srcDir: './wiki',
     appearance: 'dark',
     head: [
-        ['script', { src: 'https://platform.twitter.com/widgets.js', async: 'true', charset: 'utf-8' }]
+        ['script', { src: 'https://platform.twitter.com/widgets.js', async: 'true', charset: 'utf-8' }],
+        ['link', { rel: 'icon', href: '/favicon.png' }],
+        ['meta', { property: 'og:image', content: '/og.jpg' }],
+        ['meta', { name: 'twitter:image', content: '/og.jpg' }],
+        ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+        ['meta', { name: 'theme-color', content: '#FFE800' }]
     ],
     themeConfig: {
         nav: [

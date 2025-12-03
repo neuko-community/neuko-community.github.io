@@ -38,24 +38,21 @@ onMounted(() => {
 .tweet-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 0;
-  min-height: 300px;
-  overflow: hidden; /* Hide overflow from scaling */
+  width: 100%;
+  height: 100%;
 }
 
 .tweet-container {
-  transform: scale(1.2); /* Make it 20% larger */
-  transform-origin: top center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
   .tweet-container {
-    transform: scale(1); /* Reset scale on mobile */
     width: 100% !important;
-  }
-  
-  .tweet-wrapper {
-    min-height: auto;
   }
 }
 </style>
