@@ -1,18 +1,44 @@
 <script setup>
 import { withBase } from 'vitepress'
+import { ref, onMounted } from 'vue'
+
+const bgImage = ref(withBase('/images/home-banner.jpg'))
+const creatorHandle = ref('')
+
+onMounted(() => {
+  // Use glob only to get filenames. Eager is false to avoid importing public assets via relative path,
+  // which triggers Vite warnings.
+  const images = import.meta.glob('../../../wiki/public/hero/*.{jpg,jpeg,png,webp}', { eager: false })
+  const paths = Object.keys(images)
+  
+  if (paths.length > 0) {
+    const randomPath = paths[Math.floor(Math.random() * paths.length)]
+    const filename = randomPath.split('/').pop()
+    
+    // Construct URL manually for public assets
+    bgImage.value = withBase(`/hero/${filename}`)
+    creatorHandle.value = filename.substring(0, filename.lastIndexOf('.'))
+  }
+})
 </script>
 
 <template>
   <div class="banner-container">
     <div class="banner-wrapper">
       <!-- Top Section: Image & Main Text -->
-      <div class="banner-top" :style="{ backgroundImage: `url(${withBase('/images/home-banner.jpg')})` }">
+      <div class="banner-top" :style="{ backgroundImage: `url(${bgImage})` }">
         <div class="banner-overlay">
           <div class="banner-main-text">
+            <img :src="withBase('/images/badge-array.png')" class="badge-detail" alt="Badge Detail" />
             <h1 class="title">THE COMMUNITY </h1>
             <h2 class="subtitle">NEUKO<span class="lowered-asterisk">*</span>WIKI</h2>
             <p class="tagline">UNOFFICIAL ARCHIVE OF NEUKO.AI AND THE STORY OF G*BOY SO FAR</p>
           </div>
+        </div>
+        
+        <div v-if="creatorHandle" class="attribution-overlay">
+            <span class="attribution-text">IMG BY: </span>
+            <a :href="`https://x.com/${creatorHandle}`" target="_blank" class="attribution-link">@{{ creatorHandle.toUpperCase() }}</a>
         </div>
       </div>
 
@@ -67,7 +93,7 @@ import { withBase } from 'vitepress'
 .banner-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   padding-left: 4rem;
@@ -85,6 +111,13 @@ import { withBase } from 'vitepress'
   color: var(--vp-c-brand-1); /* Yellow */
   margin: 0;
   word-spacing: -0.3em; /* Tighten space for monospace */
+}
+
+.badge-detail {
+    height: 30px;
+    width: auto;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
 .subtitle {
@@ -106,7 +139,7 @@ import { withBase } from 'vitepress'
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4rem;
+  padding: 0 2rem 0 4rem;
   font-family: var(--vp-font-family-mono);
   font-size: 0.7rem;
   color: black; /* Black Text */
@@ -185,6 +218,10 @@ import { withBase } from 'vitepress'
         width: 100%;
         justify-content: center;
         text-align: center;
+    }
+
+    .attribution-overlay {
+        right: 1rem;
     }
 }
 
@@ -271,5 +308,32 @@ import { withBase } from 'vitepress'
   top: 0.25em;
   font-size: 0.68em;
   margin: 0 0.05em;
+}
+
+.attribution-overlay {
+    position: absolute;
+    bottom: 0.25rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--vp-font-family-mono);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 10;
+}
+
+.attribution-text {
+    font-weight: 400;
+}
+
+.attribution-link {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.attribution-link:hover {
+    text-decoration: underline;
 }
 </style>
