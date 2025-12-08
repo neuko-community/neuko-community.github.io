@@ -7,18 +7,18 @@ const props = defineProps<{}>()
 // --- Configuration ---
 const CELL_SIZE = 100 
 const GUTTER = 16     
-const CHUNK_SIZE = 1000 // Size of virtualization chunks in pixels
+const CHUNK_SIZE = 1000 
 
 // --- Types ---
 type Meme = typeof memesData.memes[0]
 type PositionedItem = {
   type: 'MEME' | 'TITLE'
   id: string
-  x: number // Grid Position
+  x: number 
   y: number
   w: number
   h: number 
-  pixelX: number // Precise Pixel Position
+  pixelX: number 
   pixelY: number
   pixelW: number
   pixelH: number
@@ -26,7 +26,6 @@ type PositionedItem = {
 }
 
 // --- State ---
-// Using shallowRef for performance as these arrays/objects are large and we don't need deep reactivity
 const allItems = shallowRef<PositionedItem[]>([]) 
 const visibleItems = shallowRef<PositionedItem[]>([]) 
 const chunks = new Map<string, PositionedItem[]>()
@@ -65,8 +64,11 @@ function layoutItems() {
     const center = Math.floor(CANVAS_SIZE / (CELL_SIZE + GUTTER) / 2)
     
     // -- Place Title --
-    const titleW = 8
-    const titleH = 4 
+    // Responsive Title Size
+    const isMobile = window.innerWidth < 768
+    const titleW = isMobile ? 3 : 8
+    const titleH = isMobile ? 3 : 4 
+    
     const titleX = center - Math.floor(titleW / 2)
     const titleY = center - Math.floor(titleH / 2)
     
@@ -221,6 +223,8 @@ function checkScrollCenter() {
   showReturnCenter.value = dist > 600
 }
 
+// --- Interaction Handlers ---
+
 const onMouseDown = (e: MouseEvent) => {
   if ((e.target as HTMLElement).closest('.nav-button')) return
   isDragging.value = true
@@ -248,6 +252,42 @@ const onMouseUp = () => {
   isDragging.value = false
   if (containerRef.value) containerRef.value.style.cursor = 'grab'
 }
+
+// Mobile Touch Support
+const onTouchStart = (e: TouchEvent) => {
+  if ((e.target as HTMLElement).closest('.nav-button')) return
+  // Don't prevent default immediately if we want pinch-zoom (browser native) usually... 
+  // but we are implementing custom drag.
+  // Actually, standard pinch zoom might conflict with drag. 
+  // Let's rely on simple 1-finger drag for now.
+  isDragging.value = true
+  const touch = e.touches[0]
+  startX.value = touch.pageX - (containerRef.value?.offsetLeft || 0)
+  startY.value = touch.pageY - (containerRef.value?.offsetTop || 0)
+  scrollLeft.value = containerRef.value?.scrollLeft || 0
+  scrollTop.value = containerRef.value?.scrollTop || 0
+}
+
+const onTouchMove = (e: TouchEvent) => {
+  if (!isDragging.value || !containerRef.value) return
+  if (e.touches.length > 1) return // Ignore multi-touch (pinch) for now or let browser handle it? 
+  // We need to preventDefault to stop browser elastic scrolling / refreshing
+  e.preventDefault() 
+  const touch = e.touches[0]
+  const x = touch.pageX - (containerRef.value.offsetLeft || 0)
+  const y = touch.pageY - (containerRef.value.offsetTop || 0)
+  const walkX = x - startX.value
+  const walkY = y - startY.value
+  containerRef.value.scrollLeft = scrollLeft.value - walkX
+  containerRef.value.scrollTop = scrollTop.value - walkY
+  
+  requestAnimationFrame(updateVisibility)
+}
+
+const onTouchEnd = () => {
+  isDragging.value = false
+}
+
 
 const onWheel = (e: WheelEvent) => {
   e.preventDefault()
@@ -277,6 +317,9 @@ onMounted(() => {
     @mouseleave="onMouseUp"
     @mouseup="onMouseUp"
     @mousemove="onMouseMove"
+    @touchstart="onTouchStart"
+    @touchmove="onTouchMove"
+    @touchend="onTouchEnd"
     @wheel="onWheel"
   >
     <!-- Loading Overlay -->
@@ -340,7 +383,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.mosaic-viewport { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: 100; overflow: hidden; background: #000; cursor: grab; user-select: none; }
+.mosaic-viewport { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: 100; overflow: hidden; background: #000; cursor: grab; user-select: none; touch-action: none; /* Critical for drag */ }
 .mosaic-canvas { position: relative; background-color: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; transition: transform 0.1s linear; }
 .mosaic-item { position: absolute; border-radius: 4px; overflow: hidden; background: #222; transition: transform 0.1s; will-change: transform; }
 .mosaic-item:hover { transform: scale(1.05); z-index: 50; box-shadow: 0 10px 30px rgba(0,0,0,0.5); outline: 2px solid rgba(255,255,255,0.8); }
@@ -353,7 +396,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px; /* Matches meme items radius for uniformity */
+  border-radius: 4px; 
   box-shadow: 0 10px 40px rgba(237, 28, 37, 0.4); 
 }
 .gboy-title { font-family: "helvetica-lt-pro", sans-serif; font-size: 5rem; font-weight: 900; text-align: center; line-height: 0.9; color: #FFFF0A; text-transform: uppercase; margin: 0; white-space: nowrap; }
@@ -372,5 +415,8 @@ onMounted(() => {
 .loader-text { font-family: var(--vp-font-family-mono); color: #FFE600; font-size: 1.2rem; animation: blink 1s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
-@media (max-width: 768px) { .gboy-title { font-size: 3rem; } }
+@media (max-width: 768px) { 
+  .gboy-title { font-size: 2rem; } 
+  .title-bg { padding: 0.5rem; }
+}
 </style>
