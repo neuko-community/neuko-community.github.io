@@ -1,0 +1,302 @@
+/* Import a tech/mono font if possible, otherwise rely on system mono for accents */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* G*Boy Palette (Dark Mode) */
+  --vp-c-bg: #0a0a0a;
+  --vp-c-bg-alt: #111111;
+  --vp-c-bg-elv: #1a1a1a;
+
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #cccccc;
+  --vp-c-text-3: #888888;
+
+  /* Accents */
+  --vp-c-brand-1: #FFE800;
+  /* G*Boy Yellow */
+  --vp-c-brand-2: #FFD700;
+  --vp-c-brand-3: #FFC400;
+
+  --vp-c-danger-1: #FF3333;
+  /* Neuko Red */
+
+  --vp-c-border: #333333;
+  --vp-c-divider: #333333;
+
+  --vp-c-gutter: #111111;
+
+  /* Layout */
+  --vp-sidebar-bg-color: #0a0a0a;
+  --vp-sidebar-width: 280px;
+  --vp-nav-bg-color: #0a0a0a;
+  --vp-nav-height: 70px;
+
+  /* Fonts */
+  --vp-font-family-base: 'Inter', sans-serif;
+  --vp-font-family-mono: 'Space Mono', monospace;
+}
+
+/* GLOBAL BRUTALIST STYLES */
+
+/* Sharp corners everywhere */
+* {
+  border-radius: 0 !important;
+}
+
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+  /* Yellow Headers */
+}
+
+/* Links */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-brand-1);
+  border-bottom-color: var(--vp-c-brand-1);
+}
+
+/* Buttons (VitePress Action Buttons) */
+.VPButton {
+  border: 1px solid var(--vp-c-brand-1) !important;
+  background-color: transparent !important;
+  color: var(--vp-c-brand-1) !important;
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.VPButton:hover {
+  background-color: var(--vp-c-brand-1) !important;
+  color: #000 !important;
+}
+
+.VPButton.theme-brand {
+  background-color: var(--vp-c-brand-1) !important;
+  color: #000 !important;
+}
+
+.VPButton.theme-brand:hover {
+  background-color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Navbar */
+.VPNavBar {
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+/* Sidebar */
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-border);
+}
+
+.VPSidebarItem.is-active>.item>.link {
+  color: var(--vp-c-brand-1) !important;
+  background-color: #1a1a1a;
+}
+
+/* Feature Cards (Homepage) */
+.VPFeature {
+  background-color: #111 !important;
+  border: 1px solid #333 !important;
+  transition: transform 0.2s;
+}
+
+.VPFeature:hover {
+  border-color: var(--vp-c-brand-1) !important;
+  transform: translateY(-2px);
+}
+
+.VPFeature .title {
+  color: var(--vp-c-brand-1) !important;
+  font-family: var(--vp-font-family-mono);
+}
+
+/* Tables */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.vp-doc tr {
+  background-color: #0a0a0a;
+  border-top: 1px solid #333;
+}
+
+.vp-doc tr:nth-child(2n) {
+  background-color: #111;
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: 1px solid #333;
+  padding: 12px;
+}
+
+.vp-doc th {
+  background-color: #1a1a1a;
+  color: var(--vp-c-brand-1);
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+}
+
+/* Blockquotes */
+.vp-doc blockquote {
+  background-color: #111;
+  border-left: 4px solid var(--vp-c-brand-1);
+  color: #ccc;
+}
+
+/* Custom "Yellow Bar" Class (to be used in markdown) */
+.yellow-bar {
+  background-color: var(--vp-c-brand-1);
+  color: #000;
+  font-family: var(--vp-font-family-mono);
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border: 1px solid #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-1);
+}
+
+/* --- CUSTOM HERO BANNER (G*BOY SPECIAL STYLE) --- */
+
+html .VPHero {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+
+html .VPHero .container {
+  display: flex !important;
+  flex-direction: column !important;
+  max-width: 96vw !important;
+  /* Almost full width */
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
+html .VPHero .image {
+  order: -1;
+  /* Image on top */
+  width: 100% !important;
+  flex: none !important;
+  margin-bottom: 32px;
+  padding: 0 !important;
+  display: block !important;
+  /* Ensure it is visible */
+}
+
+html .VPHero .image-container {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 24px;
+  /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  margin: 0 !important;
+  transform: none !important;
+  /* Remove any default tilt/transform */
+}
+
+html .VPHero .image-bg {
+  display: none !important;
+  /* Hide background blobs */
+}
+
+html .VPHero .image-src {
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hide default text since banner has it, but keep actions */
+html .VPHero .main {
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 0 auto;
+  text-align: center;
+  order: 2;
+}
+
+html .VPHero .name,
+html .VPHero .text,
+html .VPHero .tagline {
+  display: none !important;
+}
+
+html .VPHero .actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* --- CUSTOM NAV BAR --- */
+
+.VPNavBar {
+  background-color: rgba(10, 10, 10, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #333;
+}
+
+.VPNavBar .content {
+  max-width: 98vw !important;
+  padding: 0 24px !important;
+}
+
+.VPNavBarTitle .title {
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.VPNavBarMenuLink {
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
