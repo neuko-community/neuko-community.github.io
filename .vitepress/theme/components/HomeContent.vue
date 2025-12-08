@@ -21,9 +21,9 @@ import { data as tweets } from '../../../wiki/tweets.data.ts'
         <h4>ECOSYSTEM</h4>
         <p>Badges, Markets, and Community stats.</p>
       </a>
-      <a href="/transmissions/overview" class="feature-card">
-        <h4>TRANSMISSIONS</h4>
-        <p>Archive of all video signals and hidden messages.</p>
+      <a href="/memes" class="feature-card">
+        <h4>SEIZE THE MEMES</h4>
+        <p>View the community images contributed to memedepot as we drown them in his image.</p>
       </a>
     </div>
 

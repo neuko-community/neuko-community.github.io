@@ -17,7 +17,7 @@ const { frontmatter } = useData()
       <HomeContent v-if="frontmatter.layout === 'home' && !frontmatter.hide_home_elements" />
     </template>
     <template #layout-bottom>
-      <ScrollingBar v-if="frontmatter.layout === 'home'" />
+      <ScrollingBar v-if="frontmatter.layout === 'home' && !frontmatter.hide_scrolling_bar" />
     </template>
   </Layout>
 </template>

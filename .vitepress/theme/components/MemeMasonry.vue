@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { data as memesData } from '../../../wiki/memes.data'
 import { ref, onMounted, computed, nextTick, shallowRef } from 'vue'
+import ScrollingBar from './ScrollingBar.vue'
 
 const props = defineProps<{}>()
 
@@ -256,10 +257,6 @@ const onMouseUp = () => {
 // Mobile Touch Support
 const onTouchStart = (e: TouchEvent) => {
   if ((e.target as HTMLElement).closest('.nav-button')) return
-  // Don't prevent default immediately if we want pinch-zoom (browser native) usually... 
-  // but we are implementing custom drag.
-  // Actually, standard pinch zoom might conflict with drag. 
-  // Let's rely on simple 1-finger drag for now.
   isDragging.value = true
   const touch = e.touches[0]
   startX.value = touch.pageX - (containerRef.value?.offsetLeft || 0)
@@ -270,8 +267,7 @@ const onTouchStart = (e: TouchEvent) => {
 
 const onTouchMove = (e: TouchEvent) => {
   if (!isDragging.value || !containerRef.value) return
-  if (e.touches.length > 1) return // Ignore multi-touch (pinch) for now or let browser handle it? 
-  // We need to preventDefault to stop browser elastic scrolling / refreshing
+  if (e.touches.length > 1) return 
   e.preventDefault() 
   const touch = e.touches[0]
   const x = touch.pageX - (containerRef.value.offsetLeft || 0)
@@ -330,6 +326,11 @@ onMounted(() => {
     <!-- Nav -->
     <a href="/" class="nav-button home-button" title="Back to Home"><span class="icon">⌂</span> HOME</a>
     <button class="nav-button center-button" :class="{ 'visible': showReturnCenter }" @click="scrollToCenter">RETURN TO CENTER</button>
+
+    <!-- Marquee Overlay -->
+    <div class="marquee-overlay">
+      <ScrollingBar />
+    </div>
     
     <div class="mosaic-canvas" :style="{ 
       width: CANVAS_SIZE + 'px', 
@@ -414,6 +415,16 @@ onMounted(() => {
 .loading-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #000; z-index: 500; display: flex; align-items: center; justify-content: center; }
 .loader-text { font-family: var(--vp-font-family-mono); color: #FFE600; font-size: 1.2rem; animation: blink 1s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* Marquee Style */
+.marquee-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200; /* Above items */
+  /* pointer-events: auto; if marquee has links */
+}
 
 @media (max-width: 768px) { 
   .gboy-title { font-size: 2rem; } 
