@@ -8,7 +8,7 @@ const creatorHandle = ref('')
 onMounted(() => {
   // Use glob only to get filenames. Eager is false to avoid importing public assets via relative path,
   // which triggers Vite warnings.
-  const images = import.meta.glob('../../../wiki/public/hero/*.{jpg,jpeg,png,webp}', { eager: false })
+  const images = import.meta.glob('../../../public/hero/*.{jpg,jpeg,png,webp}', { eager: false })
   const paths = Object.keys(images)
   
   if (paths.length > 0) {

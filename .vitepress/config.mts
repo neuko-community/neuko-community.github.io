@@ -72,6 +72,7 @@ export default defineConfig({
     description: "Community-Built Wiki for Neuko",
     cleanUrls: true,
     srcDir: './wiki',
+
     appearance: 'dark',
     head: [
         ['script', { src: 'https://platform.twitter.com/widgets.js', async: 'true', charset: 'utf-8' }],
@@ -96,5 +97,8 @@ export default defineConfig({
         search: {
             provider: 'local'
         }
+    },
+    vite: {
+        publicDir: path.resolve(__dirname, '../public')
     }
 })

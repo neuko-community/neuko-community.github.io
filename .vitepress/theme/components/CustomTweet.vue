@@ -15,27 +15,53 @@ defineProps({
   mediaUrl: {
     type: String,
     default: ''
+  },
+  authorName: {
+    type: String,
+    default: 'Marcotics.eth 🫡'
+  },
+  authorHandle: {
+    type: String,
+    default: '@_Marcotics_'
+  },
+  authorAvatar: {
+    type: String,
+    default: 'https://unavatar.io/twitter/_Marcotics_'
+  },
+  tweetUrl: {
+    type: String,
+    default: ''
   }
 })
+
+const openTweet = (url) => {
+  if (url) {
+    window.open(url, '_blank')
+  }
+}
 </script>
 
 <template>
-  <div class="custom-tweet">
+  <div 
+    class="custom-tweet" 
+    :class="{ 'clickable': tweetUrl }"
+    @click="openTweet(tweetUrl)"
+  >
     <!-- Header -->
     <div class="tweet-header">
       <div class="tweet-avatar">
-        <img src="https://unavatar.io/twitter/_Marcotics_" alt="Marcotics" class="avatar-img" />
+        <img :src="authorAvatar" :alt="authorHandle" class="avatar-img" />
       </div>
       <div class="tweet-user-info">
         <div class="tweet-name-row">
-          <span class="tweet-name">Marcotics.eth 🫡</span>
+          <span class="tweet-name">{{ authorName }}</span>
           <span class="tweet-verified">
             <svg viewBox="0 0 24 24" aria-label="Verified account" class="verified-icon">
               <g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .495.083.965.238 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"></path></g>
             </svg>
           </span>
         </div>
-        <div class="tweet-handle">@_Marcotics_</div>
+        <div class="tweet-handle">{{ authorHandle }}</div>
       </div>
       <div class="tweet-logo">
         <svg viewBox="0 0 24 24" aria-hidden="true" class="x-logo"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
@@ -47,10 +73,22 @@ defineProps({
 
     <!-- Media Placeholder -->
     <div class="tweet-media" v-if="mediaType !== 'none'">
-      <div class="media-placeholder" v-if="mediaType === 'video' || mediaType === 'gif'">
+      <!-- If mediaType is video and mediaUrl is provided, try to show it as image/poster with play button -->
+      <!-- If mediaType video and NO mediaUrl, show default placeholder -->
+      <div class="media-placeholder" v-if="(mediaType === 'video' || mediaType === 'gif') && !mediaUrl">
         <div class="play-button">▶</div>
         <span class="gif-badge" v-if="mediaType === 'gif'">GIF</span>
       </div>
+      
+      <!-- Video/GIF with poster (using mediaUrl as image source for consistency with existing impl) -->
+      <div class="media-container" v-else-if="(mediaType === 'video' || mediaType === 'gif') && mediaUrl">
+         <img :src="mediaUrl" alt="Video Thumbnail" class="tweet-image" />
+         <div class="play-overlay">
+            <div class="play-button">▶</div>
+            <span class="gif-badge" v-if="mediaType === 'gif'">GIF</span>
+         </div>
+      </div>
+
       <img v-else-if="mediaType === 'image'" :src="mediaUrl" alt="Tweet Media" class="tweet-image" />
     </div>
 
@@ -72,6 +110,16 @@ defineProps({
   flex-direction: column;
   gap: 0.75rem;
   padding: 1.5rem;
+  border-radius: 12px; /* Ensure hover effect looks right */
+  transition: background-color 0.2s;
+}
+
+.custom-tweet.clickable {
+  cursor: pointer;
+}
+
+.custom-tweet.clickable:hover {
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .mt-auto {
@@ -165,6 +213,7 @@ defineProps({
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid #333;
+  position: relative;
 }
 
 .media-placeholder {
@@ -176,6 +225,21 @@ defineProps({
   justify-content: center;
   position: relative;
   background-image: radial-gradient(circle at center, #222 0%, #111 100%);
+}
+
+.media-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.2);
 }
 
 .tweet-image {

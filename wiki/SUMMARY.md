@@ -30,6 +30,7 @@
 ## The Ecosystem
 
 * [Badges](badges.md)
+* [G*BOY Statues](gboy-statues.md)
 * [Community](community/overview.md)
 * [Team](team.md)
 * [Website](website.md)
