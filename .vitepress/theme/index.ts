@@ -3,6 +3,7 @@ import Layout from './Layout.vue'
 import Tweet from './components/Tweet.vue'
 import HomeBanner from './components/HomeBanner.vue'
 import GBoyBanner from './components/GBoyBanner.vue'
+import ContributeForm from './components/ContributeForm.vue'
 import './custom.css'
 
 export default {
@@ -12,5 +13,6 @@ export default {
         app.component('Tweet', Tweet)
         app.component('HomeBanner', HomeBanner)
         app.component('GBoyBanner', GBoyBanner)
+        app.component('ContributeForm', ContributeForm)
     }
 }

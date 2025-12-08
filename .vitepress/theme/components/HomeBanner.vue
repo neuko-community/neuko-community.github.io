@@ -17,7 +17,7 @@ onMounted(() => {
     
     // Construct URL manually for public assets
     bgImage.value = withBase(`/hero/${filename}`)
-    creatorHandle.value = filename.substring(0, filename.lastIndexOf('.'))
+    creatorHandle.value = filename.substring(0, filename.lastIndexOf('.')).replace(/-\d+$/, '')
   }
 })
 </script>
