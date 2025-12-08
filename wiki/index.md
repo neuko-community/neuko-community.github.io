@@ -11,4 +11,6 @@ layout: home
 
 <GBoyBanner />
 
+<MemeGallery />
+
 

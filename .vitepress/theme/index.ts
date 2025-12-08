@@ -5,6 +5,8 @@ import HomeBanner from './components/HomeBanner.vue'
 import GBoyBanner from './components/GBoyBanner.vue'
 import ContributeForm from './components/ContributeForm.vue'
 import CustomTweet from './components/CustomTweet.vue' // Import
+import MemeGallery from './components/MemeGallery.vue'
+import MemeMasonry from './components/MemeMasonry.vue'
 import './custom.css'
 
 export default {
@@ -16,5 +18,7 @@ export default {
         app.component('GBoyBanner', GBoyBanner)
         app.component('ContributeForm', ContributeForm)
         app.component('CustomTweet', CustomTweet) // Register
+        app.component('MemeGallery', MemeGallery)
+        app.component('MemeMasonry', MemeMasonry)
     }
 }

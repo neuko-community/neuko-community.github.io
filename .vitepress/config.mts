@@ -80,7 +80,8 @@ export default defineConfig({
         ['meta', { property: 'og:image', content: '/og.jpg' }],
         ['meta', { name: 'twitter:image', content: '/og.jpg' }],
         ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-        ['meta', { name: 'theme-color', content: '#FFE800' }]
+        ['meta', { name: 'theme-color', content: '#FFE800' }],
+        ['link', { rel: 'stylesheet', href: 'https://use.typekit.net/tnn5ltb.css' }]
     ],
     themeConfig: {
         nav: [
