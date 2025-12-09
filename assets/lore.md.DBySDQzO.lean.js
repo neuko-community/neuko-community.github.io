@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as t,a2 as o}from"./chunks/framework.CNYnvMF6.js";const m=JSON.parse('{"title":"Lore","description":"","frontmatter":{},"headers":[],"relativePath":"lore.md","filePath":"lore.md"}'),r={name:"lore.md"};function l(n,e,s,h,u,d){return t(),a("div",null,[...e[0]||(e[0]=[o("",109)])])}const g=i(r,[["render",l]]);export{m as __pageData,g as default};
