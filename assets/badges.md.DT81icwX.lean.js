@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as i,a3 as a}from"./chunks/framework.BtFBCm54.js";const g=JSON.parse('{"title":"Badges","description":"","frontmatter":{},"headers":[],"relativePath":"badges.md","filePath":"badges.md"}'),r={name:"badges.md"};function n(l,e,s,d,h,u){return i(),o("div",null,[...e[0]||(e[0]=[a("",81)])])}const c=t(r,[["render",n]]);export{g as __pageData,c as default};
