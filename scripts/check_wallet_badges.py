@@ -87,8 +87,8 @@ def load_config():
         with open(config_path, "r") as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"{RED}Error: config.json not found.{RESET}")
-        return None
+        print(f"{YELLOW}Warning: config.json not found. Using defaults.{RESET}")
+        return {}
 
 def fetch_live_prices(config):
     sol_price = config.get("sol_price_usd", 0)
@@ -156,8 +156,8 @@ def fetch_live_prices(config):
 
 def main():
     config = load_config()
-    if not config:
-        return
+    config = load_config()
+    # proceeding with empty config if not found
 
     print(f"{BOLD}Checking Wallet:{RESET} {CYAN}{WALLET_ADDRESS}{RESET}\n")
 
@@ -208,7 +208,7 @@ def main():
     print(f"Wallet Sol:  {balance:.4f} SOL")
     print(f"Total Est:   {balance + total_badge_sol:.2f} SOL ({CYAN}${(balance + total_badge_sol) * sol_price:,.2f}{RESET})")
     
-    print(f"Total Est:   {balance + total_badge_sol:.2f} SOL ({CYAN}${(balance + total_badge_sol) * sol_price:,.2f}{RESET})")
+    # Removed duplicate Total Est print
     
     # 4. WRITE TO JSON FILE
     try:
