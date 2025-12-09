@@ -1,5 +1,4 @@
-<script setup lang="ts">
-import { data as memesData } from '../../../wiki/memes.data'
+
 import { ref, onMounted, computed, nextTick, shallowRef } from 'vue'
 import ScrollingBar from './ScrollingBar.vue'
 
@@ -12,7 +11,19 @@ const GUTTER = 16
 const CHUNK_SIZE = 4000 
 
 // --- Types ---
-type Meme = typeof memesData.memes[0]
+interface Meme {
+    slug: string
+    title: string
+    cf_asset_id: string
+    uploader: {
+        username: string
+    }
+    type?: string
+}
+
+// --- State ---
+const memes = shallowRef<Meme[]>([])
+const allItems = shallowRef<PositionedItem[]>([])
 type PositionedItem = {
   type: 'MEME' | 'TITLE'
   id: string
@@ -27,10 +38,7 @@ type PositionedItem = {
   data?: Meme
 }
 
-// --- State ---
-const allItems = shallowRef<PositionedItem[]>([]) 
-const visibleItems = shallowRef<PositionedItem[]>([]) 
-const chunks = new Map<string, PositionedItem[]>()
+
 
 const containerRef = ref<HTMLElement | null>(null)
 const isDragging = ref(false)
@@ -77,10 +85,16 @@ function clampScroll(x: number, y: number) {
 
 const isLoading = ref(true)
 
-// Dynamic Canvas Size
-const totalCells = memesData.memes.length * 4 
-const dimensionCells = Math.ceil(Math.sqrt(totalCells * 2.5)) 
-const CANVAS_SIZE = dimensionCells * (CELL_SIZE + GUTTER) 
+// Dynamic Canvas Size (Computed because memes are loaded async)
+const canvasConfig = computed(() => {
+  const totalCells = memes.value.length * 4 
+  const dimensionCells = Math.ceil(Math.sqrt(totalCells * 2.5)) 
+  const size = dimensionCells * (CELL_SIZE + GUTTER)
+  return { size, dimensionCells }
+})
+const dimensionCells = computed(() => canvasConfig.value.dimensionCells)
+const CANVAS_SIZE = computed(() => canvasConfig.value.size)
+ 
 
 // --- Logic ---
 
@@ -102,7 +116,7 @@ function layoutItems() {
     // Reset bounds
     contentBounds.value = { minX: Infinity, minY: Infinity, maxX: -Infinity, maxY: -Infinity }
 
-    const center = Math.floor(CANVAS_SIZE / (CELL_SIZE + GUTTER) / 2)
+    const center = Math.floor(CANVAS_SIZE.value / (CELL_SIZE + GUTTER) / 2)
     
     // -- Place Title --
     // Responsive Title Size
@@ -120,7 +134,7 @@ function layoutItems() {
     })
 
     // Filter out GIFs as requested for performance
-    const shuffledMemes = [...memesData.memes]
+    const shuffledMemes = [...memes.value]
       .filter(m => !m.title.toLowerCase().endsWith('.gif'))
       .sort(() => Math.random() - 0.5)
     
@@ -189,7 +203,7 @@ function placeItem(list: PositionedItem[], grid: Set<string>, partial: any) {
 
 function findSpiralPosition(grid: Set<string>, centerX: number, centerY: number, w: number, h: number) {
   let r = 0
-  const maxR = dimensionCells 
+  const maxR = dimensionCells.value  
   
   while (r < maxR) {
     for(let x = centerX - r; x <= centerX + r; x++) {
@@ -252,8 +266,8 @@ function updateVisibility() {
 
 function scrollToCenter() {
   if (containerRef.value) {
-    const scrollX = (CANVAS_SIZE - window.innerWidth) / 2
-    const scrollY = (CANVAS_SIZE - window.innerHeight) / 2
+    const scrollX = (CANVAS_SIZE.value - window.innerWidth) / 2
+    const scrollY = (CANVAS_SIZE.value - window.innerHeight) / 2
     containerRef.value.scrollTo({ left: scrollX, top: scrollY, behavior: 'instant' }) 
     updateVisibility()
   }
@@ -263,8 +277,8 @@ function checkScrollCenter() {
   if (!containerRef.value) return
   const scrollX = containerRef.value.scrollLeft
   const scrollY = containerRef.value.scrollTop
-  const centerX = (CANVAS_SIZE - window.innerWidth) / 2
-  const centerY = (CANVAS_SIZE - window.innerHeight) / 2
+  const centerX = (CANVAS_SIZE.value - window.innerWidth) / 2
+  const centerY = (CANVAS_SIZE.value - window.innerHeight) / 2
   const dist = Math.sqrt(Math.pow(scrollX - centerX, 2) + Math.pow(scrollY - centerY, 2))
   showReturnCenter.value = dist > 600
 }
@@ -402,9 +416,20 @@ function updateDebugStats() {
   debugStats.value.loadedSizeMB = (totalBytes / (1024 * 1024)).toFixed(2)
 }
 
-onMounted(() => {
-  layoutItems()
-  setInterval(updateDebugStats, 1000)
+onMounted(async () => {
+    try {
+        const res = await fetch('/memes-archive.json')
+        if (res.ok) {
+            const json = await res.json()
+            memes.value = json.memes || []
+        }
+    } catch (e) {
+        console.error('Failed to load memes', e)
+    }
+    
+    // Fallback or empty if failed, but still run layout to show title
+    layoutItems()
+    setInterval(updateDebugStats, 1000)
 })
 </script>
 
