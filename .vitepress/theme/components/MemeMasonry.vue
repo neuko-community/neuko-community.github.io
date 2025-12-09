@@ -4,11 +4,12 @@ import { ref, onMounted, computed, nextTick, shallowRef } from 'vue'
 import ScrollingBar from './ScrollingBar.vue'
 
 const props = defineProps<{}>()
+const isDev = import.meta.env.DEV
 
 // --- Configuration ---
 const CELL_SIZE = 100 
 const GUTTER = 16     
-const CHUNK_SIZE = 1000 
+const CHUNK_SIZE = 4000 
 
 // --- Types ---
 type Meme = typeof memesData.memes[0]
@@ -33,12 +34,47 @@ const chunks = new Map<string, PositionedItem[]>()
 
 const containerRef = ref<HTMLElement | null>(null)
 const isDragging = ref(false)
+const dragThresholdPassed = ref(false)
 const startX = ref(0)
 const startY = ref(0)
 const scrollLeft = ref(0)
 const scrollTop = ref(0)
 const scale = ref(1)
 const showReturnCenter = ref(false)
+// Bounds for clamping scroll
+const contentBounds = ref({
+  minX: Infinity,
+  minY: Infinity,
+  maxX: -Infinity,
+  maxY: -Infinity
+})
+
+function updateBounds(x: number, y: number, w: number, h: number) {
+  if (x < contentBounds.value.minX) contentBounds.value.minX = x
+  if (y < contentBounds.value.minY) contentBounds.value.minY = y
+  if (x + w > contentBounds.value.maxX) contentBounds.value.maxX = x + w
+  if (y + h > contentBounds.value.maxY) contentBounds.value.maxY = y + h
+}
+
+function clampScroll(x: number, y: number) {
+  if (!containerRef.value) return { x, y }
+  const vw = window.innerWidth
+  const vh = window.innerHeight
+  const padding = 200 // Buffer in pixels
+  
+  const minX = contentBounds.value.minX - padding
+  const maxX = contentBounds.value.maxX + padding - vw
+  const minY = contentBounds.value.minY - padding
+  const maxY = contentBounds.value.maxY + padding - vh
+
+  return {
+    x: Math.max(minX, Math.min(x, maxX)),
+    y: Math.max(minY, Math.min(y, maxY))
+  }
+}
+
+
+
 const isLoading = ref(true)
 
 // Dynamic Canvas Size
@@ -48,9 +84,10 @@ const CANVAS_SIZE = dimensionCells * (CELL_SIZE + GUTTER)
 
 // --- Logic ---
 
-function getImageUrl(meme: Meme) {
+function getImageUrl(meme: Meme, width?: number) {
   if (!meme) return ''
-  return `https://memedepot.com/cdn-cgi/imagedelivery/naCPMwxXX46-hrE49eZovw/${meme.cf_asset_id}/public`
+  const variant = width ? `width=${width},fit=contain,format=auto` : 'public'
+  return `https://memedepot.com/cdn-cgi/imagedelivery/naCPMwxXX46-hrE49eZovw/${meme.cf_asset_id}/${variant}`
 }
 
 function layoutItems() {
@@ -61,6 +98,9 @@ function layoutItems() {
     const placedItems: PositionedItem[] = []
     
     chunks.clear()
+    
+    // Reset bounds
+    contentBounds.value = { minX: Infinity, minY: Infinity, maxX: -Infinity, maxY: -Infinity }
 
     const center = Math.floor(CANVAS_SIZE / (CELL_SIZE + GUTTER) / 2)
     
@@ -79,7 +119,10 @@ function layoutItems() {
       x: titleX, y: titleY, w: titleW, h: titleH
     })
 
-    const shuffledMemes = [...memesData.memes].sort(() => Math.random() - 0.5)
+    // Filter out GIFs as requested for performance
+    const shuffledMemes = [...memesData.memes]
+      .filter(m => !m.title.toLowerCase().endsWith('.gif'))
+      .sort(() => Math.random() - 0.5)
     
     shuffledMemes.forEach((meme, i) => {
       const rand = Math.random()
@@ -98,6 +141,8 @@ function layoutItems() {
           x: pos.x, y: pos.y, w: w, h: h,
           data: meme
         })
+        const placed = placedItems[placedItems.length - 1]
+        updateBounds(placed.pixelX, placed.pixelY, placed.pixelW, placed.pixelH)
       }
     })
 
@@ -229,6 +274,7 @@ function checkScrollCenter() {
 const onMouseDown = (e: MouseEvent) => {
   if ((e.target as HTMLElement).closest('.nav-button')) return
   isDragging.value = true
+  dragThresholdPassed.value = false
   startX.value = e.pageX - (containerRef.value?.offsetLeft || 0)
   startY.value = e.pageY - (containerRef.value?.offsetTop || 0)
   scrollLeft.value = containerRef.value?.scrollLeft || 0
@@ -243,8 +289,17 @@ const onMouseMove = (e: MouseEvent) => {
   const y = e.pageY - (containerRef.value.offsetTop || 0)
   const walkX = x - startX.value
   const walkY = y - startY.value
-  containerRef.value.scrollLeft = scrollLeft.value - walkX
-  containerRef.value.scrollTop = scrollTop.value - walkY
+  
+  if (Math.abs(walkX) > 5 || Math.abs(walkY) > 5) {
+     dragThresholdPassed.value = true
+  }
+
+  const nextScrollLeft = scrollLeft.value - walkX
+  const nextScrollTop = scrollTop.value - walkY
+  
+  const clamped = clampScroll(nextScrollLeft, nextScrollTop)
+  containerRef.value.scrollLeft = clamped.x
+  containerRef.value.scrollTop = clamped.y
   
   requestAnimationFrame(updateVisibility)
 }
@@ -254,10 +309,19 @@ const onMouseUp = () => {
   if (containerRef.value) containerRef.value.style.cursor = 'grab'
 }
 
+const onLinkClick = (e: MouseEvent, meme: Meme) => {
+  if (dragThresholdPassed.value) {
+    e.preventDefault()
+    e.stopPropagation()
+    return
+  }
+}
+
 // Mobile Touch Support
 const onTouchStart = (e: TouchEvent) => {
   if ((e.target as HTMLElement).closest('.nav-button')) return
   isDragging.value = true
+  dragThresholdPassed.value = false
   const touch = e.touches[0]
   startX.value = touch.pageX - (containerRef.value?.offsetLeft || 0)
   startY.value = touch.pageY - (containerRef.value?.offsetTop || 0)
@@ -274,8 +338,17 @@ const onTouchMove = (e: TouchEvent) => {
   const y = touch.pageY - (containerRef.value.offsetTop || 0)
   const walkX = x - startX.value
   const walkY = y - startY.value
-  containerRef.value.scrollLeft = scrollLeft.value - walkX
-  containerRef.value.scrollTop = scrollTop.value - walkY
+  
+  if (Math.abs(walkX) > 5 || Math.abs(walkY) > 5) {
+     dragThresholdPassed.value = true
+  }
+
+  const nextScrollLeft = scrollLeft.value - walkX
+  const nextScrollTop = scrollTop.value - walkY
+  
+  const clamped = clampScroll(nextScrollLeft, nextScrollTop)
+  containerRef.value.scrollLeft = clamped.x
+  containerRef.value.scrollTop = clamped.y
   
   requestAnimationFrame(updateVisibility)
 }
@@ -293,15 +366,45 @@ const onWheel = (e: WheelEvent) => {
     requestAnimationFrame(updateVisibility)
   } else {
     if (containerRef.value) {
-      containerRef.value.scrollLeft += e.deltaX
-      containerRef.value.scrollTop += e.deltaY
+      const nextX = containerRef.value.scrollLeft + e.deltaX
+      const nextY = containerRef.value.scrollTop + e.deltaY
+      const clamped = clampScroll(nextX, nextY)
+      containerRef.value.scrollLeft = clamped.x
+      containerRef.value.scrollTop = clamped.y
       requestAnimationFrame(updateVisibility)
     }
   }
 }
 
+// Debug Stats
+const debugStats = ref({
+  visibleCount: 0,
+  totalCount: 0,
+  loadedSizeMB: '0.00'
+})
+
+function updateDebugStats() {
+  debugStats.value.visibleCount = visibleItems.value.length
+  debugStats.value.totalCount = allItems.value.length
+  
+  // Calculate approximate image transfer size
+  const resources = performance.getEntriesByType('resource')
+  let totalBytes = 0
+  resources.forEach(entry => {
+    // @ts-ignore
+    if (entry.initiatorType === 'img' || entry.initiatorType === 'css' || (entry.name && (entry.name.includes('.jpg') || entry.name.includes('.webp') || entry.name.includes('imagedelivery')))) {
+      // @ts-ignore
+      let size = entry.transferSize || entry.decodedBodySize || 0
+      if (size === 0) size = 40000 // Fallback estimate for CORS-restricted or cached images (approx 40KB)
+      totalBytes += size
+    }
+  })
+  debugStats.value.loadedSizeMB = (totalBytes / (1024 * 1024)).toFixed(2)
+}
+
 onMounted(() => {
   layoutItems()
+  setInterval(updateDebugStats, 1000)
 })
 </script>
 
@@ -318,6 +421,12 @@ onMounted(() => {
     @touchend="onTouchEnd"
     @wheel="onWheel"
   >
+    <!-- Debug Overlay -->
+    <div v-if="isDev" class="debug-overlay">
+      <div>DOM Nodes: {{ debugStats.visibleCount }} / {{ debugStats.totalCount }}</div>
+      <div>Est. Load: {{ debugStats.loadedSizeMB }} MB</div>
+    </div>
+
     <!-- Loading Overlay -->
     <div v-if="isLoading" class="loading-overlay">
       <div class="loader-text">DROWN THEM IN HIS IMAGE...</div>
@@ -357,20 +466,29 @@ onMounted(() => {
           </div>
         </div>
 
-        <a v-else-if="item.data" :href="`https://memedepot.com/d/gboy/${item.data.slug}`" target="_blank" rel="noopener" class="meme-link" @click.stop>
+        <a v-else-if="item.data" 
+           :href="`https://memedepot.com/d/gboy/${item.data.slug}`" 
+           target="_blank" 
+           rel="noopener" 
+           class="meme-link"
+           draggable="false"
+           @click="onLinkClick($event, item.data)"
+        >
           <div class="media-wrapper">
              <video 
               v-if="item.data.type === 'VIDEO' || item.data.title.endsWith('.mp4') || item.data.title.endsWith('.webm')"
               :src="getImageUrl(item.data)"
               class="mosaic-media"
               autoplay loop muted playsinline
+              draggable="false"
             ></video>
             <img 
               v-else
-              :src="getImageUrl(item.data)" 
+              :src="getImageUrl(item.data, 400)" 
               :alt="item.data.title" 
               class="mosaic-media"
               loading="lazy"
+              draggable="false"
             />
           </div>
           <div v-if="item.data.uploader?.username" class="attribution-overlay">
@@ -384,10 +502,24 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.debug-overlay {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #0f0;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 8px;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  z-index: 1000;
+  pointer-events: none;
+}
 .mosaic-viewport { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: 100; overflow: hidden; background: #000; cursor: grab; user-select: none; touch-action: none; /* Critical for drag */ }
 .mosaic-canvas { position: relative; background-color: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; transition: transform 0.1s linear; }
 .mosaic-item { position: absolute; border-radius: 4px; overflow: hidden; background: #222; transition: transform 0.1s; will-change: transform; }
-.mosaic-item:hover { transform: scale(1.05); z-index: 50; box-shadow: 0 10px 30px rgba(0,0,0,0.5); outline: 2px solid rgba(255,255,255,0.8); }
+.mosaic-item:hover { transform: scale(1.05); z-index: 50; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 .title-item { background: transparent; display: flex; align-items: center; justify-content: center; pointer-events: none; box-shadow: none; overflow: visible; z-index: 10; }
 .center-title { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
 .title-bg { 
@@ -406,9 +538,9 @@ onMounted(() => {
 .home-button { top: 20px; left: 20px; }
 .center-button { bottom: 20px; right: 20px; background: #FFE600; color: #000; border: none; box-shadow: 0 4px 12px rgba(255, 230, 0, 0.3); opacity: 0; transform: translateY(20px); pointer-events: auto; transition: opacity 0.3s ease, transform 0.3s ease; }
 .center-button:not(.visible) { opacity: 0; transform: translateY(20px); pointer-events: none; }
-.meme-link { display: block; width: 100%; height: 100%; cursor: pointer; }
+.meme-link { display: block; width: 100%; height: 100%; cursor: pointer; -webkit-user-drag: none; user-drag: none; }
 .media-wrapper { width: 100%; height: 100%; }
-.mosaic-media { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s; pointer-events: none; }
+.mosaic-media { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s; pointer-events: none; -webkit-user-drag: none; user-drag: none; }
 .attribution-overlay { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 4px 8px; border-radius: 4px; font-size: 0.65rem; color: rgba(255,255,255,0.9); opacity: 0; transition: opacity 0.2s; pointer-events: none; }
 .mosaic-item:hover .attribution-overlay { opacity: 1; }
 

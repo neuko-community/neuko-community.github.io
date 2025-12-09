@@ -60,4 +60,15 @@
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 768px) {
+  .scrolling-bar-container {
+    padding: 0 1rem;
+    margin-bottom: 1rem; /* Hug bottom more */
+  }
+  .scrolling-bar {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+}
 </style>
