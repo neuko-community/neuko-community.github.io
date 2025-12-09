@@ -1,1 +1,0 @@
-import{_ as o,c as t,o as i,a2 as a}from"./chunks/framework.CNYnvMF6.js";const p=JSON.parse('{"title":"Team","description":"","frontmatter":{},"headers":[],"relativePath":"team.md","filePath":"team.md"}'),r={name:"team.md"};function l(n,e,s,u,h,c){return i(),t("div",null,[...e[0]||(e[0]=[a("",95)])])}const m=o(r,[["render",l]]);export{p as __pageData,m as default};
