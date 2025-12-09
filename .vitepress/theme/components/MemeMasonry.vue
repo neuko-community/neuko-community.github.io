@@ -24,6 +24,8 @@ interface Meme {
 // --- State ---
 const memes = shallowRef<Meme[]>([])
 const allItems = shallowRef<PositionedItem[]>([])
+const visibleItems = shallowRef<PositionedItem[]>([])
+const chunks = new Map<string, PositionedItem[]>()
 type PositionedItem = {
   type: 'MEME' | 'TITLE'
   id: string
@@ -104,41 +106,55 @@ function getImageUrl(meme: Meme, width?: number) {
   return `https://memedepot.com/cdn-cgi/imagedelivery/naCPMwxXX46-hrE49eZovw/${meme.cf_asset_id}/${variant}`
 }
 
+// Loading progress
+const loadingProgress = ref(0) // 0 to 100
+
 function layoutItems() {
   isLoading.value = true
+  loadingProgress.value = 0
   
-  setTimeout(() => {
-    const grid = new Set<string>() 
-    const placedItems: PositionedItem[] = []
-    
-    chunks.clear()
-    
-    // Reset bounds
-    contentBounds.value = { minX: Infinity, minY: Infinity, maxX: -Infinity, maxY: -Infinity }
+  // Clean initialization
+  const grid = new Set<string>() 
+  const placedItems: PositionedItem[] = []
+  chunks.clear()
+  contentBounds.value = { minX: Infinity, minY: Infinity, maxX: -Infinity, maxY: -Infinity }
 
-    const center = Math.floor(CANVAS_SIZE.value / (CELL_SIZE + GUTTER) / 2)
-    
-    // -- Place Title --
-    // Responsive Title Size
-    const isMobile = window.innerWidth < 768
-    const titleW = isMobile ? 3 : 8
-    const titleH = isMobile ? 3 : 4 
-    
-    const titleX = center - Math.floor(titleW / 2)
-    const titleY = center - Math.floor(titleH / 2)
-    
-    placeItem(placedItems, grid, {
-      type: 'TITLE',
-      id: 'center-title',
-      x: titleX, y: titleY, w: titleW, h: titleH
-    })
+  const center = Math.floor(CANVAS_SIZE.value / (CELL_SIZE + GUTTER) / 2)
+  
+  // -- Place Title --
+  const isMobile = window.innerWidth < 768
+  const titleW = isMobile ? 3 : 8
+  const titleH = isMobile ? 3 : 4 
+  
+  const titleX = center - Math.floor(titleW / 2)
+  const titleY = center - Math.floor(titleH / 2)
+  
+  placeItem(placedItems, grid, {
+    type: 'TITLE',
+    id: 'center-title',
+    x: titleX, y: titleY, w: titleW, h: titleH
+  })
 
-    // Filter out GIFs as requested for performance
-    const shuffledMemes = [...memes.value]
-      .filter(m => !m.title.toLowerCase().endsWith('.gif'))
-      .sort(() => Math.random() - 0.5)
+  // Filter memes
+  const shuffledMemes = [...memes.value]
+    .filter(m => !m.title.toLowerCase().endsWith('.gif'))
+    .sort(() => Math.random() - 0.5)
+  
+  const TOTAL = shuffledMemes.length
+  if (TOTAL === 0) {
+    isLoading.value = false
+    return
+  }
+
+  // Use a batched processing loop
+  let index = 0
+  const BATCH_SIZE = 50 // process 50 items per tick
+
+  function processBatch() {
+    const startTime = performance.now()
     
-    shuffledMemes.forEach((meme, i) => {
+    while (index < TOTAL && performance.now() - startTime < 10) { // Allocating up to 10ms per frame
+      const meme = shuffledMemes[index]
       const rand = Math.random()
       let w = 2, h = 2
       if (rand > 0.85) { w = 3; h = 3 } 
@@ -151,21 +167,30 @@ function layoutItems() {
       if (pos) {
         placeItem(placedItems, grid, {
           type: 'MEME',
-          id: meme.slug || `meme-${i}`,
+          id: meme.slug || `meme-${index}`,
           x: pos.x, y: pos.y, w: w, h: h,
           data: meme
         })
         const placed = placedItems[placedItems.length - 1]
         updateBounds(placed.pixelX, placed.pixelY, placed.pixelW, placed.pixelH)
       }
-    })
+      index++
+    }
 
-    allItems.value = placedItems
-    updateVisibility()
-    isLoading.value = false
-    
-    nextTick(() => scrollToCenter())
-  }, 50)
+    loadingProgress.value = Math.floor((index / TOTAL) * 100)
+
+    if (index < TOTAL) {
+      requestAnimationFrame(processBatch)
+    } else {
+      // Done
+      allItems.value = placedItems
+      updateVisibility()
+      isLoading.value = false
+      nextTick(() => scrollToCenter())
+    }
+  }
+
+  requestAnimationFrame(processBatch)
 }
 
 function placeItem(list: PositionedItem[], grid: Set<string>, partial: any) {
@@ -454,7 +479,7 @@ onMounted(async () => {
 
     <!-- Loading Overlay -->
     <div v-if="isLoading" class="loading-overlay">
-      <div class="loader-text">DROWN THEM IN HIS IMAGE...</div>
+      <div class="loader-text">DROWN THEM IN HIS IMAGE... ({{ loadingProgress }}%)</div>
     </div>
 
     <!-- Nav -->

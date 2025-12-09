@@ -28,7 +28,7 @@ export default {
     async load(): Promise<MemeData> {
         try {
             // Try loading from static archive
-            const archivePath = path.resolve(process.cwd(), 'wiki/data/memes-archive.json')
+            const archivePath = path.resolve(process.cwd(), 'public/memes-archive.json')
             if (fs.existsSync(archivePath)) {
                 console.log('Loading memes from local archive:', archivePath)
                 const content = fs.readFileSync(archivePath, 'utf-8')
