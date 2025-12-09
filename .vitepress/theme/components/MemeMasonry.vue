@@ -449,7 +449,7 @@ onMounted(() => {
     }">
       
       <div 
-        v-for="item in visibleItems" 
+        v-for="(item, index) in visibleItems" 
         :key="item.id" 
         class="mosaic-item"
         :class="{ 'title-item': item.type === 'TITLE' }"
@@ -487,7 +487,7 @@ onMounted(() => {
               :src="getImageUrl(item.data, 400)" 
               :alt="item.data.title" 
               class="mosaic-media"
-              loading="lazy"
+              :loading="index < 12 ? 'eager' : 'lazy'"
               draggable="false"
             />
           </div>

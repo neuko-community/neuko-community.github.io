@@ -81,6 +81,11 @@ export default defineConfig({
         ['meta', { name: 'twitter:image', content: '/og.jpg' }],
         ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
         ['meta', { name: 'theme-color', content: '#FFE800' }],
+        // Preconnect for Fonts
+        ['link', { rel: 'preconnect', href: 'https://use.typekit.net', crossorigin: '' }],
+        ['link', { rel: 'preconnect', href: 'https://p.typekit.net', crossorigin: '' }],
+        ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: '' }],
+        ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
         ['link', { rel: 'stylesheet', href: 'https://use.typekit.net/tnn5ltb.css' }]
     ],
     themeConfig: {
