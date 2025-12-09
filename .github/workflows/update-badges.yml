@@ -29,7 +29,7 @@ jobs:
       - name: Run update script
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
-        run: python site/scripts/check_wallet_badges.py
+        run: python scripts/check_wallet_badges.py
       
       - name: Commit and Push changes
         run: |
@@ -37,8 +37,8 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
           # Check if file changed
-          if [[ `git status --porcelain site/public/badge_stats.json` ]]; then
-            git add site/public/badge_stats.json
+          if [[ `git status --porcelain public/badge_stats.json` ]]; then
+            git add public/badge_stats.json
             git commit -m "chore: update badge stats [skip ci]"
             git push
           else
