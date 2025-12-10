@@ -340,6 +340,18 @@ onMounted(async () => {
 
     .ticker-text {
         font-size: 0.8rem; /* Increased from 0.65rem */
+        white-space: normal; /* Allow wrapping */
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        line-height: 1.5;
+        overflow: visible;
+    }
+
+    .badge-stats-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0.5rem 0; /* Add vertical spacing when wrapped */
     }
 
     .action-btn {
