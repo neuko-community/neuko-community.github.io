@@ -10,3 +10,17 @@ export function getMemeImageUrl(
         : 'public'
     return `${CDN_CONFIG.baseUrl}/${CDN_CONFIG.accountId}/${assetId}/${variant}`
 }
+
+export function getMemeSrcSet(
+    assetId: string,
+    widths: number[] = [200, 400, 800],
+    format: 'auto' | 'webp' | 'jpg' = 'auto'
+): string {
+    if (!assetId) return ''
+    return widths
+        .map(w => {
+            const url = getMemeImageUrl(assetId, { width: w, format })
+            return `${url} ${w}w`
+        })
+        .join(', ')
+}

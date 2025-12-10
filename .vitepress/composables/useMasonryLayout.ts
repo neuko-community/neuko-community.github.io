@@ -93,8 +93,8 @@ export function useMasonryLayout(config: LayoutConfig) {
 
     function calculateLayout(memes: Meme[], isMobile: boolean) {
         // Canvas Sizing
-        const totalCells = memes.length * 4
-        const dimensionCells = Math.ceil(Math.sqrt(totalCells * 2.5))
+        const totalCells = memes.length * 8 // Increased from 4 for more breathing room
+        const dimensionCells = Math.ceil(Math.sqrt(totalCells * 3)) // Increased from 2.5
         const size = dimensionCells * (config.cellSize + config.gutter)
 
         canvasSize.value = { size, dimensionCells }

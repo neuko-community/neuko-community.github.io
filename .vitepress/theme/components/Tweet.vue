@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import CustomTweet from './CustomTweet.vue'
+import TweetCard from './TweetCard.vue'
 import { data as tweetsDataRaw } from '../../data/tweets.data'
 import type { TweetData } from '../../types'
 
@@ -82,7 +82,7 @@ const mappedProps = computed(() => {
   <div class="tweet-wrapper">
     <div v-if="loading" class="loading-state">Loading Tweet...</div>
     <div v-else-if="error" class="error-state">{{ error }}</div>
-    <CustomTweet v-else-if="mappedProps" v-bind="mappedProps" />
+    <TweetCard v-else-if="mappedProps" v-bind="mappedProps" />
   </div>
 </template>
 

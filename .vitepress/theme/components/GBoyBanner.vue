@@ -12,7 +12,7 @@ import { withBase } from 'vitepress'
             <p class="gboy-description">
               <strong style="color: var(--vp-c-brand-1);">I LITERALLY DON'T KNOW</strong> BUT SO FAR HE'S THE MAIN CHARACTER IN A STORY OF OCCULT MILITARY INDUSTRIAL SECRETS, PSIONIC EXPERIMENT ASSASSIN MONSTERS AND A WORLD-ENDING HIVE MIND HOMOGENY CONSPIRACY.
             </p>
-            <a href="/lore" class="read-more-btn">READ THE FULL LORE →</a>
+            <a href="/lore" class="neuko-action-btn">READ THE FULL LORE →</a>
           </div>
         </div>
       </div>

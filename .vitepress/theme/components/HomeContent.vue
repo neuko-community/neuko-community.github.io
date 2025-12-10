@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
-import Tweet from './Tweet.vue'
 import { data as tweets } from '../../data/tweets.data'
 import { homeConfig } from '../../config/home'
 </script>
@@ -10,7 +9,7 @@ import { homeConfig } from '../../config/home'
     
     <!-- Row 1: Feature Shortcuts (Full Width Grid) - Text Only -->
     <div class="features-grid">
-      <a v-for="feature in homeConfig.features" :key="feature.title" :href="feature.link" class="feature-card">
+      <a v-for="feature in homeConfig.features" :key="feature.title" :href="feature.link" class="neuko-card feature-card">
         <h4>{{ feature.title }}</h4>
         <p>{{ feature.desc }}</p>
       </a>
@@ -42,18 +41,18 @@ import { homeConfig } from '../../config/home'
     <div class="content-grid">
       
       <!-- How it Started -->
-      <div class="grid-item large-item">
-        <h3 class="section-title">{{ homeConfig.howItStarted.title }}</h3>
+      <div class="neuko-card large-item">
+        <h3 class="neuko-section-title">{{ homeConfig.howItStarted.title }}</h3>
         <div class="card-content">
           <p class="lore-text" v-html="homeConfig.howItStarted.p1"></p>
           <p class="lore-text" v-html="homeConfig.howItStarted.p2"></p>
-          <a :href="homeConfig.howItStarted.link" class="read-more-btn">{{ homeConfig.howItStarted.cta }}</a>
+          <a :href="homeConfig.howItStarted.link" class="neuko-action-btn">{{ homeConfig.howItStarted.cta }}</a>
         </div>
       </div>
 
       <!-- Latest Transmission -->
-      <div class="grid-item">
-        <h3 class="section-title">{{ homeConfig.latestTransmission.title }}</h3>
+      <div class="neuko-card">
+        <h3 class="neuko-section-title">{{ homeConfig.latestTransmission.title }}</h3>
         <div class="card-content">
           <div class="transmission-preview">
             <img :src="withBase(homeConfig.latestTransmission.image)" alt="Transmission Thumbnail" class="transmission-img" />
@@ -70,12 +69,12 @@ import { homeConfig } from '../../config/home'
 
     <!-- Row 4: Community Spotlight -->
     <div class="community-section">
-      <h3 class="section-title">{{ homeConfig.communitySpotlight.title }} <a :href="homeConfig.communitySpotlight.curatorLink" target="_blank" class="highlight-link">{{ homeConfig.communitySpotlight.curator }}</a></h3>
+      <h3 class="neuko-section-title">{{ homeConfig.communitySpotlight.title }} <a :href="homeConfig.communitySpotlight.curatorLink" target="_blank" class="highlight-link">{{ homeConfig.communitySpotlight.curator }}</a></h3>
       <div class="community-grid">
         <div 
             v-for="id in homeConfig.communitySpotlight.tweetIds" 
             :key="id" 
-            class="community-card tweet-card"
+            class="neuko-card tweet-card"
         >
           <Tweet :data="tweets[id]" />
         </div>
@@ -94,15 +93,7 @@ import { homeConfig } from '../../config/home'
   font-family: var(--vp-font-family-mono);
 }
 
-.section-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--vp-c-brand-1);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  border-bottom: 2px solid #333;
-  padding-bottom: 0.5rem;
-}
+
 
 /* Features Grid */
 .features-grid {
@@ -113,20 +104,12 @@ import { homeConfig } from '../../config/home'
 }
 
 .feature-card {
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Light outline */
-  padding: 1.5rem;
-  border-radius: 12px;
   text-decoration: none;
-  transition: transform 0.2s, border-color 0.2s;
-  display: flex;
-  flex-direction: column;
   align-items: flex-start; /* Left align text */
   text-align: left;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
   border-color: var(--vp-c-brand-1);
 }
 
@@ -229,12 +212,7 @@ import { homeConfig } from '../../config/home'
   margin-bottom: 4rem;
 }
 
-.grid-item {
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  border-radius: 12px;
-}
+
 
 .lore-text {
   font-size: 0.95rem;
@@ -243,17 +221,7 @@ import { homeConfig } from '../../config/home'
   margin-bottom: 1rem;
 }
 
-.read-more-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--vp-c-brand-1);
-  font-weight: bold;
-  text-decoration: none;
-}
 
-.read-more-btn:hover {
-  text-decoration: underline;
-}
 
 /* Transmission Card */
 .transmission-preview {
@@ -308,10 +276,7 @@ import { homeConfig } from '../../config/home'
 }
 
 .community-card {
-  background: #0a0a0a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  border-radius: 12px;
+  /* Inherits neuko-card styles */
 }
 
 .tweet-card {

@@ -112,13 +112,13 @@ h1 {
 
 .VPSidebarItem.is-active>.item>.link {
   color: var(--vp-c-brand-1) !important;
-  background-color: #1a1a1a;
+  background-color: var(--vp-c-bg-elv);
 }
 
 /* Feature Cards (Homepage) */
 .VPFeature {
-  background-color: #111 !important;
-  border: 1px solid #333 !important;
+  background-color: var(--vp-c-bg-alt) !important;
+  border: 1px solid var(--vp-c-border) !important;
   transition: transform 0.2s;
 }
 
@@ -142,22 +142,22 @@ h1 {
 }
 
 .vp-doc tr {
-  background-color: #0a0a0a;
-  border-top: 1px solid #333;
+  background-color: var(--vp-c-bg);
+  border-top: 1px solid var(--vp-c-border);
 }
 
 .vp-doc tr:nth-child(2n) {
-  background-color: #111;
+  background-color: var(--vp-c-bg-alt);
 }
 
 .vp-doc th,
 .vp-doc td {
-  border: 1px solid #333;
+  border: 1px solid var(--vp-c-border);
   padding: 12px;
 }
 
 .vp-doc th {
-  background-color: #1a1a1a;
+  background-color: var(--vp-c-bg-elv);
   color: var(--vp-c-brand-1);
   font-family: var(--vp-font-family-mono);
   text-transform: uppercase;
@@ -165,7 +165,7 @@ h1 {
 
 /* Blockquotes */
 .vp-doc blockquote {
-  background-color: #111;
+  background-color: var(--vp-c-bg-alt);
   border-left: 4px solid var(--vp-c-brand-1);
   color: #ccc;
 }
@@ -188,12 +188,12 @@ h1 {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
-  background: #0a0a0a;
+  background: var(--vp-c-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border: 1px solid #0a0a0a;
+  background: var(--vp-c-border);
+  border: 1px solid var(--vp-c-bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -316,7 +316,7 @@ html .VPHero .actions {
 .VPNavBar {
   background-color: rgba(10, 10, 10, 0.8) !important;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--vp-c-border);
 }
 
 .VPNavBar .content {
@@ -336,4 +336,47 @@ html .VPHero .actions {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
+}
+
+/* --- UTILITIES --- */
+
+.neuko-card {
+  background-color: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.neuko-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--vp-c-brand-1);
+}
+
+.neuko-section-title {
+  font-family: var(--vp-font-family-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--vp-c-border);
+  padding-bottom: 0.5rem;
+}
+
+.neuko-action-btn {
+  display: inline-block;
+  color: var(--vp-c-brand-1);
+  font-weight: bold;
+  text-decoration: none;
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.neuko-action-btn:hover {
+  color: #fff;
+  text-decoration: underline;
 }

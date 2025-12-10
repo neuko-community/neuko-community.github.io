@@ -9,7 +9,7 @@ const OUT_DIR = path.resolve(__dirname, '../public')
 const OUT_FILE = path.join(OUT_DIR, 'memes-archive.json')
 const TARGET = Infinity // Fetch ALL memes
 const API_BASE = 'https://memedepot.com/api/memes?depotSlug=gboy'
-const EXCLUDE_VIDEOS = true
+const EXCLUDE_VIDEOS = false
 
 async function scrape() {
     console.log('Starting scrape for G*BOY memes...')

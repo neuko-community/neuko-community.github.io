@@ -1,14 +1,10 @@
+import { defineAsyncComponent } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
-import Tweet from './components/Tweet.vue'
-import HomeBanner from './components/HomeBanner.vue'
 import GBoyBanner from './components/GBoyBanner.vue'
-import ContributeForm from './components/ContributeForm.vue'
-import CustomTweet from './components/CustomTweet.vue'
-import MemeGallery from './components/MemeGallery.vue'
-import MemeMasonry from './components/MemeMasonry.vue'
-import BadgeCounter from './components/BadgeCounter.vue'
 import './custom.css'
+
+const Tweet = defineAsyncComponent(() => import('./components/Tweet.vue'))
 
 export default {
     ...DefaultTheme,
@@ -17,11 +13,6 @@ export default {
         // Global Components (used in Markdown)
         app.component('Tweet', Tweet)
         app.component('GBoyBanner', GBoyBanner)
-        app.component('CustomTweet', CustomTweet)
-        app.component('MemeGallery', MemeGallery)
-        app.component('MemeMasonry', MemeMasonry)
-        app.component('ContributeForm', ContributeForm)
-        app.component('BadgeCounter', BadgeCounter)
 
         // Debugging: Global Error Handler
         app.config.errorHandler = (err: any, instance: any, info: any) => {

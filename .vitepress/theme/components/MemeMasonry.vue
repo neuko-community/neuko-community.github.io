@@ -4,7 +4,8 @@ import ScrollingBar from './ScrollingBar.vue'
 
 // --- Types & Utils ---
 import type { Meme } from '../../types'
-import { getMemeImageUrl } from '../../utils/imageUrl'
+import { getMemeImageUrl, getMemeSrcSet } from '../../utils/imageUrl'
+import { data as loadedMemes } from '../../data/memes.data'
 
 // --- Composables ---
 import { useMasonryLayout } from '../../composables/useMasonryLayout'
@@ -21,7 +22,7 @@ const CHUNK_SIZE = 2000
 
 // --- State ---
 const containerRef = ref<HTMLElement | null>(null)
-const memes = shallowRef<Meme[]>([])
+const memes = shallowRef<Meme[]>(loadedMemes)
 const showReturnCenter = ref(false)
 const isLoading = ref(true)
 const loadingProgress = ref(0)
@@ -90,6 +91,11 @@ function getImageUrl(meme: Meme, width?: number) {
   return getMemeImageUrl(meme.cf_asset_id, width ? { width } : undefined)
 }
 
+function getSrcSet(meme: Meme) {
+  if (!meme) return ''
+  return getMemeSrcSet(meme.cf_asset_id)
+}
+
 function onLinkClick(e: MouseEvent, meme: Meme) {
   if (dragThresholdPassed.value) {
     e.preventDefault()
@@ -150,17 +156,7 @@ function updateDebugStats() {
   debugStats.value.loadedSizeMB = (totalBytes / (1024 * 1024)).toFixed(2)
 }
 
-onMounted(async () => {
-    try {
-        const res = await fetch('/memes-archive.json')
-        if (res.ok) {
-            const json = await res.json()
-            memes.value = json.memes || []
-        }
-    } catch (e) {
-        console.error('Failed to load memes', e)
-    }
-    
+onMounted(() => {
     runLayout()
     setInterval(updateDebugStats, 1000)
 })
@@ -243,6 +239,8 @@ onMounted(async () => {
             <img 
               v-else
               :src="getImageUrl(item.data, 400)" 
+              :srcset="getSrcSet(item.data)"
+              sizes="(max-width: 768px) 50vw, 400px"
               :alt="item.data.title" 
               class="mosaic-media"
               :loading="index < 12 ? 'eager' : 'lazy'"
