@@ -38,7 +38,7 @@ jobs:
         run: bun install
 
       - name: Build docs
-        run: bun run docs:build
+        run: bun run build
         
       - name: Add .nojekyll
         run: touch ./.vitepress/dist/.nojekyll
