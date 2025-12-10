@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "bun scripts/dev.ts",
     "build": "vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "scrape:memes": "bun scripts/scrape-memes.ts",
+    "check:badges": "bun scripts/check-wallet-badges.ts"
   },
   "keywords": [],
   "author": "",

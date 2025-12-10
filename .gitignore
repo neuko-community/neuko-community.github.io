@@ -3,3 +3,7 @@ node_modules
 .vitepress/dist
 .vitepress/cache
 scripts/config.json
+*.json
+!package.json
+!tsconfig.json
+!public/badge_stats.json

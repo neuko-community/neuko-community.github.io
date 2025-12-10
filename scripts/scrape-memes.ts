@@ -11,6 +11,10 @@ const TARGET = Infinity // Fetch ALL memes
 const API_BASE = 'https://memedepot.com/api/memes?depotSlug=gboy'
 const EXCLUDE_VIDEOS = false
 
+import type { Meme } from '../.vitepress/types'
+
+// ...
+
 async function scrape() {
     console.log('Starting scrape for G*BOY memes...')
 
@@ -18,7 +22,7 @@ async function scrape() {
         fs.mkdirSync(OUT_DIR, { recursive: true })
     }
 
-    let allMemes: any[] = []
+    let allMemes: Meme[] = []
     let page = 1
     let hasNext = true
 
@@ -32,7 +36,7 @@ async function scrape() {
             if (!res.ok) throw new Error(`Status ${res.status}`)
 
             const json = await res.json()
-            const memes = json.memes || []
+            const memes: Meme[] = json.memes || []
 
             if (memes.length === 0) {
                 console.log('No more memes found.')
@@ -41,7 +45,7 @@ async function scrape() {
             }
 
             // Filter
-            let filtered = memes.filter((m: any) => m.depot?.slug === 'gboy')
+            let filtered = memes.filter((m) => m.depot?.slug === 'gboy')
 
             if (EXCLUDE_VIDEOS) {
                 const preVideoCount = filtered.length

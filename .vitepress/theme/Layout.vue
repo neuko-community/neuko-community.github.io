@@ -28,10 +28,8 @@ const { frontmatter } = useData()
 </template>
 
 <style>
-/* Hide default Navbar */
-.VPNavBar {
-  display: none !important;
-}
+/* Hide default Navbar override removed - use frontmatter navbar: false instead */
+
 
 /* Add padding to top of hero area */
 .hero-spacer {
