@@ -23,7 +23,7 @@ import { homeConfig } from '../../config/home'
         <h2 class="video-title">{{ homeConfig.videoIntro.title }}</h2>
         <p class="intro-desc" v-html="homeConfig.videoIntro.desc1"></p>
         <p class="intro-desc">{{ homeConfig.videoIntro.desc2 }}</p>
-        <BadgeCounter />
+
       </div>
       <div class="video-embed">
         <video 

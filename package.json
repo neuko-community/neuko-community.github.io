@@ -4,9 +4,9 @@
   "description": "**Community-Built Wiki for** [**Neuko**](https://neuko.ai)",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "bun scripts/dev.ts",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "dev": "bun scripts/dev.ts",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "keywords": [],
   "author": "",

@@ -57,26 +57,35 @@ onMounted(async () => {
       <div class="banner-bottom">
         <div class="bottom-left">
           <div class="ticker-text">
-            <span>BUY ON: </span>
-            <a href="https://magiceden.us/marketplace/gboy_badges_" target="_blank" class="banner-link">MAGIC EDEN</a>
-            <span class="separator">|</span>
-            <a href="https://x.com/neukoai" target="_blank" class="banner-link">OFFICIAL X ACCOUNT @NEUKOAI</a>
-            <span class="separator">|</span>
+            <div class="links-group">
+                <span>BUY ON: </span>
+                <a href="https://magiceden.us/marketplace/gboy_badges_" target="_blank" class="banner-link">MAGIC EDEN</a>
+                <span class="separator">|</span>
+                <a href="https://x.com/neukoai" target="_blank" class="banner-link">OFFICIAL X ACCOUNT @NEUKOAI</a>
+            </div>
+            
+            <span class="separator mobile-hide">|</span>
             
             <!-- Badge Stats -->
             <a href="https://x.com/neukoai/status/1998483693195899014" target="_blank" class="badge-stats-group">
                 <span class="stat-item" title="Rabbit Sent / Total">
-                    <img :src="withBase('/images/badges/rabbit.png')" alt="Rabbit" class="badge-icon" /> {{ badgeStats.Rabbit }}/200 ({{ Math.round((badgeStats.Rabbit/200)*100) }}%)
+                    <img :src="withBase('/images/badges/rabbit.png')" alt="Rabbit" class="badge-icon" /> 
+                    {{ badgeStats.Rabbit }}/200 <span class="mobile-hide">({{ Math.round((badgeStats.Rabbit/200)*100) }}%)</span>
                 </span>
                 <span class="stat-item" title="Moth Sent / Total">
-                     <img :src="withBase('/images/badges/moth.png')" alt="Moth" class="badge-icon" /> {{ badgeStats.Moth }}/462 ({{ Math.round((badgeStats.Moth/462)*100) }}%)
+                     <img :src="withBase('/images/badges/moth.png')" alt="Moth" class="badge-icon" /> 
+                     {{ badgeStats.Moth }}/462 <span class="mobile-hide">({{ Math.round((badgeStats.Moth/462)*100) }}%)</span>
                 </span>
                 <span class="stat-item" title="Snake Sent / Total">
-                     <img :src="withBase('/images/badges/snake.png')" alt="Snake" class="badge-icon" /> {{ badgeStats.Snake }}/834 ({{ Math.round((badgeStats.Snake/834)*100) }}%)
+                     <img :src="withBase('/images/badges/snake.png')" alt="Snake" class="badge-icon" /> 
+                     {{ badgeStats.Snake }}/834 <span class="mobile-hide">({{ Math.round((badgeStats.Snake/834)*100) }}%)</span>
                 </span>
                 
-                <span class="highlight-text">
+                <span class="highlight-text mobile-hide">
                      sent to save G*BOY
+                </span>
+                <span class="highlight-text mobile-only">
+                     sent
                 </span>
             </a>
           </div>
@@ -197,6 +206,12 @@ onMounted(async () => {
     gap: 0.25rem;
 }
 
+.links-group {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
 .badge-stats-group {
     display: inline-flex;
     align-items: center;
@@ -277,6 +292,10 @@ onMounted(async () => {
 }
 
 /* Responsive */
+.mobile-only {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .banner-bottom {
         height: auto;
@@ -325,11 +344,20 @@ onMounted(async () => {
         display: none;
     }
     
+    /* Hide specific mobile-hide elements */
+    .mobile-hide {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: inline-block !important; /* or inline, but consistent */
+    }
+    
     .banner-bottom {
         flex-direction: column;
         height: auto;
         padding: 1rem 0.5rem;
-        gap: 0.75rem;
+        gap: 0.5rem; /* Tighter gap */
     }
 
     .bottom-left, .bottom-right {
@@ -339,19 +367,32 @@ onMounted(async () => {
     }
 
     .ticker-text {
-        font-size: 0.8rem; /* Increased from 0.65rem */
-        white-space: normal; /* Allow wrapping */
-        flex-wrap: wrap;
+        font-size: 0.65rem; /* Small font to fit text */
+        flex-direction: column; /* Stack top lines vs bottom lines */
+        flex-wrap: nowrap;
         justify-content: center;
         height: auto;
-        line-height: 1.5;
+        line-height: 1.4;
         overflow: visible;
+        width: 100%;
+    }
+    
+    .links-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        gap: 0.25rem;
+        width: 100%;
     }
 
     .badge-stats-group {
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* Force single line */
+        white-space: nowrap;
         justify-content: center;
-        margin: 0.5rem 0; /* Add vertical spacing when wrapped */
+        margin: 0.25rem 0 0 0;
+        width: 100%;
+        gap: 0.5rem; /* Reduce gap */
     }
 
     .action-btn {
@@ -367,6 +408,7 @@ onMounted(async () => {
         flex-direction: row; /* Side by side */
         gap: 0.5rem;
         padding: 0 0.5rem; /* Ensure buttons don't touch edges */
+        margin-top: 0.5rem;
     }
 }
 
@@ -388,10 +430,10 @@ onMounted(async () => {
 }
 
 .lowered-asterisk {
-  position: relative;
-  top: 0.25em;
-  font-size: 0.68em;
-  margin: 0 0.05em;
+    position: relative;
+    top: 0.25em;
+    font-size: 0.68em;
+    margin: 0 0.05em;
 }
 
 .attribution-overlay {
