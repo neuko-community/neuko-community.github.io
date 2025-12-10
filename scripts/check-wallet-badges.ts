@@ -4,25 +4,57 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 // --- Config ---
+import config from './script-config.json';
 const HELIUS_API_KEY = process.env.HELIUS_API_KEY
+
 if (!HELIUS_API_KEY) {
     console.error('\x1b[31mError: HELIUS_API_KEY environment variable not set.\x1b[0m')
     process.exit(1)
 }
 
-const RPC_URL = `https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}`
-const WALLET_ADDRESS = "ES5SWKCcRkW8vwzDMcTd6utwEEpEkh6VH3vtWHv3sbDy"
+const RPC_URL = `${config.rpcUrl}/?api-key=${HELIUS_API_KEY}`
+const WALLET_ADDRESS = config.walletAddress
 
-// Constants for Valuation
-const SUPPLY_SNAKE = 834
-const SUPPLY_MOTH = 462
-const SUPPLY_RABBIT = 200
-const TOTAL_SUPPLY_ALL = 1496
+// Constants for Valuation (Unused but kept in config if needed later)
+// const TOTAL_SUPPLY_ALL = config.supply.total
+
+// --- Types ---
+interface RpcResponse<T> {
+    jsonrpc: string
+    result: T
+    error?: { message: string }
+    id: string
+}
+
+interface Asset {
+    content?: {
+        metadata?: {
+            name?: string
+        }
+    }
+}
+
+interface AssetList {
+    items: Asset[]
+}
+
+interface CoinGeckoResponse {
+    solana?: {
+        usd: number
+    }
+}
+
+interface MagicEdenListing {
+    price?: number
+    token?: {
+        name?: string
+    }
+}
 
 // --- Utils ---
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
-async function rpcCall(method: string, params: any) {
+async function rpcCall<T>(method: string, params: unknown): Promise<T | null> {
     const payload = {
         jsonrpc: "2.0",
         id: "1",
@@ -49,7 +81,7 @@ async function rpcCall(method: string, params: any) {
                 throw new Error(`RPC status ${res.status}`)
             }
 
-            const json = await res.json()
+            const json = (await res.json()) as RpcResponse<T>
             if (json.error) {
                 throw new Error(json.error.message || 'Unknown RPC error')
             }
@@ -57,8 +89,8 @@ async function rpcCall(method: string, params: any) {
             // Success
             await delay(200) // Politeness delay
             return json.result
-        } catch (e: any) {
-            console.error(`RPC Error (${method}): ${e.message}`)
+        } catch (e) {
+            console.error(`RPC Error (${method}): ${(e as Error).message}`)
             await delay(2000)
         }
     }
@@ -66,12 +98,12 @@ async function rpcCall(method: string, params: any) {
 }
 
 async function getSolBalance(wallet: string): Promise<number> {
-    const res = await rpcCall("getBalance", [wallet])
+    const res = await rpcCall<{ value: number }>("getBalance", [wallet])
     return res?.value ? res.value / 1_000_000_000 : 0
 }
 
 async function getAllAssets(wallet: string) {
-    let allItems: any[] = []
+    const allItems: Asset[] = []
     let page = 1
     while (true) {
         const params = {
@@ -79,7 +111,7 @@ async function getAllAssets(wallet: string) {
             page,
             limit: 1000
         }
-        const result = await rpcCall("getAssetsByOwner", params)
+        const result = await rpcCall<AssetList>("getAssetsByOwner", params)
         if (!result) break
 
         const items = result.items || []
@@ -104,10 +136,10 @@ async function fetchLivePrices() {
     try {
         const cgRes = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd")
         if (cgRes.ok) {
-            const data = await cgRes.json()
+            const data = (await cgRes.json()) as CoinGeckoResponse
             solPrice = data.solana?.usd || 0
         }
-    } catch (e) {
+    } catch {
         console.warn('Failed to fetch SOL price, continuing...')
     }
 
@@ -115,7 +147,7 @@ async function fetchLivePrices() {
     try {
         const meRes = await fetch("https://api-mainnet.magiceden.dev/v2/collections/gboy_badges_/listings?limit=100")
         if (meRes.ok) {
-            const listings = await meRes.json()
+            const listings = (await meRes.json()) as MagicEdenListing[]
             const floors: Record<string, number[]> = { snake: [], moth: [], rabbit: [] }
 
             for (const item of listings) {
@@ -137,7 +169,7 @@ async function fetchLivePrices() {
                 }
             }
         }
-    } catch (e) {
+    } catch {
         console.warn('Failed to fetch Magic Eden listings, utilizing 0 or fallback')
     }
 

@@ -4,7 +4,9 @@ const TWEET_IDS = [
     '1990160825462730847'  // Spotlight 2
 ]
 
+
 export interface TweetData {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [id: string]: any
 }
 
@@ -26,8 +28,8 @@ export default {
                     console.warn(`No data found for tweet ${id}`)
                     tweets[id] = null
                 }
-            } catch (e: any) {
-                console.error(`Error loading tweet ${id}:`, e.message)
+            } catch (e) {
+                console.error(`Error loading tweet ${id}:`, (e as Error).message)
                 // Keep previous fallback logic or null
                 // If we added fallback above, we are good.
                 if (!tweets[id]) tweets[id] = null

@@ -74,30 +74,33 @@ h1 {
   border-bottom-color: var(--vp-c-brand-1);
 }
 
-/* Buttons (VitePress Action Buttons) */
-.VPButton {
-  border: 1px solid var(--vp-c-brand-1) !important;
-  background-color: transparent !important;
-  color: var(--vp-c-brand-1) !important;
+/* Global Overrides - using :root for variables is fine, but for specific elements, use higher specificity */
+
+/* Buttons */
+/* Increasing specificity to override VitePress defaults without !important */
+.vp-doc .VPButton {
+  border: 1px solid var(--vp-c-brand-1);
+  background-color: transparent;
+  color: var(--vp-c-brand-1);
   font-family: var(--vp-font-family-mono);
   text-transform: uppercase;
   font-weight: bold;
   transition: all 0.2s;
 }
 
-.VPButton:hover {
-  background-color: var(--vp-c-brand-1) !important;
-  color: #000 !important;
+.vp-doc .VPButton:hover {
+  background-color: var(--vp-c-brand-1);
+  color: #000;
 }
 
-.VPButton.theme-brand {
-  background-color: var(--vp-c-brand-1) !important;
-  color: #000 !important;
+.vp-doc .VPButton.theme-brand {
+  background-color: var(--vp-c-brand-1);
+  color: #000;
 }
 
-.VPButton.theme-brand:hover {
-  background-color: #fff !important;
-  border-color: #fff !important;
+.vp-doc .VPButton.theme-brand:hover {
+  background-color: #fff;
+  border-color: #fff;
 }
 
 /* Navbar */
@@ -111,24 +114,25 @@ h1 {
 }
 
 .VPSidebarItem.is-active>.item>.link {
-  color: var(--vp-c-brand-1) !important;
+  color: var(--vp-c-brand-1);
   background-color: var(--vp-c-bg-elv);
 }
 
 /* Feature Cards (Homepage) */
-.VPFeature {
-  background-color: var(--vp-c-bg-alt) !important;
-  border: 1px solid var(--vp-c-border) !important;
+/* Target by class name more specifically if needed, or rely on cascade order (load this CSS last) */
+.VPHomeFeatures .VPFeature {
+  background-color: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-border);
   transition: transform 0.2s;
 }
 
-.VPFeature:hover {
-  border-color: var(--vp-c-brand-1) !important;
+.VPHomeFeatures .VPFeature:hover {
+  border-color: var(--vp-c-brand-1);
   transform: translateY(-2px);
 }
 
-.VPFeature .title {
-  color: var(--vp-c-brand-1) !important;
+.VPHomeFeatures .VPFeature .title {
+  color: var(--vp-c-brand-1);
   font-family: var(--vp-font-family-mono);
 }
 
@@ -208,21 +212,22 @@ h1 {
 }
 
 /* Mobile Global Adjustments */
+/* Mobile Global Adjustments */
 @media (max-width: 768px) {
   :root {
     --vp-sidebar-width: 100%;
   }
 
-  h1 {
-    font-size: 2rem !important;
+  .vp-doc h1 {
+    font-size: 2rem;
   }
 
-  h2 {
-    font-size: 1.5rem !important;
+  .vp-doc h2 {
+    font-size: 1.5rem;
   }
 
-  h3 {
-    font-size: 1.25rem !important;
+  .vp-doc h3 {
+    font-size: 1.25rem;
   }
 
   .vp-doc table {
@@ -238,62 +243,62 @@ h1 {
 }
 
 /* --- CUSTOM HERO BANNER (G*BOY SPECIAL STYLE) --- */
-
+/* Using html tag to boost specificity over default theme */
 html .VPHero {
-  padding-top: 32px !important;
-  padding-bottom: 32px !important;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 html .VPHero .container {
-  display: flex !important;
-  flex-direction: column !important;
-  max-width: 96vw !important;
+  display: flex;
+  flex-direction: column;
+  max-width: 96vw;
   /* Almost full width */
   margin: 0 auto;
-  padding: 0 !important;
+  padding: 0;
 }
 
 html .VPHero .image {
   order: -1;
   /* Image on top */
-  width: 100% !important;
-  flex: none !important;
+  width: 100%;
+  flex: none;
   margin-bottom: 32px;
-  padding: 0 !important;
-  display: block !important;
+  padding: 0;
+  display: block;
   /* Ensure it is visible */
 }
 
 html .VPHero .image-container {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 24px;
   /* Rounded corners */
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  margin: 0 !important;
-  transform: none !important;
+  margin: 0;
+  transform: none;
   /* Remove any default tilt/transform */
 }
 
 html .VPHero .image-bg {
-  display: none !important;
+  display: none;
   /* Hide background blobs */
 }
 
 html .VPHero .image-src {
-  width: 100% !important;
-  height: auto !important;
-  max-width: none !important;
+  width: 100%;
+  height: auto;
+  max-width: none;
   object-fit: cover;
   display: block;
 }
 
 /* Hide default text since banner has it, but keep actions */
 html .VPHero .main {
-  width: 100% !important;
-  max-width: 1000px !important;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
   order: 2;
@@ -302,7 +307,7 @@ html .VPHero .main {
 html .VPHero .name,
 html .VPHero .text,
 html .VPHero .tagline {
-  display: none !important;
+  display: none;
 }
 
 html .VPHero .actions {

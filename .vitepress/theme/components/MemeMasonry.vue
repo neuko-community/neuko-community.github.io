@@ -1,5 +1,6 @@
+```vue
 <script setup lang="ts">
-import { ref, onMounted, computed, nextTick, shallowRef, watch, reactive } from 'vue'
+import { ref, onMounted, nextTick, shallowRef, watch, reactive, computed } from 'vue'
 import ScrollingBar from './ScrollingBar.vue'
 
 // --- Types & Utils ---
@@ -12,7 +13,7 @@ import { useMasonryLayout } from '../../composables/useMasonryLayout'
 import { useDraggableCanvas } from '../../composables/useDraggableCanvas'
 import { useVisibilityCulling } from '../../composables/useVisibilityCulling'
 
-const props = defineProps<{}>()
+// props removed as unused and causing collision
 const isDev = import.meta.env.DEV
 
 // --- Configuration ---
@@ -64,7 +65,7 @@ const { visibleItems, updateVisibility } = useVisibilityCulling({
 
 // 3. Draggable Canvas
 const {
-  isDragging,
+  // isDragging, // unused
   dragThresholdPassed,
   onMouseDown,
   onMouseMove,
@@ -97,7 +98,7 @@ function getSrcSet(meme: Meme) {
   return getMemeSrcSet(meme.cf_asset_id)
 }
 
-function onLinkClick(e: MouseEvent, meme: Meme) {
+function onLinkClick(e: MouseEvent) {
   if (dragThresholdPassed.value) {
     e.preventDefault()
     e.stopPropagation()
@@ -151,7 +152,7 @@ function updateDebugStats() {
   const resources = performance.getEntriesByType('resource')
   let totalBytes = 0
   resources.forEach(entry => {
-    // @ts-ignore
+    // @ts-expect-error - Resource timing type
     if (entry.decodedBodySize) totalBytes += entry.decodedBodySize
   })
   debugStats.value.loadedSizeMB = (totalBytes / (1024 * 1024)).toFixed(2)
@@ -237,7 +238,7 @@ watch(visibleItems, (items) => {
            rel="noopener" 
            class="meme-link"
            draggable="false"
-           @click="onLinkClick($event, item.data)"
+           @click="onLinkClick($event)"
         >
           <div class="media-wrapper">
              <!-- Removed video tag since we filtered them out -->

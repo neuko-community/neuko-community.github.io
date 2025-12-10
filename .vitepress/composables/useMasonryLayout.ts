@@ -1,4 +1,4 @@
-import { shallowRef, computed } from 'vue'
+import { shallowRef } from 'vue'
 import type { Meme, PositionedItem } from '../types'
 
 interface LayoutConfig {
@@ -29,7 +29,9 @@ export function useMasonryLayout(config: LayoutConfig) {
         if (y + h > contentBounds.value.maxY) contentBounds.value.maxY = y + h
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function placeItem(list: PositionedItem[], grid: Set<string>, partial: any) {
+
         const pixelX = partial.x * (config.cellSize + config.gutter)
         const pixelY = partial.y * (config.cellSize + config.gutter)
         const pixelW = partial.w * config.cellSize + (partial.w - 1) * config.gutter
@@ -141,6 +143,7 @@ export function useMasonryLayout(config: LayoutConfig) {
                 else if (rand > 0.45) { w = 3; h = 2 }
                 else if (rand > 0.15) { w = 2; h = 2 }
                 else { w = 1; h = 1 }
+
 
                 const pos = findSpiralPosition(grid, center, center, w, h, dimensionCells)
                 if (pos) {

@@ -7,3 +7,6 @@ scripts/config.json
 !package.json
 !tsconfig.json
 !public/badge_stats.json
+transactions.json
+memes-archive.json
+!scripts/script-config.example.json

@@ -1,0 +1,11 @@
+{
+    "rpcUrl": "https://mainnet.helius-rpc.com",
+    "walletAddress": "YOUR_WALLET_ADDRESS",
+    "heliusApiKey": "YOUR_API_KEY",
+    "supply": {
+        "snake": 228,
+        "moth": 169,
+        "rabbit": 70,
+        "total": 467
+    }
+}

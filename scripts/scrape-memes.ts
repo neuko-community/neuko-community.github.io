@@ -7,7 +7,6 @@ const __dirname = path.dirname(__filename)
 
 const OUT_DIR = path.resolve(__dirname, '../public')
 const OUT_FILE = path.join(OUT_DIR, 'memes-archive.json')
-const TARGET = Infinity // Fetch ALL memes
 const API_BASE = 'https://memedepot.com/api/memes?depotSlug=gboy'
 const EXCLUDE_VIDEOS = false
 
@@ -22,7 +21,7 @@ async function scrape() {
         fs.mkdirSync(OUT_DIR, { recursive: true })
     }
 
-    let allMemes: Meme[] = []
+    const allMemes: Meme[] = []
     let page = 1
     let hasNext = true
 
@@ -49,7 +48,7 @@ async function scrape() {
 
             if (EXCLUDE_VIDEOS) {
                 const preVideoCount = filtered.length
-                filtered = filtered.filter((m: any) => m.type !== 'VIDEO' && !m.title.endsWith('.mp4') && !m.title.endsWith('.webm'))
+                filtered = filtered.filter((m) => m.type !== 'VIDEO' && !m.title.endsWith('.mp4') && !m.title.endsWith('.webm'))
                 if (filtered.length < preVideoCount) {
                     // console.warn(`  - Excluded ${preVideoCount - filtered.length} video memes.`)
                 }
