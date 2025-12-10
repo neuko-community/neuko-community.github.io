@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Update Badge Stats"]
+    types:
+      - completed
 
 permissions:
   contents: write
@@ -12,10 +16,12 @@ permissions:
 
 concurrency:
   group: pages
+  cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,9 +38,10 @@ jobs:
         run: bun install
 
       - name: Build docs
-        run: |
-          bun run docs:build
-          touch ./.vitepress/dist/.nojekyll
+        run: bun run docs:build
+        
+      - name: Add .nojekyll
+        run: touch ./.vitepress/dist/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
