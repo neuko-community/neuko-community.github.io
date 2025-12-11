@@ -8,12 +8,15 @@ import config from './script-config.json';
 const HELIUS_API_KEY = process.env.HELIUS_API_KEY
 
 if (!HELIUS_API_KEY) {
-    console.error('\x1b[31mError: HELIUS_API_KEY environment variable not set.\x1b[0m')
-    process.exit(1)
+    console.warn('\x1b[33mWarning: HELIUS_API_KEY not set. Using Magic Eden for badges, SOL balance will be 0.\x1b[0m')
 }
 
-const RPC_URL = `${config.rpcUrl}/?api-key=${HELIUS_API_KEY}`
-const WALLET_ADDRESS = config.walletAddress
+const WALLET_ADDRESS = "ES5SWKCcRkW8vwzDMcTd6utwEEpEkh6VH3vtWHv3sbDy"
+
+// Fallback or derived RPC
+const RPC_URL = HELIUS_API_KEY
+    ? `${config.rpcUrl}/?api-key=${HELIUS_API_KEY}`
+    : "https://api.mainnet-beta.solana.com"
 
 // Constants for Valuation (Unused but kept in config if needed later)
 // const TOTAL_SUPPLY_ALL = config.supply.total
@@ -102,26 +105,36 @@ async function getSolBalance(wallet: string): Promise<number> {
     return res?.value ? res.value / 1_000_000_000 : 0
 }
 
-async function getAllAssets(wallet: string) {
-    const allItems: Asset[] = []
-    let page = 1
-    while (true) {
-        const params = {
-            ownerAddress: wallet,
-            page,
-            limit: 1000
+interface MagicEdenToken {
+    name?: string
+    collection?: string
+}
+
+async function getAllAssets(wallet: string): Promise<Asset[]> {
+    try {
+        console.log(`Fetching badges from Magic Eden for ${wallet}...`)
+        // Use the user-provided endpoint for tokens
+        const url = `https://api-mainnet.magiceden.dev/v2/wallets/${wallet}/tokens?collection_symbol=gboy_badges_`
+
+        const res = await fetch(url)
+        if (!res.ok) {
+            throw new Error(`Magic Eden API returned ${res.status}`)
         }
-        const result = await rpcCall<AssetList>("getAssetsByOwner", params)
-        if (!result) break
 
-        const items = result.items || []
-        if (items.length === 0) break
+        const tokens = (await res.json()) as MagicEdenToken[]
 
-        allItems.push(...items)
-        if (items.length < 1000) break
-        page++
+        // Map to existing Asset interface to preserve downstream logic
+        return tokens.map(t => ({
+            content: {
+                metadata: {
+                    name: t.name
+                }
+            }
+        }))
+    } catch (e) {
+        console.error(`Error fetching from Magic Eden: ${(e as Error).message}`)
+        return []
     }
-    return allItems
 }
 
 async function fetchLivePrices() {
