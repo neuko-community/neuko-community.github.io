@@ -125,11 +125,9 @@ onUnmounted(() => {
                 
                 <span class="highlight-text mobile-break">
                      [{{ totalSent }}/1496 ({{ totalPercent }}%)] SENT TO SAVE G*BOY
+                     <span class="countdown">{{ timeLeft }}</span>
                 </span>
             </a>
-
-            <span class="separator mobile-hide">|</span>
-            <span class="countdown">{{ timeLeft }}</span>
           </div>
         </div>
 
