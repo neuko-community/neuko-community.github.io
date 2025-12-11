@@ -93,7 +93,7 @@ onMounted(async () => {
                 </span>
                 
                 <span class="highlight-text mobile-break">
-                     [ {{ totalSent }}/1496 ({{ totalPercent }}%) ] SENT TO SAVE G*BOY
+                     [{{ totalSent }}/1496 ({{ totalPercent }}%)] SENT TO SAVE G*BOY
                 </span>
             </a>
           </div>
