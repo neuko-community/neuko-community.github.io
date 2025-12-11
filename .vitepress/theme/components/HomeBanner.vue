@@ -1,11 +1,17 @@
 ```
 <script setup>
 import { withBase } from 'vitepress'
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const bgImage = ref(withBase('/images/home-banner.jpg'))
 const creatorHandle = ref('')
 const badgeStats = ref({ Rabbit: 0, Moth: 0, Snake: 0 })
+const timeLeft = ref('')
+let timerInterval = null
+
+// Target: December 11th, 10:13 AM HST (UTC-10)
+// 2025 is implied from context (current time is 2025)
+const targetDate = new Date('2025-12-11T10:13:00-10:00').getTime()
 
 // Computed totals
 const totalSent = computed(() => {
@@ -16,7 +22,28 @@ const totalPercent = computed(() => {
     return Math.round((totalSent.value / 1496) * 100)
 })
 
+const updateCountdown = () => {
+    const now = new Date().getTime()
+    const distance = targetDate - now
+    
+    if (distance < 0) {
+        timeLeft.value = '00:00:00 Left'
+        if (timerInterval) clearInterval(timerInterval)
+        return
+    }
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+    timeLeft.value = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} Left`
+}
+
 onMounted(async () => {
+  // Start countdown
+  updateCountdown()
+  timerInterval = setInterval(updateCountdown, 1000)
+
   // Fetch badge stats
   try {
     const res = await fetch('/badge_stats.json')
@@ -41,6 +68,10 @@ onMounted(async () => {
     bgImage.value = withBase(`/hero/${filename}`)
     creatorHandle.value = filename.substring(0, filename.lastIndexOf('.')).replace(/-\d+$/, '')
   }
+})
+
+onUnmounted(() => {
+    if (timerInterval) clearInterval(timerInterval)
 })
 </script>
 
@@ -75,7 +106,7 @@ onMounted(async () => {
                 <a href="https://x.com/neukoai" target="_blank" class="banner-link">OFFICIAL X ACCOUNT @NEUKOAI</a>
             </div>
             
-
+            <span class="separator mobile-hide">|</span>
             
             <!-- Badge Stats -->
             <a href="https://x.com/neukoai/status/1998483693195899014" target="_blank" class="badge-stats-group">
@@ -96,6 +127,9 @@ onMounted(async () => {
                      [{{ totalSent }}/1496 ({{ totalPercent }}%)] SENT TO SAVE G*BOY
                 </span>
             </a>
+
+            <span class="separator mobile-hide">|</span>
+            <span class="countdown">{{ timeLeft }}</span>
           </div>
         </div>
 
@@ -262,6 +296,13 @@ onMounted(async () => {
     border-bottom: none;
 }
 
+.countdown {
+    font-weight: 800;
+    color: black;
+    margin-left: 0.25rem;
+    white-space: nowrap;
+}
+
 .arrow {
     color: black;
     margin: 0 0.25rem;
@@ -400,7 +441,7 @@ onMounted(async () => {
         justify-content: center;
         margin: 0.25rem 0 0 0;
         width: 100%;
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
     
     .mobile-break {
