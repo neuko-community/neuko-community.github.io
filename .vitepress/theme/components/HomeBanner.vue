@@ -5,13 +5,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const bgImage = ref(withBase('/images/home-banner.jpg'))
 const creatorHandle = ref('')
-const badgeStats = ref({ Rabbit: 0, Moth: 0, Snake: 0 })
-const timeLeft = ref('')
-let timerInterval = null
-
-// Target: December 11th, 10:00 AM HST (UTC-10)
-// 2025 is implied from context (current time is 2025)
-const targetDate = new Date('2025-12-11T10:00:00-10:00').getTime()
+const badgeStats = ref({ Rabbit: 160, Moth: 366, Snake: 614 })
 
 // Computed totals
 const totalSent = computed(() => {
@@ -22,39 +16,7 @@ const totalPercent = computed(() => {
     return Math.round((totalSent.value / 1496) * 100)
 })
 
-const updateCountdown = () => {
-    const now = new Date().getTime()
-    const distance = targetDate - now
-    
-    if (distance < 0) {
-        timeLeft.value = '00:00:00 Left'
-        if (timerInterval) clearInterval(timerInterval)
-        return
-    }
-
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000)
-
-    timeLeft.value = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} Left`
-}
-
 onMounted(async () => {
-  // Start countdown
-  updateCountdown()
-  timerInterval = setInterval(updateCountdown, 1000)
-
-  // Fetch badge stats
-  try {
-    const res = await fetch('/badge_stats.json')
-    if (res.ok) {
-      badgeStats.value = await res.json()
-    }
-  } catch (e) {
-    console.error('Failed to load badge stats', e)
-    // Keep defaults 0
-  }
-
   // Use glob only to get filenames. Eager is false to avoid importing public assets via relative path,
   // which triggers Vite warnings.
   const images = import.meta.glob('../../../public/hero/*.{jpg,jpeg,png,webp}', { eager: false })
@@ -68,10 +30,6 @@ onMounted(async () => {
     bgImage.value = withBase(`/hero/${filename}`)
     creatorHandle.value = filename.substring(0, filename.lastIndexOf('.')).replace(/-\d+$/, '')
   }
-})
-
-onUnmounted(() => {
-    if (timerInterval) clearInterval(timerInterval)
 })
 </script>
 
@@ -125,7 +83,6 @@ onUnmounted(() => {
                 
                 <span class="highlight-text mobile-break">
                      [{{ totalSent }}/1496 ({{ totalPercent }}%)] SENT TO SAVE G*BOY
-                     <span class="countdown">{{ timeLeft }}</span>
                 </span>
             </a>
           </div>
