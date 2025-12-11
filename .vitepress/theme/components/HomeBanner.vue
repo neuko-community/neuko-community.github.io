@@ -9,9 +9,9 @@ const badgeStats = ref({ Rabbit: 0, Moth: 0, Snake: 0 })
 const timeLeft = ref('')
 let timerInterval = null
 
-// Target: December 11th, 10:13 AM HST (UTC-10)
+// Target: December 11th, 10:00 AM HST (UTC-10)
 // 2025 is implied from context (current time is 2025)
-const targetDate = new Date('2025-12-11T10:13:00-10:00').getTime()
+const targetDate = new Date('2025-12-11T10:00:00-10:00').getTime()
 
 // Computed totals
 const totalSent = computed(() => {

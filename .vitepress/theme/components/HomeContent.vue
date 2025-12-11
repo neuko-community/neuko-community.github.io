@@ -44,6 +44,7 @@ import { homeConfig } from '../../config/home'
       <div class="neuko-card large-item">
         <h3 class="neuko-section-title">{{ homeConfig.howItStarted.title }}</h3>
         <div class="card-content">
+          <img v-if="homeConfig.howItStarted.image" :src="withBase(homeConfig.howItStarted.image)" alt="How it Started" class="section-img" />
           <p class="lore-text" v-html="homeConfig.howItStarted.p1"></p>
           <p class="lore-text" v-html="homeConfig.howItStarted.p2"></p>
           <a :href="homeConfig.howItStarted.link" class="neuko-action-btn">{{ homeConfig.howItStarted.cta }}</a>
@@ -219,6 +220,14 @@ import { homeConfig } from '../../config/home'
   line-height: 1.6;
   color: #ccc;
   margin-bottom: 1rem;
+}
+
+.section-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 

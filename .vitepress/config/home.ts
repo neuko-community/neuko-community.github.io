@@ -34,15 +34,16 @@ export const homeConfig = {
         p1: 'Neuko\'s lore centers on a cryptic conspiracy involving psychic experiments, a mysterious character known as <strong>G*Boy (G304)</strong>, and the fictional <strong>MITER-Corp</strong>.',
         p2: 'What began as experiments on "homeless babies" to create psychic soldiers evolved into a story of escape, rebellion, and a decentralized network of "operatives" — you.',
         cta: 'READ THE FULL LORE →',
-        link: '/lore'
+        link: '/lore',
+        image: '/images/how-it-started.png'
     },
     latestTransmission: {
-        title: 'LATEST TRANSMISSION',
-        subTitle: 'THE 1994 ARCHIVES',
-        desc: 'Archived video logs from September 1994 reveal the origin of G*Boy.',
-        cta: 'VIEW LOGS',
-        link: '/transmissions/overview',
-        image: '/images/img-1.jpg'
+        title: 'G*BOY OPERATIVE IDENTITY CARD',
+        subTitle: 'OPERATIVE IDENTITY',
+        desc: 'Create and download your custom ID with your hooded PFP, Operative Type and Number.',
+        cta: 'CREATE ID',
+        link: 'https://neukoai.feezybellz.me/dp/',
+        image: '/images/gboy-identity-card.jpg'
     },
     communitySpotlight: {
         title: 'COMMUNITY MEMBER SPOTLIGHT BY',
