@@ -95,24 +95,28 @@ const tools = [
     isHash: false,
     enc: (s, k) => {
       if (!k) return s
+      let keyIndex = 0
       return s
         .split('')
-        .map((c, i) => {
+        .map((c) => {
           if (!/[a-z]/i.test(c)) return c
           const base = c <= 'Z' ? 65 : 97
-          const shift = k.toLowerCase().charCodeAt(i % k.length) - 97
+          const shift = k.toLowerCase().charCodeAt(keyIndex % k.length) - 97
+          keyIndex++
           return String.fromCharCode(((c.charCodeAt(0) - base + shift) % 26) + base)
         })
         .join('')
     },
     dec: (s, k) => {
       if (!k) return s
+      let keyIndex = 0
       return s
         .split('')
-        .map((c, i) => {
+        .map((c) => {
           if (!/[a-z]/i.test(c)) return c
           const base = c <= 'Z' ? 65 : 97
-          const shift = k.toLowerCase().charCodeAt(i % k.length) - 97
+          const shift = k.toLowerCase().charCodeAt(keyIndex % k.length) - 97
+          keyIndex++
           return String.fromCharCode(((c.charCodeAt(0) - base - shift + 26) % 26) + base)
         })
         .join('')
