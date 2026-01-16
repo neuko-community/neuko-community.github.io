@@ -38,11 +38,20 @@ const tableHeaders = computed(() => {
 })
 
 const filteredData = computed(() => {
-  if (!searchQuery.value) return rawData
+  // Sort alphabetically by wallet x handle
+  const sortedData = [...rawData].sort((a, b) => {
+    const handleA = a['X handle'].toLowerCase()
+    const handleB = b['X handle'].toLowerCase()
+    if (handleA < handleB) return -1
+    if (handleA > handleB) return 1
+    return 0
+  })
+
+  if (!searchQuery.value) return sortedData
 
   const query = searchQuery.value.toLowerCase()
 
-  return rawData.filter((row) => {
+  return sortedData.filter((row) => {
     // Searches across all columns in the row
     return Object.values(row).some((value) => String(value).toLowerCase().includes(query))
   })
