@@ -6,15 +6,20 @@ import {
   keyMilestones,
   formatDate,
   getMonthYear,
-  type TimelineEvent
+  type TimelineEvent,
+  EventType
 } from '../../data/timelineEvents'
+import { articles, type Article } from '../../data/timelineArticles'
+import { LegacyEvent } from '../../data/timeline.types'
+import TimelineArticle from './components/TimelineArticle.vue'
+import TimelineLegacy from './components/TimelineLegacy.vue'
 
 type SortOrder = 'newest' | 'oldest'
 
 const sortOrder = ref<SortOrder>('newest')
 
 const sortedEvents = computed(() => {
-  const events = [...timelineEvents]
+  const events: TimelineEvent[] = [...timelineEvents, ...articles]
   if (sortOrder.value === 'newest') {
     return events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   }
@@ -39,6 +44,14 @@ const groupedEvents = computed(() => {
 function toggleSort() {
   sortOrder.value = sortOrder.value === 'newest' ? 'oldest' : 'newest'
 }
+
+function isArticleEvent(event: TimelineEvent): event is Article {
+  return event.type === EventType.ARTICLE
+}
+
+function isLegacyEvent(event: TimelineEvent): event is LegacyEvent {
+  return event.type !== EventType.ARTICLE
+}
 </script>
 
 <template>
@@ -57,7 +70,11 @@ function toggleSort() {
     <div v-if="upcomingEvents.length" class="upcoming-section">
       <h2 class="section-title">Upcoming Events</h2>
       <div class="events-list">
-        <div v-for="event in upcomingEvents" :key="event.id" class="event-card neuko-card upcoming">
+        <div
+          v-for="(event, idx) in upcomingEvents"
+          :key="idx"
+          class="event-card neuko-card upcoming"
+        >
           <div class="event-header">
             <span class="event-date">{{ formatDate(event.date) }}</span>
             <h3 class="event-title">{{ event.title }}</h3>
@@ -89,62 +106,10 @@ function toggleSort() {
           <h2 class="month-header">{{ monthYear }}</h2>
 
           <div class="events-list">
-            <div v-for="event in events" :key="event.id" class="event-card neuko-card">
-              <div class="event-header">
-                <span class="event-date">{{ formatDate(event.date) }}</span>
-                <h3 class="event-title">{{ event.title }}</h3>
-              </div>
-
-              <p class="event-description">{{ event.description }}</p>
-
-              <div v-if="event.postUrl" class="event-link">
-                <a :href="event.postUrl" target="_blank" rel="noopener">View on X →</a>
-              </div>
-
-              <div v-if="event.caption && event.caption !== '(blank)'" class="event-caption">
-                <span class="label">Caption:</span> "{{ event.caption }}"
-              </div>
-
-              <div v-if="event.videoDetails" class="event-video">
-                <span class="label">Video:</span> {{ event.videoDetails }}
-              </div>
-
-              <ul v-if="event.details && event.details.length" class="event-details">
-                <li v-for="(detail, idx) in event.details" :key="idx">{{ detail }}</li>
-              </ul>
-
-              <div v-if="event.distribution && event.distribution.length" class="event-section">
-                <span class="label">Distribution:</span>
-                <ul>
-                  <li v-for="(item, idx) in event.distribution" :key="idx">{{ item }}</li>
-                </ul>
-              </div>
-
-              <div v-if="event.loreReveals && event.loreReveals.length" class="event-section">
-                <span class="label">Lore Reveals:</span>
-                <ul>
-                  <li v-for="(item, idx) in event.loreReveals" :key="idx">{{ item }}</li>
-                </ul>
-              </div>
-
-              <div v-if="event.puzzleElements && event.puzzleElements.length" class="event-section">
-                <span class="label">Puzzle Elements:</span>
-                <ul>
-                  <li v-for="(item, idx) in event.puzzleElements" :key="idx">{{ item }}</li>
-                </ul>
-              </div>
-
-              <div v-if="event.metrics && event.metrics.length" class="event-section">
-                <span class="label">Metrics:</span>
-                <ul>
-                  <li v-for="(item, idx) in event.metrics" :key="idx">{{ item }}</li>
-                </ul>
-              </div>
-
-              <div v-if="event.significance" class="event-significance">
-                <span class="label">Significance:</span> {{ event.significance }}
-              </div>
-            </div>
+            <template v-for="(event, idx) in events" :key="idx">
+              <TimelineArticle v-if="isArticleEvent(event)" :article="event" />
+              <TimelineLegacy v-else-if="isLegacyEvent(event)" :event="event" />
+            </template>
           </div>
         </div>
       </template>
@@ -257,10 +222,6 @@ function toggleSort() {
   border-style: dashed;
 }
 
-.event-header {
-  margin-bottom: 1rem;
-}
-
 .event-date {
   display: inline-block;
   font-family: var(--vp-font-family-mono);
@@ -287,17 +248,8 @@ function toggleSort() {
   margin: 0 0 1rem 0;
 }
 
-.event-link a {
-  color: var(--vp-c-brand-1);
-  text-decoration: none;
-  font-family: var(--vp-font-family-mono);
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.event-link a:hover {
-  text-decoration: underline;
+.event-embed {
+  margin: 1rem 0 0 0;
 }
 
 .event-caption,
