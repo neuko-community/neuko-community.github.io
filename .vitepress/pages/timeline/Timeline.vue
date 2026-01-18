@@ -19,6 +19,7 @@ type SortOrder = 'newest' | 'oldest'
 const sortOrder = ref<SortOrder>('newest')
 const showOfficial = ref(true)
 const showCommunity = ref(true)
+const selectedUser = ref('all')
 
 const typeOptions = [
   { value: EventType.ARTICLE, label: 'Articles' },
@@ -32,6 +33,27 @@ const typeOptions = [
 ]
 
 const activeTypes = ref<EventType[]>(typeOptions.map((option) => option.value))
+
+const userOptions = computed(() => {
+  const userMap = new Map<string, string>()
+  for (const event of [...posts, ...articles]) {
+    const screenName = event.tweet?.user?.screen_name
+    if (!screenName) {
+      continue
+    }
+    const displayName = event.tweet?.user?.name || screenName
+    userMap.set(screenName, displayName)
+  }
+  return [
+    { value: 'all', label: 'ALL USERS' },
+    ...Array.from(userMap.entries())
+      .sort((a, b) => a[1].localeCompare(b[1]))
+      .map(([screenName, name]) => ({
+        value: screenName,
+        label: `${name} (@${screenName})`
+      }))
+  ]
+})
 
 const sortedEvents = computed(() => {
   const events: TimelineEvent[] = [...posts, ...articles]
@@ -47,7 +69,10 @@ const filteredEvents = computed(() => {
       (event.source === SourceType.OFFICIAL && showOfficial.value) ||
       (event.source === SourceType.COMMUNITY && showCommunity.value)
     const typeAllowed = activeTypes.value.includes(event.type)
-    return sourceAllowed && typeAllowed
+    const userAllowed =
+      selectedUser.value === 'all' ||
+      (event.tweet?.user?.screen_name && event.tweet.user.screen_name === selectedUser.value)
+    return sourceAllowed && typeAllowed && userAllowed
   })
 })
 
@@ -74,12 +99,14 @@ function selectAllFilters() {
   showOfficial.value = true
   showCommunity.value = true
   activeTypes.value = typeOptions.map((option) => option.value)
+  selectedUser.value = 'all'
 }
 
 function clearAllFilters() {
   showOfficial.value = false
   showCommunity.value = false
   activeTypes.value = []
+  selectedUser.value = 'all'
 }
 
 function isArticleEvent(event: TimelineEvent): event is Article {
@@ -139,10 +166,19 @@ function isPostEvent(event: TimelineEvent): event is Post {
     <!-- Timeline Events -->
     <div class="timeline">
       <div class="timeline-controls">
-        <button class="sort-btn" @click="toggleSort">
-          <span class="sort-icon">{{ sortOrder === 'newest' ? '↓' : '↑' }}</span>
-          {{ sortOrder === 'newest' ? 'Newest First' : 'Oldest First' }}
-        </button>
+        <div class="controls-row">
+          <button class="sort-btn sort-btn--compact" @click="toggleSort">
+            <span class="sort-icon">{{ sortOrder === 'newest' ? '↓' : '↑' }}</span>
+            {{ sortOrder === 'newest' ? 'Newest' : 'Oldest' }}
+          </button>
+          <div class="user-filter">
+            <select v-model="selectedUser" class="filter-select filter-select--fill">
+              <option v-for="user in userOptions" :key="user.value" :value="user.value">
+                {{ user.label }}
+              </option>
+            </select>
+          </div>
+        </div>
         <div class="filters">
           <div class="filter-actions">
             <button class="filter-action-btn" type="button" @click="selectAllFilters">
@@ -243,7 +279,13 @@ function isPostEvent(event: TimelineEvent): event is Post {
   cursor: pointer;
   transition: all 0.2s;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+}
+
+.sort-btn--compact {
+  width: 150px;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
 }
 
 .timeline-controls {
@@ -251,6 +293,19 @@ function isPostEvent(event: TimelineEvent): event is Post {
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.controls-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.user-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
 }
 
 .filters {
@@ -309,6 +364,30 @@ function isPostEvent(event: TimelineEvent): event is Post {
 
 .filter-option input {
   accent-color: var(--vp-c-brand-1);
+}
+
+.filter-select {
+  background: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-border);
+  color: var(--vp-c-text-1);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--vp-font-family-mono);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-select--fill {
+  width: 100%;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--vp-c-brand-1) 25%, transparent);
 }
 
 .filter-action-btn:hover {
@@ -492,6 +571,20 @@ function isPostEvent(event: TimelineEvent): event is Post {
   .sort-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .sort-btn--compact {
+    width: 100%;
+  }
+
+  .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .user-filter {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .event-card {

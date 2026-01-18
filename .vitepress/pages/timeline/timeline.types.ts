@@ -4,6 +4,8 @@ export interface TimelineEvent {
   date: string
   source: SourceType
   type: EventType
+  user?: string
+  tweet?: TweetData
 }
 
 export interface LegacyEvent extends TimelineEvent {
@@ -39,11 +41,11 @@ export enum EventType {
 export interface Article extends TimelineEvent {
   title: string
   url: string
-  author?: string
+  id: string
+  user?: string
   subtitle?: string
   description?: string
   image?: string
-  id?: string
   tweet?: TweetData
 }
 
@@ -51,4 +53,5 @@ export interface Post extends TimelineEvent {
   url: string
   id: string
   tweet?: TweetData
+  user?: string
 }

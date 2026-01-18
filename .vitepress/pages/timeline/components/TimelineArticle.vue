@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { formatDate } from '../../../data/timelineEvents'
 import EventCard from './EventCard.vue'
 import { Article } from '../timeline.types'
+import TweetHeader from './TweetHeader.vue'
 
 const props = defineProps<{
   article: Article
@@ -24,6 +25,13 @@ const onClick = () => {
       :alt="articleTitle"
     />
     <div class="timeline-article">
+      <TweetHeader
+        :isVerified="props.article?.tweet?.user.is_blue_verified"
+        :displayName="props.article?.tweet?.user.name"
+        :username="props.article?.tweet?.user.screen_name"
+        :pfp="props.article?.tweet?.user.profile_image_url_https"
+        :showXLogo="false"
+      />
       <div class="article-content">
         <p class="event-title">{{ articleTitle }}</p>
 
@@ -31,17 +39,17 @@ const onClick = () => {
           {{ props.article.subtitle }}
         </p>
       </div>
-      <p v-if="props.article?.author" class="event-author">
+      <!-- <p v-if="props.article?.user" class="event-author">
         By
         <a
-          :href="`https://x.com/${props.article.author}`"
+          :href="`https://x.com/${props.article.user}`"
           target="_blank"
           rel="noopener noreferrer"
           @click.stop
         >
-          @{{ props.article.author }}
+          @{{ props.article.user }}
         </a>
-      </p>
+      </p> -->
     </div>
     <div class="event-meta">
       <p class="event-type">ARTICLE</p>

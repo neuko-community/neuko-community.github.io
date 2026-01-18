@@ -1,5 +1,9 @@
 import { EventType, Post, SourceType } from '../timeline.types'
-import { fetchTweetData, mapWithConcurrency, type TweetDataMinimal } from '../../../utils/tweetFetch'
+import {
+  fetchTweetData,
+  mapWithConcurrency,
+  type TweetDataMinimal
+} from '../../../utils/tweetFetch'
 
 type PostType = EventType.POST | EventType.THREAD | EventType.INTERVIEW
 type PostDetails = Omit<Post, 'type' | 'tweet' | 'date'> & { type?: PostType }
@@ -11,11 +15,6 @@ const officialPosts: OfficialPostDetails[] = [
     source: SourceType.OFFICIAL,
     url: 'https://x.com/neukoai/status/2012218480636928007',
     id: '2012218480636928007'
-  },
-  {
-    source: SourceType.OFFICIAL,
-    url: 'https://x.com/neukoai/status/1976994494383112304',
-    id: '1976994494383112304'
   },
   {
     source: SourceType.OFFICIAL,
@@ -65,67 +64,36 @@ const officialPosts: OfficialPostDetails[] = [
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    url: 'https://x.com/neukoai/status/1984362507784351883',
-    id: '1984362507784351883'
-  },
-  {
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    url: 'https://x.com/neukoai/status/1986152753412919577',
-    id: '1986152753412919577'
-  },
-  {
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    url: 'https://x.com/neukoai/status/1988703965694111829',
-    id: '1988703965694111829'
-  },
-  {
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/1989425770524225554',
     id: '1989425770524225554'
   },
-  // {
-  //   source: SourceType.OFFICIAL,
-  //   type: EventType.POST,
-  //   url: 'https://x.com/neukoai/status/1991264007055974856',
-  //   id: '1991264007055974856'
-  // },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/1993801736142909814',
     id: '1993801736142909814'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/1995902340365185090',
     id: '1995902340365185090'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/1996332652492943710',
     id: '1996332652492943710'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/1998483693195899014',
     id: '1998483693195899014'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/1998848567587582362',
     id: '1998848567587582362'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/1999215138872918507',
     id: '1999215138872918507'
   },
@@ -137,63 +105,48 @@ const officialPosts: OfficialPostDetails[] = [
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/opensea/status/1999827413421986236',
     id: '1999827413421986236'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/2001399818304840178',
     id: '2001399818304840178'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/2008635872254595310',
     id: '2008635872254595310'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/2008939518330827166',
     id: '2008939518330827166'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/2009756721275637907',
     id: '2009756721275637907'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/2010835979754525040',
     id: '2010835979754525040'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/neukoai/status/2011106635662717284',
     id: '2011106635662717284'
   },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
     url: 'https://x.com/wallstreetbets/status/2011861685943075158',
     id: '2011861685943075158'
   },
-  // {
-  //   source: SourceType.OFFICIAL,
-  //   type: EventType.POST,
-  //   url: 'https://x.com/neukoai/status/2011916650667116625',
-  //   id: '2011916650667116625'
-  // },
   {
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    url: 'https://x.com/neukoai/status/1999215138872918507',
-    id: '1999215138872918507'
+    url: 'https://x.com/neukoai/status/1991264007055974856',
+    id: '1991264007055974856'
   }
 ]
 const communityPosts: CommunityPostDetails[] = []
@@ -226,7 +179,8 @@ export default {
         postLookup.set(post.id, {
           ...existing,
           date: new Date(tweet.created_at).toISOString().slice(0, 10),
-          tweet
+          tweet,
+          user: tweet.user.screen_name
         })
       } catch (e) {
         console.error(`Error loading post ${post.id}:`, (e as Error).message)
