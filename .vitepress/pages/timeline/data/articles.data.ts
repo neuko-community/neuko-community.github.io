@@ -1,4 +1,9 @@
 import { Article, EventType, SourceType } from '../timeline.types'
+import {
+  fetchTweetData,
+  mapWithConcurrency,
+  type TweetDataMinimal
+} from '../../../utils/tweetFetch'
 
 type ArticleDetails = Omit<Article, 'type' | 'date'> & { date?: string }
 type OfficialArticleDetails = Omit<ArticleDetails, 'source'> & { source: SourceType.OFFICIAL }
@@ -259,32 +264,27 @@ export default {
   async load(): Promise<Article[]> {
     const articleLookup = new Map()
 
-    await Promise.all(
-      articleData.map(async (article) => {
-        if (!article.id) {
-          return
-        }
+    await mapWithConcurrency(articleData, 6, async (article) => {
+      if (!article.id) {
+        return
+      }
 
-        try {
-          const res = await fetch(`https://react-tweet.vercel.app/api/tweet/${article.id}`)
-          if (!res.ok) throw new Error(`Status ${res.status}`)
-          const json = await res.json()
+      const tweet = await fetchTweetData<TweetDataMinimal>(article.id, 'article')
+      if (!tweet) {
+        return
+      }
 
-          if (!json.data) {
-            console.warn(`No data found for article ${article.id}`)
-            return
-          }
-          articleLookup.set(article.id, {
-            type: EventType.ARTICLE,
-            ...article,
-            date: new Date(json.data.created_at).toISOString().slice(0, 10),
-            tweet: json.data
-          })
-        } catch (e) {
-          console.error(`Error loading article ${article.id}:`, (e as Error).message)
-        }
-      })
-    )
+      try {
+        articleLookup.set(article.id, {
+          type: EventType.ARTICLE,
+          ...article,
+          date: new Date(tweet.created_at).toISOString().slice(0, 10),
+          tweet
+        })
+      } catch (e) {
+        console.error(`Error loading article ${article.id}:`, (e as Error).message)
+      }
+    })
     return articleData
       .map((article) => articleLookup.get(article.id ?? article.url)!)
       .filter(Boolean)

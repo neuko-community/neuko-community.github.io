@@ -70,6 +70,18 @@ function toggleSort() {
   sortOrder.value = sortOrder.value === 'newest' ? 'oldest' : 'newest'
 }
 
+function selectAllFilters() {
+  showOfficial.value = true
+  showCommunity.value = true
+  activeTypes.value = typeOptions.map((option) => option.value)
+}
+
+function clearAllFilters() {
+  showOfficial.value = false
+  showCommunity.value = false
+  activeTypes.value = []
+}
+
 function isArticleEvent(event: TimelineEvent): event is Article {
   return event.type === EventType.ARTICLE
 }
@@ -132,6 +144,14 @@ function isPostEvent(event: TimelineEvent): event is Post {
           {{ sortOrder === 'newest' ? 'Newest First' : 'Oldest First' }}
         </button>
         <div class="filters">
+          <div class="filter-actions">
+            <button class="filter-action-btn" type="button" @click="selectAllFilters">
+              Select All
+            </button>
+            <button class="filter-action-btn" type="button" @click="clearAllFilters">
+              Clear All
+            </button>
+          </div>
           <div class="filter-group">
             <span class="filter-title">Source</span>
             <label class="filter-option">
@@ -243,6 +263,26 @@ function isPostEvent(event: TimelineEvent): event is Post {
   background: var(--vp-c-bg-alt);
 }
 
+.filter-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.filter-action-btn {
+  border: 1px solid var(--vp-c-border);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
 .filter-group {
   display: flex;
   flex-wrap: wrap;
@@ -269,6 +309,11 @@ function isPostEvent(event: TimelineEvent): event is Post {
 
 .filter-option input {
   accent-color: var(--vp-c-brand-1);
+}
+
+.filter-action-btn:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 
 .sort-btn:hover {

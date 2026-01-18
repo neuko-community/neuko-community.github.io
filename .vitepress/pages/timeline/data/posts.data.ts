@@ -1,4 +1,5 @@
 import { EventType, Post, SourceType } from '../timeline.types'
+import { fetchTweetData, mapWithConcurrency, type TweetDataMinimal } from '../../../utils/tweetFetch'
 
 type PostType = EventType.POST | EventType.THREAD | EventType.INTERVIEW
 type PostDetails = Omit<Post, 'type' | 'tweet' | 'date'> & { type?: PostType }
@@ -208,34 +209,29 @@ export default {
   async load(): Promise<Post[]> {
     const postLookup = new Map()
 
-    await Promise.all(
-      postData.map(async (post) => {
-        try {
-          const res = await fetch(`https://react-tweet.vercel.app/api/tweet/${post.id}`)
-          if (!res.ok) throw new Error(`Status ${res.status}`)
-          const json = await res.json()
-          if (!json.data) {
-            console.warn(`No data found for post ${post.id}`)
-            return
-          }
+    await mapWithConcurrency(postData, 6, async (post) => {
+      const tweet = await fetchTweetData<TweetDataMinimal>(post.id, 'post')
+      if (!tweet) {
+        return
+      }
 
-          const existing = postLookup.get(post.id) ?? {
-            type: post.type || EventType.POST,
-            id: post.id,
-            url: post.url,
-            source: post.source
-          }
-
-          postLookup.set(post.id, {
-            ...existing,
-            date: new Date(json.data.created_at).toISOString().slice(0, 10),
-            tweet: json.data
-          })
-        } catch (e) {
-          console.error(`Error loading post ${post.id}:`, (e as Error).message)
+      try {
+        const existing = postLookup.get(post.id) ?? {
+          type: post.type || EventType.POST,
+          id: post.id,
+          url: post.url,
+          source: post.source
         }
-      })
-    )
+
+        postLookup.set(post.id, {
+          ...existing,
+          date: new Date(tweet.created_at).toISOString().slice(0, 10),
+          tweet
+        })
+      } catch (e) {
+        console.error(`Error loading post ${post.id}:`, (e as Error).message)
+      }
+    })
     return postData.map((post) => postLookup.get(post.id)!).filter(Boolean)
   }
 }
