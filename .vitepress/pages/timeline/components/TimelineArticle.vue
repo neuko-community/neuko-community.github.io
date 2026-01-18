@@ -8,6 +8,7 @@ const props = defineProps<{
   article: Article
 }>()
 console.log(props.article)
+if (props.article.id === '2012852172212654310') console.log(props.article.tweet)
 const articleTitle = computed(() => props.article?.title || 'Article')
 const onClick = () => {
   window.open(props.article?.url, '_blank')
