@@ -95,18 +95,12 @@ function toggleSort() {
   sortOrder.value = sortOrder.value === 'newest' ? 'oldest' : 'newest'
 }
 
-function selectAllFilters() {
-  showOfficial.value = true
-  showCommunity.value = true
+function selectAllTypes() {
   activeTypes.value = typeOptions.map((option) => option.value)
-  selectedUser.value = 'all'
 }
 
-function clearAllFilters() {
-  showOfficial.value = false
-  showCommunity.value = false
+function clearAllTypes() {
   activeTypes.value = []
-  selectedUser.value = 'all'
 }
 
 function isArticleEvent(event: TimelineEvent): event is Article {
@@ -180,31 +174,37 @@ function isPostEvent(event: TimelineEvent): event is Post {
           </div>
         </div>
         <div class="filters">
-          <div class="filter-actions">
-            <button class="filter-action-btn" type="button" @click="selectAllFilters">
-              Select All
-            </button>
-            <button class="filter-action-btn" type="button" @click="clearAllFilters">
-              Clear All
-            </button>
-          </div>
-          <div class="filter-group">
+          <div class="filter-section">
             <span class="filter-title">Source</span>
-            <label class="filter-option">
-              <input v-model="showOfficial" type="checkbox" />
-              Official
-            </label>
-            <label class="filter-option">
-              <input v-model="showCommunity" type="checkbox" />
-              Community
-            </label>
+            <div class="filter-group">
+              <label class="filter-option">
+                <input v-model="showOfficial" type="checkbox" />
+                Official
+              </label>
+              <label class="filter-option">
+                <input v-model="showCommunity" type="checkbox" />
+                Community
+              </label>
+            </div>
           </div>
-          <div class="filter-group">
-            <span class="filter-title">Type</span>
-            <label v-for="option in typeOptions" :key="option.value" class="filter-option">
-              <input v-model="activeTypes" type="checkbox" :value="option.value" />
-              {{ option.label }}
-            </label>
+          <div class="filter-section">
+            <div class="filter-section-header">
+              <span class="filter-title">Type</span>
+              <div class="filter-actions">
+                <button class="filter-action-btn" type="button" @click="selectAllTypes">
+                  Select All
+                </button>
+                <button class="filter-action-btn" type="button" @click="clearAllTypes">
+                  Clear All
+                </button>
+              </div>
+            </div>
+            <div class="type-chips">
+              <label v-for="option in typeOptions" :key="option.value" class="type-chip">
+                <input v-model="activeTypes" type="checkbox" :value="option.value" />
+                <span>{{ option.label }}</span>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -306,6 +306,7 @@ function isPostEvent(event: TimelineEvent): event is Post {
   align-items: center;
   gap: 0.5rem;
   flex: 1;
+  cursor: pointer;
 }
 
 .filters {
@@ -316,6 +317,19 @@ function isPostEvent(event: TimelineEvent): event is Post {
   border: 1px solid var(--vp-c-border);
   border-radius: 10px;
   background: var(--vp-c-bg-alt);
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .filter-actions {
@@ -366,6 +380,41 @@ function isPostEvent(event: TimelineEvent): event is Post {
   accent-color: var(--vp-c-brand-1);
 }
 
+.type-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.type-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  background: var(--vp-c-bg);
+  transition: all 0.2s;
+}
+
+.type-chip input {
+  display: none;
+}
+
+.type-chip:has(input:checked) {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  background: color-mix(in srgb, var(--vp-c-brand-1) 12%, var(--vp-c-bg));
+}
+
+.type-chip:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
 .filter-select {
   background: var(--vp-c-bg-alt);
   border: 1px solid var(--vp-c-border);
@@ -378,6 +427,7 @@ function isPostEvent(event: TimelineEvent): event is Post {
   height: 40px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .filter-select--fill {
@@ -388,6 +438,11 @@ function isPostEvent(event: TimelineEvent): event is Post {
   outline: none;
   border-color: var(--vp-c-brand-1);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--vp-c-brand-1) 25%, transparent);
+}
+
+.filter-select:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 
 .filter-action-btn:hover {
@@ -585,6 +640,11 @@ function isPostEvent(event: TimelineEvent): event is Post {
   .user-filter {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .filter-section-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .event-card {
