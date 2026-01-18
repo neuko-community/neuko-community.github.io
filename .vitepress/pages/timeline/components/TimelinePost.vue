@@ -10,7 +10,6 @@ const props = defineProps<{
 }>()
 
 const mappedProps = computed(() => {
-  console.log(props.post)
   const t = props.post.tweet
   if (!t) return null
 
@@ -45,9 +44,10 @@ const mappedProps = computed(() => {
   }
 
   return {
-    authorName: user.name,
-    authorHandle: `@${user.screen_name}`,
-    authorAvatar: user.profile_image_url_https,
+    isVerified: user.is_blue_verified,
+    displayName: user.name,
+    username: `@${user.screen_name}`,
+    pfp: user.profile_image_url_https,
     date: dateStr,
     content,
     mediaType,
@@ -59,7 +59,18 @@ const mappedProps = computed(() => {
 
 <template>
   <EventCard class="timeline-post-card" style="padding: 0">
-    <TweetCard v-if="mappedProps" v-bind="mappedProps" />
+    <TweetCard
+      v-if="mappedProps"
+      :isVerified="mappedProps.isVerified"
+      :displayName="mappedProps.displayName"
+      :username="mappedProps.username"
+      :pfp="mappedProps.pfp"
+      :content="mappedProps.content"
+      :mediaType="mappedProps.mediaType"
+      :mediaUrl="mappedProps.mediaUrl"
+      :tweetUrl="mappedProps.tweetUrl"
+      :showXLogo="true"
+    />
     <div class="event-meta">
       <p class="event-type">{{ props.post.type }}</p>
       <span class="event-date">{{ formatDate(props.post.date) }}</span>
