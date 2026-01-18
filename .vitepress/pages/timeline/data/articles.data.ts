@@ -76,18 +76,6 @@ const communityArticles: ArticleDetails[] = [
     url: 'https://x.com/airdoror0/status/2010370941772255575?s=20'
   },
   {
-    date: '2026-01-12',
-    source: SourceType.OFFICIAL,
-    title: 'Austin Hurwitz',
-    url: 'https://x.com/austin_hurwitz/status/2010766430086610948?s=20'
-  },
-  {
-    date: '2026-01-13',
-    source: SourceType.OFFICIAL,
-    title: 'Austin Hurwitz',
-    url: 'https://x.com/austin_hurwitz/status/2011048235322773546?s=20'
-  },
-  {
     date: '2026-01-13',
     source: SourceType.COMMUNITY,
     title: 'Airdoror0',

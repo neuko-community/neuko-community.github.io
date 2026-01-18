@@ -32,7 +32,7 @@ export enum EventType {
   THREAD = 'thread',
   INTERVIEW = 'interview',
   SPACES = 'spaces',
-  DEADLINE = 'deadline',
+  MILESTONE = 'milestone',
   OTHER = 'other'
 }
 

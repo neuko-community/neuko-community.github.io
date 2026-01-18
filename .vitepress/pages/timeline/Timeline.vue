@@ -5,19 +5,33 @@ import {
   upcomingEvents,
   keyMilestones,
   formatDate,
-  getMonthYear,
-  type TimelineEvent
+  getMonthYear
 } from '../../data/timelineEvents'
 // import { articles } from './data/articles.data'
 import { data as posts } from './data/posts.data'
 import { data as articles } from './data/articles.data'
-import { Article, EventType, type Post } from './timeline.types'
+import { Article, EventType, SourceType, type Post, type TimelineEvent } from './timeline.types'
 import TimelineArticle from './components/TimelineArticle.vue'
 import TimelinePost from './components/TimelinePost.vue'
 
 type SortOrder = 'newest' | 'oldest'
 
 const sortOrder = ref<SortOrder>('newest')
+const showOfficial = ref(true)
+const showCommunity = ref(true)
+
+const typeOptions = [
+  { value: EventType.ARTICLE, label: 'Articles' },
+  { value: EventType.POST, label: 'Posts' },
+  { value: EventType.THREAD, label: 'Threads' },
+  { value: EventType.INTERVIEW, label: 'Interviews' },
+  { value: EventType.VIDEO, label: 'Videos' },
+  { value: EventType.SPACES, label: 'Spaces' },
+  { value: EventType.MILESTONE, label: 'Milestones' },
+  { value: EventType.OTHER, label: 'Other' }
+]
+
+const activeTypes = ref<EventType[]>(typeOptions.map((option) => option.value))
 
 const sortedEvents = computed(() => {
   const events: TimelineEvent[] = [...posts, ...articles]
@@ -27,11 +41,21 @@ const sortedEvents = computed(() => {
   return events.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 })
 
+const filteredEvents = computed(() => {
+  return sortedEvents.value.filter((event) => {
+    const sourceAllowed =
+      (event.source === SourceType.OFFICIAL && showOfficial.value) ||
+      (event.source === SourceType.COMMUNITY && showCommunity.value)
+    const typeAllowed = activeTypes.value.includes(event.type)
+    return sourceAllowed && typeAllowed
+  })
+})
+
 // Group events by month/year
 const groupedEvents = computed(() => {
   const groups: Map<string, TimelineEvent[]> = new Map()
 
-  for (const event of sortedEvents.value) {
+  for (const event of filteredEvents.value) {
     const monthYear = getMonthYear(event.date)
     if (!groups.has(monthYear)) {
       groups.set(monthYear, [])
@@ -102,10 +126,32 @@ function isPostEvent(event: TimelineEvent): event is Post {
 
     <!-- Timeline Events -->
     <div class="timeline">
-      <button class="sort-btn" @click="toggleSort">
-        <span class="sort-icon">{{ sortOrder === 'newest' ? '↓' : '↑' }}</span>
-        {{ sortOrder === 'newest' ? 'Newest First' : 'Oldest First' }}
-      </button>
+      <div class="timeline-controls">
+        <button class="sort-btn" @click="toggleSort">
+          <span class="sort-icon">{{ sortOrder === 'newest' ? '↓' : '↑' }}</span>
+          {{ sortOrder === 'newest' ? 'Newest First' : 'Oldest First' }}
+        </button>
+        <div class="filters">
+          <div class="filter-group">
+            <span class="filter-title">Source</span>
+            <label class="filter-option">
+              <input v-model="showOfficial" type="checkbox" />
+              Official
+            </label>
+            <label class="filter-option">
+              <input v-model="showCommunity" type="checkbox" />
+              Community
+            </label>
+          </div>
+          <div class="filter-group">
+            <span class="filter-title">Type</span>
+            <label v-for="option in typeOptions" :key="option.value" class="filter-option">
+              <input v-model="activeTypes" type="checkbox" :value="option.value" />
+              {{ option.label }}
+            </label>
+          </div>
+        </div>
+      </div>
       <template v-for="[monthYear, events] in groupedEvents" :key="monthYear">
         <div class="month-section">
           <h2 class="month-header">{{ monthYear }}</h2>
@@ -178,6 +224,51 @@ function isPostEvent(event: TimelineEvent): event is Post {
   transition: all 0.2s;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+.timeline-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 10px;
+  background: var(--vp-c-bg-alt);
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+}
+
+.filter-title {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--vp-c-text-3);
+}
+
+.filter-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+}
+
+.filter-option input {
+  accent-color: var(--vp-c-brand-1);
 }
 
 .sort-btn:hover {
