@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { formatDate } from '../../../data/timelineEvents'
-import type { Article } from '../../../data/timelineArticles'
 import EventCard from './EventCard.vue'
+import { Article } from '../timeline.types'
 
 const props = defineProps<{
   article: Article
 }>()
-
+console.log(props.article)
 const articleTitle = computed(() => props.article?.title || 'Article')
 const onClick = () => {
-  window.open(props.article?.postUrl, '_blank')
+  window.open(props.article?.url, '_blank')
 }
 </script>
 
@@ -23,11 +23,13 @@ const onClick = () => {
       :alt="articleTitle"
     />
     <div class="timeline-article">
-      <p class="event-title">{{ articleTitle }}</p>
+      <div class="article-content">
+        <p class="event-title">{{ articleTitle }}</p>
 
-      <p v-if="props.article?.subtitle" class="event-subtitle">
-        {{ props.article.subtitle }}
-      </p>
+        <p v-if="props.article?.subtitle" class="event-subtitle">
+          {{ props.article.subtitle }}
+        </p>
+      </div>
       <p v-if="props.article?.author" class="event-author">
         By
         <a
@@ -53,6 +55,12 @@ const onClick = () => {
   flex-direction: column;
   gap: 0.75rem;
   padding: 1.5rem;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .event-title {

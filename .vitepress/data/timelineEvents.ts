@@ -41,117 +41,117 @@ export interface TimelineSection {
 
 export const timelineEvents: TimelineEvent[] = [
   // October 2025
-  {
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    date: '2025-10-11',
-    title: 'First Teaser Post',
-    description: 'Poetic reply posted: "i stood up i fell over i wept on the floor"',
-    postUrl: 'https://x.com/neukoai/status/1976994494383112304',
-    significance: 'First public signal from Neuko account, establishes cryptic tone'
-  },
-  {
-    date: '2025-10-13',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: 'Official Launch - "We\'re Watching"',
-    description: 'First major post with launch video',
-    postUrl: 'https://x.com/neukoai/status/1977763395408429229',
-    caption: "we're watching",
-    videoDetails:
-      '~10 seconds, features hooded figure (G*Boy) in dark lab with monitors, breaking vending machine, walking dimly lit hallway',
-    details: ['123K+ views organically, broke X algorithm without paid promotion'],
-    significance: 'Official launch, establishes surveillance motif and G*Boy character'
-  },
-  {
-    date: '2025-10-17',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: '"Early Matters" Badge Tease',
-    description: 'Video teasing badge system',
-    postUrl: 'https://x.com/neukoai/status/1979268208340406384',
-    caption: 'early matters',
-    videoDetails:
-      '~21 seconds, panoramic white lab with old computers, badge close-ups (Rabbit and Moth), ends with hooded figure in rainy alley',
-    details: [
-      'Rabbit badges shown with clean cases, Moth badges slightly worn - hinting at distribution phases',
-      'All three founders (@austin_hurwitz, @SQU1NCH, @greenie_sr) posted cryptic "🐰" comment'
-    ],
-    significance: 'Introduces Rabbit 🐰, Moth 🐝, and Snake 🐍 badge system'
-  },
-  {
-    date: '2025-10-20',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: 'Cognitive Assessment Video',
-    description: 'Badge distribution requirements announced',
-    postUrl: 'https://x.com/neukoai/status/1980355518771392550',
-    caption: '(blank)',
-    videoDetails:
-      '~48 seconds, black screen with breathing countdowns, flashes anime-style images (hospital, animals, fire)',
-    details: [
-      '662 total badges (200 Rabbit 🐰, 462 Moth 🐝)',
-      '24-hour deadline to DM Solana wallet address'
-    ],
-    significance: 'First badge distribution phase begins, establishes "cognitive assessment" lore'
-  },
-  {
-    date: '2025-10-22',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: 'Distribution Complete',
-    description: 'Rabbit and Moth badge airdrops completed',
-    postUrl: 'https://x.com/neukoai/status/1981125805104312473',
-    caption: '(blank)',
-    videoDetails:
-      '~26 seconds, hands opening boxes with badges, screens show "Distribution Complete"',
-    distribution: [
-      'Phase 1: 200 Rabbit 🐰 badges airdropped first to 200 people',
-      'Phase 2: 462 Moth 🐝 badges airdropped after Rabbits to next wave'
-    ],
-    details: ['Spectrograms hidden in audio reveal time machine and testing chamber imagery'],
-    significance: 'First two badge phases complete, Snake 🐍 teased'
-  },
-  {
-    date: '2025-10-24',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: 'Snake Badge Distribution Begins',
-    description:
-      'Snake badges given to Rabbit/Moth holders to distribute to people they thought would benefit the community',
-    postUrl: 'https://x.com/neukoai/status/1981740247504269582',
-    caption: '🐰 = 2 🐍 🐝 = 1 🐍 monday',
-    videoDetails:
-      '~45 seconds, TV channels flipping through chaotic scenes (highway, news, snake handler, facility attack)',
-    distribution: [
-      'Rabbit 🐰 holders receive 2 Snake 🐍 badges each',
-      'Moth 🐝 holders receive 1 Snake 🐍 badge each',
-      'Holders decide: Hold, Sell, or Give'
-    ],
-    significance: 'Decentralized community-led distribution begins, major social experiment',
-    puzzleElements: ['Channel numbers', 'background chatter', 'hidden numerical codes']
-  },
-  {
-    date: '2025-10-27',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: 'Puzzle Escalation - Channel Flipping',
-    description: 'Complex puzzle video with multiple clues',
-    postUrl: 'https://x.com/neukoai/status/1982894878280569063',
-    caption: 'dropping to distributors stage 1: complete stage 2: initiating',
-    videoDetails:
-      '~62 seconds, more TV channel flipping (jungle snake, taxi fight, news, record player, bedroom jacket)',
-    details: [
-      'Community shoutouts hidden in video (@TheKeeperOfX with radios, @CharliegNFTeth with frog gummies, @satoshi_owl with owl hoots)',
-      'Hidden contrast codes at shoutout scenes lead to website PIN parts',
-      'Codes deciphered: HOOTS-49, HOPS-13, STAYS-28'
-    ],
-    significance: 'Leads to neuko.ai website unlock, most complex puzzle to date'
-  },
+  // {
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   date: '2025-10-11',
+  //   title: 'First Teaser Post',
+  //   description: 'Poetic reply posted: "i stood up i fell over i wept on the floor"',
+  //   postUrl: 'https://x.com/neukoai/status/1976994494383112304',
+  //   significance: 'First public signal from Neuko account, establishes cryptic tone'
+  // },
+  // {
+  //   date: '2025-10-13',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: 'Official Launch - "We\'re Watching"',
+  //   description: 'First major post with launch video',
+  //   postUrl: 'https://x.com/neukoai/status/1977763395408429229',
+  //   caption: "we're watching",
+  //   videoDetails:
+  //     '~10 seconds, features hooded figure (G*Boy) in dark lab with monitors, breaking vending machine, walking dimly lit hallway',
+  //   details: ['123K+ views organically, broke X algorithm without paid promotion'],
+  //   significance: 'Official launch, establishes surveillance motif and G*Boy character'
+  // },
+  // {
+  //   date: '2025-10-17',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: '"Early Matters" Badge Tease',
+  //   description: 'Video teasing badge system',
+  //   postUrl: 'https://x.com/neukoai/status/1979268208340406384',
+  //   caption: 'early matters',
+  //   videoDetails:
+  //     '~21 seconds, panoramic white lab with old computers, badge close-ups (Rabbit and Moth), ends with hooded figure in rainy alley',
+  //   details: [
+  //     'Rabbit badges shown with clean cases, Moth badges slightly worn - hinting at distribution phases',
+  //     'All three founders (@austin_hurwitz, @SQU1NCH, @greenie_sr) posted cryptic "🐰" comment'
+  //   ],
+  //   significance: 'Introduces Rabbit 🐰, Moth 🐝, and Snake 🐍 badge system'
+  // },
+  // {
+  //   date: '2025-10-20',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: 'Cognitive Assessment Video',
+  //   description: 'Badge distribution requirements announced',
+  //   postUrl: 'https://x.com/neukoai/status/1980355518771392550',
+  //   caption: '(blank)',
+  //   videoDetails:
+  //     '~48 seconds, black screen with breathing countdowns, flashes anime-style images (hospital, animals, fire)',
+  //   details: [
+  //     '662 total badges (200 Rabbit 🐰, 462 Moth 🐝)',
+  //     '24-hour deadline to DM Solana wallet address'
+  //   ],
+  //   significance: 'First badge distribution phase begins, establishes "cognitive assessment" lore'
+  // },
+  // {
+  //   date: '2025-10-22',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: 'Distribution Complete',
+  //   description: 'Rabbit and Moth badge airdrops completed',
+  //   postUrl: 'https://x.com/neukoai/status/1981125805104312473',
+  //   caption: '(blank)',
+  //   videoDetails:
+  //     '~26 seconds, hands opening boxes with badges, screens show "Distribution Complete"',
+  //   distribution: [
+  //     'Phase 1: 200 Rabbit 🐰 badges airdropped first to 200 people',
+  //     'Phase 2: 462 Moth 🐝 badges airdropped after Rabbits to next wave'
+  //   ],
+  //   details: ['Spectrograms hidden in audio reveal time machine and testing chamber imagery'],
+  //   significance: 'First two badge phases complete, Snake 🐍 teased'
+  // },
+  // {
+  //   date: '2025-10-24',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: 'Snake Badge Distribution Begins',
+  //   description:
+  //     'Snake badges given to Rabbit/Moth holders to distribute to people they thought would benefit the community',
+  //   postUrl: 'https://x.com/neukoai/status/1981740247504269582',
+  //   caption: '🐰 = 2 🐍 🐝 = 1 🐍 monday',
+  //   videoDetails:
+  //     '~45 seconds, TV channels flipping through chaotic scenes (highway, news, snake handler, facility attack)',
+  //   distribution: [
+  //     'Rabbit 🐰 holders receive 2 Snake 🐍 badges each',
+  //     'Moth 🐝 holders receive 1 Snake 🐍 badge each',
+  //     'Holders decide: Hold, Sell, or Give'
+  //   ],
+  //   significance: 'Decentralized community-led distribution begins, major social experiment',
+  //   puzzleElements: ['Channel numbers', 'background chatter', 'hidden numerical codes']
+  // },
+  // {
+  //   date: '2025-10-27',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: 'Puzzle Escalation - Channel Flipping',
+  //   description: 'Complex puzzle video with multiple clues',
+  //   postUrl: 'https://x.com/neukoai/status/1982894878280569063',
+  //   caption: 'dropping to distributors stage 1: complete stage 2: initiating',
+  //   videoDetails:
+  //     '~62 seconds, more TV channel flipping (jungle snake, taxi fight, news, record player, bedroom jacket)',
+  //   details: [
+  //     'Community shoutouts hidden in video (@TheKeeperOfX with radios, @CharliegNFTeth with frog gummies, @satoshi_owl with owl hoots)',
+  //     'Hidden contrast codes at shoutout scenes lead to website PIN parts',
+  //     'Codes deciphered: HOOTS-49, HOPS-13, STAYS-28'
+  //   ],
+  //   significance: 'Leads to neuko.ai website unlock, most complex puzzle to date'
+  // },
   {
     date: '2025-10-28',
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
+    type: EventType.OTHER,
     title: 'Community Distribution Phase',
     description: 'Snake badges distributed by community',
     details: [
@@ -165,7 +165,7 @@ export const timelineEvents: TimelineEvent[] = [
   {
     date: '2025-10-30',
     source: SourceType.OFFICIAL,
-    type: EventType.POST,
+    type: EventType.OTHER,
     title: 'Website Puzzle Discovery',
     description: '@thrax_nft discovers hidden console logs on neuko.ai',
     details: [
@@ -175,26 +175,26 @@ export const timelineEvents: TimelineEvent[] = [
     ],
     significance: 'Major lore reveal, confirms planned nature of distribution'
   },
-  {
-    date: '2025-10-31',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: '"Last Call" Ultimatum',
-    description: '24-hour deadline for Snake badge distribution',
-    postUrl: 'https://x.com/neukoai/status/1984362507784351883',
-    caption: 'last call, 🐍 hoarders',
-    videoDetails: '~41 seconds, field operations recap with community shoutouts',
-    details: [
-      "Rabbit 🐰 and Moth 🐝 holders who haven't distributed Snake 🐍 badges given 24-hour ultimatum"
-    ],
-    loreReveals: [
-      'Mentions "G304" (G*Boy designation)',
-      'References facility attacks and "desertion"',
-      'Hints at moving operations underground'
-    ],
-    puzzleElements: ['Hidden contrast codes in shoutout scenes'],
-    significance: 'Consequences of ultimatum still unknown'
-  },
+  // {
+  //   date: '2025-10-31',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: '"Last Call" Ultimatum',
+  //   description: '24-hour deadline for Snake badge distribution',
+  //   postUrl: 'https://x.com/neukoai/status/1984362507784351883',
+  //   caption: 'last call, 🐍 hoarders',
+  //   videoDetails: '~41 seconds, field operations recap with community shoutouts',
+  //   details: [
+  //     "Rabbit 🐰 and Moth 🐝 holders who haven't distributed Snake 🐍 badges given 24-hour ultimatum"
+  //   ],
+  //   loreReveals: [
+  //     'Mentions "G304" (G*Boy designation)',
+  //     'References facility attacks and "desertion"',
+  //     'Hints at moving operations underground'
+  //   ],
+  //   puzzleElements: ['Hidden contrast codes in shoutout scenes'],
+  //   significance: 'Consequences of ultimatum still unknown'
+  // },
 
   // November 2025
   {
@@ -220,24 +220,24 @@ export const timelineEvents: TimelineEvent[] = [
     ],
     significance: 'Establishes community documentation pattern'
   },
-  {
-    date: '2025-11-05',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: 'Website Portal Video',
-    description: 'Video revealing neuko.ai website',
-    postUrl: 'https://x.com/neukoai/status/1986152753412919577',
-    caption: 'https://www.neuko.ai/',
-    videoDetails:
-      '~60 seconds, montage of animated hooded figures in fantastical scenes (desert, skate, bubble, party, mountain, fire, throne, dancing)',
-    details: [
-      'Minimalistic design with "NEUKO" title and logo',
-      'PIN unlock system requiring codes from puzzles',
-      'Console logs accessible via browser dev tools',
-      'Post-video treasure trail initiated for wallet holding 3x badges'
-    ],
-    significance: 'Website officially revealed, new puzzle layer unlocked'
-  },
+  // {
+  //   date: '2025-11-05',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: 'Website Portal Video',
+  //   description: 'Video revealing neuko.ai website',
+  //   postUrl: 'https://x.com/neukoai/status/1986152753412919577',
+  //   caption: 'https://www.neuko.ai/',
+  //   videoDetails:
+  //     '~60 seconds, montage of animated hooded figures in fantastical scenes (desert, skate, bubble, party, mountain, fire, throne, dancing)',
+  //   details: [
+  //     'Minimalistic design with "NEUKO" title and logo',
+  //     'PIN unlock system requiring codes from puzzles',
+  //     'Console logs accessible via browser dev tools',
+  //     'Post-video treasure trail initiated for wallet holding 3x badges'
+  //   ],
+  //   significance: 'Website officially revealed, new puzzle layer unlocked'
+  // },
   {
     date: '2025-11-09',
     source: SourceType.COMMUNITY,
@@ -251,23 +251,23 @@ export const timelineEvents: TimelineEvent[] = [
     ],
     significance: 'Community-driven onboarding content'
   },
-  {
-    date: '2025-11-12',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: '"Catch Up, Sneeb" Claymation',
-    description: 'Lore-deepening claymation video',
-    postUrl: 'https://x.com/neukoai/status/1988703965694111829',
-    caption: 'catch up, sneeb',
-    videoDetails: '~124 seconds, stop-motion clay figures discussing conspiracies',
-    loreReveals: [
-      'MITER-Corp experiments on "homeless babies" to create psychic soldiers',
-      'Badge phases explained',
-      'G*Boy escape causes "general chaos"',
-      'References "darker, insidious experiments"'
-    ],
-    significance: 'Major lore dump, recaps entire story arc, hints at five core characters'
-  },
+  // {
+  //   date: '2025-11-12',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: '"Catch Up, Sneeb" Claymation',
+  //   description: 'Lore-deepening claymation video',
+  //   postUrl: 'https://x.com/neukoai/status/1988703965694111829',
+  //   caption: 'catch up, sneeb',
+  //   videoDetails: '~124 seconds, stop-motion clay figures discussing conspiracies',
+  //   loreReveals: [
+  //     'MITER-Corp experiments on "homeless babies" to create psychic soldiers',
+  //     'Badge phases explained',
+  //     'G*Boy escape causes "general chaos"',
+  //     'References "darker, insidious experiments"'
+  //   ],
+  //   significance: 'Major lore dump, recaps entire story arc, hints at five core characters'
+  // },
   {
     date: '2025-11-13',
     source: SourceType.OFFICIAL,
@@ -282,22 +282,22 @@ export const timelineEvents: TimelineEvent[] = [
       '0.25% mindshare (per cookie.fun) - higher than many established projects'
     ]
   },
-  {
-    date: '2025-11-14',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: '"Meanwhile in St. Juniper..."',
-    description: 'Cryptic video release shifting focus to St. Juniper Research Lab',
-    postUrl: 'https://x.com/neukoai/status/1989428712345678901',
-    caption: 'meanwhile in st. juniper',
-    videoDetails: '~45 seconds, grainy CCTV-style footage, alarms blaring, empty corridors',
-    loreReveals: [
-      'Audio decoding reveals panic about "Subject G304" and "Sector 7 lockdown"',
-      'Terminal flash: "SJ-SECURELAB DETECTED - User ID: node04 - Access Key: v5.12.03 - MOTH..."'
-    ],
-    significance:
-      'Confirmed badge holders (Moths) could interact with the secure lab portal, kicking off the "Bloc" hack'
-  },
+  // {
+  //   date: '2025-11-14',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: '"Meanwhile in St. Juniper..."',
+  //   description: 'Cryptic video release shifting focus to St. Juniper Research Lab',
+  //   postUrl: 'https://x.com/neukoai/status/1989428712345678901',
+  //   caption: 'meanwhile in st. juniper',
+  //   videoDetails: '~45 seconds, grainy CCTV-style footage, alarms blaring, empty corridors',
+  //   loreReveals: [
+  //     'Audio decoding reveals panic about "Subject G304" and "Sector 7 lockdown"',
+  //     'Terminal flash: "SJ-SECURELAB DETECTED - User ID: node04 - Access Key: v5.12.03 - MOTH..."'
+  //   ],
+  //   significance:
+  //     'Confirmed badge holders (Moths) could interact with the secure lab portal, kicking off the "Bloc" hack'
+  // },
   {
     date: '2025-11-18',
     source: SourceType.COMMUNITY,
@@ -313,21 +313,21 @@ export const timelineEvents: TimelineEvent[] = [
     significance:
       'Massive lore payoff, community actively "hacked" the story to reveal G*Boy\'s origin'
   },
-  {
-    date: '2025-11-19',
-    source: SourceType.OFFICIAL,
-    type: EventType.POST,
-    title: 'Launch of G*BOY Special (AI Art Tool)',
-    description: 'Release of custom AI art generator',
-    postUrl: 'https://x.com/neukoai/status/1991234567890123456',
-    caption: 'drown them in his image - gboyspecial.com',
-    details: [
-      'gboyspecial.com - AI model fine-tuned on G*Boy aesthetic',
-      'Democratized content creation, flooding timeline with user-generated G*Boy art (#GboySpecial)'
-    ],
-    significance:
-      'Democratized content creation, flooding timeline with user-generated G*Boy art (#GboySpecial)'
-  },
+  // {
+  //   date: '2025-11-19',
+  //   source: SourceType.OFFICIAL,
+  //   type: EventType.POST,
+  //   title: 'Launch of G*BOY Special (AI Art Tool)',
+  //   description: 'Release of custom AI art generator',
+  //   postUrl: 'https://x.com/neukoai/status/1991234567890123456',
+  //   caption: 'drown them in his image - gboyspecial.com',
+  //   details: [
+  //     'gboyspecial.com - AI model fine-tuned on G*Boy aesthetic',
+  //     'Democratized content creation, flooding timeline with user-generated G*Boy art (#GboySpecial)'
+  //   ],
+  //   significance:
+  //     'Democratized content creation, flooding timeline with user-generated G*Boy art (#GboySpecial)'
+  // },
   {
     date: '2025-11-20',
     source: SourceType.OFFICIAL,

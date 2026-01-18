@@ -1,25 +1,26 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import {
-  timelineEvents,
+  // timelineEvents,
   upcomingEvents,
   keyMilestones,
   formatDate,
   getMonthYear,
-  type TimelineEvent,
-  EventType
+  type TimelineEvent
 } from '../../data/timelineEvents'
-import { articles, type Article } from '../../data/timelineArticles'
-import { LegacyEvent } from '../../data/timeline.types'
+// import { articles } from './data/articles.data'
+import { data as posts } from './data/posts.data'
+import { data as articles } from './data/articles.data'
+import { Article, EventType, type Post } from './timeline.types'
 import TimelineArticle from './components/TimelineArticle.vue'
-import TimelineLegacy from './components/TimelineLegacy.vue'
+import TimelinePost from './components/TimelinePost.vue'
 
 type SortOrder = 'newest' | 'oldest'
 
 const sortOrder = ref<SortOrder>('newest')
 
 const sortedEvents = computed(() => {
-  const events: TimelineEvent[] = [...timelineEvents, ...articles]
+  const events: TimelineEvent[] = [...posts, ...articles]
   if (sortOrder.value === 'newest') {
     return events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   }
@@ -49,8 +50,12 @@ function isArticleEvent(event: TimelineEvent): event is Article {
   return event.type === EventType.ARTICLE
 }
 
-function isLegacyEvent(event: TimelineEvent): event is LegacyEvent {
-  return event.type !== EventType.ARTICLE
+// function isLegacyEvent(event: TimelineEvent): event is LegacyEvent {
+//   return event.type !== EventType.ARTICLE
+// }
+
+function isPostEvent(event: TimelineEvent): event is Post {
+  return event.type === EventType.POST || event.type === EventType.THREAD
 }
 </script>
 
@@ -108,7 +113,8 @@ function isLegacyEvent(event: TimelineEvent): event is LegacyEvent {
           <div class="events-list">
             <template v-for="(event, idx) in events" :key="idx">
               <TimelineArticle v-if="isArticleEvent(event)" :article="event" />
-              <TimelineLegacy v-else-if="isLegacyEvent(event)" :event="event" />
+              <!-- <TimelineLegacy v-else-if="isLegacyEvent(event)" :event="event" /> -->
+              <TimelinePost v-if="isPostEvent(event)" :post="event" />
             </template>
           </div>
         </div>

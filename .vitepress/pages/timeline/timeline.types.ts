@@ -1,3 +1,5 @@
+import type { TweetData } from '../../types'
+
 export interface TimelineEvent {
   date: string
   source: SourceType
@@ -7,7 +9,6 @@ export interface TimelineEvent {
 export interface LegacyEvent extends TimelineEvent {
   title?: string
   description?: string
-  postUrl?: string
   url?: string
   caption?: string
   videoDetails?: string
@@ -33,4 +34,21 @@ export enum EventType {
   SPACES = 'spaces',
   DEADLINE = 'deadline',
   OTHER = 'other'
+}
+
+export interface Article extends TimelineEvent {
+  title: string
+  url: string
+  author?: string
+  subtitle?: string
+  description?: string
+  image?: string
+  id?: string
+  tweet?: TweetData
+}
+
+export interface Post extends TimelineEvent {
+  url: string
+  id: string
+  tweet?: TweetData
 }

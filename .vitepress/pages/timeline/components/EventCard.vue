@@ -38,6 +38,8 @@ function handleClick() {
   align-items: center;
   gap: 1rem;
   font-size: 0.75rem;
+  padding: 0 1.5rem;
+  border-top: 1px solid var(--vp-c-border);
 }
 
 :deep(.event-type) {

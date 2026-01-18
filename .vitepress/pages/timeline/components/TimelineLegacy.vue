@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { StyleValue } from 'vue'
-import { LegacyEvent } from '../../../data/timeline.types'
+import { LegacyEvent } from '../timeline.types'
 import { formatDate } from '../../../data/timelineEvents'
 import EventCard from './EventCard.vue'
 
@@ -19,8 +19,8 @@ const props = defineProps<{
 
     <p class="event-description">{{ props.event.description }}</p>
 
-    <div v-if="props.event.postUrl" class="event-embed">
-      <XEmbed :url="props.event.postUrl" />
+    <div v-if="props.event.url" class="event-embed">
+      <XEmbed :url="props.event.url" />
     </div>
 
     <div v-if="props.event.url" class="event-embed">
