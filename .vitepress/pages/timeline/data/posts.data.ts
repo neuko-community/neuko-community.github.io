@@ -13,6 +13,11 @@ type CommunityPostDetails = Omit<PostDetails, 'source'> & { source: SourceType.C
 const officialPosts: OfficialPostDetails[] = [
   {
     source: SourceType.OFFICIAL,
+    url: 'https://x.com/neukoai/status/2013357568605765999',
+    id: '2013357568605765999'
+  },
+  {
+    source: SourceType.OFFICIAL,
     url: 'https://x.com/neukoai/status/2012218480636928007',
     id: '2012218480636928007'
   },
