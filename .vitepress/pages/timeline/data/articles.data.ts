@@ -178,6 +178,16 @@ const communityArticles: CommunityArticleDetails[] = [
     id: '2010370941772255575'
   },
 
+  // @Chromospace
+  {
+    source: SourceType.COMMUNITY,
+    user: '0xChromospace',
+    image: 'https://pbs.twimg.com/media/G--NlF4WwAEsu3u?format=jpg&name=medium',
+    title: 'Simple Prompts = Great Gboy Images: My Workflow on gboyspecial.com',
+    url: 'https://x.com/0xChromospace/status/2013260307905364478',
+    id: '2013260307905364478'
+  },
+
   // @DegenFigster
   {
     source: SourceType.COMMUNITY,
