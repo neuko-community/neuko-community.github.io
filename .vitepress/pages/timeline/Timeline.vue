@@ -383,7 +383,7 @@ function isPostEvent(event: TimelineEvent): event is Post {
 .type-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: space-between;
 }
 
 .type-chip {
@@ -398,6 +398,7 @@ function isPostEvent(event: TimelineEvent): event is Post {
   cursor: pointer;
   background: var(--vp-c-bg);
   transition: all 0.2s;
+  margin: 0.25rem 0;
 }
 
 .type-chip input {

@@ -12,6 +12,14 @@ const officialArticles: OfficialArticleDetails[] = [
   {
     source: SourceType.OFFICIAL,
     user: 'austin_hurwitz',
+    image: 'https://pbs.twimg.com/media/G--b64dWAAAdxPn?format=jpg&name=medium',
+    title: 'What Happens After Content Becomes Free',
+    url: 'https://x.com/austin_hurwitz/status/2012999151991058745',
+    id: '2012999151991058745'
+  },
+  {
+    source: SourceType.OFFICIAL,
+    user: 'austin_hurwitz',
     image: 'https://pbs.twimg.com/media/G-itcIyXIAA-vcr?format=jpg&name=medium',
     title: 'Your Token is Broken',
     url: 'https://x.com/neukoai/status/2011048235322773546',
