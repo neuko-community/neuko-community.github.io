@@ -198,6 +198,16 @@ const communityArticles: CommunityArticleDetails[] = [
     id: '2010392722129944763'
   },
 
+  // @FSkifor
+  {
+    source: SourceType.COMMUNITY,
+    user: 'FSkifor',
+    image: 'https://pbs.twimg.com/media/G-8dQI5WMAE6jx1?format=jpg&name=medium',
+    title: 'HARMONY: THE COMPLETE SYMPHONY OF DISTORTION',
+    url: 'https://x.com/FSkifor/status/2012868848475684931',
+    id: '2012868848475684931'
+  },
+
   // @kezo_futura
   {
     source: SourceType.COMMUNITY,
