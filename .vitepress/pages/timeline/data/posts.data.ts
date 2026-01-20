@@ -23,6 +23,11 @@ const officialPosts: OfficialPostDetails[] = [
     url: 'https://x.com/austin_hurwitz/status/2001705140873478450',
     id: '2001705140873478450'
   },
+  {
+    source: SourceType.OFFICIAL,
+    url: 'https://x.com/austin_hurwitz/status/1996666112868851753',
+    id: '1996666112868851753'
+  },
 
   // @boris0chuck
   {
@@ -30,6 +35,8 @@ const officialPosts: OfficialPostDetails[] = [
     url: 'https://x.com/boris0chuck/status/2003556939188568413',
     id: '2003556939188568413'
   },
+
+  // @greenie_sr
 
   // @neukoai
   {
@@ -188,8 +195,31 @@ const officialPosts: OfficialPostDetails[] = [
     url: 'https://x.com/SQU1NCH/status/2003564428894109966',
     id: '2003564428894109966'
   },
+  {
+    source: SourceType.OFFICIAL,
+    type: EventType.VIDEO,
+    url: 'https://x.com/SQU1NCH/status/1997006321661489627',
+    id: '1997006321661489627'
+  },
+   {
+    source: SourceType.OFFICIAL,
+    url: 'https://x.com/SQU1NCH/status/1996605658758521234',
+    id: '1996605658758521234'
+   },
+    {
+      source: SourceType.OFFICIAL,
+      type: EventType.THREAD,
+      url: 'https://x.com/SQU1NCH/status/1996600123208372394',
+      id: '1996600123208372394'
+    }
 ]
 const communityPosts: CommunityPostDetails[] = [
+  // @afkboom
+   {
+    source: SourceType.COMMUNITY,
+    url: 'https://x.com/afkboom/status/1998181754713354379',
+    id: '1998181754713354379'
+   },
   // @BAGFILLERR
   {
     source: SourceType.COMMUNITY,
@@ -197,6 +227,29 @@ const communityPosts: CommunityPostDetails[] = [
     url: 'https://x.com/BAGFILLERR/status/2006082909417939424',
     id: '2006082909417939424'
   },
+  {
+    source: SourceType.COMMUNITY,
+    type: EventType.THREAD,
+    url: 'https://x.com/BAGFILLERR/status/1987997186039402591',
+    id: '1987997186039402591'
+  },
+
+  // @DendiRedemption
+  {
+    source: SourceType.COMMUNITY,
+    type: EventType.THREAD,
+    url: 'https://x.com/DendiRedemption/status/1983974904870400150',
+    id: '1983974904870400150'
+  },
+
+  // @eleven88eth
+  {
+    source: SourceType.COMMUNITY,
+    type: EventType.THREAD,
+    url: 'https://x.com/eleven88eth/status/1994247572785926543',
+    id: '1994247572785926543'
+  },
+
   // @feezybellz_ii
   {
     source: SourceType.COMMUNITY,
@@ -224,6 +277,55 @@ const communityPosts: CommunityPostDetails[] = [
     type: EventType.VIDEO,
     url: 'https://x.com/kezo_futura/status/1999738873237373020',
     id: '1999738873237373020'
+  },
+
+
+
+  // @LostSnow_Rin
+  {
+    source: SourceType.COMMUNITY,
+    url: 'https://x.com/LostSnow_Rin/status/1981349935489409266',
+    id: '1981349935489409266'
+  },
+  {
+    source: SourceType.COMMUNITY,
+    url: 'https://x.com/LostSnow_Rin/status/1988946547250495549',
+    id: '1988946547250495549'
+  },
+  {
+    source: SourceType.COMMUNITY,
+    type: EventType.VIDEO,
+    url: 'https://x.com/LostSnow_Rin/status/1991992692524699866',
+    id: '1991992692524699866'
+  },
+
+
+  // @nuyorkinoeth
+  {
+    source: SourceType.COMMUNITY,
+    url: 'https://x.com/nuyorkinoeth/status/1986177138764947467',
+    id: '1986177138764947467'
+  },
+
+  // @opensea
+  {
+    source: SourceType.COMMUNITY,
+    url: 'https://x.com/opensea/status/1996333608769061101',
+    id: '1996333608769061101'
+  },
+
+  // @phygitals
+  {
+    source: SourceType.COMMUNITY,
+    url : 'https://x.com/phygitals/status/1997006280628621751',
+    id: '1997006280628621751'
+  },
+
+  // @solana
+  {
+    source: SourceType.COMMUNITY,
+    url: 'https://x.com/solana/status/1995959776828948609',
+    id: '1995959776828948609',
   },
 
   // @solanaspaces

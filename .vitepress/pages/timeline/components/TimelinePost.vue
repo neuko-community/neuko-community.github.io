@@ -55,6 +55,11 @@ const mappedProps = computed(() => {
     tweetUrl: `https://x.com/${user.screen_name}/status/${t.id_str}`
   }
 })
+
+const type = computed(() => {
+  if (props.post.id === '1988946547250495549')return 'placenta'
+  return props.post.type
+})
 </script>
 
 <template>
@@ -72,7 +77,7 @@ const mappedProps = computed(() => {
       :showXLogo="true"
     />
     <div class="event-meta">
-      <p class="event-type">{{ props.post.type }}</p>
+      <p class="event-type">{{ type }}</p>
       <span class="event-date">{{ formatDate(props.post.date) }}</span>
     </div>
   </EventCard>

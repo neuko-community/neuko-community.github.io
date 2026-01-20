@@ -30,6 +30,7 @@ export enum SourceType {
 export enum EventType {
   ARTICLE = 'article',
   VIDEO = 'video',
+  MUSIC = 'music',
   POST = 'post',
   THREAD = 'thread',
   INTERVIEW = 'interview',

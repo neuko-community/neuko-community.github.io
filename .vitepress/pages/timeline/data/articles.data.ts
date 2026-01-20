@@ -178,15 +178,7 @@ const communityArticles: CommunityArticleDetails[] = [
     id: '2010370941772255575'
   },
 
-  // @Chromospace
-  {
-    source: SourceType.COMMUNITY,
-    user: '0xChromospace',
-    image: 'https://pbs.twimg.com/media/G--NlF4WwAEsu3u?format=jpg&name=medium',
-    title: 'Simple Prompts = Great Gboy Images: My Workflow on gboyspecial.com',
-    url: 'https://x.com/0xChromospace/status/2013260307905364478',
-    id: '2013260307905364478'
-  },
+
 
   // @DegenFigster
   {
@@ -282,6 +274,26 @@ const communityArticles: CommunityArticleDetails[] = [
     title: 'How to Fix Your Entire Life in One Day (According to NEUKO Internal Logs)',
     url: 'https://x.com/satoshi_owl/status/2012660386713997693',
     id: '2012660386713997693'
+  },
+
+  // @VipulPapriwal
+  {
+    source: SourceType.COMMUNITY,
+    user: 'VipulPapriwal',
+    image: 'https://pbs.twimg.com/media/G_HU1g4XIAADTnv?format=jpg&name=medium',
+    title: 'The G*BOY Difference: How This Community Doesn’t Just Consume Culture But Makes It',
+    url: 'https://x.com/VipulPapriwal/status/2013624874959544361',
+    id: '2013624874959544361'
+  },
+
+  // @0xChromospace
+  {
+    source: SourceType.COMMUNITY,
+    user: '0xChromospace',
+    image: 'https://pbs.twimg.com/media/G--NlF4WwAEsu3u?format=jpg&name=medium',
+    title: 'Simple Prompts = Great Gboy Images: My Workflow on gboyspecial.com',
+    url: 'https://x.com/0xChromospace/status/2013260307905364478',
+    id: '2013260307905364478'
   },
 
   // 0xNickcrypto
