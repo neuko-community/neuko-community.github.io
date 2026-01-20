@@ -255,6 +255,17 @@ const communityArticles: CommunityArticleDetails[] = [
     id: '2009084639344816275'
   },
 
+  // @Sinsonx
+  {
+    // FAILING TO LOAD
+    source: SourceType.COMMUNITY,
+    user: 'Sinsonx',
+    image: 'https://pbs.twimg.com/media/G9xpCKRa4AAMvWP?format=jpg&name=medium',
+    title: 'NeukoAi and how its just different',
+    url: 'https://x.com/Sinsonx/status/2007573464899825773',
+    id: '2007573464899825773'
+  },
+
   //@satoshi_owl
   {
     source: SourceType.COMMUNITY,
@@ -307,7 +318,8 @@ export default {
           type: EventType.ARTICLE,
           ...article,
           date: new Date(tweet.created_at).toISOString().slice(0, 10),
-          tweet
+          tweet,
+          user: tweet.user.screen_name
         })
       } catch (e) {
         console.error(`Error loading article ${article.id}:`, (e as Error).message)

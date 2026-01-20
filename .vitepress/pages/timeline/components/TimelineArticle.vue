@@ -28,7 +28,7 @@ const onClick = () => {
       <TweetHeader
         :isVerified="props.article?.tweet?.user.is_blue_verified"
         :displayName="props.article?.tweet?.user.name"
-        :username="props.article?.tweet?.user.screen_name"
+        :username="`@${props.article?.tweet?.user.screen_name}`"
         :pfp="props.article?.tweet?.user.profile_image_url_https"
         :showXLogo="false"
       />

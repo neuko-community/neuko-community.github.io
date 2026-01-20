@@ -27,7 +27,7 @@ defineProps({
           </svg>
         </span>
       </div>
-      <div class="tweet-handle">@{{ username }}</div>
+      <div class="tweet-handle">{{ username }}</div>
     </div>
     <div class="tweet-logo" v-if="showXLogo">
       <svg viewBox="0 0 24 24" aria-hidden="true" class="x-logo">

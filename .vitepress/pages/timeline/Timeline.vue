@@ -8,8 +8,10 @@ import {
   getMonthYear
 } from '../../data/timelineEvents'
 // import { articles } from './data/articles.data'
-import { data as posts } from './data/posts.data'
 import { data as articles } from './data/articles.data'
+import { data as interviews } from './data/interview.data'
+import { data as posts } from './data/posts.data'
+import { data as spaces } from './data/spaces.data'
 import { Article, EventType, SourceType, type Post, type TimelineEvent } from './timeline.types'
 import TimelineArticle from './components/TimelineArticle.vue'
 import TimelinePost from './components/TimelinePost.vue'
@@ -36,7 +38,7 @@ const activeTypes = ref<EventType[]>(typeOptions.map((option) => option.value))
 
 const userOptions = computed(() => {
   const userMap = new Map<string, string>()
-  for (const event of [...posts, ...articles]) {
+  for (const event of [...posts, ...articles, ...spaces, ...interviews]) {
     const screenName = event.tweet?.user?.screen_name
     if (!screenName) {
       continue
@@ -56,7 +58,7 @@ const userOptions = computed(() => {
 })
 
 const sortedEvents = computed(() => {
-  const events: TimelineEvent[] = [...posts, ...articles]
+  const events: TimelineEvent[] = [...posts, ...articles, ...spaces, ...interviews]
   if (sortOrder.value === 'newest') {
     return events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   }
@@ -112,7 +114,7 @@ function isArticleEvent(event: TimelineEvent): event is Article {
 // }
 
 function isPostEvent(event: TimelineEvent): event is Post {
-  return event.type === EventType.POST || event.type === EventType.THREAD
+  return event.type === EventType.POST || event.type === EventType.THREAD || event.type === EventType.SPACES || event.type === EventType.VIDEO || event.type === EventType.INTERVIEW
 }
 </script>
 
