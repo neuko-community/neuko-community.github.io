@@ -247,16 +247,7 @@ const communityArticles: CommunityArticleDetails[] = [
     id: '2009084639344816275'
   },
 
-  // @Sinsonx
-  {
-    // FAILING TO LOAD
-    source: SourceType.COMMUNITY,
-    user: 'Sinsonx',
-    image: 'https://pbs.twimg.com/media/G9xpCKRa4AAMvWP?format=jpg&name=medium',
-    title: 'NeukoAi and how its just different',
-    url: 'https://x.com/Sinsonx/status/2007573464899825773',
-    id: '2007573464899825773'
-  },
+
 
   //@satoshi_owl
   {

@@ -176,12 +176,7 @@ const officialPosts: OfficialPostDetails[] = [
     url: 'https://x.com/wallstreetbets/status/2011861685943075158',
     id: '2011861685943075158'
   },
-  {
-    // FAILING TO LOAD
-    source: SourceType.OFFICIAL,
-    url: 'https://x.com/neukoai/status/1991264007055974856',
-    id: '1991264007055974856'
-  },
+
 
   // @SQU1NCH
   {
@@ -201,25 +196,25 @@ const officialPosts: OfficialPostDetails[] = [
     url: 'https://x.com/SQU1NCH/status/1997006321661489627',
     id: '1997006321661489627'
   },
-   {
+  {
     source: SourceType.OFFICIAL,
     url: 'https://x.com/SQU1NCH/status/1996605658758521234',
     id: '1996605658758521234'
-   },
-    {
-      source: SourceType.OFFICIAL,
-      type: EventType.THREAD,
-      url: 'https://x.com/SQU1NCH/status/1996600123208372394',
-      id: '1996600123208372394'
-    }
+  },
+  {
+    source: SourceType.OFFICIAL,
+    type: EventType.THREAD,
+    url: 'https://x.com/SQU1NCH/status/1996600123208372394',
+    id: '1996600123208372394'
+  }
 ]
 const communityPosts: CommunityPostDetails[] = [
   // @afkboom
-   {
+  {
     source: SourceType.COMMUNITY,
     url: 'https://x.com/afkboom/status/1998181754713354379',
     id: '1998181754713354379'
-   },
+  },
   // @BAGFILLERR
   {
     source: SourceType.COMMUNITY,
@@ -317,7 +312,7 @@ const communityPosts: CommunityPostDetails[] = [
   // @phygitals
   {
     source: SourceType.COMMUNITY,
-    url : 'https://x.com/phygitals/status/1997006280628621751',
+    url: 'https://x.com/phygitals/status/1997006280628621751',
     id: '1997006280628621751'
   },
 
