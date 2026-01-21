@@ -11,6 +11,13 @@ const officialArticles: OfficialArticleDetails[] = [
   // @austin_hurwitz
   {
     source: SourceType.OFFICIAL,
+    image: 'https://pbs.twimg.com/media/G_MruaGWQAAlMGz?format=jpg&name=medium',
+    title: "What Netflix's Earnings Reveal About the Future of Media",
+    url: 'https://x.com/austin_hurwitz/status/2014001759169990881',
+    id: '2014001759169990881'
+  },
+  {
+    source: SourceType.OFFICIAL,
     user: 'austin_hurwitz',
     image: 'https://pbs.twimg.com/media/G--b64dWAAAdxPn?format=jpg&name=medium',
     title: 'What Happens After Content Becomes Free',
@@ -145,6 +152,13 @@ type CommunityArticleDetails = Omit<ArticleDetails, 'source'> & {
 }
 const communityArticles: CommunityArticleDetails[] = [
   // @airdoror0
+  {
+    source: SourceType.COMMUNITY,
+    image: 'https://pbs.twimg.com/media/G_MD4aVasAAkPff?format=jpg&name=medium',
+    title: '👁️Why G*BOY is stronger when he isn’t explained👁️',
+    url: 'https://x.com/airdoror0/status/2013959367624933533',
+    id: '2013959367624933533'
+  },
   {
     source: SourceType.COMMUNITY,
     user: 'airdoror0',
