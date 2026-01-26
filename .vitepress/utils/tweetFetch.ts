@@ -1,8 +1,6 @@
-export type TweetDataMinimal = {
-  created_at: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any
-}
+import { applySourceType } from "../pages/timeline/data/utils"
+import { EventType, Post } from "../pages/timeline/timeline.types"
+import { Tweet } from "../types/tweets"
 
 type FetchTweetOptions = {
   retries?: number
@@ -36,6 +34,40 @@ const isRetryableError = (error: unknown) => {
   if (error instanceof Error && error.name === 'AbortError') return true
   const cause = (error as { cause?: { code?: string } })?.cause
   return Boolean(cause?.code && RETRYABLE_ERROR_CODES.has(cause.code))
+
+
+}
+
+const getTweetIdFromUrl = (url: string) => url.match(/\/status\/(\d+)/)?.[1]
+
+type PostInput = Pick<Post, 'url'> & Partial<Omit<Post, 'url'>>
+
+export const loadTweets = async (posts: PostInput[], type: EventType) => {
+  const postMap = new Map()
+
+  await mapWithConcurrency(posts, 6, async (post) => {
+    const id = getTweetIdFromUrl(post.url)
+    if (!id) return
+    try {
+      const tweet = await fetchTweetData(id, type)
+      if (!tweet) return
+
+      const postDetails = {
+        ...post,
+        type: post.type || type,
+        date: new Date(tweet.created_at).toISOString().slice(0, 10),
+        tweet,
+        user: tweet.user.screen_name,
+        id,
+      }
+
+      postMap.set(id, applySourceType(postDetails)
+      )
+    } catch (e) {
+      console.error(`Error loading ${type} ${id}:`, (e as Error).message)
+    }
+  })
+  return Array.from(postMap.values()).filter(Boolean)
 }
 
 export const mapWithConcurrency = async <T>(
@@ -58,11 +90,11 @@ export const mapWithConcurrency = async <T>(
   )
 }
 
-export const fetchTweetData = async <T = TweetDataMinimal>(
+export const fetchTweetData = async (
   id: string,
   label: string,
   options: FetchTweetOptions = {}
-): Promise<T | null> => {
+): Promise<Tweet | null> => {
   const { retries, timeoutMs, retryDelayMs } = { ...defaultOptions, ...options }
   const url = `https://react-tweet.vercel.app/api/tweet/${id}`
 
@@ -94,7 +126,7 @@ export const fetchTweetData = async <T = TweetDataMinimal>(
         return null
       }
 
-      return json.data as T
+      return json.data as Tweet
     } catch (error) {
       if (attempt < retries && isRetryableError(error)) {
         await sleep(retryDelayMs * (attempt + 1))

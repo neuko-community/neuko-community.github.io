@@ -33,21 +33,12 @@ export enum EventType {
   OTHER = 'other'
 }
 
+
 export interface TimelineEvent {
   date: string
   source: SourceType
   type: EventType
   user?: string
-  tweet?: TweetData
-}
-export interface Article extends TimelineEvent {
-  title: string
-  url: string
-  id: string
-  user?: string
-  subtitle?: string
-  description?: string
-  image?: string
   tweet?: TweetData
 }
 
@@ -57,3 +48,11 @@ export interface Post extends TimelineEvent {
   tweet?: TweetData
   user?: string
 }
+
+export interface Article extends Post {
+  title: string
+  subtitle?: string
+  description?: string
+  image?: string
+}
+
