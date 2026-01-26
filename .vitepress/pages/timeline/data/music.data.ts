@@ -12,6 +12,9 @@ const officialMusic: MusicDetails[] = [
   }
 ]
 const communityMusic: MusicDetails[] = [
+  // @DegenFigster
+  { url: 'https://x.com/DegenFigster/status/2000563720863522858' },
+
   //@DyorMoon
   {
     url: 'https://x.com/DyorMoon/status/2010869371716186343'
@@ -46,6 +49,9 @@ const communityMusic: MusicDetails[] = [
   {
     url: 'https://x.com/knollcaptures/status/1989508001557004533'
   },
+
+  // @NeukoSync
+  { url: 'https://x.com/NeukoSync/status/2014721179035328756' },
 ]
 
 const musicData: MusicDetails[] = [...officialMusic, ...communityMusic]

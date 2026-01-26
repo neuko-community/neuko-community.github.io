@@ -9,6 +9,12 @@ type PostDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id' | 'source'> & { t
 const officialPosts: PostDetails[] = [
 
   // @austin_hurwitz
+  { url: 'https://x.com/austin_hurwitz/status/1998056897501417520' },
+  { url: 'https://x.com/austin_hurwitz/status/2009038538679992797' },
+  { url: "https://x.com/austin_hurwitz/status/2011460329943826520" },
+  {
+    url: 'https://x.com/austin_hurwitz/status/2008861601714118884'
+  },
   {
     url: 'https://x.com/austin_hurwitz/status/2008737719871304099',
   },
@@ -113,6 +119,10 @@ const officialPosts: PostDetails[] = [
 
   // @SQU1NCH
   {
+    url: 'https://x.com/SQU1NCH/status/2012246421504721061',
+    type: EventType.THREAD,
+  },
+  {
     type: EventType.VIDEO,
     url: 'https://x.com/SQU1NCH/status/2006509264664461714',
   },
@@ -146,6 +156,10 @@ const communityPosts: PostDetails[] = [
     url: 'https://x.com/BAGFILLERR/status/1987997186039402591',
   },
 
+  // @DegenFigster
+  { url: 'https://x.com/DegenFigster/status/2012569459127443709' },
+  { url: 'https://x.com/DegenFigster/status/2012928585221238877' },
+
   // @DendiRedemption
   {
     type: EventType.THREAD,
@@ -159,6 +173,7 @@ const communityPosts: PostDetails[] = [
   },
 
   // @feezybellz_ii
+  { url: 'https://x.com/feezybellz_ii/status/2015398622544752938' },
   {
     type: EventType.THREAD,
     url: 'https://x.com/feezybellz_ii/status/2010276385198067880',
@@ -167,6 +182,16 @@ const communityPosts: PostDetails[] = [
   //@ FSkifor
   {
     url: 'https://x.com/FSkifor/status/2012287148515299478',
+  },
+
+  // @greenknight_sol
+  { url: "https://x.com/greenknight_sol/status/2011373543037042973" },
+  { url: 'https://x.com/greenknight_sol/status/2011893996990144813' },
+
+  // @HelveticaVault
+
+  {
+    url: 'https://x.com/HelveticVault/status/2014053051061936555'
   },
 
   // @kezo_futura
@@ -178,6 +203,10 @@ const communityPosts: PostDetails[] = [
     type: EventType.VIDEO,
     url: 'https://x.com/kezo_futura/status/1999738873237373020',
   },
+
+  // @knollcaptures
+  { url: 'https://x.com/knollcaptures/status/2012567279670804655' },
+  { url: 'https://x.com/knollcaptures/status/2012920107522289701' },
 
 
 
@@ -193,6 +222,13 @@ const communityPosts: PostDetails[] = [
     url: 'https://x.com/LostSnow_Rin/status/1991992692524699866',
   },
 
+  // @Marcotics
+  { url: 'https://x.com/Marcotics/status/2012593030675529984' },
+  { url: 'https://x.com/Marcotics/status/2012956018469122121' },
+
+  // @mikeygnft
+  { url: 'https://x.com/mikeygnft/status/2009725799868575786' },
+
 
   // @nuyorkinoeth
   {
@@ -204,10 +240,14 @@ const communityPosts: PostDetails[] = [
     url: 'https://x.com/opensea/status/1996333608769061101',
   },
 
+  // @orca_so
+  { url: 'https://x.com/orca_so/status/1996333595917762861' },
+
   // @phygitals
   {
     url: 'https://x.com/phygitals/status/1997006280628621751',
   },
+  { url: 'https://x.com/phygitals/status/1996338738599743630' },
 
   // @solana
   {
@@ -220,9 +260,30 @@ const communityPosts: PostDetails[] = [
   },
 
   // @satoshi_owl
+  { url: 'https://x.com/satoshi_owl/status/2012600264767819971' },
+  { url: 'https://x.com/satoshi_owl/status/2012947684315779236' },
   {
     url: 'https://x.com/satoshi_owl/status/2013607280080511349',
   },
+
+  // @Sinsonx
+  {
+    url: 'https://x.com/Sinsonx/status/1989423048941080590',
+    type: EventType.THREAD,
+  },
+
+  // @xeetdotai
+  { url: 'https://x.com/xeetdotai/status/1996348571290148910' },
+
+  // @veeman_eth
+  {
+    url: 'https://x.com/veeman_eth/status/1997834837777088860',
+    type: EventType.THREAD,
+  },
+
+  // @wasabi_protocol
+  { url: 'https://x.com/wasabi_protocol/status/2007851601936212016' },
+  { url: 'https://x.com/wasabi_protocol/status/1996335723214156123' }
 ]
 
 //BROADCASST

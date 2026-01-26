@@ -99,6 +99,11 @@ const officialArticles: ArticleDetails[] = [
 const communityArticles: ArticleDetails[] = [
   // @airdoror0
   {
+    url: 'https://x.com/airdoror0/status/2015379445255979294',
+    title: 'IP Dies the Moment It’s Complete— Why NEUKO Is Still Unfinished',
+    image: "https://pbs.twimg.com/media/G_gQ1iHaIAAaH8Z?format=jpg&name=900x900"
+  },
+  {
     image: 'https://pbs.twimg.com/media/G_MD4aVasAAkPff?format=jpg&name=medium',
     title: '👁️Why G*BOY is stronger when he isn’t explained👁️',
     url: 'https://x.com/airdoror0/status/2013959367624933533',
@@ -131,6 +136,13 @@ const communityArticles: ArticleDetails[] = [
     image: 'https://pbs.twimg.com/media/G-ZZTTtWQAA3zIO?format=jpg&name=medium',
     title: 'From Lore to Covers: Building G*Boy Comics in the Neuko AI Universe',
     url: 'https://x.com/DegenFigster/status/2010392722129944763',
+  },
+
+  // @feezybellz_ii
+  {
+    url: "https://x.com/feezybellz_ii/status/2014692542067986531",
+    title: 'The Rise of the AI-Native Storyteller',
+    image: "https://pbs.twimg.com/media/G_We35IW4AA-8VT?format=jpg&name=medium"
   },
 
   // @FSkifor
@@ -183,6 +195,19 @@ const communityArticles: ArticleDetails[] = [
     image: 'https://pbs.twimg.com/media/G-5mSLUXsAA_JYj?format=jpg&name=medium',
     title: 'How to Fix Your Entire Life in One Day (According to NEUKO Internal Logs)',
     url: 'https://x.com/satoshi_owl/status/2012660386713997693',
+  },
+
+  // @Sinsonx
+  {
+    url: 'https://x.com/Sinsonx/status/2007573464899825773',
+    title: 'NeukoAi and how its just different',
+    image: "https://pbs.twimg.com/media/G9xpCKRa4AAMvWP?format=jpg&name=medium"
+  },
+  {
+    url: 'https://x.com/Sinsonx/status/2014762797541069297',
+    title: "Why I'm still holding $GBOY",
+    image: "https://pbs.twimg.com/media/G-zfDImWYAAtRXH?format=jpg&name=medium",
+
   },
 
   // @VipulPapriwal

@@ -5,7 +5,10 @@ type SpaceDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id' | 'source'>
 const communitySpaces: SpaceDetails[] = [
   // @CryptoVonDoom
   {
-    url: "https://x.com/CryptoVonDoom/status/2011876061278323152",
+    url: "https://x.com/CryptoVonDoom/status/2011681337133105379",
+  },
+  {
+    url: 'https://x.com/CryptoVonDoom/status/2003001383759610222', // INTERVIEW
   }
 
 ]
