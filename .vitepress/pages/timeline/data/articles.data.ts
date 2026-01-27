@@ -7,6 +7,11 @@ type ArticleDetails = Omit<Article, 'type' | 'date' | 'source' | 'id'>
 const officialArticles: ArticleDetails[] = [
   // @austin_hurwitz
   {
+    url: 'https://x.com/austin_hurwitz/status/2016280628090843360',
+    title: 'Day in the life of a Moltbot (fka Clawdbot)',
+    image: "https://pbs.twimg.com/media/G_tERCdWcAArHre?format=jpg&name=small"
+  },
+  {
     image: 'https://pbs.twimg.com/media/G_MruaGWQAAlMGz?format=jpg&name=medium',
     title: "What Netflix's Earnings Reveal About the Future of Media",
     url: 'https://x.com/austin_hurwitz/status/2014001759169990881',
@@ -172,6 +177,11 @@ const communityArticles: ArticleDetails[] = [
   },
 
   // @RecedingHare
+  {
+    url: 'https://x.com/RecedingHare/status/2016161122231910640',
+    title: "Investing in your community can pay huge dividends, here's how...",
+    image: 'https://pbs.twimg.com/media/G_rWJgGWQAAT4m3?format=jpg&name=medium'
+  },
   {
     image: 'https://pbs.twimg.com/media/G-oyrp4agAAClCj?format=jpg&name=medium',
     title: 'The Neukoverse is coming alive',

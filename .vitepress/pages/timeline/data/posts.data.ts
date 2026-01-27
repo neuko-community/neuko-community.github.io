@@ -180,6 +180,7 @@ const communityPosts: PostDetails[] = [
   },
 
   //@ FSkifor
+  { url: 'https://x.com/FSkifor/status/2015900472272413030' },
   {
     url: 'https://x.com/FSkifor/status/2012287148515299478',
   },
