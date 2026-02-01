@@ -13,12 +13,16 @@ const comics: ComicDetails[] = [
   { url: 'https://x.com/DegenFigster/status/2011114855403565514' }, // Headcase
   { url: 'https://x.com/DegenFigster/status/2010660485927182843' }, // GBOY 15,
   { url: 'https://x.com/DegenFigster/status/2009914060100563042' }, // Daydreamer,
-  { url: 'https://x.com/DegenFigster/status/2006397200226550216' }, // GBOYS Unite ???
+  // { url: 'https://x.com/DegenFigster/status/2006397200226550216' }, // GBOYS Unite ???
+  { url: 'https://x.com/DegenFigster/status/2006399764414201955' }, // GBOYS Unite also
   { url: 'https://x.com/DegenFigster/status/2003463123790172485' }, // 1nk & GUMM1 89
   { url: 'https://x.com/DegenFigster/status/2003111588618961358' }, // ZLINE 1
   { url: 'https://x.com/DegenFigster/status/2002819378082206073' }, // Denise, 
   { url: 'https://x.com/DegenFigster/status/2002718420140527838' }, // Blowpie,
   { url: 'https://x.com/DegenFigster/status/1996268489435205959' }, //neuko Adult //WONT LOAD
+  { url: 'https://x.com/DegenFigster/status/2010314711209046300' }, // Nikita,
+  { url: 'https://x.com/DegenFigster/status/2003542136629919766' }, // The Amazing GBOY
+  { url: 'https://x.com/DegenFigster/status/2002865299205578957' }, // Bradleigh 
 
 ]
 
