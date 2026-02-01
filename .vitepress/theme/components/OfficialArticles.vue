@@ -17,7 +17,7 @@ const officialArticles = computed<Article[]>(() => {
   <section class="official-articles">
     <div class="official-articles-header">
       <h3 class="neuko-section-title">Latest Team Articles</h3>
-      <a class="official-articles-link" :href="withBase('/timeline?source=official&types=article,post&sort=newest')">
+      <a class="official-articles-link" :href="withBase('/timeline?source=official&types=article&sort=newest')">
         View more
         <span class="official-articles-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" class="chevron-icon">
