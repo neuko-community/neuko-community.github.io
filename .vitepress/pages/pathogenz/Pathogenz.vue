@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
-import { data as pathogenzData } from '../data/pathogenz.data'
-import type { Post } from './timeline/timeline.types'
+import { data as pathogenzData } from '../../data/pathogenz.data'
+import type { Post } from '../timeline/timeline.types'
 
 type PathogenzRank = 'legendary' | 'mythic'
 type SortOption = 'announced-desc' | 'announced-asc' | 'hp-desc' | 'hp-asc'

@@ -3,7 +3,8 @@ import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import GBoyBanner from './components/GBoyBanner.vue'
 import Timeline from '../pages/timeline/Timeline.vue'
-import Pathogenz from '../pages/Pathogenz.vue'
+import Pathogenz from '../pages/pathogenz/Pathogenz.vue'
+import Comics from '../pages/comics/Comics.vue'
 import CipherTool from './components/CipherTool.vue'
 import SteganographyTool from './components/SteganographyTool.vue'
 import SpectrogramTool from './components/SpectrogramTool.vue'
@@ -22,6 +23,7 @@ export default {
     app.component('GBoyBanner', GBoyBanner)
     app.component('Timeline', Timeline)
     app.component('Pathogenz', Pathogenz)
+    app.component('Comics', Comics)
     app.component('CipherTool', CipherTool)
     app.component('SteganographyTool', SteganographyTool)
     app.component('SpectrogramTool', SpectrogramTool)
