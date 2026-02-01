@@ -74,8 +74,23 @@ const sortedCards = computed(() => {
 <template>
   <div class="comics-page">
     <header class="comics-header">
-      <h1>Comics</h1>
+      <img class="comics-logo" src="" alt="Pathogenz TCG" loading="lazy" />
+      <div class="comics-header-content">
+        <h1>Neuko Comics Group</h1>
+        <p class="comics-subtitle">
+          Community made comic book collection inspired by the
+          <a class="comics-mention" href="https://x.com/neukoai" target="_blank" rel="noopener noreferrer">
+            @neukoai
+          </a>
+          universe and its characters.
+        </p>
+      </div>
     </header>
+    <div class="comics-link-container">
+      <a class="comics-link" href="https://x.com/DegenFigster" target="_blank" rel="noopener noreferrer">
+        https://x.com/DegenFigster
+      </a>
+    </div>
 
     <div class="comics-controls">
       <div class="comics-sort">
@@ -103,13 +118,50 @@ const sortedCards = computed(() => {
   padding: 0 1.5rem;
 }
 
-.comics-header h1 {
-  font-family: var(--vp-font-family-mono);
-  font-size: 2.5rem;
-  font-weight: 700;
+.comics-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.comics-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--vp-c-border);
+  background: var(--vp-c-bg-alt);
+  display: none;
+}
+
+.comics-subtitle {
+  color: var(--vp-c-text-2);
+  font-size: 1rem;
+  margin: 0;
+  max-width: 520px;
+}
+
+.comics-mention {
   color: var(--vp-c-brand-1);
-  margin: 0 0 1.5rem 0;
-  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.comics-link-container {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.comics-link {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.85rem;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  border: 1px solid var(--vp-c-border);
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: var(--vp-c-bg-alt);
 }
 
 .comics-controls {
