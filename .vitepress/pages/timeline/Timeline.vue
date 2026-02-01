@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import {
   // timelineEvents,
   upcomingEvents,
@@ -37,6 +37,50 @@ const typeOptions = [
 ]
 
 const activeTypes = ref<EventType[]>(typeOptions.map((option) => option.value))
+
+const applyQueryParams = () => {
+  if (typeof window === 'undefined') return
+  const params = new URLSearchParams(window.location.search)
+
+  const source = params.get('source')?.toLowerCase()
+  if (source === 'official') {
+    showOfficial.value = true
+    showCommunity.value = false
+  } else if (source === 'community') {
+    showOfficial.value = false
+    showCommunity.value = true
+  } else if (source === 'all') {
+    showOfficial.value = true
+    showCommunity.value = true
+  }
+
+  const sort = params.get('sort')?.toLowerCase()
+  if (sort === 'newest' || sort === 'oldest') {
+    sortOrder.value = sort as SortOrder
+  }
+
+  const typesParam = params.get('types')
+  if (typesParam) {
+    const allowedTypes = new Set(Object.values(EventType))
+    const parsedTypes = typesParam
+      .split(',')
+      .map((value) => value.trim().toLowerCase())
+      .filter((value) => allowedTypes.has(value as EventType)) as EventType[]
+
+    if (parsedTypes.length) {
+      activeTypes.value = parsedTypes
+    }
+  }
+
+  const user = params.get('user')
+  if (user) {
+    selectedUser.value = user
+  }
+}
+
+onMounted(() => {
+  applyQueryParams()
+})
 
 const userOptions = computed(() => {
   const userMap = new Map<string, string>()
