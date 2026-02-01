@@ -88,14 +88,8 @@ const sortedCards = computed(() => {
     </div>
 
     <div class="comics-grid">
-      <a
-        v-for="card in sortedCards"
-        :key="card.tweetUrl"
-        class="comics-card"
-        :href="card.tweetUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a v-for="card in sortedCards" :key="card.tweetUrl" class="comics-card" :href="card.tweetUrl" target="_blank"
+        rel="noopener noreferrer">
         <img :src="card.mediaUrl" :alt="card.alt" loading="lazy" />
       </a>
     </div>
