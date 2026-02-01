@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import {
   // timelineEvents,
   upcomingEvents,
@@ -49,6 +49,9 @@ const applyQueryParams = () => {
   } else if (source === 'community') {
     showOfficial.value = false
     showCommunity.value = true
+  } else if (source === 'none') {
+    showOfficial.value = false
+    showCommunity.value = false
   } else if (source === 'all') {
     showOfficial.value = true
     showCommunity.value = true
@@ -61,6 +64,11 @@ const applyQueryParams = () => {
 
   const typesParam = params.get('types')
   if (typesParam) {
+    if (typesParam.toLowerCase() === 'all') {
+      activeTypes.value = typeOptions.map((option) => option.value)
+      return
+    }
+
     const allowedTypes = new Set(Object.values(EventType))
     const parsedTypes = typesParam
       .split(',')
@@ -78,9 +86,50 @@ const applyQueryParams = () => {
   }
 }
 
+const updateQueryParams = () => {
+  if (typeof window === 'undefined') return
+
+  const params: string[] = []
+  const source =
+    showOfficial.value && showCommunity.value
+      ? 'all'
+      : showOfficial.value
+        ? 'official'
+        : showCommunity.value
+          ? 'community'
+          : 'none'
+
+  params.push(`source=${encodeURIComponent(source)}`)
+  params.push(`sort=${encodeURIComponent(sortOrder.value)}`)
+
+  const allTypes = typeOptions.map((option) => option.value)
+  const typesValue =
+    activeTypes.value.length === allTypes.length
+      ? 'all'
+      : activeTypes.value.join(',')
+  if (typesValue) {
+    const encodedTypes = encodeURIComponent(typesValue).replace(/%2C/g, ',')
+    params.push(`types=${encodedTypes}`)
+  }
+
+  if (selectedUser.value && selectedUser.value !== 'all') {
+    params.push(`user=${encodeURIComponent(selectedUser.value)}`)
+  }
+
+  const query = params.join('&')
+  const url = query ? `${window.location.pathname}?${query}` : window.location.pathname
+  window.history.replaceState(null, '', url)
+}
+
 onMounted(() => {
   applyQueryParams()
 })
+
+watch(
+  [sortOrder, showOfficial, showCommunity, selectedUser, activeTypes],
+  () => updateQueryParams(),
+  { deep: true }
+)
 
 const userOptions = computed(() => {
   const userMap = new Map<string, string>()
@@ -187,11 +236,7 @@ function isPostEvent(event: TimelineEvent): event is Post {
     <div v-if="upcomingEvents.length" class="upcoming-section">
       <h2 class="section-title">Upcoming Events</h2>
       <div class="events-list">
-        <div
-          v-for="(event, idx) in upcomingEvents"
-          :key="idx"
-          class="event-card neuko-card upcoming"
-        >
+        <div v-for="(event, idx) in upcomingEvents" :key="idx" class="event-card neuko-card upcoming">
           <div class="event-header">
             <span class="event-date">{{ formatDate(event.date) }}</span>
             <h3 class="event-title">{{ event.title }}</h3>

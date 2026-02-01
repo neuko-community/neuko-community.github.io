@@ -17,16 +17,12 @@ const officialArticles = computed<Article[]>(() => {
   <section class="official-articles">
     <div class="official-articles-header">
       <h3 class="neuko-section-title">Latest Team Articles</h3>
-      <a
-        class="official-articles-link"
-        :href="withBase('/timeline?source=official&types=article,post&sort=newest')"
-      >
+      <a class="official-articles-link" :href="withBase('/timeline?source=official&types=article,post&sort=newest')">
         View more
         <span class="official-articles-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" class="chevron-icon">
             <path
-              d="M9.29 6.71a1 1 0 0 0 0 1.41L13.17 12l-3.88 3.88a1 1 0 1 0 1.42 1.41l4.59-4.59a1 1 0 0 0 0-1.41l-4.59-4.59a1 1 0 0 0-1.42 0z"
-            />
+              d="M9.29 6.71a1 1 0 0 0 0 1.41L13.17 12l-3.88 3.88a1 1 0 1 0 1.42 1.41l4.59-4.59a1 1 0 0 0 0-1.41l-4.59-4.59a1 1 0 0 0-1.42 0z" />
           </svg>
         </span>
       </a>
