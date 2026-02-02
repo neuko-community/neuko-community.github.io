@@ -26,6 +26,8 @@ const comics: ComicDetails[] = [
 
 ]
 
+//https://x.com/DegenFigster/status/2002858886345465901 4 issue post
+
 const comicsData: ComicDetails[] = [...comics]
 
 export declare const data: Post[]
