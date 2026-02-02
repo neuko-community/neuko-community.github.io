@@ -9,6 +9,7 @@ type PostDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id' | 'source'> & { t
 const officialPosts: PostDetails[] = [
 
   // @austin_hurwitz
+  { url: 'https://x.com/austin_hurwitz/status/2018380486184501436', type: EventType.THREAD },
   { url: 'https://x.com/austin_hurwitz/status/1998056897501417520' },
   { url: 'https://x.com/austin_hurwitz/status/2009038538679992797' },
   { url: "https://x.com/austin_hurwitz/status/2011460329943826520" },
