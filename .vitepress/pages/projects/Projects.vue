@@ -103,6 +103,7 @@ const handleUrl = (handle: string) => `https://x.com/${normalizeHandle(handle)}`
   flex-direction: column;
   gap: 0.75rem;
   padding: 1.25rem 1.5rem 1.5rem;
+  height: 100%;
 }
 
 .projects-body h2 {
@@ -155,6 +156,7 @@ const handleUrl = (handle: string) => `https://x.com/${normalizeHandle(handle)}`
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--vp-c-brand-1);
+  margin-top: auto;
 }
 
 .projects-card:hover .projects-link {
