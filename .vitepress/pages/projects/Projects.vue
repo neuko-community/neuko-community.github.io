@@ -9,6 +9,8 @@ const resolveImage = (image: string) => (isExternal(image) ? image : withBase(im
 const normalizeHandle = (handle: string) => handle.replace(/^@/, '').trim()
 const handleLabel = (handle: string) => `@${normalizeHandle(handle)}`
 const handleUrl = (handle: string) => `https://x.com/${normalizeHandle(handle)}`
+const renderDescription = (description: string) =>
+  description.replace(/\r?\n/g, '<br />')
 </script>
 
 <template>
@@ -27,7 +29,7 @@ const handleUrl = (handle: string) => `https://x.com/${normalizeHandle(handle)}`
         </div>
         <div class="projects-body">
           <h2>{{ project.title }}</h2>
-          <p class="projects-description">{{ project.description }}</p>
+          <p class="projects-description" v-html="renderDescription(project.description)"></p>
           <div class="projects-contributors">
             <span class="contributors-label">Key contributors</span>
             <ul>

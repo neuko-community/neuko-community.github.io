@@ -41,6 +41,32 @@ export const projectsConfig: {
       image: '/images/gboy-identity-card.jpg',
       contributors: ['feezybellz_ii'],
       link: 'https://neukoai.feezybellz.me/dp/'
+    },
+    {
+      title: 'Bloc Translator',
+      description: 'A tool to translate Bloc encrypted messages into English.',
+      image: '/images/img-1.jpg',
+      contributors: ['HelveticaVault'],
+      link: 'https://thebloctranslator.vercel.app/'
+    },
+    {
+      title: 'G*BOY Character Selector Skill for AI Assistants',
+      description: `Turns your personal assistant into one of our characters from the neuko ep 2 rollout \n 
+                  🧠 Headcase
+                    💭 Daydreamer
+                    🔓 Thinktank
+                    🔥 Diehard
+                    🤝 Inside Man\n
+                    each character comes with a full personality profile: values, tone, communication style, and avatar`,
+      image: '/images/img-1.jpg',
+      contributors: ['austin_hurwitz'],
+      link: 'https://github.com/basedmereum/gboy-character-openclaw/tree/main'
+    }, {
+      title: 'Bloc Chat',
+      description: 'A chatbot that enables you to chat with the EP2 characters.',
+      image: '/images/img-1.jpg',
+      contributors: ['FSkifor'],
+      link: 'https://www.bloc-chat.online/'
     }
   ]
 }
