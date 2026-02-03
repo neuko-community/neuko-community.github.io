@@ -9,6 +9,7 @@ type PostDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id' | 'source'> & { t
 const officialPosts: PostDetails[] = [
 
   // @austin_hurwitz
+  { url: 'https://x.com/austin_hurwitz/status/2018487812526428667', type: EventType.THREAD },
   { url: 'https://x.com/austin_hurwitz/status/2018380486184501436', type: EventType.THREAD },
   { url: 'https://x.com/austin_hurwitz/status/1998056897501417520' },
   { url: 'https://x.com/austin_hurwitz/status/2009038538679992797' },
@@ -34,6 +35,7 @@ const officialPosts: PostDetails[] = [
   // @greenie_sr
 
   // @neukoai
+  { url: 'https://x.com/neukoai/status/2018725752787607572', type: EventType.THREAD },
   { url: 'https://x.com/neukoai/status/2018419539990491150' },
   { url: 'https://x.com/neukoai/status/2018376412323860913', type: EventType.VIDEO },
   { url: 'https://x.com/neukoai/status/2017371470100414911', type: EventType.VIDEO },

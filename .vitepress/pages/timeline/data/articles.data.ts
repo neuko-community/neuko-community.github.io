@@ -178,6 +178,11 @@ const communityArticles: ArticleDetails[] = [
 
   // @RecedingHare
   {
+    url: 'https://x.com/RecedingHare/status/2018695933442031718',
+    title: 'Neuko artist focus... piCASSo',
+    image: 'https://pbs.twimg.com/media/HAPXrIqXUAAJNQk?format=jpg&name=medium'
+  },
+  {
     url: 'https://x.com/RecedingHare/status/2016161122231910640',
     title: "Investing in your community can pay huge dividends, here's how...",
     image: 'https://pbs.twimg.com/media/G_rWJgGWQAAT4m3?format=jpg&name=medium'

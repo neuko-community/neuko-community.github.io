@@ -11,6 +11,19 @@ const handleLabel = (handle: string) => `@${normalizeHandle(handle)}`
 const handleUrl = (handle: string) => `https://x.com/${normalizeHandle(handle)}`
 const renderDescription = (description: string) =>
   description.replace(/\r?\n/g, '<br />')
+const isGithubLink = (link: string) => /^https?:\/\/(www\.)?github\.com\//i.test(link)
+const githubPreviewImage = (link: string) => `https://opengraph.githubassets.com/1/${link}`
+const previewImage = (link: string, image?: string) => {
+  if (image && image.trim()) return resolveImage(image)
+  return isGithubLink(link) ? githubPreviewImage(link) : ''
+}
+const previewLabel = (link: string) => {
+  try {
+    return new URL(link).hostname.replace(/^www\./, '')
+  } catch {
+    return link
+  }
+}
 </script>
 
 <template>
@@ -25,10 +38,15 @@ const renderDescription = (description: string) =>
         :href="resolveLink(project.link)" :target="isExternal(project.link) ? '_blank' : undefined"
         :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
         <div class="projects-image-wrap">
-          <img :src="resolveImage(project.image)" :alt="project.title" loading="lazy" />
+          <img v-if="previewImage(project.link, project.image,)" :src="previewImage(project.link, project.image)"
+            :alt="project.title" loading="lazy" />
+          <div v-else class="projects-image-fallback">
+            <span class="preview-label">Link preview</span>
+            <span class="preview-url">{{ previewLabel(project.link) }}</span>
+          </div>
         </div>
         <div class="projects-body">
-          <h2>{{ project.title }}</h2>
+          <h2 class="projects-title">{{ project.title }}</h2>
           <p class="projects-description" v-html="renderDescription(project.description)"></p>
           <div class="projects-contributors">
             <span class="contributors-label">Key contributors</span>
@@ -63,6 +81,11 @@ const renderDescription = (description: string) =>
   color: var(--vp-c-brand-1);
   margin: 0 0 0.75rem 0;
   text-transform: uppercase;
+}
+
+.projects-title {
+  /* min-height: 100px; */
+  line-height: 1
 }
 
 .projects-subtitle {
@@ -100,6 +123,32 @@ const renderDescription = (description: string) =>
   display: block;
 }
 
+.projects-image-fallback {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  color: var(--vp-c-text-2);
+  background: linear-gradient(135deg, rgba(255, 232, 0, 0.08), rgba(255, 232, 0, 0));
+}
+
+.preview-label {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--vp-c-text-3);
+}
+
+.preview-url {
+  font-size: 0.95rem;
+  word-break: break-word;
+  color: var(--vp-c-brand-1);
+}
+
 .projects-body {
   display: flex;
   flex-direction: column;
@@ -118,9 +167,11 @@ const renderDescription = (description: string) =>
   margin: 0;
   color: var(--vp-c-text-2);
   font-size: 0.95rem;
+  line-height: 1.2;
 }
 
 .projects-contributors {
+  margin-top: 2rem;
   display: grid;
   gap: 0.4rem;
 }

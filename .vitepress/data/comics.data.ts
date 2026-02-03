@@ -5,6 +5,7 @@ import { loadTweets } from "../utils/tweetFetch"
 type ComicDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id' | 'source'>
 
 const comics: ComicDetails[] = [
+  { url: 'https://x.com/DegenFigster/status/2018734123611799910' }, //DIEHARD
   { url: 'https://x.com/DegenFigster/status/2016597687609458760' },  // Owl
   { url: 'https://x.com/DegenFigster/status/2016809571138908294' }, // N0tt
   { url: 'https://x.com/DegenFigster/status/2016137288334311467' }, // InsideMan

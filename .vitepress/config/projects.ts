@@ -1,7 +1,7 @@
 export type ProjectEntry = {
   title: string
   description: string
-  image: string
+  image?: string
   contributors: string[]
   link: string
 }
@@ -31,7 +31,7 @@ export const projectsConfig: {
     {
       title: 'Comics',
       description: 'Community-made comic book collection inspired by Neuko characters.',
-      image: '/images/img-1.jpg',
+      image: 'https://pbs.twimg.com/media/G84C9A8XQAAtA2y?format=jpg&name=large',
       contributors: ['DegenFigster'],
       link: '/comics'
     },
@@ -45,28 +45,28 @@ export const projectsConfig: {
     {
       title: 'Bloc Translator',
       description: 'A tool to translate Bloc encrypted messages into English.',
-      image: '/images/img-1.jpg',
-      contributors: ['HelveticaVault'],
+      image: 'https://pbs.twimg.com/media/HAHVdEyXsAAzVpt?format=jpg&name=small',
+      contributors: ['HelveticVault'],
       link: 'https://thebloctranslator.vercel.app/'
     },
     {
       title: 'G*BOY Character Selector Skill for AI Assistants',
-      description: `Turns your personal assistant into one of our characters from the neuko ep 2 rollout \n 
-                  🧠 Headcase
-                    💭 Daydreamer
-                    🔓 Thinktank
-                    🔥 Diehard
-                    🤝 Inside Man\n
-                    each character comes with a full personality profile: values, tone, communication style, and avatar`,
-      image: '/images/img-1.jpg',
+      description: `Turns your personal assistant into one of our characters from the neuko ep 2 rollout`,
       contributors: ['austin_hurwitz'],
       link: 'https://github.com/basedmereum/gboy-character-openclaw/tree/main'
     }, {
       title: 'Bloc Chat',
       description: 'A chatbot that enables you to chat with the EP2 characters.',
-      image: '/images/img-1.jpg',
+      image: 'https://www.bloc-chat.online/media/Headcase.png',
       contributors: ['FSkifor'],
       link: 'https://www.bloc-chat.online/'
+    },
+    {
+      title: 'The Bloc Radio',
+      description: 'Playlist of Bloc hits',
+      image: 'https://www.bloc.rocks/walkman-hi-ref.png',
+      contributors: ['afkboom'],
+      link: 'https://www.bloc.rocks'
     }
   ]
 }
