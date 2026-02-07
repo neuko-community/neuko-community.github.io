@@ -7,6 +7,11 @@ type ArticleDetails = Omit<Article, 'type' | 'date' | 'source' | 'id'>
 const officialArticles: ArticleDetails[] = [
   // @austin_hurwitz
   {
+    url: 'https://x.com/austin_hurwitz/status/2020230955370201129',
+    title: 'The Bot Father: Lessons I Wish I Knew When Working with OpenClaw',
+    image: "https://pbs.twimg.com/media/HAlNRusWAAEYwre?format=jpg&name=medium"
+  },
+  {
     url: 'https://x.com/austin_hurwitz/status/2016280628090843360',
     title: 'Day in the life of a Moltbot (fka Clawdbot)',
     image: "https://pbs.twimg.com/media/G_tERCdWcAArHre?format=jpg&name=small"
