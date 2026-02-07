@@ -31,7 +31,7 @@ export const projectsConfig: {
     {
       title: 'Comics',
       description: 'Community-made comic book collection inspired by Neuko characters.',
-      image: 'https://pbs.twimg.com/media/G84C9A8XQAAtA2y?format=jpg&name=small',
+      image: '/images/comics.jpg',
       contributors: ['DegenFigster'],
       link: '/comics'
     },
@@ -45,7 +45,7 @@ export const projectsConfig: {
     {
       title: 'Bloc Translator',
       description: 'A tool to translate Bloc encrypted messages into English.',
-      image: 'https://pbs.twimg.com/media/HAHVdEyXsAAzVpt?format=jpg&name=small',
+      image: '/images/bloc-translator.jpg',
       contributors: ['HelveticVault'],
       link: 'https://thebloctranslator.vercel.app/'
     },
