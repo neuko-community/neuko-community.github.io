@@ -21,12 +21,11 @@ const renderDescription = (description: string) =>
     </header>
 
     <div class="projects-grid">
-      <a v-for="(project, index) in projectsConfig.projects" :key="index" class="projects-card neuko-card"
+      <a v-for="project in projectsConfig.projects" :key="`${project.link}\0${project.title}`" class="projects-card neuko-card"
         :href="resolveLink(project.link)" :target="isExternal(project.link) ? '_blank' : undefined"
         :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
         <div class="projects-image-wrap">
-          <img v-if="project.image?.trim()" :src="resolveImage(project.image!)"
-            :alt="project.title" loading="lazy" />
+          <img v-if="project.image?.trim()" :src="resolveImage(project.image!)" :alt="project.title" loading="lazy" />
           <div v-else class="projects-image-fallback">
             <span class="preview-label">Link preview</span>
             <span class="preview-url">{{ project.link }}</span>
