@@ -57,7 +57,7 @@ export const projectsConfig: {
     }, {
       title: 'Bloc Chat',
       description: 'A chatbot that enables you to chat with the EP2 characters.',
-      image: 'https://www.bloc-chat.online/media/Headcase.png',
+      image: '/images/bloc-chat.jpg',
       contributors: ['FSkifor'],
       link: 'https://www.bloc-chat.online/'
     },
