@@ -31,7 +31,7 @@ export const projectsConfig: {
     {
       title: 'Comics',
       description: 'Community-made comic book collection inspired by Neuko characters.',
-      image: '/images/comics.jpg',
+      image: '/images/comic.jpeg',
       contributors: ['DegenFigster'],
       link: '/comics'
     },
@@ -45,7 +45,7 @@ export const projectsConfig: {
     {
       title: 'Bloc Translator',
       description: 'A tool to translate Bloc encrypted messages into English.',
-      image: '/images/bloc-translator.jpg',
+      image: '/images/bloc-translator.jpeg',
       contributors: ['HelveticVault'],
       link: 'https://thebloctranslator.vercel.app/'
     },
@@ -57,7 +57,7 @@ export const projectsConfig: {
     }, {
       title: 'Bloc Chat',
       description: 'A chatbot that enables you to chat with the EP2 characters.',
-      image: '/images/bloc-chat.jpg',
+      image: '/images/bloc-chat.png',
       contributors: ['FSkifor'],
       link: 'https://www.bloc-chat.online/'
     },

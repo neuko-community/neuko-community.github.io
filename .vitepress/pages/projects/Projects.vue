@@ -34,11 +34,11 @@ const previewLabel = (link: string) => {
     </header>
 
     <div class="projects-grid">
-      <a v-for="project in projectsConfig.projects" :key="project.title" class="projects-card neuko-card"
+      <a v-for="project in projectsConfig.projects" :key="project.link" class="projects-card neuko-card"
         :href="resolveLink(project.link)" :target="isExternal(project.link) ? '_blank' : undefined"
         :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
         <div class="projects-image-wrap">
-          <img v-if="previewImage(project.link, project.image,)" :src="previewImage(project.link, project.image)"
+          <img v-if="previewImage(project.link, project.image)" :src="previewImage(project.link, project.image)"
             :alt="project.title" loading="lazy" />
           <div v-else class="projects-image-fallback">
             <span class="preview-label">Link preview</span>
