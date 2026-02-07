@@ -31,7 +31,7 @@ export const projectsConfig: {
     {
       title: 'Comics',
       description: 'Community-made comic book collection inspired by Neuko characters.',
-      image: 'https://pbs.twimg.com/media/G84C9A8XQAAtA2y?format=jpg&name=large',
+      image: 'https://pbs.twimg.com/media/G84C9A8XQAAtA2y?format=jpg&name=small',
       contributors: ['DegenFigster'],
       link: '/comics'
     },
