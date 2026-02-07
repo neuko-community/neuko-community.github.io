@@ -52,18 +52,21 @@ export const projectsConfig: {
     {
       title: 'G*BOY Character Selector',
       description: `An OpenCLAW skill for switching your agent's personality between curated characters from the G*BOY universe.`,
+      image: 'https://opengraph.githubassets.com/1/https://github.com/basedmereum/gboy-character-openclaw/tree/main',
       contributors: ['austin_hurwitz'],
       link: 'https://github.com/basedmereum/gboy-character-openclaw/tree/main'
     },
     {
       title: "Solprism",
       description: 'SOLPRISM adds cryptographic accountability to AI agent payments. Before an agent sends USDC, it commits a hash of its reasoning onchain.',
+      image: 'https://opengraph.githubassets.com/1/https://github.com/basedmereum/solprism-usdc',
       contributors: ['basedmereum'],
       link: 'https://github.com/basedmereum/solprism-usdc'
     },
     {
       title: 'AI Journal',
       description: 'An AI-powered journaling web app with local Markdown storage and Claude-powered reflection.',
+      image: 'https://opengraph.githubassets.com/1/https://github.com/basedmereum/ai-journal',
       contributors: ['austin_hurwitz'],
       link: 'https://github.com/basedmereum/ai-journal',
     },

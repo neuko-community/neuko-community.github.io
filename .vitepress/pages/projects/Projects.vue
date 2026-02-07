@@ -11,19 +11,6 @@ const handleLabel = (handle: string) => `@${normalizeHandle(handle)}`
 const handleUrl = (handle: string) => `https://x.com/${normalizeHandle(handle)}`
 const renderDescription = (description: string) =>
   description.replace(/\r?\n/g, '<br />')
-const isGithubLink = (link: string) => /^https?:\/\/(www\.)?github\.com\//i.test(link)
-const githubPreviewImage = (link: string) => `https://opengraph.githubassets.com/1/${link}`
-const previewImage = (link: string, image?: string) => {
-  if (image && image.trim()) return resolveImage(image)
-  return isGithubLink(link) ? githubPreviewImage(link) : ''
-}
-const previewLabel = (link: string) => {
-  try {
-    return new URL(link).hostname.replace(/^www\./, '')
-  } catch {
-    return link
-  }
-}
 </script>
 
 <template>
@@ -34,15 +21,15 @@ const previewLabel = (link: string) => {
     </header>
 
     <div class="projects-grid">
-      <a v-for="project in projectsConfig.projects" :key="project.link" class="projects-card neuko-card"
+      <a v-for="(project, index) in projectsConfig.projects" :key="index" class="projects-card neuko-card"
         :href="resolveLink(project.link)" :target="isExternal(project.link) ? '_blank' : undefined"
         :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
         <div class="projects-image-wrap">
-          <img v-if="previewImage(project.link, project.image)" :src="previewImage(project.link, project.image)"
+          <img v-if="project.image?.trim()" :src="resolveImage(project.image!)"
             :alt="project.title" loading="lazy" />
           <div v-else class="projects-image-fallback">
             <span class="preview-label">Link preview</span>
-            <span class="preview-url">{{ previewLabel(project.link) }}</span>
+            <span class="preview-url">{{ project.link }}</span>
           </div>
         </div>
         <div class="projects-body">
