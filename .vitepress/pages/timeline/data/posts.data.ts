@@ -35,6 +35,10 @@ const officialPosts: PostDetails[] = [
   // @greenie_sr
 
   // @neukoai
+
+  { url: 'https://x.com/neukoai/status/2019486804366479412', type: EventType.VIDEO },
+  { url: 'https://x.com/neukoai/status/2019446494365950091', type: EventType.VIDEO },
+  { url: 'https://x.com/neukoai/status/2019126404995248524' },
   { url: 'https://x.com/neukoai/status/2018725752787607572', type: EventType.THREAD },
   { url: 'https://x.com/neukoai/status/2018419539990491150' },
   { url: 'https://x.com/neukoai/status/2018376412323860913', type: EventType.VIDEO },
