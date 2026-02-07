@@ -50,11 +50,24 @@ export const projectsConfig: {
       link: 'https://thebloctranslator.vercel.app/'
     },
     {
-      title: 'G*BOY Character Selector Skill for AI Assistants',
-      description: `Turns your personal assistant into one of our characters from the neuko ep 2 rollout`,
+      title: 'G*BOY Character Selector',
+      description: `An OpenCLAW skill for switching your agent's personality between curated characters from the G*BOY universe.`,
       contributors: ['austin_hurwitz'],
       link: 'https://github.com/basedmereum/gboy-character-openclaw/tree/main'
-    }, {
+    },
+    {
+      title: "Solprism",
+      description: 'SOLPRISM adds cryptographic accountability to AI agent payments. Before an agent sends USDC, it commits a hash of its reasoning onchain.',
+      contributors: ['basedmereum'],
+      link: 'https://github.com/basedmereum/solprism-usdc'
+    },
+    {
+      title: 'AI Journal',
+      description: 'An AI-powered journaling web app with local Markdown storage and Claude-powered reflection.',
+      contributors: ['austin_hurwitz'],
+      link: 'https://github.com/basedmereum/ai-journal',
+    },
+    {
       title: 'Bloc Chat',
       description: 'A chatbot that enables you to chat with the EP2 characters.',
       image: '/images/bloc-chat.png',
