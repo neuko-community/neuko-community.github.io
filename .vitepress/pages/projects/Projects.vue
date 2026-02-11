@@ -9,6 +9,12 @@ const handleLabel = (handle: string) => `@${normalizeHandle(handle)}`
 const handleUrl = (handle: string) => `https://x.com/${normalizeHandle(handle)}`
 const renderDescription = (description: string) =>
   description.replace(/\r?\n/g, '<br />')
+
+// Resolve image URL: apply withBase at runtime so production base is correct (fixes wrong/duplicate images).
+const imageSrc = (url: string | undefined) => {
+  if (!url?.trim()) return ''
+  return url.startsWith('http') ? url : withBase(url)
+}
 </script>
 
 <template>
@@ -19,11 +25,11 @@ const renderDescription = (description: string) =>
     </header>
 
     <div class="projects-grid">
-      <a v-for="project in projectsConfig.projects" :key="`${project.link}\0${project.title}`"
+      <a v-for="(project, index) in projectsConfig.projects" :key="`project-${index}-${project.title}`"
         class="projects-card neuko-card" :href="project.link" :target="isExternal(project.link) ? '_blank' : undefined"
         :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
         <div class="projects-image-wrap">
-          <img v-if="project.image?.trim()" :src="project.image" :alt="project.title" loading="lazy" />
+          <img v-if="imageSrc(project.image)" :src="imageSrc(project.image)" :alt="project.title" loading="lazy" />
           <div v-else class="projects-image-fallback">
             <span class="preview-label">Link preview</span>
             <span class="preview-url">{{ project.link }}</span>

@@ -8,6 +8,8 @@ export type ProjectEntry = {
   link: string
 }
 
+// Local image paths (no withBase here — applied in component so base is correct in production).
+// Use full URLs for external images (GitHub opengraph, etc.).
 export const projectsConfig: {
   title: string
   description: string
@@ -19,35 +21,35 @@ export const projectsConfig: {
     {
       title: 'GBOYSPECIAL Prompt Library',
       description: 'A library of prompts for the GBOYSPECIAL AI tool.',
-      image: withBase('/images/prompt-library.jpeg'),
+      image: '/images/prompt-library.jpeg',
       contributors: ['FSkifor'],
       link: 'https://www.gboy-lib.art/feed'
     },
     {
       title: 'Pathogenz TCG',
       description: 'A collectible trading card game built by badge-holding community members.',
-      image: withBase('/images/pathogenz.jpg'),
+      image: '/images/pathogenz.jpg',
       contributors: ['PathogenzTCG', '0161cassius'],
       link: withBase('/pathogenz')
     },
     {
       title: 'Comics',
       description: 'Community-made comic book collection inspired by Neuko characters.',
-      image: withBase('/images/comic.jpeg'),
+      image: '/images/comic.jpeg',
       contributors: ['DegenFigster'],
       link: withBase('/comics')
     },
     {
       title: 'Operative Identity Card',
       description: 'Create and download your custom ID with your hooded PFP, Operative Type and Number.',
-      image: withBase('/images/gboy-identity-card.jpg'),
+      image: '/images/gboy-identity-card.jpg',
       contributors: ['feezybellz_ii'],
       link: 'https://neukoai.feezybellz.me/dp/'
     },
     {
       title: 'Bloc Translator',
       description: 'A tool to translate Bloc encrypted messages into English.',
-      image: withBase('/images/bloc-translator.jpeg'),
+      image: '/images/bloc-translator.jpeg',
       contributors: ['HelveticVault'],
       link: 'https://thebloctranslator.vercel.app/'
     },
@@ -75,7 +77,7 @@ export const projectsConfig: {
     {
       title: 'Bloc Chat',
       description: 'A chatbot that enables you to chat with the EP2 characters.',
-      image: withBase('/images/bloc-chat.png'),
+      image: '/images/bloc-chat.png',
       contributors: ['FSkifor'],
       link: 'https://www.bloc-chat.online/'
     },
