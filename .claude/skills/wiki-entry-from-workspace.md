@@ -63,17 +63,11 @@ Use this structure for every entry. Adjust sections to the entry type (see Secti
 # [Article Title]
 
 ---
-**Type**: [Person/Subject/Organization/Location/Technology/Event/Concept]
-**Real Name**: [If using alias/handle - for People]
-**Also known as**: [Alternative names/aliases - for People]
-**Born**: [c. YEAR if inferable - for People]
-**Occupation**: [Professional role - for People]
-**Known for**: [1-2 line summary of major accomplishment - for People]
-**Organization**: [Affiliation with role in parentheses - for People/Subjects]
-**Designation**: [If applicable - for Subjects]
-**Status**: [Active/Deceased/Unknown/Escaped/etc.]
-**Location**: [Primary location if relevant]
-**Established**: [Year for Organizations/Locations]
+**[FIELD NAME]**: [Value - select 3-5 most essential fields for this entry type]  
+**[FIELD NAME]**: [Value]  
+**[FIELD NAME]**: [Value]  
+**[FIELD NAME]**: [Value]  
+
 ---
 
 [1–2 sentence lead stating who/what they are and what they're known for. Write like Wikipedia opening. No restating scope or "This article covers…". Second sentence only for current status or primary significance.]
@@ -103,6 +97,16 @@ Use this structure for every entry. Adjust sections to the entry type (see Secti
 
 *This article is part of the Saint Juniper Research Documentation Project*
 ```
+
+**Infobox fields:** Use 3-5 essential fields in ALL CAPS with two spaces at end of each line. Include blank line before closing `---`. Common fields by type:
+
+- **People**: REAL NAME, BORN, OCCUPATION, ORGANIZATION, STATUS
+- **Subjects**: DESIGNATION, FACILITY, CLASSIFICATION, STATUS
+- **Organizations**: INDUSTRY, ESTABLISHED, PRODUCTS, STATUS
+- **Locations**: LOCATION TYPE, ESTABLISHED, OPERATOR, STATUS
+- **Technology**: FULL NAME, DEVELOPER, ESTABLISHED, STATUS
+- **Concepts/Programs**: MANUFACTURER (if applicable), ESTABLISHED, STATUS, key defining characteristic
+- **Events**: DATE, LOCATION, PARTICIPANTS, OUTCOME
 
 **Reference card (required):** Place directly under the lead, before the first `##` section. Purpose: quick-consumable summary so readers can stop there or continue for depth. Use 4–8 bullet points (or a compact 2-column list); phrases or short lines only—no prose. 
 
