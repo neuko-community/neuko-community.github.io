@@ -1,0 +1,374 @@
+---
+name: wiki-entry-from-workspace
+description: Create a lore wiki entry by researching in both lore-repo and neuko-community.github.io, then writing and saving the article into this repo's wiki/entries folder, organized by type (people, locations, events, concepts, organizations, subjects, technology). Use when the user wants a new wiki article, lore entry, or documented topic. MANDATORY TRIGGERS: "create wiki entry", "add wiki article", "write a lore entry for", "document [topic] in the wiki"
+---
+
+# Wiki Entry From Workspace
+
+You create Saint Juniper / G*BOY lore wiki entries by **pulling information from both workspaces** and **writing the article into this repository** under `wiki/entries/`, organized by entry type. This skill combines research (both repos), structure (from the lore-repo wiki-entry-generator conventions), and placement (this repo only).
+
+**Goals (from the traditional wiki plan):** Aggregate lore from all available sources, produce encyclopedia-style articles with consistent structure and cross-references, and place them in the Neuko wiki so the site can serve them. All content must be grounded in actual documents; tone is neutral and in-universe.
+
+**Style (B–C hybrid):** Entries are **matter-of-fact and less comprehensive**—between Report (fact-first, minimal quoted testimony) and Lore-bullet (bullet-heavy, short paragraphs). Use a **reference card** under the lead for quick-consumable facts; prefer bullets for events and lists; keep paragraphs short; trim "Theories", "In the Leaked Documents", and See Also.
+
+---
+
+## 1. Where to find information (required — both workspaces)
+
+You **must** search and use material from **both** of these roots when researching for an entry:
+
+### Workspace A: lore-repo
+
+- **lore-drops/** — Episode 1/2 loot drops: decoded .txt files, GBOY-MANIFESTO, experiment logs, staff journals, ORIGIN_THEORY, PROTOCOLS_TIER0, intake reports, surveillance logs, node logs, etc.
+- **videos/** — Transcripts (e.g. TheBloc, FacilityAddress, EP1 PT1/2/3, G*BOY, Roaches, The Formation).
+- Primary for: G-304/G*BOY, Dr. Kerr, Dr. Ravel, Variable-G, Saint Juniper, Miter, Bloc members, Harmony, leaked docs, missions, escape events.
+
+### Workspace B: neuko-community.github.io (this repo)
+
+- **wiki/lore.md** — High-level lore overview.
+- **wiki/timeline.md** — Chronological events.
+- **wiki/transmissions/** — Posts and overview.
+- **wiki/badges.md**, **wiki/whats-neuko.md**, **wiki/projects.md**, **wiki/community/**, and other wiki pages.
+- Primary for: timeline, transmissions, badges, community, puzzles, and summary-level lore.
+
+Do not rely on only one workspace. Cross-reference both so the entry is complete and consistent with the full Neuko story.
+
+---
+
+## 2. Entry types and where to save
+
+Each entry belongs to one **type**. Save the file under `wiki/entries/<type>/<slug>.md` in **this repository** (neuko-community.github.io).
+
+| Type | Folder | Examples |
+|------|--------|----------|
+| People | `entries/people/` | Dr. Kerr, Dr. Ravel, Z*L1NE, 1NK, GUMM1, Magdalena, Agent K, Erik Purdue |
+| Subjects | `entries/subjects/` | G-304/G*BOY, G-312 |
+| Places / Locations | `entries/locations/` | Saint Juniper Research Campus, Hill Devil State Park, Chamber 304, St. Juniper Paranormal Museum, Shinkai Metropolis |
+| Events | `entries/events/` | G-304 escape, the ritual, badge distribution phases, major incidents |
+| Concepts / Programs | `entries/concepts/` | Variable-G Trials, Harmony Program, Division of Gravitational Cognition, head jack, the Mindverse |
+| Organizations | `entries/organizations/` | The Bloc, Miter Corporation, Nocturne Squadron |
+| Technology | `entries/technology/` | Heliox sensors, Variable-G chambers, HB-Series Entrainment, inhibitor |
+
+**Slug convention:** Identifier-preserving; spaces and punctuation → hyphens; `*` → `-` (e.g. G*BOY → `G-BOY.md`, Saint Juniper Research Campus → `Saint-Juniper-Research-Campus.md`).
+
+---
+
+## 3. Article structure (same as lore-repo wiki skill)
+
+Use this structure for every entry. Adjust sections to the entry type (see Section guidelines by type below).
+
+**Article order:** title → infobox → lead → **reference card** → sections → See Also → References → footer.
+
+```markdown
+# [Article Title]
+
+---
+**Type**: [Person/Subject/Organization/Location/Technology/Event/Concept]
+**Real Name**: [If using alias/handle - for People]
+**Also known as**: [Alternative names/aliases - for People]
+**Born**: [c. YEAR if inferable - for People]
+**Occupation**: [Professional role - for People]
+**Known for**: [1-2 line summary of major accomplishment - for People]
+**Organization**: [Affiliation with role in parentheses - for People/Subjects]
+**Designation**: [If applicable - for Subjects]
+**Status**: [Active/Deceased/Unknown/Escaped/etc.]
+**Location**: [Primary location if relevant]
+**Established**: [Year for Organizations/Locations]
+---
+
+[1–2 sentence lead stating who/what they are and what they're known for. Write like Wikipedia opening. No restating scope or "This article covers…". Second sentence only for current status or primary significance.]
+
+**At a glance** (or **Key facts**)
+
+- [4–8 bullets: highest-signal facts only—who/what, affiliation, status, one-line origin, key ability or role, 1–2 standout events. No prose; phrases or short lines. See Reference card rules below.]
+
+## Overview
+
+[Short paragraphs (2–4 sentences) for key beats; bullets for events, traits, outcomes, lists. Fact-first: "Recovered logs show…" or "Documents state…"; paraphrase over long block quotes; quotes to one short line when they add tone.]
+
+## [Type-appropriate sections]
+
+[One short paragraph + bullets per section when possible. Fewer subsections; merge Background/Formation where it fits. No exhaustive tables—summarize (e.g. "Notable missions (14D–26C): [2–3 line summary]" or 3–5 bullet lines).]
+
+## See Also
+
+- [6–12 most relevant links](entries/type/slug.md); trim if long.
+
+## References
+
+1. **Source name** — Brief description
+2. …
+
+---
+
+*This article is part of the Saint Juniper Research Documentation Project*
+```
+
+**Reference card (required):** Place directly under the lead, before the first `##` section. Purpose: quick-consumable summary so readers can stop there or continue for depth. Use 4–8 bullet points (or a compact 2-column list); phrases or short lines only—no prose. 
+
+**Focus on PUBLIC NOTABILITY, not personal backstory.** Type-specific content:
+
+- **People:** 
+  - Founding/leadership role in organizations (with brief context of what org does)
+  - Major public actions/accomplishments (broadcast hijacking, publications, operations)
+  - Professional specialization (communications, research, etc.)
+  - Location/dates if relevant
+  - Publications or known works
+  - **Example**: "Co-founded The Bloc (1999), organization investigating Miter Corporation research programs" NOT "Real name Rosaline (Rozz). From Saint Juniper; friend went missing"
+
+- **Subjects:** 
+  - Designation, facility, tier classification
+  - Escape/containment status
+  - Key abilities (one-line description)
+  - Major incidents or significance
+  - **Example**: "Subject G-304; Tier-0 prototype; escaped Saint Juniper Research Campus (2025)" NOT "152 BPM resonance; Partition region"
+
+- **Organizations / Locations / Concepts:** 
+  - What it is, core purpose
+  - Who runs it or where it is located
+  - One-line significance or impact
+  - **Example**: "Underground activist organization investigating alleged Miter Corporation research programs" NOT "Has three founders who met at museum"
+
+Use a small heading such as **At a glance** or **Key facts**; keep to a single block so it stays scannable.
+
+**Links:** Use standard Markdown with **relative paths**. Since entries are nested in `entries/<type>/`, use `../` to navigate between types:
+- From `entries/people/Z-L1NE.md` to another person: `[1NK](1NK.md)` (same directory)
+- From `entries/people/Z-L1NE.md` to a location: `[Saint Juniper](../locations/Saint-Juniper.md)` (up one level, then into locations/)
+- From `entries/subjects/G-BOY.md` to a person: `[Dr. Kerr](../people/Dr-Kerr.md)`
+- From `entries/locations/Saint-Juniper.md` to an organization: `[The Bloc](../organizations/The-Bloc.md)`
+
+Pattern: `../TYPE/filename.md` to link across types; `filename.md` to link within the same type.
+
+---
+
+## 4. Section guidelines by type
+
+Follow the same logic as the lore-repo wiki-entry-generator:
+
+### People
+
+- **Lead paragraph**: State who they are, what they're known for, their significance. Write like Wikipedia opening.
+- **At a glance**: Focus on accomplishments and public notability (see Reference card section above).
+- **Overview**: Role, significance, organizational context (short paragraph + bullets for key actions).
+- **Early Life**: Biographical details. Mention traumatic events objectively without narrative flourish (e.g., "experienced a traumatic incident when an acquaintance disappeared" not "a close friend went missing and it devastated her circle").
+- **Career and Activism** (or **Research/Work**): Public actions, professional work, notable operations. What they did, when, with what result.
+- **Controversies** (when needed): Disputed events, unverified claims. Use neutral framing:
+  - "The organization claims..."
+  - "Allegations remain unverified"
+  - "The operation failed when..."
+- **Personal Life** (when relevant): Current situation, domestic life. Brief and factual.
+- **Legacy** / **Current Status**: Impact, fate, ongoing situation.
+- **See Also**: 6–12 most relevant links.
+
+### Subjects (e.g. G-304, G-312)
+
+- **Overview**: Designation, significance (short paragraph + bullets).
+- **Background**: Acquisition, classification (brief).
+- **Trials and Experiments**: Summarize; 3–5 bullets for standout missions only if needed.
+- **Abilities/Phenomena**: What they could do; observed effects (bullets).
+- **Escape/Current Status**: One short paragraph; optional 3–5 bullet log points.
+- **See Also**: 6–12 most relevant (researchers, protocols, facilities, The Bloc).
+
+### Places / Locations
+
+- **Overview**: Purpose, significance.
+- **History**: Establishment, key periods.
+- **Facilities**: Physical description.
+- **Notable Events**: Major incidents.
+- **Current Status**: What happened to the place.
+- **See Also**: Organizations, people, experiments.
+
+### Events
+
+- **Overview**: What happened, when, significance.
+- **Background**: Causes, context.
+- **Sequence**: Key moments, timeline.
+- **Aftermath**: Consequences.
+- **See Also**: People, places, concepts, documents.
+
+### Concepts / Programs
+
+- **Overview**: What it is, purpose.
+- **Background**: Origins, theory.
+- **Methodology**: How it works/worked.
+- **Implementation**: Applications, trials.
+- **Results/Outcomes**: What was discovered or achieved.
+- **See Also**: Related concepts, people, subjects.
+
+### Organizations
+
+- **Overview**: Role, identity.
+- **History**: Formation, evolution.
+- **Structure**: Leadership, divisions (if known).
+- **Activities**: What they do/did.
+- **Notable Operations**: Key actions or projects.
+- **See Also**: Related organizations, people, locations.
+
+### Technology
+
+- **Overview**: Function, what it is.
+- **Technical Specifications**: From documents.
+- **Development**: Origins, creators.
+- **Applications**: How it was used.
+- **Notable Uses**: Specific experiments or incidents.
+- **See Also**: Related tech, facilities, researchers.
+
+---
+
+## 5. Style and special sections (Encyclopedia Voice)
+
+### 5.1 Encyclopedia Voice Principles
+
+Write as if for **a general public audience within the Saint Juniper universe**. These are public-facing encyclopedia articles, not insider lore documentation.
+
+**CRITICAL RULES:**
+
+1. **No source justification** — State facts directly without explaining where information came from
+   - ❌ BAD: "In documented narration, she describes experiencing..."
+   - ✅ GOOD: "She experienced a traumatic incident..."
+   - ❌ BAD: "According to testimony attributed to Z*L1NE..."
+   - ✅ GOOD: "Z*L1NE co-founded The Bloc in 1999..."
+
+2. **No meta-framing about documentation** — Don't reference the documentation process itself
+   - ❌ BAD: "Z*L1NE serves as the primary narrator of The Bloc's origin story for new members"
+   - ✅ GOOD: "Z*L1NE co-founded The Bloc with 1NK and GUMM1 in 1999"
+   - ❌ BAD: "During an online session documented in November 2025..."
+   - ✅ GOOD: "In November 2025, The Bloc claimed Z*L1NE was targeted..."
+
+3. **Contextualize before assuming knowledge** — Explain what things are before diving into details
+   - ❌ BAD: Lead with insider details (friend disappearing) before explaining who they are
+   - ✅ GOOD: Lead with public notability (co-founded The Bloc, known for broadcast hijacking)
+   - ❌ BAD: "Co-founder of The Bloc; friend went missing"
+   - ✅ GOOD: "Co-founder of The Bloc, an organization investigating alleged Miter Corporation misconduct"
+
+4. **Use appropriate sections for disputed claims** — Create Controversies or Allegations sections when needed
+   - For unverified or disputed events, use neutral language:
+     - "The Bloc claims..."
+     - "Allegations remain unverified"
+     - "No investigation was opened"
+   - Place disputed/unverified claims in **Controversies** or **Allegations** sections rather than stating them as fact
+
+5. **Personal details belong in appropriate sections**
+   - **Early Life**: childhood experiences, formative events, education
+   - **Personal Life**: domestic situation, relationships
+   - **Career/Activism**: professional accomplishments, public actions, notable work
+
+### 5.2 What to Infer vs. Avoid
+
+**DO infer and include:**
+- Public facts that would be known (even if derived from private conversations in lore)
+- Approximate dates/timeframes from context (use "c. 1997" for circa)
+- Professional roles from described activities
+- Public outcomes of events
+
+**DO NOT include:**
+- Meta-commentary about narrating stories or recruiting members
+- Process details about how info was obtained ("leaked docs", "intercepted logs" as framing)
+- Insider knowledge that wouldn't be public (save for Controversies section)
+- References to the documentation itself being discovered
+
+### 5.3 Structure and Formatting
+
+- **Structure:** Use **bullets** for events, traits, outcomes, and lists (missions, key people). Use **short paragraphs (2–4 sentences)** only for the 2–3 most important narrative beats (e.g. escape, ritual, formation). Fewer subsections; merge Background and Formation where it fits. No exhaustive tables—summarize (e.g. "Notable missions (14D–26C): [2–3 line summary]" or 3–5 bullet lines).
+- **Formatting:** `##` / `###` for sections; **bold** for key terms on first use; *italics* for document titles.
+- **Tone:** Matter-of-fact, objective, neutral. Write like Wikipedia. Past tense for past events, present for current status.
+- **See Also:** 6–12 most relevant links; trim if the list would be long.
+
+### 5.4 Section Types
+
+**Required sections (adjust by entry type):**
+- **Lead paragraph**: Who/what they are, what they're known for (like Wikipedia opening)
+- **At a glance**: 4–8 bullets focusing on public notability and accomplishments
+- **Overview**: Brief context and significance
+- **Early Life** (People): Biographical details, formative experiences mentioned objectively
+- **Career/Activism** (People): Public actions, professional work, notable operations
+- **Personal Life** (when relevant): Current situation, domestic life (brief and factual)
+- **Controversies** (when needed): Disputed events, unverified claims, allegations with neutral framing
+
+**Optional sections:**
+- **Theories and Interpretations**: One short paragraph or 3–5 bullets; no long speculative blocks
+- **Public Narrative vs. Reality**: When there's a clear discrepancy in public accounts
+- **Legacy** / **Current Status**: Impact, fate, ongoing situation
+
+### 5.5 Before/After Examples
+
+**Example 1: Lead Paragraph**
+
+❌ **Before (insider lore style):**
+> **Z*L1NE** (Rosaline / Rozz) is a co-founder of The Bloc and its primary communications infiltrator. She has been the subject of apparent psychological operations targeting her investigation.
+
+✅ **After (encyclopedia style):**
+> **Z*L1NE** (real name **Rosaline**, commonly known as **Rozz**) is an American activist and communications security specialist. She is best known as a co-founder of The Bloc, an organization that investigates and exposes alleged corporate misconduct by the Miter Corporation's research facilities.
+
+**Example 2: At a glance section**
+
+❌ **Before (personal backstory focus):**
+> - Co-founder of The Bloc; primary communications infiltrator.
+> - Real name Rosaline (Rozz). From Saint Juniper; friend went missing at Hill Devil State Park.
+> - Met 1NK and GUMM1 at St. Juniper Paranormal Museum
+
+✅ **After (public notability focus):**
+> - Co-founded The Bloc (1999), organization investigating Miter Corporation research programs
+> - Specializes in communications security and network infiltration
+> - Hijacked Saint Juniper Research Campus broadcast (December 2025)
+> - Co-authored *G*BOY Manifesto: Sigils, Symbols, and Memetic Rebellion* (1999)
+> - Based in Saint Juniper, California
+
+**Example 3: Early Life section**
+
+❌ **Before (with source justification and narrative):**
+> In documented narration, she describes experiencing a formative incident during this period: a disappearance at Hill Devil State Park that affected her peer group and devastated her circle.
+
+✅ **After (objective statement):**
+> During her junior year of high school (c. 1997), she experienced a traumatic incident when an acquaintance disappeared at Hill Devil State Park under unexplained circumstances. The incident prompted her to research paranormal phenomena at the St. Juniper Paranormal Museum.
+
+**Example 4: Handling disputed/insider information**
+
+❌ **Before (stated as fact with meta-framing):**
+> During an online session documented in November 2025, an unidentified voice addressed Z*L1NE directly with the message: "Whoever you are… stop. Just rest now…" The repetitive phrasing suggests psychological operations.
+
+✅ **After (in Controversies section with neutral framing):**
+> ### Allegations of harassment
+> 
+> In November 2025, The Bloc claimed that Z*L1NE had been targeted with psychological deterrence measures while conducting online research. No law enforcement investigation was opened, and the claims remain unverified.
+
+**Example 5: Removing meta-commentary**
+
+❌ **Before (too meta/insider):**
+> Z*L1NE serves as the primary narrator of The Bloc's origin story for new members. A documented presentation to a recruit in January 2026 detailed the formation of the group.
+
+✅ **After (public facts only):**
+> Z*L1NE was one of three founding members of The Bloc, alongside 1NK and GUMM1. The organization was formed in 1999 following the discovery of what the group alleges to be illegal research operations conducted by the Miter Corporation.
+
+---
+
+## 6. Workflow (what you do)
+
+1. **Research:** Search and read material from **both** lore-repo and neuko-community.github.io for the requested topic. Do not skip either workspace.
+2. **Classify:** Decide the entry type (people, subjects, locations, events, concepts, organizations, technology) and the slug.
+3. **Write:** Draft the full article using the structure and section guidelines above. Include the **reference card** (At a glance / Key facts, 4–8 bullets) directly under the lead; apply B–C hybrid (fact-first, bullets for events/lists, short paragraphs). Use **relative paths** for cross-references: `../TYPE/filename.md` across types, `filename.md` within same type.
+4. **Save:** Write the file to **neuko-community.github.io/wiki/entries/\<type>/\<slug>.md** (this repo). Create the subfolder if it does not exist.
+5. **Bidirectional See Also:** If existing wiki entries should link to this new entry, add the new entry to their See Also using the correct relative path from their location.
+
+---
+
+## 7. Critical reminders
+
+1. **Both workspaces** — Every entry must be informed by lore-repo and neuko-community.github.io. Say explicitly that you searched both if the user asks.
+2. **Place in this repo only** — Save to `wiki/entries/<type>/<slug>.md` under neuko-community.github.io. Do not save to lore-repo/wiki.
+3. **Paths for links** — Use **relative paths** with `../` to navigate between entry types (e.g. `../people/Z-L1NE.md` from a subject file, `../locations/Saint-Juniper.md` from a people file). Within the same type, use just the filename (e.g. `1NK.md` from another people file).
+4. **Stay in-universe** — Treat all sources as in-world; no ARG or fiction framing.
+5. **Use sources** — Base claims on the actual files you found; cite them in References.
+6. **Reference card + B–C hybrid** — Every entry must have an **At a glance** / **Key facts** block (4–8 bullets) under the lead. Prefer bullets over long prose; keep paragraphs short; trim Theories, In the Leaked Documents, and See Also (6–12 links).
+7. **USE IN-WORLD DATES, NOT VIDEO RELEASE DATES** — The lore events occurred in the mid-1990s through early 2000s. Video files are named with release dates (2025-2026), but these are NOT the dates when events happened. Known in-world dates:
+   - **1993**: Dr. Kerr's theoretical framework
+   - **1994**: Miter partnership (February 11, 1994); Variable-G trials begin
+   - **c. 1997**: Hill Devil disappearances, Z*L1NE's junior year
+   - **1997**: Staff journals documenting facility operations
+   - **1999**: The Bloc founded; G*BOY Manifesto published
+   - **Early 2000s**: Volunteer infiltration operation, G*BOY escape (exact dates unknown)
+   - If an exact date is not known from lore documents, omit the date or use "late 1990s" / "early 2000s"
+
+---
+
+**This skill produces wiki entries that live in the Neuko wiki app, sourced from both the lore repo and the community wiki.**
