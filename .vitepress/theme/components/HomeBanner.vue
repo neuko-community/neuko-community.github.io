@@ -1,149 +1,116 @@
 ```
 <script setup>
 import { withBase } from 'vitepress'
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const bgImage = ref(withBase('/images/home-banner.jpg'))
 const creatorHandle = ref('')
-const badgeStats = ref({ Rabbit: 160, Moth: 366, Snake: 614 })
-
-// Computed totals
-const totalSent = computed(() => {
-    return (badgeStats.value.Rabbit || 0) + (badgeStats.value.Moth || 0) + (badgeStats.value.Snake || 0)
-})
-
-const totalPercent = computed(() => {
-    return Math.round((totalSent.value / 1496) * 100)
-})
 
 onMounted(async () => {
-  // Use glob only to get filenames. Eager is false to avoid importing public assets via relative path,
-  // which triggers Vite warnings.
-  const images = import.meta.glob('../../../public/hero/*.{jpg,jpeg,png,webp}', { eager: false })
-  const paths = Object.keys(images)
-  
-  if (paths.length > 0) {
-    const randomPath = paths[Math.floor(Math.random() * paths.length)]
-    const filename = randomPath.split('/').pop()
-    
-    // Construct URL manually for public assets
-    bgImage.value = withBase(`/hero/${filename}`)
-    creatorHandle.value = filename.substring(0, filename.lastIndexOf('.')).replace(/-\d+$/, '')
-  }
+    const images = import.meta.glob('../../../public/hero*.{jpg,jpeg,png,webp}', { eager: false })
+    const paths = Object.keys(images)
+
+    if (paths.length > 0) {
+        const randomPath = paths[Math.floor(Math.random() * paths.length)]
+        const filename = randomPath.split('/').pop()
+
+        bgImage.value = withBase(`/hero/${filename}`)
+        creatorHandle.value = filename.substring(0, filename.lastIndexOf('.')).replace(/-\d+$/, '')
+    }
 })
 </script>
 
 <template>
-  <div class="banner-container">
-    <div class="banner-wrapper">
-      <!-- Top Section: Image & Main Text -->
-      <div class="banner-top" :style="{ backgroundImage: `url(${bgImage})` }">
-        <div class="banner-overlay">
-          <div class="banner-main-text">
-            <img :src="withBase('/images/badge-array.png')" class="badge-detail" alt="Badge Detail" />
-            <h1 class="title">THE COMMUNITY </h1>
-            <h2 class="subtitle">NEUKO<span class="lowered-asterisk">*</span>WIKI</h2>
-            <p class="tagline">UNOFFICIAL ARCHIVE OF NEUKO.AI AND THE STORY OF G*BOY SO FAR</p>
-          </div>
-        </div>
-        
-        <div v-if="creatorHandle" class="attribution-overlay">
-            <span class="attribution-text">IMG BY: </span>
-            <a :href="`https://x.com/${creatorHandle}`" target="_blank" class="attribution-link">@{{ creatorHandle.toUpperCase() }}</a>
-        </div>
-      </div>
+    <div class="banner-container">
+        <div class="banner-wrapper">
+            <div class="banner-top" :style="{ backgroundImage: `url(${bgImage})` }">
+                <div class="banner-overlay">
+                    <div class="banner-main-text">
+                        <img :src="withBase('/images/badge-array.png')" class="badge-detail" alt="Badge Detail" />
+                        <h1 class="title">THE COMMUNITY </h1>
+                        <h2 class="subtitle">NEUKO<span class="lowered-asterisk">*</span>WIKI</h2>
+                        <p class="tagline">UNOFFICIAL ARCHIVE OF NEUKO.AI AND THE STORY OF G*BOY SO FAR</p>
+                    </div>
+                </div>
 
-      <!-- Bottom Section: Info Bar -->
-      <div class="banner-bottom">
-        <div class="bottom-left">
-          <div class="ticker-text">
-            <div class="links-group">
-                <span>BUY ON: </span>
-                <a href="https://magiceden.us/marketplace/gboy_badges_" target="_blank" class="banner-link">MAGIC EDEN</a>
-                <span class="separator">|</span>
-                <a href="https://x.com/neukoai" target="_blank" class="banner-link">OFFICIAL X ACCOUNT @NEUKOAI</a>
+                <div v-if="creatorHandle" class="attribution-overlay">
+                    <span class="attribution-text">IMG BY: </span>
+                    <a :href="`https://x.com/${creatorHandle}`" target="_blank" class="attribution-link">@{{
+                        creatorHandle.toUpperCase() }}</a>
+                </div>
             </div>
-            
-            <span class="separator mobile-hide">|</span>
-            
-            <!-- Badge Stats -->
-            <a href="https://x.com/neukoai/status/1998483693195899014" target="_blank" class="badge-stats-group">
-                <span class="stat-item" title="Rabbit Sent / Total">
-                    <img :src="withBase('/images/badges/rabbit.png')" alt="Rabbit" class="badge-icon" /> 
-                    {{ badgeStats.Rabbit }}/200 ({{ Math.round((badgeStats.Rabbit/200)*100) }}%)
-                </span>
-                <span class="stat-item" title="Moth Sent / Total">
-                     <img :src="withBase('/images/badges/moth.png')" alt="Moth" class="badge-icon" /> 
-                     {{ badgeStats.Moth }}/462 ({{ Math.round((badgeStats.Moth/462)*100) }}%)
-                </span>
-                <span class="stat-item" title="Snake Sent / Total">
-                     <img :src="withBase('/images/badges/snake.png')" alt="Snake" class="badge-icon" /> 
-                     {{ badgeStats.Snake }}/834 ({{ Math.round((badgeStats.Snake/834)*100) }}%)
-                </span>
-                
-                <span class="highlight-text mobile-break">
-                     [{{ totalSent }}/1496 ({{ totalPercent }}%)] SENT TO SAVE G*BOY
-                </span>
-            </a>
-          </div>
-        </div>
 
-        <div class="bottom-right">
-          <a href="/whats-neuko" class="action-btn primary">START HERE</a>
-          <a href="https://gboyspecial.com" target="_blank" class="action-btn secondary">GBOYSPECIAL.COM</a>
+            <div class="banner-bottom">
+                <div class="bottom-left">
+                    <div class="ticker-text">
+                        <div class="links-group">
+                            <span>BUY ON: </span>
+                            <a href="https://magiceden.us/marketplace/gboy_badges_" target="_blank"
+                                class="banner-link">MAGIC EDEN</a>
+                            <span class="separator">|</span>
+                            <a href="https://x.com/neukoai" target="_blank" class="banner-link">OFFICIAL X ACCOUNT
+                                @NEUKOAI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-right">
+                    <a href="/whats-neuko" class="action-btn primary">START HERE</a>
+                    <a href="https://gboyspecial.com" target="_blank" class="action-btn secondary">GBOYSPECIAL.COM</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
 .banner-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto 2rem auto;
-  padding: 0 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 2rem auto;
+    padding: 0 2rem;
 }
 
 .banner-wrapper {
-  position: relative;
-  width: 100%;
-  height: auto; /* Fixed: Remove fixed height to avoid gap */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Light outline */
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .banner-top {
-  position: relative;
-  width: 100%;
-  height: 320px;
-  background-size: cover;
-  background-position: center;
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
 }
 
 .banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  padding-left: 4rem;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding-left: 4rem;
 }
 
 .banner-main-text {
-  text-align: left;
+    text-align: left;
 }
 
-.title, .subtitle {
-  font-family: var(--vp-font-family-mono);
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--vp-c-brand-1); /* Yellow */
-  margin: 0;
-  word-spacing: -0.3em; /* Tighten space for monospace */
+.title,
+.subtitle {
+    font-family: var(--vp-font-family-mono);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--vp-c-brand-1);
+    margin: 0;
+    word-spacing: -0.3em;
 }
 
 .badge-detail {
@@ -154,29 +121,29 @@ onMounted(async () => {
 }
 
 .subtitle {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .tagline {
-  font-family: var(--vp-font-family-mono);
-  font-size: 0.8rem; /* Doubled from 0.8rem */
-  margin-top: 1rem;
-  color: #ccc;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+    font-family: var(--vp-font-family-mono);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .banner-bottom {
-  background-color: var(--vp-c-brand-1); /* Yellow Background */
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem 0 4rem;
-  font-family: var(--vp-font-family-mono);
-  font-size: 0.7rem;
-  color: black; /* Black Text */
-  border-top: 1px solid #333;
+    background-color: var(--vp-c-brand-1);
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 0 4rem;
+    font-family: var(--vp-font-family-mono);
+    font-size: 0.7rem;
+    color: black;
+    border-top: 1px solid #333;
 }
 
 .bottom-left {
@@ -207,48 +174,6 @@ onMounted(async () => {
     display: flex;
     align-items: center;
     white-space: nowrap;
-}
-
-.badge-stats-group {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin: 0 0.5rem;
-    color: black;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    padding: 2px 8px;
-    background: rgba(255, 255, 255, 0.1);
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.badge-stats-group:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: black;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.stat-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-weight: 800;
-}
-
-.badge-icon {
-    height: 1.8em;
-    width: auto;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.highlight-text {
-    text-decoration: none;
-    margin-left: 0;
-    font-weight: 800;
-    border-bottom: none;
 }
 
 .countdown {
@@ -295,7 +220,6 @@ onMounted(async () => {
     color: var(--vp-c-brand-1);
 }
 
-/* Responsive */
 .mobile-only {
     display: none;
 }
@@ -308,8 +232,9 @@ onMounted(async () => {
         gap: 1rem;
         justify-content: center;
     }
-    
-    .bottom-left, .bottom-right {
+
+    .bottom-left,
+    .bottom-right {
         width: 100%;
         justify-content: center;
         text-align: center;
@@ -329,50 +254,55 @@ onMounted(async () => {
     .banner-top {
         height: 240px;
     }
+
     .banner-overlay {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
+
     .title {
-        font-size: 1.9rem !important; /* Force uniform size */
+        font-size: 1.9rem !important;
     }
+
     .subtitle {
-        font-size: 1.9rem !important; /* Force uniform size */
+        font-size: 1.9rem !important;
     }
+
     .tagline {
-        font-size: 0.9rem; /* Doubled from 0.6rem */
+        font-size: 0.9rem;
         line-height: 1.4;
-        max-width: 85% ; /* Shorten line wrapping by 20% */
+        max-width: 85%;
     }
+
     .desktop-only {
         display: none;
     }
-    
-    /* Hide specific mobile-hide elements */
+
     .mobile-hide {
         display: none !important;
     }
-    
+
     .mobile-only {
-        display: inline-block !important; /* or inline, but consistent */
+        display: inline-block !important;
     }
-    
+
     .banner-bottom {
         flex-direction: column;
         height: auto;
         padding: 1rem 0.5rem;
-        gap: 0.5rem; /* Tighter gap */
+        gap: 0.5rem;
     }
 
-    .bottom-left, .bottom-right {
+    .bottom-left,
+    .bottom-right {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
     }
 
     .ticker-text {
-        font-size: 0.65rem; /* Small font to fit text */
-        flex-direction: column; /* Stack top lines vs bottom lines */
+        font-size: 0.65rem;
+        flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
         height: auto;
@@ -380,7 +310,7 @@ onMounted(async () => {
         overflow: visible;
         width: 100%;
     }
-    
+
     .links-group {
         display: flex;
         align-items: center;
@@ -390,34 +320,19 @@ onMounted(async () => {
         width: 100%;
     }
 
-    .badge-stats-group {
-        display: flex; /* Flex for mobile too */
-        flex-wrap: wrap; /* Allow wrapping */
-        justify-content: center;
-        margin: 0.25rem 0 0 0;
-        width: 100%;
-        gap: 0.4rem;
-    }
-    
-    .mobile-break {
-        display: block;
-        width: 100%; /* Force new line */
-        margin-top: 2px;
+    .action-btn {
+        width: auto;
+        flex: 1;
+        text-align: center;
+        margin-bottom: 0;
+        padding: 8px 12px;
+        font-size: 0.7rem;
     }
 
-    .action-btn {
-        width: auto; /* Allow buttons to size naturally or flex */
-        flex: 1; /* Make them share width equally */
-        text-align: center;
-        margin-bottom: 0; /* Remove bottom margin */
-        padding: 8px 12px; /* Slightly smaller padding for mobile */
-        font-size: 0.7rem; /* Slightly smaller text */
-    }
-    
     .bottom-right {
-        flex-direction: row; /* Side by side */
+        flex-direction: row;
         gap: 0.5rem;
-        padding: 0 0.5rem; /* Ensure buttons don't touch edges */
+        padding: 0 0.5rem;
         margin-top: 0.5rem;
     }
 }
@@ -435,7 +350,7 @@ onMounted(async () => {
 }
 
 .separator {
-    color: rgba(0,0,0,0.4);
+    color: rgba(0, 0, 0, 0.4);
     margin: 0 0.25rem;
 }
 

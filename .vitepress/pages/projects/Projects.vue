@@ -20,8 +20,7 @@ const renderDescription = (description: string) =>
 
     <div class="projects-grid">
       <a v-for="project in projectsConfig.projects" :key="`${project.link}\0${project.title}`"
-        class="projects-card neuko-card" :href="project.link"
-        :target="isExternal(project.link) ? '_blank' : undefined"
+        class="projects-card neuko-card" :href="project.link" :target="isExternal(project.link) ? '_blank' : undefined"
         :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
         <div class="projects-image-wrap">
           <img v-if="project.image?.trim()" :src="project.image" :alt="project.title" loading="lazy" />
