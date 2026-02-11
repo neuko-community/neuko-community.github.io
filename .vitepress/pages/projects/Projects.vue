@@ -2,10 +2,8 @@
 import { withBase } from 'vitepress'
 import { projectsConfig } from '../../config/projects'
 
-const isExternal = (link: string) => /^(https?:)?\/\//.test(link)
-
-const resolveLink = (link: string) => (isExternal(link) ? link : withBase(link))
-const resolveImage = (image: string) => (isExternal(image) ? image : withBase(image))
+const isExternal = (link: string) =>
+  link.startsWith('http') && !link.startsWith(withBase('/'))
 const normalizeHandle = (handle: string) => handle.replace(/^@/, '').trim()
 const handleLabel = (handle: string) => `@${normalizeHandle(handle)}`
 const handleUrl = (handle: string) => `https://x.com/${normalizeHandle(handle)}`
@@ -21,11 +19,12 @@ const renderDescription = (description: string) =>
     </header>
 
     <div class="projects-grid">
-      <a v-for="project in projectsConfig.projects" :key="`${project.link}\0${project.title}`" class="projects-card neuko-card"
-        :href="resolveLink(project.link)" :target="isExternal(project.link) ? '_blank' : undefined"
+      <a v-for="project in projectsConfig.projects" :key="`${project.link}\0${project.title}`"
+        class="projects-card neuko-card" :href="project.link"
+        :target="isExternal(project.link) ? '_blank' : undefined"
         :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
         <div class="projects-image-wrap">
-          <img v-if="project.image?.trim()" :src="resolveImage(project.image!)" :alt="project.title" loading="lazy" />
+          <img v-if="project.image?.trim()" :src="project.image" :alt="project.title" loading="lazy" />
           <div v-else class="projects-image-fallback">
             <span class="preview-label">Link preview</span>
             <span class="preview-url">{{ project.link }}</span>

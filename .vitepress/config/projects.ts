@@ -1,3 +1,5 @@
+import { withBase } from 'vitepress'
+
 export type ProjectEntry = {
   title: string
   description: string
@@ -17,35 +19,35 @@ export const projectsConfig: {
     {
       title: 'GBOYSPECIAL Prompt Library',
       description: 'A library of prompts for the GBOYSPECIAL AI tool.',
-      image: '/images/prompt-library.jpeg',
+      image: withBase('/images/prompt-library.jpeg'),
       contributors: ['FSkifor'],
       link: 'https://www.gboy-lib.art/feed'
     },
     {
       title: 'Pathogenz TCG',
       description: 'A collectible trading card game built by badge-holding community members.',
-      image: '/images/pathogenz.jpg',
+      image: withBase('/images/pathogenz.jpg'),
       contributors: ['PathogenzTCG', '0161cassius'],
-      link: '/pathogenz'
+      link: withBase('/pathogenz')
     },
     {
       title: 'Comics',
       description: 'Community-made comic book collection inspired by Neuko characters.',
-      image: '/images/comic.jpeg',
+      image: withBase('/images/comic.jpeg'),
       contributors: ['DegenFigster'],
-      link: '/comics'
+      link: withBase('/comics')
     },
     {
       title: 'Operative Identity Card',
       description: 'Create and download your custom ID with your hooded PFP, Operative Type and Number.',
-      image: '/images/gboy-identity-card.jpg',
+      image: withBase('/images/gboy-identity-card.jpg'),
       contributors: ['feezybellz_ii'],
       link: 'https://neukoai.feezybellz.me/dp/'
     },
     {
       title: 'Bloc Translator',
       description: 'A tool to translate Bloc encrypted messages into English.',
-      image: '/images/bloc-translator.jpeg',
+      image: withBase('/images/bloc-translator.jpeg'),
       contributors: ['HelveticVault'],
       link: 'https://thebloctranslator.vercel.app/'
     },
@@ -73,7 +75,7 @@ export const projectsConfig: {
     {
       title: 'Bloc Chat',
       description: 'A chatbot that enables you to chat with the EP2 characters.',
-      image: '/images/bloc-chat.png',
+      image: withBase('/images/bloc-chat.png'),
       contributors: ['FSkifor'],
       link: 'https://www.bloc-chat.online/'
     },
