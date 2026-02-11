@@ -25,24 +25,12 @@ const imageSrc = (url: string | undefined) => {
     </header>
 
     <div class="projects-grid">
-      <div
-        v-for="(project, index) in projectsConfig.projects"
-        :key="index"
-        class="projects-card-wrapper"
-      >
-        <a
-          class="projects-card neuko-card"
-          :href="project.link"
+      <div v-for="(project, index) in projectsConfig.projects" :key="index" class="projects-card-wrapper">
+        <a class="projects-card neuko-card" :href="project.link"
           :target="isExternal(project.link) ? '_blank' : undefined"
-          :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined"
-        >
+          :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
           <div class="projects-image-wrap">
-            <img
-              v-if="imageSrc(project.image)"
-              :src="imageSrc(project.image)"
-              :alt="project.title"
-              loading="lazy"
-            />
+            <img v-if="imageSrc(project.image)" :src="imageSrc(project.image)" :alt="project.title" loading="lazy" />
             <div v-else class="projects-image-fallback">
               <span class="preview-label">Link preview</span>
               <span class="preview-url">{{ project.link }}</span>
