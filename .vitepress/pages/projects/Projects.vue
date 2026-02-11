@@ -25,30 +25,44 @@ const imageSrc = (url: string | undefined) => {
     </header>
 
     <div class="projects-grid">
-      <a v-for="(project, index) in projectsConfig.projects" :key="`project-${index}-${project.title}`"
-        class="projects-card neuko-card" :href="project.link" :target="isExternal(project.link) ? '_blank' : undefined"
-        :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined">
-        <div class="projects-image-wrap">
-          <img v-if="imageSrc(project.image)" :src="imageSrc(project.image)" :alt="project.title" loading="lazy" />
-          <div v-else class="projects-image-fallback">
-            <span class="preview-label">Link preview</span>
-            <span class="preview-url">{{ project.link }}</span>
+      <div
+        v-for="(project, index) in projectsConfig.projects"
+        :key="index"
+        class="projects-card-wrapper"
+      >
+        <a
+          class="projects-card neuko-card"
+          :href="project.link"
+          :target="isExternal(project.link) ? '_blank' : undefined"
+          :rel="isExternal(project.link) ? 'noopener noreferrer' : undefined"
+        >
+          <div class="projects-image-wrap">
+            <img
+              v-if="imageSrc(project.image)"
+              :src="imageSrc(project.image)"
+              :alt="project.title"
+              loading="lazy"
+            />
+            <div v-else class="projects-image-fallback">
+              <span class="preview-label">Link preview</span>
+              <span class="preview-url">{{ project.link }}</span>
+            </div>
           </div>
-        </div>
-        <div class="projects-body">
-          <h2 class="projects-title">{{ project.title }}</h2>
-          <p class="projects-description" v-html="renderDescription(project.description)"></p>
-          <div class="projects-contributors">
-            <span class="contributors-label">Key contributors</span>
-            <ul>
-              <li v-for="handle in project.contributors" :key="handle">
-                <a :href="handleUrl(handle)" target="_blank" rel="noopener noreferrer">{{ handleLabel(handle) }}</a>
-              </li>
-            </ul>
+          <div class="projects-body">
+            <h2 class="projects-title">{{ project.title }}</h2>
+            <p class="projects-description" v-html="renderDescription(project.description)"></p>
+            <div class="projects-contributors">
+              <span class="contributors-label">Key contributors</span>
+              <ul>
+                <li v-for="handle in project.contributors" :key="handle">
+                  <a :href="handleUrl(handle)" target="_blank" rel="noopener noreferrer">{{ handleLabel(handle) }}</a>
+                </li>
+              </ul>
+            </div>
+            <span class="projects-link">View project</span>
           </div>
-          <span class="projects-link">View project</span>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -91,11 +105,17 @@ const imageSrc = (url: string | undefined) => {
   gap: 1.5rem;
 }
 
+.projects-card-wrapper {
+  min-width: 0;
+}
+
 .projects-card {
+  display: block;
   text-decoration: none;
   color: inherit;
   padding: 0;
   overflow: hidden;
+  height: 100%;
 }
 
 .projects-image-wrap {
