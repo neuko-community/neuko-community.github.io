@@ -10,3 +10,5 @@ scripts/config.json
 transactions.json
 memes-archive.json
 !scripts/script-config.example.json
+.claude
+.cursor
