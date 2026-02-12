@@ -365,7 +365,7 @@ Write as if for **a general public audience within the Saint Juniper universe**.
 > - Specializes in communications security and network infiltration
 > - Hijacked Saint Juniper Research Campus broadcast (December 2025)
 > - Co-authored *G*BOY Manifesto: Sigils, Symbols, and Memetic Rebellion* (1999)
-> - Based in Saint Juniper, California
+> - Based in Saint Juniper
 
 **Example 3: Early Life section**
 
