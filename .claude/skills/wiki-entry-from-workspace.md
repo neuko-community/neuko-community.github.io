@@ -13,14 +13,48 @@ You create Saint Juniper / G*BOY lore wiki entries by **pulling information from
 
 ---
 
-## 1. Where to find information (required — both workspaces)
+## 1. Source Philosophy: In-Universe Knowledge
+
+**Critical distinction:** This encyclopedia represents what **in-universe characters** (activists, researchers, The Bloc members) would know, not what ARG players watching videos would know.
+
+### What to Include
+
+✅ **Recovered materials from lore-drops** (logs, documents, audio recordings, staff journals, memos, experiment logs)
+- These are treated as leaked or recovered documents that The Bloc obtained
+- Can be cited as "materials recovered by The Bloc" or "leaked documents"
+- Represent actual in-universe sources that researchers would have access to
+
+✅ **Video content that represents in-universe events**
+- Broadcasts (facility addresses, hijacked communications)
+- Public announcements
+- Documented incidents that would be recorded/accessible
+- Must be content that exists within the story world
+
+### What to Exclude
+
+❌ **Video content that is meta-ARG narrative**
+- Player-facing exposition that wouldn't exist as a document in-universe
+- Abstract narrative sequences without clear in-world context
+- Content that only makes sense as ARG puzzle pieces
+
+### How to Determine
+
+Ask: "Would The Bloc or other in-universe researchers have access to this information, or is this only for ARG players?" If only for players, don't use it or use it very sparingly with appropriate framing.
+
+---
+
+## 2. Where to find information (required — both workspaces)
 
 You **must** search and use material from **both** of these roots when researching for an entry:
 
 ### Workspace A: lore-repo
 
 - **lore-drops/** — Episode 1/2 loot drops: decoded .txt files, GBOY-MANIFESTO, experiment logs, staff journals, ORIGIN_THEORY, PROTOCOLS_TIER0, intake reports, surveillance logs, node logs, etc.
+  - **Treatment**: These are **recovered materials** that can be cited as documents "recovered by The Bloc" or "leaked documents" - they represent in-universe sources that activists/researchers would have access to
 - **videos/** — Transcripts (e.g. TheBloc, FacilityAddress, EP1 PT1/2/3, G*BOY, Roaches, The Formation).
+  - **Treatment**: Exercise **discernment** - videos are ARG content for players and may not represent in-universe public knowledge. Determine if the video represents:
+    - **Usable**: A broadcast, public announcement, or documented event that would be accessible in-universe (e.g., hijacked broadcasts, facility addresses)
+    - **Unusable**: Meta-narrative or player-facing content that wouldn't exist as public information in-universe
 - Primary for: G-304/G*BOY, Dr. Kerr, Dr. Ravel, Variable-G, Saint Juniper, Miter, Bloc members, Harmony, leaked docs, missions, escape events.
 
 ### Workspace B: neuko-community.github.io (this repo)
@@ -35,7 +69,7 @@ Do not rely on only one workspace. Cross-reference both so the entry is complete
 
 ---
 
-## 2. Entry types and where to save
+## 3. Entry types and where to save
 
 Each entry belongs to one **type**. Save the file under `wiki/entries/<type>/<slug>.md` in **this repository** (neuko-community.github.io).
 
@@ -53,7 +87,7 @@ Each entry belongs to one **type**. Save the file under `wiki/entries/<type>/<sl
 
 ---
 
-## 3. Article structure (same as lore-repo wiki skill)
+## 4. Article structure (same as lore-repo wiki skill)
 
 Use this structure for every entry. Adjust sections to the entry type (see Section guidelines by type below).
 
@@ -90,7 +124,10 @@ Use this structure for every entry. Adjust sections to the entry type (see Secti
 
 ## References
 
-1. **Source name** — Brief description
+1. **Source name** — Brief description with attribution
+   - Example: "Internal memo recovered by The Bloc (February 11, 1994)"
+   - Example: "Staff journal entry obtained by activist researchers (March 2, 1997)"
+   - Example: "Leaked experiment log from Division of Gravitational Cognition"
 2. …
 
 ---
@@ -145,7 +182,7 @@ Pattern: `../TYPE/filename.md` to link across types; `filename.md` to link withi
 
 ---
 
-## 4. Section guidelines by type
+## 5. Section guidelines by type
 
 Follow the same logic as the lore-repo wiki-entry-generator:
 
@@ -219,7 +256,7 @@ Follow the same logic as the lore-repo wiki-entry-generator:
 
 ---
 
-## 5. Style and special sections (Encyclopedia Voice)
+## 6. Style and special sections (Encyclopedia Voice)
 
 ### 5.1 Encyclopedia Voice Principles
 
@@ -261,15 +298,27 @@ Write as if for **a general public audience within the Saint Juniper universe**.
 
 **DO infer and include:**
 - Public facts that would be known (even if derived from private conversations in lore)
+- Information from recovered documents (logs, memos, staff journals, experiment reports) - cite as "materials recovered by The Bloc"
+- Details from audio recordings included in lore-drops - these are treated as leaked recordings
 - Approximate dates/timeframes from context (use "c. 1997" for circa)
 - Professional roles from described activities
 - Public outcomes of events
 
 **DO NOT include:**
 - Meta-commentary about narrating stories or recruiting members
-- Process details about how info was obtained ("leaked docs", "intercepted logs" as framing)
+- Information from videos that represents out-of-universe ARG content rather than in-universe accessible information
 - Insider knowledge that wouldn't be public (save for Controversies section)
-- References to the documentation itself being discovered
+- Overly detailed descriptions of how documentation was recovered (brief attribution to The Bloc is acceptable)
+
+**Examples of appropriate sourcing:**
+
+✅ **Good - Recovered document**: "According to internal memos recovered by The Bloc, Dr. Kerr announced the Miter Corporation partnership on February 11, 1994."
+
+✅ **Good - Leaked audio**: "Audio recordings obtained by activists reveal conversations between facility personnel regarding containment protocols."
+
+✅ **Good - In-universe broadcast**: "A facility address broadcast announced Agent K's command of recapture operations."
+
+❌ **Bad - ARG meta-content**: "A narrative video sequence depicts Agent K addressing Erik Purdue through abstract visual metaphors." (This is player-facing content, not an in-universe accessible document)
 
 ### 5.3 Structure and Formatting
 
@@ -346,25 +395,37 @@ Write as if for **a general public audience within the Saint Juniper universe**.
 
 ---
 
-## 6. Workflow (what you do)
+## 7. Workflow (what you do)
 
 1. **Research:** Search and read material from **both** lore-repo and neuko-community.github.io for the requested topic. Do not skip either workspace.
+   - **Prioritize lore-drops**: Documents, logs, audio recordings - these are in-universe materials that can be directly cited
+   - **Evaluate videos carefully**: Determine if content represents in-universe accessible information (broadcasts, recorded events) or meta-ARG narrative
+   - **Cite appropriately**: Attribute recovered materials to The Bloc or activist researchers
 2. **Classify:** Decide the entry type (people, subjects, locations, events, concepts, organizations, technology) and the slug.
-3. **Write:** Draft the full article using the structure and section guidelines above. Include the **reference card** (At a glance / Key facts, 4–8 bullets) directly under the lead; apply B–C hybrid (fact-first, bullets for events/lists, short paragraphs). Use **relative paths** for cross-references: `../TYPE/filename.md` across types, `filename.md` within same type.
+3. **Write:** Draft the full article using the structure and section guidelines above. Include the **reference card** (At a glance / Key facts, 4–8 bullets) directly under the lead; apply B–C hybrid (fact-first, bullets for events/lists, short paragraphs). Use **relative paths** for cross-references: `../TYPE/filename.md` across types, `filename.md` within same type. **Include inline links** within the body text whenever you reference another entry's subject (e.g., link "Dr. Kerr" to `[Dr. Kerr](Dr-E-Kerr.md)` when mentioned in another person's entry).
 4. **Save:** Write the file to **neuko-community.github.io/wiki/entries/\<type>/\<slug>.md** (this repo). Create the subfolder if it does not exist.
-5. **Bidirectional See Also:** If existing wiki entries should link to this new entry, add the new entry to their See Also using the correct relative path from their location.
+5. **Update existing entries (bidirectional linking):** After creating the new entry, update existing related entries to link back to it:
+   - **Inline links**: Add inline markdown links in the body text where the new entry's subject is mentioned (e.g., if creating "Agent K" entry, update "Erik Purdue" entry to change "Agent K" text to `[Agent K](Agent-K.md)`)
+   - **See Also sections**: Add the new entry to the See Also section of related entries using the correct relative path from their location
+   - Identify which existing entries should link to the new one based on direct relationships (people who worked together, organizations they belonged to, locations they operated at, events they participated in, etc.)
+   - Use proper relative paths: `../TYPE/filename.md` when linking across types, `filename.md` when linking within the same type
 
 ---
 
-## 7. Critical reminders
+## 8. Critical reminders
 
 1. **Both workspaces** — Every entry must be informed by lore-repo and neuko-community.github.io. Say explicitly that you searched both if the user asks.
 2. **Place in this repo only** — Save to `wiki/entries/<type>/<slug>.md` under neuko-community.github.io. Do not save to lore-repo/wiki.
 3. **Paths for links** — Use **relative paths** with `../` to navigate between entry types (e.g. `../people/Z-L1NE.md` from a subject file, `../locations/Saint-Juniper.md` from a people file). Within the same type, use just the filename (e.g. `1NK.md` from another people file).
-4. **Stay in-universe** — Treat all sources as in-world; no ARG or fiction framing.
-5. **Use sources** — Base claims on the actual files you found; cite them in References.
-6. **Reference card + B–C hybrid** — Every entry must have an **At a glance** / **Key facts** block (4–8 bullets) under the lead. Prefer bullets over long prose; keep paragraphs short; trim Theories, In the Leaked Documents, and See Also (6–12 links).
-7. **USE IN-WORLD DATES, NOT VIDEO RELEASE DATES** — The lore events occurred in the mid-1990s through early 2000s. Video files are named with release dates (2025-2026), but these are NOT the dates when events happened. Known in-world dates:
+4. **Bidirectional linking** — When creating a new entry, always update existing related entries to link to it. Add both inline links (in body text where the subject is mentioned) and See Also links. This creates a navigable web of interconnected articles.
+5. **Stay in-universe** — Treat all sources as in-world; no ARG or fiction framing. The encyclopedia represents what in-universe characters (like The Bloc) would know, not what ARG players know.
+6. **Use sources appropriately** — Base claims on actual files you found. Distinguish between:
+   - **Recovered materials** (lore-drops): Can be cited as "materials recovered by The Bloc," "leaked documents," or "obtained by activist researchers" - these represent in-universe sources
+   - **Audio recordings** (from lore-drops): Treat as leaked or intercepted recordings - can be cited directly
+   - **Videos**: Use with discernment - only if they represent in-universe accessible information (broadcasts, announcements, documented events), not meta-ARG content
+   - Cite sources in References with appropriate context (e.g., "Internal memo recovered by The Bloc (February 11, 1994)")
+7. **Reference card + B–C hybrid** — Every entry must have an **At a glance** / **Key facts** block (4–8 bullets) under the lead. Prefer bullets over long prose; keep paragraphs short; trim Theories, In the Leaked Documents, and See Also (6–12 links).
+8. **USE IN-WORLD DATES, NOT VIDEO RELEASE DATES** — The lore events occurred in the mid-1990s through early 2000s. Video files are named with release dates (2025-2026), but these are NOT the dates when events happened. Known in-world dates:
    - **1993**: Dr. Kerr's theoretical framework
    - **1994**: Miter partnership (February 11, 1994); Variable-G trials begin
    - **c. 1997**: Hill Devil disappearances, Z*L1NE's junior year

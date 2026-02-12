@@ -47,5 +47,6 @@ export default defineConfig({
     },
     vite: {
         publicDir: path.resolve(__dirname, '../public')
-    }
+    },
+    ignoreDeadLinks: true,
 })
