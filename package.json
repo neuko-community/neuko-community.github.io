@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "bun scripts/dev.ts",
-    "build": "vitepress build",
+    "build": "bun scripts/generate-directory.ts && vitepress build",
     "preview": "vitepress preview",
     "scrape:memes": "bun scripts/scrape-memes.ts",
+    "generate:directory": "bun scripts/generate-directory.ts",
     "lint": "eslint . --fix",
     "format": "prettier --write ."
   },
