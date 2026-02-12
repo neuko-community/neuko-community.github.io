@@ -28,7 +28,7 @@ const { frontmatter } = useData()
       <div v-if="frontmatter.layout === 'home'" class="footer-credits">
         2025 - built by <a href="https://x.com/afkboom" target="_blank">@afkboom</a> | populated by
         the community -
-        <a href="https://github.com/neuko-community/neuko-community.github.io" target="_blank"
+        <a href="https://github.com/neuko-community/wiki" target="_blank"
           >github repo</a
         >
       </div>

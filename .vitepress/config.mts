@@ -38,7 +38,7 @@ export default defineConfig({
         sidebar: getSidebar(),
 
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/neuko-community/neuko-wiki' }
+            { icon: 'github', link: 'https://github.com/neuko-community/wiki' }
         ],
 
         search: {
