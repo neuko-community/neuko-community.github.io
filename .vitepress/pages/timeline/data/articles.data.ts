@@ -7,6 +7,11 @@ type ArticleDetails = Omit<Article, 'type' | 'date' | 'source' | 'id'>
 const officialArticles: ArticleDetails[] = [
   // @austin_hurwitz
   {
+    url: 'https://x.com/austin_hurwitz/status/2020609951295557795',
+    title: 'I Gave an AI Agent Full Autonomy for a Week. It Built a Protocol on Solana.',
+    image: "https://pbs.twimg.com/media/HAql976XIAAU0dk?format=jpg&name=small",
+  },
+  {
     url: 'https://x.com/austin_hurwitz/status/2020230955370201129',
     title: 'The Bot Father: Lessons I Wish I Knew When Working with OpenClaw',
     image: "https://pbs.twimg.com/media/HAlNRusWAAEYwre?format=jpg&name=medium"
@@ -90,6 +95,12 @@ const officialArticles: ArticleDetails[] = [
     image: 'https://pbs.twimg.com/media/G3E8skBXwAA_Cjz?format=jpg&name=medium',
     title: 'Machiavelli, $VIBESTR, and Ideas Having Sex',
     url: 'https://x.com/austin_hurwitz/status/1977429231656173872',
+  },
+  // @blowfishbot
+  {
+    url: 'https://x.com/blowfishbot/status/2022074920780357797',
+    title: 'WTF is Blowfish',
+    image: "https://pbs.twimg.com/media/HA_X2HbWAAAOC1_?format=jpg&name=900x900"
   },
 
   // @neukoai

@@ -20,6 +20,7 @@ const neukoTeamAccounts = [
   'greenie_sr',
   'boris0chuck',
   'demdev007',
+  'blowfishbot'
 ]
 
 export const isNeukoTeamAccount = (user?: string) => user && neukoTeamAccounts.includes(user) || false
