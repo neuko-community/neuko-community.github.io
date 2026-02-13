@@ -3,7 +3,7 @@ import {
   loadTweets,
 } from '../../../utils/tweetFetch'
 
-type PostType = EventType.POST | EventType.THREAD | EventType.INTERVIEW | EventType.VIDEO | EventType.INTERVIEW
+type PostType = EventType.POST | EventType.THREAD | EventType.INTERVIEW | EventType.VIDEO | EventType.INTERVIEW | EventType.DEBRIEF
 type PostDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id' | 'source'> & { type?: PostType }
 
 const officialPosts: PostDetails[] = [
@@ -271,11 +271,18 @@ const communityPosts: PostDetails[] = [
   },
 
   // @satoshi_owl
+  { url: 'https://x.com/satoshi_owl/status/2019746327383396836', type: EventType.DEBRIEF }, // 10
+  { url: 'https://x.com/satoshi_owl/status/2001826293109920022', type: EventType.DEBRIEF }, // 9
+  { url: 'https://x.com/satoshi_owl/status/1996579259805028652', type: EventType.DEBRIEF }, // 8
+  { url: 'https://x.com/satoshi_owl/status/1993858422710641011', type: EventType.DEBRIEF }, // 7
+  { url: 'https://x.com/satoshi_owl/status/1991295599384359116', type: EventType.DEBRIEF }, // 6
+  { url: 'https://x.com/satoshi_owl/status/1989504633018994750', type: EventType.DEBRIEF }, // 5
+  { url: 'https://x.com/satoshi_owl/status/1986267027514769671', type: EventType.DEBRIEF }, // 4
+  { url: 'https://x.com/satoshi_owl/status/1985518909911679395', type: EventType.DEBRIEF }, // 3
+  { url: 'https://x.com/satoshi_owl/status/1983610368330231897', type: EventType.DEBRIEF }, // 1
   { url: 'https://x.com/satoshi_owl/status/2012600264767819971' },
   { url: 'https://x.com/satoshi_owl/status/2012947684315779236' },
-  {
-    url: 'https://x.com/satoshi_owl/status/2013607280080511349',
-  },
+  { url: 'https://x.com/satoshi_owl/status/2013607280080511349' },
 
   // @Sinsonx
   {

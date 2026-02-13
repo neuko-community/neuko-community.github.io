@@ -30,6 +30,7 @@ export enum EventType {
   INTERVIEW = 'interview',
   SPACES = 'spaces',
   MILESTONE = 'milestone',
+  DEBRIEF = 'debrief',
   OTHER = 'other'
 }
 

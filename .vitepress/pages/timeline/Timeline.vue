@@ -33,10 +33,16 @@ const typeOptions = [
   { value: EventType.MUSIC, label: 'Music' },
   { value: EventType.SPACES, label: 'Spaces' },
   { value: EventType.MILESTONE, label: 'Milestones' },
+  { value: EventType.DEBRIEF, label: 'Debriefs' },
   { value: EventType.OTHER, label: 'Other' }
+
 ]
 
 const activeTypes = ref<EventType[]>(typeOptions.map((option) => option.value))
+
+// Hidden: ?types=placenta shows only this post (no UI filter).
+const PLACENTA_POST_ID = '1988946547250495549'
+const showPlacentaOnly = ref(false)
 
 const applyQueryParams = () => {
   if (typeof window === 'undefined') return
@@ -63,6 +69,11 @@ const applyQueryParams = () => {
   }
 
   const typesParam = params.get('types')
+  if (typesParam?.toLowerCase() === 'placenta') {
+    showPlacentaOnly.value = true
+    return
+  }
+  showPlacentaOnly.value = false
   if (typesParam) {
     if (typesParam.toLowerCase() === 'all') {
       activeTypes.value = typeOptions.map((option) => option.value)
@@ -103,8 +114,9 @@ const updateQueryParams = () => {
   params.push(`sort=${encodeURIComponent(sortOrder.value)}`)
 
   const allTypes = typeOptions.map((option) => option.value)
-  const typesValue =
-    activeTypes.value.length === allTypes.length
+  const typesValue = showPlacentaOnly.value
+    ? 'placenta'
+    : activeTypes.value.length === allTypes.length
       ? 'all'
       : activeTypes.value.join(',')
   if (typesValue) {
@@ -126,7 +138,7 @@ onMounted(() => {
 })
 
 watch(
-  [sortOrder, showOfficial, showCommunity, selectedUser, activeTypes],
+  [sortOrder, showOfficial, showCommunity, selectedUser, activeTypes, showPlacentaOnly],
   () => updateQueryParams(),
   { deep: true }
 )
@@ -161,6 +173,11 @@ const sortedEvents = computed(() => {
 })
 
 const filteredEvents = computed(() => {
+  if (showPlacentaOnly.value) {
+    return sortedEvents.value.filter(
+      (event) => 'id' in event && (event as Post).id === PLACENTA_POST_ID
+    )
+  }
   return sortedEvents.value.filter((event) => {
     const sourceAllowed =
       (event.source === SourceType.OFFICIAL && showOfficial.value) ||
@@ -216,6 +233,7 @@ function isPostEvent(event: TimelineEvent): event is Post {
     || event.type === EventType.VIDEO
     || event.type === EventType.INTERVIEW
     || event.type === EventType.MUSIC
+    || event.type === EventType.DEBRIEF
   )
 }
 </script>
