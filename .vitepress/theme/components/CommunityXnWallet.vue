@@ -10,7 +10,7 @@ const isUnlocked = ref(false)
 const error = ref('')
 
 // Configuration
-const ACCESS_KEY = 'HOODUP'
+const ACCESS_KEY = 'MILTONPLUMB'
 
 // --- Methods ---
 const checkPassword = () => {
@@ -71,13 +71,8 @@ const filteredData = computed(() => {
         <p class="instruction">Enter clearance key to decrypt wallet database...</p>
 
         <div class="input-container">
-          <input
-            v-model="password"
-            type="password"
-            @keyup.enter="checkPassword"
-            placeholder="ACCESS KEY"
-            class="terminal-input"
-          />
+          <input v-model="password" type="password" @keyup.enter="checkPassword" placeholder="ACCESS KEY"
+            class="terminal-input" />
           <button @click="checkPassword" class="auth-btn">AUTHENTICATE</button>
         </div>
         <p v-if="error" class="error-log">{{ error }}</p>
@@ -96,12 +91,8 @@ const filteredData = computed(() => {
       <div class="search-bar-container">
         <div class="search-wrapper">
           <span class="search-icon">🔎</span>
-          <input
-            v-model="searchQuery"
-            type="text"
-            placeholder="FILTER BY WALLET, NAME, OR ID..."
-            class="search-input"
-          />
+          <input v-model="searchQuery" type="text" placeholder="FILTER BY WALLET, NAME, OR ID..."
+            class="search-input" />
         </div>
         <div class="results-meta">
           MATCHES: {{ filteredData.length }} / TOTAL: {{ rawData.length }}
@@ -165,10 +156,12 @@ const filteredData = computed(() => {
   border-radius: 50%;
   background: #444;
 }
+
 .status-dot.blink {
   background: #ff4d4d;
   animation: pulse 1.5s infinite;
 }
+
 .status-dot.active {
   background: var(--vp-c-brand-1);
 }
@@ -178,12 +171,14 @@ const filteredData = computed(() => {
   text-align: center;
   padding: 40px 0;
 }
+
 .cypher-text {
   color: var(--vp-c-brand-1);
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .instruction {
   font-size: 0.8rem;
   color: #888;
@@ -195,6 +190,7 @@ const filteredData = computed(() => {
   gap: 10px;
   justify-content: center;
 }
+
 .terminal-input {
   background: #111;
   border: 1px solid #333;
@@ -203,6 +199,7 @@ const filteredData = computed(() => {
   border-radius: 4px;
   width: 250px;
 }
+
 .auth-btn {
   background: var(--vp-c-brand-1);
   color: #000;
@@ -217,17 +214,20 @@ const filteredData = computed(() => {
 .search-bar-container {
   margin-bottom: 25px;
 }
+
 .search-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
+
 .search-icon {
   position: absolute;
   left: 15px;
   font-size: 0.8rem;
   color: #444;
 }
+
 .search-input {
   width: 100%;
   background: #111;
@@ -237,6 +237,7 @@ const filteredData = computed(() => {
   border-radius: 6px;
   font-size: 0.85rem;
 }
+
 .results-meta {
   font-size: 0.65rem;
   color: #444;
@@ -250,11 +251,13 @@ const filteredData = computed(() => {
   border: 1px solid #1a1a1a;
   border-radius: 8px;
 }
+
 .neuko-table {
   width: 100%;
   border-collapse: collapse;
   background: #0c0c0c;
 }
+
 .neuko-table th {
   background: #111;
   color: #555;
@@ -264,12 +267,14 @@ const filteredData = computed(() => {
   text-align: left;
   border-bottom: 2px solid #1a1a1a;
 }
+
 .neuko-table td {
   padding: 12px;
   color: #aaa;
   font-size: 0.8rem;
   border-bottom: 1px solid #161616;
 }
+
 .neuko-table tr:hover td {
   background: rgba(0, 255, 157, 0.02);
   color: #fff;
@@ -291,6 +296,7 @@ const filteredData = computed(() => {
   padding: 4px 8px;
   cursor: pointer;
 }
+
 .logout-btn:hover {
   border-color: #ff4d4d;
   color: #ff4d4d;
@@ -307,9 +313,11 @@ const filteredData = computed(() => {
   0% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.3;
   }
+
   100% {
     opacity: 1;
   }

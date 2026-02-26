@@ -66,11 +66,18 @@
   { "X handle": "dukes1216", "address": "BRkLjq7zmCdwLS5MWbeND2RLHetYcKcKmgr8K4chMEV" },
   { "X handle": "mrwinning247", "address": "H7FDR9Lxw5k3Lm4tpStmTHoZwfsdrXNjVArwshfrjiyY" },
   { "X handle": "LiquorGrainNFT", "address": "HFvWmp8NwKvghY4vEg4M2hwc9Et1C8YbHewXMiU2mY6b" },
-  { "X handle": "CLOUD_STR1FE (Nebulous)", "address": "yyud78h1zmSmuq8DShDws23fs9zDWXoArc1p9stzDMg" },
-  { "X handle": "FSkifor (Crypto Freak)", "address": "91RKq73hiuUPUBVvEUfo9Jaj5XR58phybJEwLhY9BYJq" },
+  {
+    "X handle": "CLOUD_STR1FE (Nebulous)",
+    "address": "yyud78h1zmSmuq8DShDws23fs9zDWXoArc1p9stzDMg"
+  },
+  {
+    "X handle": "FSkifor (Crypto Freak)",
+    "address": "91RKq73hiuUPUBVvEUfo9Jaj5XR58phybJEwLhY9BYJq"
+  },
   { "X handle": "721drinker (Tojo)", "address": "DJNbmbhgLZRDfk7tmByy5KZqC1ntNcPUaWYyLXwY2FEq" },
   { "X handle": "basedkiing1", "address": "5zWgwdLxt9myeuyYbYE45GZEubX3hg4a6rJLJZea2B35" },
   { "X handle": "HelveticVault", "address": "7DRuQujbpHZBzZWoSWvGBQg1yW2zWcMunj6XEHFaqkhF" },
   { "X handle": "SteveBlackbeard", "address": "EhXMS14jY11pLrF8dpuy1zcjHVjDquojSKXXEGkka53K" },
-  { "X handle": "Wakuwaku", "address": "3xiqSqH7X5rquRBDkdXC7JRBALTTa67GGFHqhDyvt8N5" }
+  { "X handle": "Wakuwaku", "address": "3xiqSqH7X5rquRBDkdXC7JRBALTTa67GGFHqhDyvt8N5" },
+  { "X handle": "HelveticVault (E*NKI)", "address": "4jRDWrm2pTxMDyX8iyGAuVGpvcqM1ms4UytSvjYB4wpF" }
 ]
