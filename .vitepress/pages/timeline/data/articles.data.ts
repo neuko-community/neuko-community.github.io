@@ -105,6 +105,11 @@ const officialArticles: ArticleDetails[] = [
 
   // @neukoai
   {
+    title: "Agent Skills That Don't Suck: Character Image Studio & Blowfish",
+    image: 'https://pbs.twimg.com/media/HBeNqQWWwAAiCbg?format=jpg&name=medium',
+    url: 'https://x.com/neukoai/status/2024249673305797067',
+  },
+  {
     title: "IT'S $GBOY SEASON",
     image: 'https://pbs.twimg.com/media/G8jy1TaWcAE5-60?format=jpg&name=medium',
     url: 'https://x.com/neukoai/status/2002140529551630525',
