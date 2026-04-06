@@ -1,7 +1,5 @@
 import type { TweetData } from '../../types'
 
-
-
 export interface LegacyEvent extends TimelineEvent {
   title?: string
   description?: string
@@ -34,11 +32,12 @@ export enum EventType {
   OTHER = 'other'
 }
 
+export type EventTypes = EventType | EventType[] | string
 
 export interface TimelineEvent {
   date: string
   source: SourceType
-  type: EventType
+  type: EventTypes
   user?: string
   tweet?: TweetData
 }
@@ -56,4 +55,3 @@ export interface Article extends Post {
   description?: string
   image?: string
 }
-
