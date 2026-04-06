@@ -263,6 +263,13 @@ const communityArticles: ArticleDetails[] = [
     image: 'https://pbs.twimg.com/media/G-p71opbQDklnWk?format=jpg&name=medium',
     title: 'EPISODE 2 LOADING…',
     url: 'https://x.com/0xNickcrypto/status/2011560958569640268'
+  },
+
+  {
+    url: 'https://x.com/Wakuwaku/status/2026275928947470796',
+    title:
+      'Exploring NEUKO\'s Creative Framework: Inspiration sans Rules, & Why created "Stories from Shinkai"',
+    image: 'https://pbs.twimg.com/media/HB7FTScX0AAs0k2?format=jpg'
   }
 ]
 

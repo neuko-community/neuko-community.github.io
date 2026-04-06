@@ -37,6 +37,9 @@ const officialPosts: PostDetails[] = [
   },
 
   // @greenie_sr
+  {
+    url: 'https://x.com/greenie_sr/status/2039699072827691260'
+  },
 
   // @neukoai
 
@@ -526,6 +529,11 @@ const communityPosts: PostDetails[] = [
     type: EventType.VIDEO
   },
 
+  // @Wakuwaku
+  {
+    url: 'https://x.com/Wakuwaku/status/2028872055089774752?s=20'
+  },
+
   // @xeetdotai
   { url: 'https://x.com/xeetdotai/status/1996348571290148910' },
 
@@ -535,9 +543,20 @@ const communityPosts: PostDetails[] = [
     type: EventType.THREAD
   },
 
+  // @CDNHODLer
+  {
+    url: 'https://x.com/CDNHODLer/status/2027000132252631511'
+  },
+
+  // @LiquorGrainNFT
+  {
+    url: 'https://x.com/LiquorGrainNFT/status/2026319491630502147'
+  }
+
   // @wasabi_protocol
   { url: 'https://x.com/wasabi_protocol/status/2007851601936212016' },
-  { url: 'https://x.com/wasabi_protocol/status/1996335723214156123' }
+  { url: 'https://x.com/wasabi_protocol/status/1996335723214156123' },
+  { url: 'https://x.com/wasabi_protocol/status/2033616175389937691' }
 ]
 
 //BROADCASST
