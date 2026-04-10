@@ -7,7 +7,7 @@ type PostType =
   | EventType.INTERVIEW
   | EventType.VIDEO
   | EventType.DEBRIEF
-type PostDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id'> & {
+type PostDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id' | 'source'> & {
   type?: PostType | PostType[]
 }
 
@@ -551,7 +551,7 @@ const communityPosts: PostDetails[] = [
   // @LiquorGrainNFT
   {
     url: 'https://x.com/LiquorGrainNFT/status/2026319491630502147'
-  }
+  },
 
   // @wasabi_protocol
   { url: 'https://x.com/wasabi_protocol/status/2007851601936212016' },
