@@ -35,7 +35,6 @@ const typeOptions = [
   { value: EventType.MILESTONE, label: 'Milestones' },
   { value: EventType.DEBRIEF, label: 'Debriefs' },
   { value: EventType.OTHER, label: 'Other' }
-
 ]
 
 const activeTypes = ref<EventType[]>(typeOptions.map((option) => option.value))
@@ -172,6 +171,17 @@ const sortedEvents = computed(() => {
   return events.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 })
 
+const getEventTypes = (event: TimelineEvent): EventType[] => {
+  if (Array.isArray(event.type)) return event.type
+  if (typeof event.type === 'string') {
+    return event.type
+      .split(',')
+      .map((t) => t.trim() as EventType)
+      .filter((t) => Object.values(EventType).includes(t))
+  }
+  return [event.type]
+}
+
 const filteredEvents = computed(() => {
   if (showPlacentaOnly.value) {
     return sortedEvents.value.filter(
@@ -182,7 +192,7 @@ const filteredEvents = computed(() => {
     const sourceAllowed =
       (event.source === SourceType.OFFICIAL && showOfficial.value) ||
       (event.source === SourceType.COMMUNITY && showCommunity.value)
-    const typeAllowed = activeTypes.value.includes(event.type)
+    const typeAllowed = getEventTypes(event).some((type) => activeTypes.value.includes(type))
     const userAllowed =
       selectedUser.value === 'all' ||
       (event.tweet?.user?.screen_name && event.tweet.user.screen_name === selectedUser.value)
@@ -218,7 +228,7 @@ function clearAllTypes() {
 }
 
 function isArticleEvent(event: TimelineEvent): event is Article {
-  return event.type === EventType.ARTICLE
+  return getEventTypes(event).includes(EventType.ARTICLE)
 }
 
 // function isLegacyEvent(event: TimelineEvent): event is LegacyEvent {
@@ -226,14 +236,16 @@ function isArticleEvent(event: TimelineEvent): event is Article {
 // }
 
 function isPostEvent(event: TimelineEvent): event is Post {
-  return (
-    event.type === EventType.POST
-    || event.type === EventType.THREAD
-    || event.type === EventType.SPACES
-    || event.type === EventType.VIDEO
-    || event.type === EventType.INTERVIEW
-    || event.type === EventType.MUSIC
-    || event.type === EventType.DEBRIEF
+  return getEventTypes(event).some((type) =>
+    [
+      EventType.POST,
+      EventType.THREAD,
+      EventType.SPACES,
+      EventType.VIDEO,
+      EventType.INTERVIEW,
+      EventType.MUSIC,
+      EventType.DEBRIEF
+    ].includes(type)
   )
 }
 </script>
@@ -254,7 +266,11 @@ function isPostEvent(event: TimelineEvent): event is Post {
     <div v-if="upcomingEvents.length" class="upcoming-section">
       <h2 class="section-title">Upcoming Events</h2>
       <div class="events-list">
-        <div v-for="(event, idx) in upcomingEvents" :key="idx" class="event-card neuko-card upcoming">
+        <div
+          v-for="(event, idx) in upcomingEvents"
+          :key="idx"
+          class="event-card neuko-card upcoming"
+        >
           <div class="event-header">
             <span class="event-date">{{ formatDate(event.date) }}</span>
             <h3 class="event-title">{{ event.title }}</h3>

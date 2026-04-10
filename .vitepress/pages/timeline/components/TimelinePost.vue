@@ -57,8 +57,10 @@ const mappedProps = computed(() => {
 })
 
 const type = computed(() => {
-  if (props.post.id === '1988946547250495549')return 'placenta'
-  return props.post.type
+  if (props.post.id === '1988946547250495549') return 'placenta'
+  const t = props.post.type
+  if (Array.isArray(t)) return t.join(', ')
+  return t
 })
 </script>
 

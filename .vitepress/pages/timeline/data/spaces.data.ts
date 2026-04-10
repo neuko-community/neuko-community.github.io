@@ -1,16 +1,20 @@
-import { loadTweets } from "../../../utils/tweetFetch"
-import { EventType, Post } from "../timeline.types"
+import { loadTweets } from '../../../utils/tweetFetch'
+import { EventType, Post } from '../timeline.types'
 
 type SpaceDetails = Omit<Post, 'type' | 'tweet' | 'date' | 'id' | 'source'>
 const communitySpaces: SpaceDetails[] = [
+  //@0xRowdy
+  {
+    url: 'https://x.com/0xRowdy/status/2039887320036368491'
+  },
+
   // @CryptoVonDoom
   {
-    url: "https://x.com/CryptoVonDoom/status/2011681337133105379",
+    url: 'https://x.com/CryptoVonDoom/status/2011681337133105379'
   },
   {
-    url: 'https://x.com/CryptoVonDoom/status/2003001383759610222', // INTERVIEW
+    url: 'https://x.com/CryptoVonDoom/status/2003001383759610222' // INTERVIEW
   }
-
 ]
 
 const spaceData: SpaceDetails[] = [...communitySpaces]
